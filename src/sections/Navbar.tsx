@@ -1,10 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Monitor, Cpu, Globe, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const navLinks = [
+interface NavLink {
+  name: string;
+  href: string;
+  isMega?: boolean;
+}
+
+const navLinks: NavLink[] = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/#about' },
   { name: 'Services', href: '#services' },
