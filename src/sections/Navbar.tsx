@@ -7,12 +7,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/#about' },
-  { name: 'Services', href: '#services', isMega: true },
+  { name: 'Services', href: '#services' },
   { name: 'Our Project', href: '/#portfolio' },
   { name: 'Career', href: '/#insights' },
   { name: 'Contact Us', href: '/#cta' },
 ];
 
+/*
 const megaMenuData = [
   {
     category: "FRONT END",
@@ -41,6 +42,7 @@ const megaMenuData = [
     ]
   }
 ];
+*/
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -177,7 +179,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Backdrop Overlay */}
+          {/* Backdrop Overlay - Disabled for now
           <AnimatePresence>
             {isServicesOpen && (
               <motion.div
@@ -189,8 +191,9 @@ export default function Navbar() {
               />
             )}
           </AnimatePresence>
+          */}
 
-          {/* BHOOMI Style Mega Menu - Dual-Column Ultra-Compact Edition */}
+          {/* BHOOMI Style Mega Menu - Dual-Column Ultra-Compact Edition - Disabled for now
           <AnimatePresence>
             {isServicesOpen && (
               <motion.div
@@ -229,7 +232,6 @@ export default function Navbar() {
                           ))}
                         </ul>
                       </div>
-                      {/* Vertical Minimalist Divider */}
                       {idx < 1 && (
                         <div className="w-[1px] h-full bg-slate-50 self-stretch" />
                       )}
@@ -239,6 +241,7 @@ export default function Navbar() {
               </motion.div>
             )}
           </AnimatePresence>
+          */}
         </div>
       </nav>
 
