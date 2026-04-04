@@ -4,8 +4,7 @@ import type { Variants } from 'framer-motion';
 import { CheckCircle2, Globe, Target, Cpu, TrendingUp } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ThreeNeuralStorm from '../components/ThreeNeuralStorm';
-import ParticleNetwork from '../components/ParticleNetwork';
+import ThreeSolutionBackground from '../components/ThreeSolutionBackground';
 
 // Import Assets
 import imgWorkspace from '../assets/overview/overview_workspace.png';
@@ -20,7 +19,6 @@ export default function CompanyOverview() {
    const leftImageRef = useRef(null);
    const rightImageRef = useRef(null);
 
-   const headingChars = "Company Overview.".split("");
    const container: Variants = {
       hidden: { opacity: 0 },
       visible: (i: number = 1) => ({
@@ -106,162 +104,197 @@ export default function CompanyOverview() {
 
    return (
       <div className="pt-[80px] bg-white min-h-screen font-primary overflow-x-hidden">
-         {/* HERO SECTION */}
-         <section className="relative h-[250px] lg:h-[350px] flex items-center justify-center bg-[#fafaff] border-b border-indigo-100/30 overflow-hidden">
-            <ThreeNeuralStorm />
-            <ParticleNetwork />
+         <section className="relative min-h-[300px] lg:min-h-[350px] flex items-center justify-center bg-[#f8fafc] border-b border-slate-100 overflow-hidden pt-8">
+            <ThreeSolutionBackground />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-8">
                <motion.div
                   variants={container}
                   initial="hidden"
                   animate="visible"
                   style={{ opacity, scale }}
-                  className="space-y-3"
+                  className="flex flex-col items-center gap-6"
                >
-                  <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1] tracking-tighter uppercase flex justify-center flex-wrap">
-                     {headingChars.map((char, index) => (
-                        <motion.span
-                           key={index}
-                           variants={child}
-                           className={index >= 8 ? "text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 whitespace-pre" : "whitespace-pre"}
-                        >
-                           {char}
-                        </motion.span>
-                     ))}
+                  {/* Elite Identity Badge */}
+                  <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-indigo-200/50 bg-white/40 backdrop-blur-md shadow-sm">
+                     <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600">Enterprise Excellence</span>
+                  </div>
+
+                  <h1 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter leading-[1.05] uppercase max-w-4xl mx-auto">
+                     {(() => {
+                        const title = "ABOUT WEBULTRASOLUTION.";
+                        return title.split(" ").map((word, wordIdx) => (
+                           <span key={wordIdx} className="inline-block mr-4">
+                              {word.split("").map((char, charIdx) => (
+                                 <motion.span
+                                    key={`${wordIdx}-${charIdx}`}
+                                    variants={child}
+                                    className={`inline-block ${word === "WEBULTRASOLUTION." ? "text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600" : ""}`}
+                                 >
+                                    {char}
+                                 </motion.span>
+                              ))}
+                           </span>
+                        ));
+                     })()}
                   </h1>
-                  <p className="text-[10px] lg:text-[11px] font-black text-slate-400 uppercase tracking-[0.4em] max-w-2xl mx-auto leading-relaxed">
-                     Engineering Global Digital Success Since 2018.
+
+                  <p className="text-slate-500 text-sm lg:text-lg font-medium max-w-3xl leading-relaxed font-secondary">
+                     Webultrasolution stands at the forefront of today's digital landscape, serving as a proficient offshore partner for the USA in realms of digital marketing, software design, and web development.
                   </p>
+
                </motion.div>
             </div>
          </section>
 
-         {/* AGENCY OVERVIEW */}
-         <section className="relative py-10 lg:py-20 bg-white overflow-hidden">
+         {/* COMPANY OVERVIEW SECTION - ELITE IDENTITY (SUPER COMPACT) */}
+         <section className="relative py-8 lg:py-12 bg-[#fdfdff] overflow-hidden">
             <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-24">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
+               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
 
-                  {/* LEFT: WORKSPACE IMAGE */}
-                  <div className="lg:col-span-5 relative" ref={leftImageRef}>
+                  {/* LEFT: WORKSPACE IMAGE - CINEMATIC VIEW (RE-BALANCED) */}
+                  <div className="lg:col-span-4 relative" ref={leftImageRef}>
                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-                        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                        initial={{ opacity: 0, x: -80, rotate: -3 }}
+                        whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(79,70,229,0.15)] border-8 border-white/80 backdrop-blur-md"
+                        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="relative rounded-3xl overflow-hidden shadow-[0_40px_100px_-30px_rgba(79,70,229,0.2)] border-x-[12px] border-white backdrop-blur-2xl"
                      >
-                        <img src={imgWorkspace} alt="Agency Workspace" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000" />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/10 to-transparent" />
+                        <img src={imgWorkspace} alt="Company Workspace" className="w-full h-auto object-cover hover:scale-110 transition-transform duration-[2s] ease-out" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/40 via-transparent to-white/5 pointer-events-none" />
+
+                        {/* Elite Indicator */}
+                        <div className="absolute top-6 left-6">
+                           <div className="px-3 py-1.5 rounded-xl bg-white/90 backdrop-blur-md border border-white/50 shadow-2xl flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                              <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest leading-none pt-0.5">Primary HQ</span>
+                           </div>
+                        </div>
                      </motion.div>
                   </div>
 
-                  {/* RIGHT: NARRATIVE */}
-                  <div className="lg:col-span-7 space-y-6">
-                     <div className="flex items-center gap-4">
-                        <div className="h-[2px] w-12 bg-indigo-600" />
-                        <span className="text-indigo-600 text-[10px] font-black uppercase tracking-[0.5em]">Enterprise Identity</span>
-                     </div>
+                  {/* RIGHT: NARRATIVE - ELITE PRECISION (SUPER COMPACT) */}
+                  <div className="lg:col-span-8 space-y-6">
+                     <div className="space-y-6">
+                        <div className="space-y-3">
+                           <div className="flex items-center gap-3">
+                              <div className="h-[1px] w-8 bg-indigo-500" />
+                              <span className="text-indigo-600 text-[9px] font-black uppercase tracking-[0.4em] leading-none pt-0.5">Identity Protocol</span>
+                           </div>
+                           <h2 className="text-3xl lg:text-[40px] font-black text-slate-900 tracking-tighter uppercase leading-[0.95] italic">
+                              Company <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 not-italic">Overview.</span>
+                           </h2>
+                        </div>
 
-                     <div className="space-y-4">
-                        <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-tight italic">
-                           Agency <span className="text-indigo-600 not-italic">Overview.</span>
-                        </h2>
-                        <AnimatedText
-                           className="text-[16px] lg:text-[18px] font-bold text-slate-800 leading-relaxed tracking-tight font-secondary max-w-4xl"
-                           text="WebUltraSolution Services is a proficiency-driven Web Design, Software Development, and IT agency headquartered in Noida. Serving as a comprehensive offshore service provider for the USA, we cater to the diverse design and IT infrastructure needs of both corporate entities and enterprise projects."
-                        />
-                        <AnimatedText
-                           className="text-[13px] lg:text-[14px] text-slate-600 font-medium leading-relaxed max-w-2xl"
-                           text="With a wealth of experience in Custom Software Development, Mobile Apps, and SEO, WebUltraSolution has consistently delivered top-notch digital solutions globally. We excel in remote infrastructure management, data center services, and security compliance."
-                        />
+                        <div className="space-y-4">
+                           <AnimatedText
+                              className="text-[15px] lg:text-[16px] font-bold text-slate-800 leading-relaxed text-left font-secondary border-l-4 border-indigo-600 pl-4 py-1"
+                              text="Webultrasolution Services is a proficiency-driven Web Design, Software Development, and IT agency headquartered in Noida. Serving as a comprehensive offshore service provider for the USA, we cater to the diverse design and IT infrastructure needs of both corporate entities and enterprise projects. With a wealth of experience in Custom Software Development, Mobile Apps, and SEO, WebUltraSolution has consistently delivered top-notch digital solutions globally. As a low IT cost structure provider, source commitment to the user, we are committed to providing truly cost-effective, customized IT solutions that meet our client's rigorous technological demands."
+                           />
+                           <AnimatedText
+                              className="text-[15px] lg:text-[16px] text-slate-500 font-medium leading-relaxed text-left"
+                              text="Our minimum experience spans various industries, including Retail, enabling us to offer a unique value proposition and expertise that is tailored for our clients. From remote infrastructure management to end-user consulting, data center services, and security and compliance, WebUltraSolution excels in delivering comprehensive and seamless solutions."
+                           />
+                        </div>
 
-                        {/* Profile Buttons */}
+                        {/* 
                         <div className="flex flex-wrap gap-3 pt-4">
                            {[
-                              { name: "Company Profile", color: "bg-indigo-600" },
-                              { name: "Website Profile", color: "bg-blue-600" },
-                              { name: "Social Profile", color: "bg-slate-900" }
-                           ].map((btn, i) => (
+                              { label: "Company Profile", icon: CheckCircle2, gradient: "from-indigo-600 to-blue-700" },
+                              { label: "Website Profile", icon: Globe, gradient: "from-blue-600 to-cyan-700" },
+                              { label: "Social Profile", icon: Target, gradient: "from-slate-800 to-slate-950" }
+                           ].map((item, idx) => (
                               <motion.button
-                                 key={i}
-                                 whileHover={{ scale: 1.05, y: -2 }}
+                                 key={idx}
+                                 whileHover={{ scale: 1.05, y: -4, rotate: 1 }}
                                  whileTap={{ scale: 0.95 }}
-                                 className={`${btn.color} px-6 py-3 rounded-xl text-white text-[9px] font-black uppercase tracking-[0.25em] shadow-lg transition-all`}
+                                 className={`bg-gradient-to-br ${item.gradient} px-6 py-3 rounded-xl text-white text-[9px] font-black uppercase tracking-[0.15em] shadow-xl shadow-indigo-100 flex items-center gap-2 transition-all`}
                               >
-                                 View {btn.name}
+                                 <item.icon size={16} /> View {item.label}
                               </motion.button>
                            ))}
-                        </div>
+                        </div> 
+                        */}
                      </div>
                   </div>
                </div>
             </div>
          </section>
 
-         {/* COMMITMENT & NETWORK */}
-         <section className="relative py-10 lg:py-20 bg-slate-50/50 overflow-hidden border-y border-slate-100">
+         {/* CORE PILLARS SECTION - ELITE ARCHITECTURE (ULTRA COMPACT) */}
+         <section className="relative py-8 lg:py-12 bg-[#f8faff] overflow-hidden border-y border-slate-100">
             <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-24">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
+               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
 
-                  {/* LEFT: PHILOSOPHY */}
-                  <div className="lg:col-span-6 space-y-8 order-2 lg:order-1">
-                     <div className="space-y-4">
-                        <div className="flex items-center gap-4">
-                           <div className="h-[2px] w-8 bg-indigo-600" />
-                           <span className="text-indigo-600 text-[10px] font-black uppercase tracking-[0.4em]">Core Philosophy</span>
-                        </div>
-                        <h3 className="text-3xl lg:text-4xl font-black text-slate-900 uppercase tracking-tighter italic leading-none flex flex-wrap gap-x-3">
-                           Ensuring <span className="text-indigo-600 not-italic">Client Contentment</span>
-                        </h3>
-                        <p className="text-[13px] text-slate-500 font-medium leading-relaxed max-w-xl">
-                           At the core of our operations lies a commitment to customer satisfaction, which serves as our driving force. Our growth is intricately tied to meeting your needs at the highest level of rigorous technological demand.
-                        </p>
-                     </div>
-
-                     <div className="grid grid-cols-1 gap-4">
+                  {/* LEFT: FOUR PILLARS - ELITE GRID (ULTRA COMPACT) */}
+                  <div className="lg:col-span-8 space-y-6 order-2 lg:order-1">
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                         {[
-                           { title: "Strategic Team Work", icon: Target, desc: "Collaborating with our team members to enhance the elite success of our global clients." },
-                           { title: "Embracing Diversity", icon: Globe, desc: "Appreciating the distinctive blend of qualities and contributions of every individual." },
-                           { title: "Emphasizing Excellence", icon: CheckCircle2, desc: "Placing a premium on the pursuit of quality in every single pixel and line of code." }
-                        ].map((item, i) => (
+                           {
+                              title: "Ensuring Client Contentment",
+                              desc: "At the core of our operations lies a commitment to customer satisfaction, which serves as our driving force. Our growth is intricately linked to fulfilling our promises across diverse business vocations.",
+                              icon: Target
+                           },
+                           {
+                              title: "Strategic Team Work",
+                              desc: "We strongly believe individual achievements collectively form a joint opportunity to collaborate and drive together toward embracing the success of our global clients.",
+                              icon: Cpu
+                           },
+                           {
+                              title: "Inclusive Diversity",
+                              desc: "We embrace the distinctive blend of qualities and contributions that every individual brings to the workplace, fostering a culture of high-status innovation.",
+                              icon: Globe
+                           },
+                           {
+                              title: "Empowering Excellence",
+                              desc: "Recognizing and appreciating the distinct combination of qualities that each individual brings, playing a pivotal role in the pursuit of absolute quality.",
+                              icon: CheckCircle2
+                           }
+                        ].map((pillar, idx) => (
                            <motion.div
-                              key={i}
-                              initial={{ opacity: 0, x: -20 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.6, delay: i * 0.1 }}
-                              className="group flex gap-6 items-start p-5 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all"
+                              key={idx}
+                              initial={{ opacity: 0, y: 15 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.8, delay: idx * 0.1 }}
+                              className="group p-5 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-700 hover:-translate-y-1"
                            >
-                              <div className="w-10 h-10 rounded-2xl bg-indigo-50/50 flex items-center justify-center text-indigo-600 flex-shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                                 <item.icon size={20} className="group-hover:rotate-12 transition-transform" />
+                              <div className="flex items-center gap-3 mb-4">
+                                 <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 flex-shrink-0">
+                                    <pillar.icon size={16} />
+                                 </div>
+                                 <h3 className="text-sm lg:text-[15px] font-black text-slate-900 tracking-[0.15em] uppercase group-hover:text-indigo-600 transition-colors leading-none mt-1">{pillar.title}</h3>
                               </div>
-                              <div className="space-y-1">
-                                 <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-widest">{item.title}</h4>
-                                 <p className="text-[11px] text-slate-500 font-medium leading-relaxed">{item.desc}</p>
-                              </div>
+                              <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                 {pillar.desc}
+                              </p>
                            </motion.div>
                         ))}
                      </div>
                   </div>
 
-                  {/* RIGHT: INFOGRAPHIC */}
-                  <div className="lg:col-span-6 relative order-1 lg:order-2" ref={rightImageRef}>
+                  {/* RIGHT: INFOGRAPHIC - ELITE PERSPECTIVE (SUPER COMPACT) */}
+                  <div className="lg:col-span-4 relative order-1 lg:order-2" ref={rightImageRef}>
                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
-                        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                        initial={{ opacity: 0, scale: 0.8, x: 100, rotate: 3 }}
+                        whileInView={{ opacity: 1, scale: 1, x: 0, rotate: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative rounded-[2.5rem] overflow-hidden shadow-[0_40px_100px_-30px_rgba(0,0,0,0.1)] border-8 border-white/90"
+                        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="relative rounded-3xl overflow-hidden shadow-[0_50px_120px_-40px_rgba(0,0,0,0.15)] border-[12px] border-white"
                      >
-                        <img src={imgNetwork} alt="Digital Infrastructure" className="w-full h-auto object-cover scale-105 hover:scale-100 transition-transform duration-[2s]" />
-                        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
+                        <img src={imgNetwork} alt="Responsive Design Infographic" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-[2s]" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent pointer-events-none" />
                      </motion.div>
 
-                     {/* Stats Overlay */}
-                     <div className="absolute -bottom-6 -left-6 p-6 bg-white rounded-2xl shadow-2xl border border-slate-100 z-10 flex flex-col items-center gap-1 group scale-90">
-                        <TrendingUp size={24} className="text-indigo-600 mb-1 group-hover:scale-125 transition-transform" />
-                        <span className="text-2xl font-black text-slate-900 tracking-tighter">100%</span>
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Reliability Rate</span>
+                     {/* Floating Stat Badge (SMALL) */}
+                     <div className="absolute -bottom-6 -left-6 p-5 bg-white rounded-2xl shadow-2xl border border-slate-50 hidden lg:block group">
+                        <div className="flex flex-col items-center gap-1.5">
+                           <TrendingUp className="text-indigo-600 group-hover:scale-110 transition-transform" size={20} />
+                           <span className="text-xl font-black text-slate-900 tracking-tighter uppercase leading-none italic">Elite</span>
+                           <span className="text-[8px] font-black text-indigo-400 uppercase tracking-widest">Standards</span>
+                        </div>
                      </div>
                   </div>
 
@@ -269,34 +302,34 @@ export default function CompanyOverview() {
             </div>
          </section>
 
-         {/* CALL TO ACTION */}
-         <section className="py-16 relative overflow-hidden bg-slate-900 border-t border-white/5">
-            <div className="absolute inset-0 opacity-20">
-               <ThreeNeuralStorm />
+         {/* CALL TO ACTION - ELITE LIGHT (SUPER COMPACT) */}
+         {/* <section className="py-10 lg:py-12 relative overflow-hidden bg-white border-t border-slate-100">
+            <div className="absolute inset-0 opacity-10">
+               <ThreeSolutionBackground />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-6">
-               <div className="space-y-3">
-                  <span className="text-indigo-400 text-[10px] font-black uppercase tracking-[0.6em] block">Partner With Us</span>
-                  <h2 className="text-4xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-none">
-                     Discuss <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-400">Your Vision.</span>
+            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-4">
+               <div className="space-y-2">
+                  <span className="text-indigo-600 text-[9px] font-black uppercase tracking-[0.5em] block">Partner With Us</span>
+                  <h2 className="text-2xl lg:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                     Discuss <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600">Your Vision.</span>
                   </h2>
-                  <p className="text-slate-400 font-medium text-[14px] lg:text-[15px] max-w-3xl mx-auto leading-relaxed pt-1">
+                  <p className="text-slate-500 font-medium text-[12px] lg:text-[13px] max-w-3xl mx-auto leading-relaxed pt-1">
                      Do you have a project and want to discuss with us? We are well-equipped to support you with Website Services, E-commerce solutions, CMS, Mobile Apps, SEO, and GUI & UX Designing.
                   </p>
                </div>
 
-               <div className="flex justify-center">
+               <div className="flex justify-center pt-1">
                   <motion.button
-                     whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(79, 70, 229, 0.4)' }}
+                     whileHover={{ scale: 1.05, y: -2, boxShadow: '0 20px 40px rgba(79, 70, 229, 0.2)' }}
                      whileTap={{ scale: 0.95 }}
-                     className="px-10 py-4 bg-indigo-600 text-white rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-2xl transition-all"
+                     className="px-8 py-3.5 bg-gradient-to-br from-indigo-600 to-blue-700 text-white rounded-xl text-[9px] font-black uppercase tracking-[0.2em] shadow-xl shadow-indigo-100 transition-all"
                   >
                      Get Started Now
                   </motion.button>
                </div>
             </div>
-         </section>
+         </section> */}
       </div>
    );
 }

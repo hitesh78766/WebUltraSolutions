@@ -12,7 +12,7 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '#about' /*, isMega: true */ },
+  { name: 'About', href: '#about', isMega: true },
   { name: 'Services', href: '#services', isMega: true },
   { name: 'Our Project', href: '/#portfolio' },
   { name: 'Career', href: '/#insights' },
@@ -72,8 +72,19 @@ export default function Navbar() {
       }
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+        setIsAboutOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isMega?: boolean) => {
@@ -92,6 +103,7 @@ export default function Navbar() {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     setIsServicesOpen(false);
+    setIsAboutOpen(false);
 
     if (href.startsWith('/')) {
       // It's a proper route or a hash link with route
@@ -292,25 +304,97 @@ export default function Navbar() {
               className="absolute inset-0 bg-white/80 backdrop-blur-2xl"
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            <div className="relative h-full flex flex-col items-center justify-center gap-8 py-20 px-6" style={{ pointerEvents: 'auto' }}>
-              <div className="flex flex-col items-center gap-6">
+            <div className="relative h-full overflow-y-auto pt-24 pb-12 px-6 flex flex-col items-center" style={{ pointerEvents: 'auto' }}>
+              <div className="flex flex-col items-center gap-6 w-full max-w-sm">
                 {navLinks.map((link) => (
-                  <button
-                    key={link.name}
-                    onClick={(e) => handleNavClick(e as any, link.href)}
-                    className="text-3xl font-display font-medium text-slate-800 hover:text-[#5e6ad2]"
-                  >
-                    {link.name}
-                  </button>
+                  <div key={link.name} className="w-full flex flex-col items-center">
+                    <button
+                      onClick={(e) => handleNavClick(e as any, link.href, link.isMega)}
+                      className="flex items-center gap-2 text-2xl font-black text-slate-800 hover:text-[#5e6ad2] uppercase tracking-tight"
+                    >
+                      {link.name}
+                      {link.isMega && (
+                        <ChevronDown
+                          size={24}
+                          className={`transition-transform duration-300 ${((link.name === 'Services' && isServicesOpen) || (link.name === 'About' && isAboutOpen)) ? 'rotate-180' : ''}`}
+                        />
+                      )}
+                    </button>
+
+                    <AnimatePresence>
+                      {link.isMega && ((link.name === 'Services' && isServicesOpen) || (link.name === 'About' && isAboutOpen)) && (
+                        <motion.div
+                          key={link.name}
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                          className="w-full mt-4 flex flex-col items-center gap-6 overflow-hidden bg-slate-50/50 rounded-3xl p-6 border border-slate-100 shadow-sm"
+                        >
+                          {link.name === 'Services' ? (
+                            megaMenuData.map((section, idx) => (
+                              <div key={idx} className="w-full text-center space-y-4">
+                                <div className="flex items-center justify-center gap-3">
+                                  <div className="w-6 h-6 rounded-lg bg-white shadow-sm flex items-center justify-center text-indigo-600">
+                                    <section.icon size={14} />
+                                  </div>
+                                  <h4 className="text-[10px] font-black text-indigo-500 tracking-[0.3em] uppercase">{section.category}</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                  {section.links.map((sublink, sIdx) => (
+                                    <li key={sIdx}>
+                                      <a
+                                        href={typeof sublink === 'object' ? sublink.href : '#'}
+                                        onClick={(e) => handleNavClick(e as any, typeof sublink === 'object' ? sublink.href : '#')}
+                                        className="text-sm font-bold text-slate-600 hover:text-slate-900 block transition-colors uppercase tracking-wide"
+                                      >
+                                        {typeof sublink === 'object' ? sublink.name : sublink}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="w-full text-center space-y-4">
+                              <h4 className="text-[10px] font-black text-indigo-500 tracking-[0.3em] uppercase">Agency Core</h4>
+                              <ul className="grid grid-cols-2 gap-3 w-full">
+                                {[
+                                  { name: "Overview", href: "/company-overview" },
+                                  { name: "Mission", href: "/mission" },
+                                  { name: "Team", href: "/team" },
+                                  { name: "Why Us", href: "/why-us" },
+                                  { name: "Expertise", href: "/expertise" },
+                                  { name: "Clients", href: "/clients" },
+                                  { name: "Feedback", href: "/feedback" },
+                                  { name: "Careers", href: "/careers" }
+                                ].map((item, index) => (
+                                  <li key={index}>
+                                    <a
+                                      href={item.href}
+                                      onClick={(e) => handleNavClick(e as any, item.href)}
+                                      className="text-[11px] font-bold text-slate-600 hover:text-slate-900 block p-2.5 bg-white rounded-xl border border-slate-100 transition-all active:scale-95 uppercase"
+                                    >
+                                      {item.name}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 ))}
               </div>
 
               <a
                 href="#cta"
                 onClick={(e) => handleNavClick(e, '#cta')}
-                className="mt-4 px-10 py-4 bg-[#5e6ad2] text-white text-lg font-bold rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95"
+                className="mt-12 px-10 py-3.5 bg-slate-900 text-white text-sm font-black rounded-xl shadow-xl transition-all hover:bg-slate-800 active:scale-95 uppercase tracking-widest"
               >
-                Let's Talk
+                Schedule Meeting
               </a>
             </div>
           </motion.div>

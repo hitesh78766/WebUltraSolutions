@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
    Palette, 
@@ -7,9 +7,7 @@ import {
    Eye, 
    Cpu, 
    Shield,
-   ChevronRight,
-   Zap,
-   ArrowRight
+   Zap
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -158,7 +156,7 @@ export default function WebDesign() {
                            viewport={{ once: true, margin: "-50px" }}
                            whileHover={{ y: -6, scale: 1.02 }}
                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[32%] relative h-[180px] lg:h-[220px] rounded-[2.5rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(79,70,229,0.12)] border border-slate-100 group/img cursor-pointer"
+                           className="w-full lg:w-[38%] relative h-[180px] lg:h-[230px] rounded-2xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(79,70,229,0.12)] border border-slate-100 group/img cursor-pointer"
                         >
                            <motion.img 
                               src={pillar.image} 
@@ -185,7 +183,7 @@ export default function WebDesign() {
                            whileInView={{ opacity: 1, x: 0 }}
                            viewport={{ once: true, margin: "-50px" }}
                            transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[68%] space-y-6 px-6 lg:px-0"
+                           className="w-full lg:w-[62%] space-y-6 px-6 lg:px-0"
                         >
                            <div className="space-y-4">
                               <div className="flex items-center gap-5">
@@ -222,7 +220,7 @@ export default function WebDesign() {
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{ once: true }}
                      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                     className="py-12 lg:py-14 px-8 rounded-[2rem] bg-white border border-slate-100 text-slate-900 relative overflow-hidden shadow-[0_40px_80px_-20px_rgba(79,70,229,0.06)] flex items-center justify-center text-center group/panel cursor-default"
+                     className="py-12 lg:py-14 px-8 rounded-2xl bg-white border border-slate-100 text-slate-900 relative overflow-hidden shadow-[0_40px_80px_-20px_rgba(79,70,229,0.06)] flex items-center justify-center text-center group/panel cursor-default"
                   >
                      <div className="relative z-10 max-w-4xl mx-auto space-y-8">
                         {/* ICON CORE: FLOATING ELITE ENTRANCE WITH LIGHTNING PULSE */}
