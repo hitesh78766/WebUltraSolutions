@@ -31,7 +31,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
   return (
     <div
       ref={containerRef}
-      className="loading-screen"
+      className="fixed inset-0 z-[1000] bg-white flex items-center justify-center overflow-hidden"
     >
       <div className="relative flex flex-col items-center gap-6">
         {/* Logo Animation */}

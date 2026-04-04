@@ -23,8 +23,8 @@ function WavingGrid({ count = 45, separation = 0.25 }) {
   // Color mapping: variations of the brand's indigo
   const colors = useMemo(() => {
     const cols = new Float32Array(count * count * 3);
-    const colorA = new THREE.Color('#5e6ad2');
-    const colorB = new THREE.Color('#818cf8');
+    const colorA = new THREE.Color('#6366f1');
+    const colorB = new THREE.Color('#38bdf8');
     
     let i = 0;
     for (let x = 0; x < count; x++) {
@@ -82,10 +82,10 @@ function WavingGrid({ count = 45, separation = 0.25 }) {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.045}
+        size={0.12}
         vertexColors
         transparent
-        opacity={0.35}
+        opacity={0.75}
         sizeAttenuation={true}
         blending={THREE.NormalBlending}
       />
@@ -95,25 +95,26 @@ function WavingGrid({ count = 45, separation = 0.25 }) {
 
 export default function ThreeSolutionBackground() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none bg-[#ffffff]">
-      {/* Soft Ambient Gradients - Lighter theme */}
-      <div className="absolute top-0 right-0 w-[70%] h-[70%] bg-indigo-50/50 rounded-full blur-[140px] opacity-60" />
-      <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-blue-50/40 rounded-full blur-[160px] opacity-50" />
+    <div className="absolute inset-0 z-0 pointer-events-none bg-[#f8fafc]">
+      {/* Soft Ambient Gradients - High-Status LIGHT THEME */}
+      <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-indigo-100/50 rounded-full blur-[140px] opacity-60" />
+      <div className="absolute bottom-0 left-0 w-[70%] h-[70%] bg-blue-100/40 rounded-full blur-[160px] opacity-50" />
       
       <Canvas 
         camera={{ position: [0, 2.5, 5], fov: 45 }}
         dpr={[1, 2]}
       >
-        <fog attach="fog" args={['#ffffff', 2, 10]} />
-        <ambientLight intensity={0.8} />
+        <fog attach="fog" args={['#f8fafc', 2, 10]} />
+        <ambientLight intensity={1.2} />
+        <pointLight position={[10, 10, 10]} intensity={1.5} color="#4f46e5" />
         <WavingGrid count={50} separation={0.3} />
       </Canvas>
 
-      {/* Surface Details for that "Ultra" feel */}
+      {/* Surface Details - Technical Grids (Light Version) */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(#5e6ad2 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)',
           backgroundSize: '48px 48px',
         }}
       />

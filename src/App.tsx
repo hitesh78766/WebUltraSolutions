@@ -20,6 +20,26 @@ import PrestigeBanner from './sections/PrestigeBanner';
 
 // Import Pages
 import WebDesign from './pages/WebDesign';
+import ResponsivePage from './pages/ResponsiveDesign';
+import GraphicPage from './pages/GraphicDesign';
+import LogoDesign from './pages/LogoDesign';
+import WebDevelopment from './pages/WebDevelopment';
+import PhpDevelopment from './pages/PhpDevelopment';
+import EcommerceDevelopment from './pages/EcommerceDevelopment';
+import WordpressDevelopment from './pages/WordpressDevelopment';
+import AppDevelopment from './pages/AppDevelopment';
+import SoftwareDevelopment from './pages/SoftwareDevelopment';
+import AndroidAppDevelopment from './pages/AndroidAppDevelopment';
+
+import CompanyOverview from './pages/CompanyOverview';
+import Mission from './pages/Mission';
+import Team from './pages/Team';
+import Expertise from './pages/Expertise';
+import Feedback from './pages/Feedback';
+import WhyUs from './pages/WhyUs';
+import Clients from './pages/Clients';
+import Careers from './pages/Careers';
+import Contact from './pages/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -152,6 +172,25 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/web-design" element={<WebDesign />} />
+          <Route path="/responsive-design" element={<ResponsivePage />} />
+          <Route path="/graphic-design" element={<GraphicPage />} />
+          <Route path="/logo-design" element={<LogoDesign />} />
+          <Route path="/web-development" element={<WebDevelopment />} />
+          <Route path="/php-development" element={<PhpDevelopment />} />
+          <Route path="/ecommerce-development" element={<EcommerceDevelopment />} />
+          <Route path="/wordpress-development" element={<WordpressDevelopment />} />
+          <Route path="/app-development" element={<AppDevelopment />} />
+          <Route path="/software-development" element={<SoftwareDevelopment />} />
+          <Route path="/android-app-development" element={<AndroidAppDevelopment />} />
+          <Route path="/company-overview" element={<CompanyOverview />} />
+          <Route path="/mission" element={<Mission />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/expertise" element={<Expertise />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/why-us" element={<WhyUs />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </MainLayout>
     </Router>

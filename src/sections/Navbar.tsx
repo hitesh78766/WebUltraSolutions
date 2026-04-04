@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Monitor, Cpu, Target } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavLink {
@@ -12,43 +12,38 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/#about' },
-  { name: 'Services', href: '#services' },
+  { name: 'About', href: '#about' /*, isMega: true */ },
+  { name: 'Services', href: '#services', isMega: true },
   { name: 'Our Project', href: '/#portfolio' },
   { name: 'Career', href: '/#insights' },
-  { name: 'Contact Us', href: '/#cta' },
+  { name: 'Contact Us', href: '/contact' },
 ];
 
-/*
 const megaMenuData = [
   {
     category: "FRONT END",
     icon: Monitor,
     links: [
-      { name: "Web Design", href: "/web-design" },
-      { name: "Responsive + Mobile Websites", href: "#services" },
-      { name: "Graphic Design", href: "#services" },
-      { name: "Logo Design", href: "#services" },
-      { name: "Custom Web Design", href: "#services" }
+      { name: "Web Design", icon: Monitor, href: "/web-design" },
+      { name: "Responsive + Mobile Websites", icon: Monitor, href: "/responsive-design" },
+      { name: "Graphic Design", icon: Target, href: "/graphic-design" },
+      { name: "Logo Design", icon: Target, href: "/logo-design" }
     ]
   },
   {
     category: "WEB & APP DEVELOPMENT",
     icon: Cpu,
     links: [
-      { name: "Web Development", href: "#services" },
-      { name: "PHP Development", href: "#services" },
-      { name: "Ecommerce Development", href: "#services" },
-      { name: "WordPress Development", href: "#services" },
-      { name: "Joomla Development", href: "#services" },
-      { name: "Interspire Development", href: "#services" },
-      { name: "App Development", href: "#services" },
-      { name: "Software Development", href: "#services" },
-      { name: "Android App Development", href: "#services" }
+      { name: "Web Development", icon: Cpu, href: "/web-development" },
+      { name: "PHP Development", icon: Cpu, href: "/php-development" },
+      { name: "Ecommerce Development", icon: Target, href: "/ecommerce-development" },
+      { name: "WordPress Development", icon: Cpu, href: "/wordpress-development" },
+      { name: "App Development", icon: Cpu, href: "/app-development" },
+      { name: "Software Development", icon: Cpu, href: "/software-development" },
+      { name: "Android App Development", icon: Monitor, href: "/android-app-development" }
     ]
   }
 ];
-*/
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -57,6 +52,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   useEffect(() => {
     const nav = navRef.current;
@@ -70,7 +66,10 @@ export default function Navbar() {
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      if (window.scrollY > 50) setIsServicesOpen(false);
+      if (window.scrollY > 50) {
+        setIsServicesOpen(false);
+        setIsAboutOpen(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -80,7 +79,13 @@ export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isMega?: boolean) => {
     if (isMega) {
       e.preventDefault();
-      setIsServicesOpen(!isServicesOpen);
+      if (href === '#about') {
+        setIsAboutOpen(!isAboutOpen);
+        setIsServicesOpen(false);
+      } else {
+        setIsServicesOpen(!isServicesOpen);
+        setIsAboutOpen(false);
+      }
       return;
     }
 
@@ -93,21 +98,21 @@ export default function Navbar() {
       if (href.includes('#')) {
         const [path, hash] = href.split('#');
         if (location.pathname !== path) {
-           navigate(path);
-           // Delay to allow page to load then scroll
-           setTimeout(() => {
-             const target = document.getElementById(hash);
-             if (target) {
-               if ((window as any).lenis) (window as any).lenis.scrollTo(target);
-               else target.scrollIntoView({ behavior: 'smooth' });
-             }
-           }, 100);
+          navigate(path);
+          // Delay to allow page to load then scroll
+          setTimeout(() => {
+            const target = document.getElementById(hash);
+            if (target) {
+              if ((window as any).lenis) (window as any).lenis.scrollTo(target);
+              else target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
         } else {
-           const target = document.getElementById(hash);
-           if (target) {
-             if ((window as any).lenis) (window as any).lenis.scrollTo(target);
-             else target.scrollIntoView({ behavior: 'smooth' });
-           }
+          const target = document.getElementById(hash);
+          if (target) {
+            if ((window as any).lenis) (window as any).lenis.scrollTo(target);
+            else target.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       } else {
         navigate(href);
@@ -133,23 +138,22 @@ export default function Navbar() {
       >
         <div className="relative w-full pointer-events-auto">
           <div
-            className={`w-full px-8 lg:px-16 py-3.5 transition-all duration-500 flex items-center justify-between ${isScrolled
-              ? 'bg-white/95 backdrop-blur-xl shadow-premium border-b border-slate-200/80'
-              : 'bg-white/40 backdrop-blur-lg border-b border-white/10'
+            className={`w-full px-8 lg:px-16 py-3 transition-all duration-700 flex items-center justify-between border-b ${isScrolled
+              ? 'bg-white/90 backdrop-blur-2xl shadow-[0_10px_40px_rgba(79,70,229,0.06)] border-indigo-100/50'
+              : 'bg-gradient-to-r from-white/60 via-indigo-50/30 to-blue-50/40 backdrop-blur-xl border-white/20'
               }`}
           >
             {/* Logo */}
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
-              className="flex items-center gap-2.5 group active:scale-95 transition-transform"
+              className="flex items-center group active:scale-95 transition-transform"
             >
-              <div className="relative w-8 h-8 flex items-center justify-center rounded-xl bg-[#5e6ad2] shadow-lg group-hover:rotate-12 transition-all">
-                <span className="text-white font-display font-bold text-base">W</span>
-              </div>
-              <span className="font-display font-bold text-lg tracking-tight text-slate-900 uppercase" style={{ color: '#0f172a' }}>
-                WebUltra<span className="text-[#5e6ad2]">.</span>
-              </span>
+              <img
+                src="/images/webUltraSolution-logo.png"
+                alt="WebUltra Solution Logo"
+                className="h-10 lg:h-14 w-auto object-contain brightness-110 contrast-110 p-1 transition-all group-hover:scale-105"
+              />
             </a>
 
             <div className="hidden md:flex items-center gap-2 xl:gap-4">
@@ -158,11 +162,99 @@ export default function Navbar() {
                   <button
                     onClick={(e) => handleNavClick(e as any, link.href, link.isMega)}
                     className={`flex items-center gap-1 px-3 py-1.5 text-xs lg:text-sm font-black transition-all duration-300 rounded-lg hover:text-[#5e6ad2] ${isScrolled ? 'text-slate-800' : 'text-slate-700'
-                      } ${isServicesOpen && link.isMega ? 'text-[#5e6ad2]' : ''}`}
+                      } ${(isServicesOpen && link.isMega && link.name === 'Services') || (isAboutOpen && link.isMega && link.name === 'About') ? 'text-[#5e6ad2]' : ''}`}
                   >
                     {link.name}
-                    {link.isMega && <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />}
+                    {link.isMega && <ChevronDown size={14} className={`transition-transform duration-300 ${(isServicesOpen && link.name === 'Services') || (isAboutOpen && link.name === 'About') ? 'rotate-180' : ''}`} />}
                   </button>
+                  {link.isMega && (link.name === 'Services' || link.name === 'About') && (
+                    <AnimatePresence>
+                      {((isServicesOpen && link.name === 'Services') || (isAboutOpen && link.name === 'About')) && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -10, scale: 0.98 }}
+                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                          className={`absolute top-[52px] left-1/2 -translate-x-1/2 ${link.name === 'Services' ? 'w-[640px]' : 'w-[440px]'} max-w-[95vw] bg-white border border-slate-100 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.12)] z-[100] rounded-3xl overflow-hidden pointer-events-auto p-4 lg:p-4`}
+                          onMouseLeave={() => {
+                            setIsServicesOpen(false);
+                            setIsAboutOpen(false);
+                          }}
+                        >
+                          {link.name === 'Services' ? (
+                            <div className="grid grid-cols-2 gap-4 relative">
+                              {megaMenuData.map((section, idx) => (
+                                <div key={idx} className="relative group/column p-4 rounded-2xl transition-colors hover:bg-slate-50/50">
+                                  <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-8 h-8 rounded-xl bg-indigo-50/50 flex items-center justify-center text-[#5e6ad2] shadow-sm transform group-hover/column:rotate-6 transition-transform">
+                                      <section.icon size={16} />
+                                    </div>
+                                    <h4 className="text-[11px] font-black text-slate-800 tracking-[0.2em] uppercase leading-none">
+                                      {section.category}
+                                    </h4>
+                                  </div>
+                                  <ul className="space-y-2.5">
+                                    {section.links.map((sublink, sIdx) => (
+                                      <li key={sIdx} className="group/item list-none">
+                                        <a
+                                          href={typeof sublink === 'string' ? '#services' : sublink.href}
+                                          onClick={(e) => handleNavClick(e as any, typeof sublink === 'string' ? '#services' : sublink.href)}
+                                          className="flex items-center gap-3 group-hover/item:translate-x-1 transition-transform"
+                                        >
+                                          <div className="w-7 h-7 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 group-hover/item:scale-105 transition-transform flex-shrink-0">
+                                            {typeof sublink === 'object' && sublink.icon ? <sublink.icon size={12} /> : <Target size={12} />}
+                                          </div>
+                                          <span className="text-[11px] font-black text-slate-700 group-hover/item:text-slate-900 uppercase tracking-[0.1em] transition-colors">
+                                            {typeof sublink === 'string' ? sublink : sublink.name}
+                                          </span>
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="p-1 relative">
+                              <div className="flex items-center gap-3 mb-4 px-3 pt-1">
+                                <div className="w-8 h-8 rounded-xl bg-indigo-50/50 flex items-center justify-center text-[#5e6ad2] shadow-sm transform group-hover/column:rotate-6 transition-transform">
+                                  <Target size={16} />
+                                </div>
+                                <h4 className="text-[11px] font-black text-slate-800 tracking-[0.2em] uppercase leading-none">Agency Core</h4>
+                              </div>
+
+                              <div className="grid grid-cols-2 gap-1.5">
+                                {[
+                                  { name: "Overview", icon: Monitor, href: "/company-overview" },
+                                  { name: "Mission", icon: Target, href: "/mission" },
+                                  { name: "Team", icon: Cpu, href: "/team" },
+                                  { name: "Why Us", icon: Target, href: "/why-us" },
+                                  { name: "Expertise", icon: Monitor, href: "/expertise" },
+                                  { name: "Clients", icon: Target, href: "/clients" },
+                                  { name: "Feedback", icon: Cpu, href: "/feedback" },
+                                  { name: "Careers", icon: Monitor, href: "/careers" }
+                                ].map((item, index) => (
+                                  <a
+                                    key={index}
+                                    href={item.href}
+                                    onClick={(e) => handleNavClick(e as any, item.href)}
+                                    className="group/item flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100"
+                                  >
+                                    <div className="w-7 h-7 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 group-hover/item:scale-105 transition-transform flex-shrink-0">
+                                      <item.icon size={12} />
+                                    </div>
+                                    <span className="text-[11px] font-black text-slate-700 group-hover/item:text-slate-900 uppercase tracking-[0.1em] transition-colors">
+                                      {item.name}
+                                    </span>
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
                 </div>
               ))}
             </div>
@@ -184,70 +276,6 @@ export default function Navbar() {
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
-
-          {/* Backdrop Overlay - Disabled for now
-          <AnimatePresence>
-            {isServicesOpen && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 top-[76px] bg-black/5 z-30 pointer-events-auto"
-                onClick={() => setIsServicesOpen(false)}
-              />
-            )}
-          </AnimatePresence>
-          */}
-
-          {/* BHOOMI Style Mega Menu - Dual-Column Ultra-Compact Edition - Disabled for now
-          <AnimatePresence>
-            {isServicesOpen && (
-              <motion.div
-                initial={{ opacity: 0, x: "-50%", y: -10, scale: 0.99 }}
-                animate={{ opacity: 1, x: "-50%", y: 0, scale: 1 }}
-                exit={{ opacity: 0, x: "-50%", y: -10, scale: 0.99 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                style={{ left: '50%' }}
-                className="absolute top-[72px] w-[820px] max-w-[95vw] bg-white border border-slate-100 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.12)] z-40 overflow-hidden pointer-events-auto p-6 lg:p-7"
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <div className="grid grid-cols-2 gap-8 relative">
-                  {megaMenuData.map((section, idx) => (
-                    <div key={idx} className="relative group/column flex">
-                      <div className="flex-1 space-y-2 px-4">
-                        <div className="flex items-center gap-2 pb-1 mb-0 transition-all duration-300">
-                           <div className="flex items-center justify-center text-[#5e6ad2] transition-transform duration-500 group-hover/column:rotate-6 group-hover/column:scale-110">
-                             <section.icon size={16} />
-                           </div>
-                           <h4 className="text-[13px] font-black text-slate-900 tracking-tight uppercase">
-                             {section.category}
-                           </h4>
-                        </div>
-                        <ul className="grid grid-cols-1 gap-y-2">
-                          {section.links.map((sublink, sIdx) => (
-                            <li key={sIdx} className="group/item list-none">
-                              <a
-                                href={typeof sublink === 'string' ? '#services' : sublink.href}
-                                onClick={(e) => handleNavClick(e as any, typeof sublink === 'string' ? '#services' : sublink.href)}
-                                className="text-[13px] font-semibold text-slate-500 hover:text-[#5e6ad2] transition-colors flex items-center justify-between group-hover/item:translate-x-1 transition-transform"
-                              >
-                                <span>{typeof sublink === 'string' ? sublink : sublink.name}</span>
-                                <ChevronRight size={12} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#5e6ad2]" />
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      {idx < 1 && (
-                        <div className="w-[1px] h-full bg-slate-50 self-stretch" />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-          */}
         </div>
       </nav>
 

@@ -69,9 +69,12 @@ export default function Footer() {
            
            {/* BRAND COL */}
            <div className="animate-up lg:col-span-4 space-y-6">
-              <div className="flex items-center gap-3">
-                 <div className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white font-display font-black text-xl shadow-xl shadow-indigo-500/20">W</div>
-                 <span className="text-2xl font-display font-black text-white">Web<span className="text-indigo-500">Ultra.</span></span>
+              <div className="flex items-center">
+                 <img 
+                   src="/images/webUltraSolution-logo.png" 
+                   alt="WebUltra Solution Logo" 
+                   className="h-8 lg:h-9 w-auto object-contain brightness-150 grayscale-0 invert-0" 
+                 />
               </div>
               <p className="text-white/40 text-[11px] lg:text-xs font-medium max-w-sm leading-relaxed">
                  Engineering the next frontier of enterprise web architecture. Delivering high-performance digital legacy across the globe.

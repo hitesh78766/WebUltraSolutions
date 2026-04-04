@@ -34,7 +34,7 @@ const services = [
     description: 'We create visually stunning, user-centric interface designs that don’t just capture attention but drive meaningful engagement. Our design philosophy combines modern aesthetics with seamless UX to elevate your digital brand identity to elite standards.',
     color: 'from-blue-500/20 to-transparent',
     iconColor: 'text-blue-600',
-    image: imgWebDesign
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1000"
   },
   {
     icon: Code2,
@@ -42,7 +42,7 @@ const services = [
     description: 'Building robust, enterprise-grade web applications using cutting-edge frameworks like React, Next.js, and Node.js. We focus on scalability, performance optimization, and clean architecture to ensure your technical infrastructure is future-proof.',
     color: 'from-violet-500/20 to-transparent',
     iconColor: 'text-violet-600',
-    image: imgWebDev
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
   },
   {
     icon: ShoppingCart,
@@ -50,7 +50,7 @@ const services = [
     description: 'Launch high-converting online stores with custom e-commerce solutions. From seamless multi-payment gateways to advanced inventory management and user-friendly checkout flows, we provide everything needed to scale your retail business globally.',
     color: 'from-emerald-500/20 to-transparent',
     iconColor: 'text-emerald-600',
-    image: imgEcommerce
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000"
   },
   {
     icon: Smartphone,
@@ -58,7 +58,7 @@ const services = [
     description: 'Developing high-performance, native and cross-platform mobile applications for iOS and Android. Our mobile solutions feature fluid animations, offline capabilities, and intuitive touch interfaces designed to provide a premium user experience on every device.',
     color: 'from-rose-500/20 to-transparent',
     iconColor: 'text-rose-600',
-    image: imgMobile
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1000"
   },
   {
     icon: Database,
@@ -66,7 +66,7 @@ const services = [
     description: 'Custom software engineering designed to solve complex business challenges. We deliver end-to-end software lifecycles, including architecture design, API development, and system integration, focused on maximizing your operational efficiency and ROI.',
     color: 'from-amber-500/20 to-transparent',
     iconColor: 'text-amber-600',
-    image: imgSoftware
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000"
   },
   {
     icon: TrendingUp,
@@ -74,7 +74,7 @@ const services = [
     description: 'Data-driven marketing strategies that amplify your brand’s visibility and convert traffic into loyal customers. Through advanced SEO, PPC management, and social media orchestration, we ensure your business dominates the digital landscape.',
     color: 'from-indigo-500/20 to-transparent',
     iconColor: 'text-indigo-600',
-    image: imgMarketing
+    image: "https://images.unsplash.com/photo-1460926092272-c0ad3af274b9?auto=format&fit=crop&q=80&w=1000"
   },
 ];
 
@@ -196,7 +196,7 @@ export default function Services() {
                       <h3 className="text-xl lg:text-[2rem] font-display font-bold text-slate-800 leading-tight">
                         {service.title}
                       </h3>
-                      <p className="text-slate-500 text-[11px] lg:text-sm leading-relaxed font-medium line-clamp-3">
+                      <p className="text-slate-500 text-[11px] lg:text-sm leading-relaxed font-medium">
                         {service.description}
                       </p>
 
