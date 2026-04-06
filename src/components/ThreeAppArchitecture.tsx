@@ -8,17 +8,17 @@ function DeviceWireframe({ position, args, label }: { position: [number, number,
     <Float speed={2} rotationIntensity={0.5} floatIntensity={1} position={position}>
       <mesh>
         <boxGeometry args={args} />
-        <meshStandardMaterial color="#6366f1" wireframe transparent opacity={0.15} />
+        <meshStandardMaterial color="#FF6600" wireframe transparent opacity={0.15} />
       </mesh>
       {/* SCREEN PLANE */}
       <mesh position={[0, 0, args[2] / 2 + 0.01]}>
         <planeGeometry args={[args[0] * 0.9, args[1] * 0.9]} />
-        <meshBasicMaterial color="#6366f1" transparent opacity={0.05} />
+        <meshBasicMaterial color="#FF6600" transparent opacity={0.05} />
       </mesh>
       <Text
         position={[0, -args[1]/2 - 0.3, 0]}
         fontSize={0.15}
-        color="#6366f1"
+        color="#FF6600"
         anchorX="center"
         anchorY="middle"
         opacity={0.4}
@@ -52,7 +52,7 @@ function TechnicalNeuralNetwork() {
         <group key={i}>
           <mesh position={line.start.toArray()}>
              <sphereGeometry args={[0.03, 8, 8]} />
-             <meshBasicMaterial color="#6366f1" transparent opacity={0.3} />
+             <meshBasicMaterial color="#FF6600" transparent opacity={0.3} />
           </mesh>
           <line>
             <bufferGeometry attach="geometry">
@@ -63,7 +63,7 @@ function TechnicalNeuralNetwork() {
                 itemSize={3}
               />
             </bufferGeometry>
-            <lineBasicMaterial color="#6366f1" transparent opacity={0.1} transparent />
+            <lineBasicMaterial color="#FF6600" transparent opacity={0.1} />
           </line>
         </group>
       ))}
@@ -74,11 +74,13 @@ function TechnicalNeuralNetwork() {
 export default function ThreeAppArchitecture() {
   return (
     <div className="absolute inset-0 z-0 pointer-events-none bg-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#f8fafc_100%)] opacity-40" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#FFF7F0_100%)] opacity-40" />
       <Canvas shadows antialias="true">
         <PerspectiveCamera makeDefault position={[0, 0, 12]} fov={35} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+        <ambientLight intensity={1.5} />
+        <pointLight position={[10, 10, 10]} intensity={2.5} color="#ffffff" />
+        <directionalLight position={[-10, 10, 10]} intensity={1.5} color="#ffffff" />
+        <spotLight position={[0, 15, 20]} angle={0.2} intensity={2} color="#fff7f0" />
         
         {/* REFINED TECHNICAL BLUEPRINT ELEMENTS */}
         <group position={[0, 0, 0]}>
@@ -89,14 +91,14 @@ export default function ThreeAppArchitecture() {
            {/* CENTRAL DATA CORE */}
            <Float speed={3}>
              <Sphere args={[0.5, 32, 32]}>
-               <meshStandardMaterial color="#4f46e5" emissive="#6366f1" emissiveIntensity={2} roughness={0} metalness={1} />
+               <meshStandardMaterial color="#FF6600" emissive="#FF8C00" emissiveIntensity={0.5} roughness={0.1} metalness={0.8} />
              </Sphere>
            </Float>
         </group>
 
         <TechnicalNeuralNetwork />
         
-        <Environment preset="city" />
+        <Environment preset="studio" />
       </Canvas>
     </div>
   );

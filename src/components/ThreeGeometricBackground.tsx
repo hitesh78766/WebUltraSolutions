@@ -37,7 +37,7 @@ function FloatingPrisms({ count = 12 }) {
           {p.type === 1 && <sphereGeometry args={[0.7, 32, 32]} />}
           {p.type === 2 && <torusGeometry args={[0.6, 0.2, 16, 100]} />}
           <meshPhongMaterial
-            color="#4f46e5"
+            color="#FF6600"
             wireframe
             transparent
             opacity={0.08}
@@ -51,15 +51,16 @@ function FloatingPrisms({ count = 12 }) {
 
 export default function ThreeGeometricBackground() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#FFF7F0]">
       {/* Ambient Depth Layer */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-indigo-50/20 via-transparent to-blue-50/10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-orange-50/20 via-transparent to-orange-50/10" />
 
       <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
-        <fog attach="fog" args={['#ffffff', 10, 25]} />
-        <ambientLight intensity={2} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#6366f1" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#3b82f6" />
+        <fog attach="fog" args={['#FFF7F0', 10, 25]} />
+        <ambientLight intensity={3} />
+        <pointLight position={[10, 10, 10]} intensity={3} color="#ffffff" />
+        <directionalLight position={[-10, 10, 5]} intensity={1.5} color="#ffffff" />
+        <pointLight position={[-10, -10, -10]} intensity={1} color="#FFDAB9" />
         <FloatingPrisms />
       </Canvas>
 
@@ -67,7 +68,7 @@ export default function ThreeGeometricBackground() {
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: 'linear-gradient(to right, #4f46e5 1px, transparent 1px), linear-gradient(to bottom, #4f46e5 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(to right, #FF6600 1px, transparent 1px), linear-gradient(to bottom, #FF6600 1px, transparent 1px)',
           backgroundSize: '100px 100px'
         }}
       />

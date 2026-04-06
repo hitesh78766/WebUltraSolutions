@@ -56,8 +56,8 @@ export default function ParticleNetwork() {
         const oy = orb.y + Math.sin(orb.angle) * orb.ry;
 
         const grad = ctx.createRadialGradient(ox, oy, 0, ox, oy, orb.size);
-        grad.addColorStop(0, 'rgba(99, 102, 241, 0.04)');
-        grad.addColorStop(1, 'rgba(99, 102, 241, 0)');
+        grad.addColorStop(0, 'rgba(255, 102, 0, 0.04)');
+        grad.addColorStop(1, 'rgba(255, 102, 0, 0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(ox, oy, orb.size, 0, Math.PI * 2);
@@ -65,8 +65,8 @@ export default function ParticleNetwork() {
       });
 
       // Draw Particles & Connections
-      ctx.fillStyle = 'rgba(99, 102, 241, 0.12)';
-      ctx.strokeStyle = 'rgba(99, 102, 241, 0.06)';
+      ctx.fillStyle = 'rgba(255, 102, 0, 0.12)';
+      ctx.strokeStyle = 'rgba(255, 102, 0, 0.06)';
       
       particles.forEach((p, i) => {
         p.x += p.vx;

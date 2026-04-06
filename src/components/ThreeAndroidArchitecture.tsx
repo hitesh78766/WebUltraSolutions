@@ -25,7 +25,7 @@ function AndroidCore() {
       {/* SCREEN GLOW */}
       <mesh position={[0, 0, 0.11]}>
         <planeGeometry args={[1.8, 3.8]} />
-        <meshBasicMaterial color="#3ddc84" transparent opacity={0.15} />
+        <meshBasicMaterial color="#FF6600" transparent opacity={0.15} />
       </mesh>
 
       {/* FLOATING APP MODULES */}
@@ -37,7 +37,7 @@ function AndroidCore() {
         ]}>
           <mesh>
             <boxGeometry args={[0.4, 0.4, 0.4]} />
-            <MeshDistortMaterial color={i % 2 === 0 ? "#3ddc84" : "#6366f1"} speed={3} distort={0.3} radius={1} />
+            <MeshDistortMaterial color={i % 2 === 0 ? "#FF6600" : "#FF8C00"} speed={3} distort={0.3} radius={1} />
           </mesh>
         </Float>
       ))}
@@ -45,11 +45,11 @@ function AndroidCore() {
       {/* CONNECTIVITY LINES (SIMULATED WITH THIN TORUS OR TUBES) */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[3, 0.01, 16, 100]} />
-        <meshBasicMaterial color="#3ddc84" transparent opacity={0.2} />
+        <meshBasicMaterial color="#FF6600" transparent opacity={0.2} />
       </mesh>
       <mesh rotation={[0, Math.PI / 2, 0]}>
         <torusGeometry args={[3.2, 0.01, 16, 100]} />
-        <meshBasicMaterial color="#6366f1" transparent opacity={0.2} />
+        <meshBasicMaterial color="#FF8C00" transparent opacity={0.2} />
       </mesh>
     </group>
   );
@@ -79,7 +79,7 @@ function GlobalNetwork() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.03} color="#3ddc84" transparent opacity={0.3} sizeAttenuation />
+      <pointsMaterial size={0.03} color="#FF6600" transparent opacity={0.3} sizeAttenuation />
     </points>
   );
 }
@@ -87,18 +87,19 @@ function GlobalNetwork() {
 export default function ThreeAndroidArchitecture() {
   return (
     <div className="absolute inset-0 z-0 pointer-events-none bg-white">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/30 via-transparent to-emerald-50/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 via-transparent to-orange-50/20" />
       <Canvas shadows>
         <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={40} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
-        <spotLight position={[-10, 10, 10]} angle={0.2} penumbra={1} intensity={1} />
+        <ambientLight intensity={1.5} />
+        <pointLight position={[10, 10, 10]} intensity={2.5} color="#ffffff" />
+        <directionalLight position={[-10, 10, 10]} intensity={1.5} color="#ffffff" />
+        <spotLight position={[0, 10, 15]} angle={0.3} penumbra={1} intensity={2} color="#fff7f0" />
         
         <AndroidCore />
         <GlobalNetwork />
         
-        <Stars radius={100} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
-        <Environment preset="city" />
+        <Stars radius={100} depth={50} count={1000} factor={2} saturation={0} fade speed={1} />
+        <Environment preset="studio" />
       </Canvas>
     </div>
   );

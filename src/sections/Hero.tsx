@@ -5,65 +5,45 @@ import {
   ArrowRight, Sparkles, ShoppingCart, Monitor, Globe, Search
 } from 'lucide-react';
 
-import ThreeNetworkGlobe from '../components/ThreeNetworkGlobe';
+
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const sliderData = [
   {
-    title: 'Best Solution For Online Stores',
-    subtitle: 'Discover what SEO Consulting Services can do for Your Company',
+    badge: 'Experience',
+    title: 'Ecommerce Development',
+    subtitle: 'Business-impacting Problems Need Business-centric Solutions',
     features: [
-      'Easily update products',
-      'Sell your products online',
-      'Quick, Easy and Convenient',
-      'Shaping Cart, Shopping carts, E-commerce Portals',
-      'User Friendly, Resonable Price, On time Delivery, Quality Assurance'
+      '1000+ Projects Delivered',
+      '24+ Years Experience',
+      '97% Client Retention',
+      '100% Global Reach'
     ],
-    cta: 'READ MORE',
-    color: 'bg-[#5e6ad2]',
-    icon: ShoppingCart,
+    cta: 'Connect with Us',
+    color: 'bg-[#FF6600]',
+    accent: 'text-[#FF6600]',
+    border: 'border-[#5A4AF4]/30',
+    bg: 'bg-[#FFF7F0]',
+    mockup: 'hero_mockup_ecommerce.png'
   },
   {
-    title: 'Responsive Website Design',
-    subtitle: 'A comprehensive web solution tailored for your business or personal website needs',
+    badge: 'Innovation',
+    title: 'Next-Gen App Solutions',
+    subtitle: 'Empowering Businesses with Cutting-Edge Mobile & Web Applications',
     features: [
-      'Ultra Responsive Design Using HTML5 & CSS3',
-      'Support All Major Browser (IE9/10/11, Firefox, Chrome Etc.)',
-      'Works Great on Computer, Tablets & Phones'
+      '500+ Apps Developed',
+      'Expert Flutter & React Team',
+      'High Performance & Scalable',
+      'Seamless User Experience'
     ],
-    cta: 'READ MORE',
-    color: 'bg-violet-600',
-    icon: Monitor,
-  },
-  {
-    title: 'Services The Way You Want Them',
-    subtitle: 'A comprehensive web solution tailored for your business or personal website needs',
-    features: [
-      'Website Designing & Development',
-      'Software & Portal Development',
-      'Search Engine Optimization ( SEO )',
-      'Graphics & Application Development',
-      'Digital Marketing & PPC Advertising'
-    ],
-    cta: 'READ MORE',
-    color: 'bg-indigo-600',
-    icon: Globe,
-  },
-  {
-    title: 'Search Engine Optimization',
-    subtitle: 'Discover what SEO Consulting Services can do for Your Company',
-    features: [
-      'Digital Marketing & SEO Consulting',
-      'Content & Social Media Marketing',
-      'Reputation Management & Writing',
-      'Keyword & Opportunity Research',
-      'In-Depth Analytics & Reporting'
-    ],
-    cta: 'READ MORE',
-    color: 'bg-[#5e6ad2]',
-    icon: Search,
+    cta: 'Explore Apps',
+    color: 'bg-[#FF6600]', // Standardized to Slide 1
+    accent: 'text-[#FF6600]', // Standardized to Slide 1
+    border: 'border-[#5A4AF4]/30', // Standardized to Slide 1
+    bg: 'bg-[#FFF7F0]', // Standardized to Slide 1
+    mockup: 'hero_mockup_ecommerce.png'
   }
 ];
 
@@ -88,10 +68,7 @@ export default function Hero() {
       }
     );
 
-    gsap.fromTo(el.querySelectorAll('.hero-fade-in'),
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: 'power3.out', delay: 0.5 }
-    );
+
 
     // Auto-play logic: 5 seconds
     const interval = setInterval(() => {
@@ -107,94 +84,198 @@ export default function Hero() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden bg-[#fcfdff] py-16"
+      className="relative flex flex-col w-full overflow-hidden"
     >
-      <ThreeNetworkGlobe />
+      {/* Top Hero Content with Peach Background */}
+      <div className={`relative px-6 md:px-14 py-12 pt-24 w-full transition-colors duration-1000 ${slide.bg}`}>
+        {/* Premium Linear Gradient & Diagonal Motif (High Visibility) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-[#FF6600]/10 to-transparent skew-x-12 transform translate-x-1/3" />
+          <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-[#FF6600]/15 rounded-full blur-[120px] animate-pulse" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-7">
-
-        {/* Elite Badge */}
-        <div className="hero-fade-in inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/5 rounded-full border border-indigo-500/10 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
-          <span className="text-[9px] font-bold text-indigo-500 uppercase tracking-[0.3em]">Premium Web Experience</span>
+          {/* Sharp Diagonal Light Beams from reference */}
+          <div className="absolute top-0 right-[25%] w-4 h-[200%] bg-gradient-to-b from-white/60 via-white/10 to-transparent -rotate-[25deg] transform -translate-y-1/2" />
+          <div className="absolute top-0 right-[15%] w-2 h-[200%] bg-gradient-to-b from-white/40 via-white/5 to-transparent -rotate-[25deg] transform -translate-y-1/2" />
+          <div className="absolute top-0 right-[5%] w-8 h-[200%] bg-gradient-to-b from-white/30 via-white/0 to-transparent -rotate-[25deg] transform -translate-y-1/2" />
         </div>
 
-        {/* Hero Title */}
-        <h1 className="text-4xl md:text-7xl font-display font-bold leading-[1.05] tracking-tight max-w-5xl mx-auto">
-          {(() => {
-            const words = slide.title.split(' ');
-            const splitIndex = Math.max(1, words.length - 2);
+        <div className="relative z-10 max-w-full mx-auto px-6 md:px-14 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-            return words.map((word, wordIdx) => {
-              const isDark = wordIdx < splitIndex;
-              return (
-                <span key={wordIdx} className={`inline-block ${isDark ? 'text-slate-900' : 'text-indigo-600'}`}>
-                  {word.split('').map((char, charIdx) => (
-                    <span key={`${currentSlide}-${wordIdx}-${charIdx}`} className="hero-char inline-block whitespace-pre">
+            {/* Left Content */}
+            <div className="flex flex-col items-start gap-8">
+              {/* Experience Badge (Sharpened) */}
+              <div className={`inline-flex items-center gap-2 px-6 py-2 ${slide.color} rounded-md shadow-lg`}>
+                <span className="text-[14px] font-bold text-white uppercase tracking-wider">{slide.badge}</span>
+              </div>
+
+              {/* Hero Title (Border-less) */}
+              <div className="py-2">
+                <h1 className={`text-4xl md:text-5xl font-display font-bold leading-tight tracking-tight ${slide.accent}`}>
+                  {slide.title.split('').map((char, i) => (
+                    <span key={`${currentSlide}-${i}`} className="hero-char inline-block whitespace-pre">
                       {char}
                     </span>
                   ))}
-                  {/* Space between words */}
-                  {wordIdx < words.length - 1 && (
-                    <span className="inline-block whitespace-pre"> </span>
-                  )}
-                </span>
-              );
-            });
-          })()}
-        </h1>
+                </h1>
+              </div>
 
-        {/* Subtitle */}
-        <p className="hero-fade-in text-lg md:text-xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed font-secondary">
-          {slide.subtitle}
-        </p>
+              {/* Subtitle */}
+              <p className="text-base md:text-lg text-slate-700 max-w-lg font-medium leading-relaxed font-secondary">
+                {slide.subtitle}
+              </p>
 
-        {/* Dynamic Feature List - High Density Centered */}
-        <div className="hero-fade-in flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
-          {slide.features.map((feature, i) => (
-            <div key={i} className="px-5 py-2.5 glass rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3 transition-transform hover:scale-105">
-              <div className="w-2 h-2 rounded-full bg-indigo-500 shadow-sm" />
-              <span className="text-[12px] font-bold text-slate-700">{feature}</span>
+              {/* Avatars & Transformations */}
+              <div className="flex items-center gap-6">
+                <div className="flex -space-x-4">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-slate-200 shadow-xl overflow-hidden">
+                      <img src={`https://i.pravatar.cc/150?u=u${i + currentSlide}`} alt="Transformations" />
+                    </div>
+                  ))}
+                  <div className="w-12 h-12 rounded-full border-4 border-white bg-white shadow-xl flex items-center justify-center text-[#FF6600] font-bold text-xl">
+                    +
+                  </div>
+                </div>
+                <div className="space-y-0.5">
+                  <div className="text-lg font-bold text-slate-900">500+</div>
+                  <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Transformations</div>
+                </div>
+              </div>
+
+              {/* CTA Button (Sharpened) */}
+              <div className="pt-4">
+                <button className={`group relative px-8 py-4 ${slide.color} text-white text-sm font-bold rounded-md transition-all hover:shadow-2xl hover:scale-105 active:scale-95 flex items-center gap-3 shadow-orange-500/20`}>
+                  <span>{slide.cta}</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
-          ))}
+
+            {/* Right Image Mockup (Significantly Smaller) */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[450px] transform hover:scale-[1.02] transition-transform duration-700">
+                <img
+                  src={`/${slide.mockup}`}
+                  alt="Digital Transformation"
+                  className="w-full h-auto drop-shadow-[0_25px_25px_rgba(0,0,0,0.1)]"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Main Actions */}
-        <div className="hero-fade-in pt-6 flex flex-col sm:flex-row items-center justify-center gap-8">
-          <button className="group relative px-10 py-5 bg-slate-900 text-white text-sm font-bold rounded-full transition-all hover:bg-indigo-600 hover:shadow-premium-xl active:scale-95 flex items-center gap-3">
-            <span>{slide.cta}</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+      {/* Bottom Stats Row (Elite White & Compact) */}
+      <div className="relative z-10 w-full bg-[#FDFBF9] px-6 md:px-14 py-6 border-t border-slate-100/50">
+        <div className="max-w-full mx-auto">
+          <div className="mt-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            {slide.features.map((feature, i) => {
+              const [val, ...rest] = feature.split(' ');
+              return (
+                <div key={i} className="p-4 lg:p-5 bg-white border border-slate-100 shadow-sm rounded-md transition-all group hover:shadow-xl hover:-translate-y-1 flex flex-col items-center">
+                  <div className={`mb-1.5 w-8 h-8 rounded-md bg-orange-50 flex items-center justify-center ${slide.accent} group-hover:bg-[#FF6600] group-hover:text-white transition-colors shadow-sm`}>
+                    {i === 0 && <Globe className="w-4 h-4" />}
+                    {i === 1 && <Sparkles className="w-4 h-4" />}
+                    {i === 2 && <Monitor className="w-4 h-4" />}
+                    {i === 3 && <Search className="w-4 h-4" />}
+                  </div>
+                  <div className="space-y-0 text-center">
+                    <div className={`text-xl lg:text-2xl font-bold ${slide.accent} tracking-tight`}>{val}</div>
+                    <div className="text-[9px] whitespace-nowrap font-bold text-slate-500 uppercase tracking-widest leading-none">{rest.join(' ')}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?img=${i + 15}`} alt="User" />
+      {/* Client Logo Marquee Section */}
+      <div className="w-full bg-white py-10 border-t border-slate-100 overflow-hidden">
+        <div className="max-w-full mx-auto px-4">
+          {/* Header Line */}
+          <div className="flex items-center justify-center gap-8 mb-4">
+            <div className="h-[1px] flex-1 max-w-[400px] bg-gradient-to-r from-transparent via-[#FF6600]/40 to-transparent" />
+            <span className="text-[10px] md:text-[12px] font-bold text-slate-400 uppercase tracking-[0.3em] whitespace-nowrap">Trusted by World's Best</span>
+            <div className="h-[1px] flex-1 max-w-[400px] bg-gradient-to-l from-transparent via-[#FF6600]/40 to-transparent" />
+          </div>
+
+          {/* Marquee Content (Colorful) */}
+          <div className="relative flex overflow-hidden">
+            <div className="flex animate-marquee whitespace-nowrap py-8 items-center">
+              {[
+                { name: 'ecom express', color: 'text-[#E31E5D]' },
+                { name: 'EICHER', color: 'text-[#E31D24]' },
+                { name: 'FURLENCO', color: 'text-[#00A9E0]' },
+                { name: 'Mahindra', color: 'text-[#ED1C24]' },
+                { name: 'DECATHLON', color: 'text-[#0082C3]' },
+                { name: 'Haldiram\'s', color: 'text-[#ED1C24]' },
+                { name: 'ecom express', color: 'text-[#E31E5D]' },
+                { name: 'EICHER', color: 'text-[#E31D24]' },
+                { name: 'FURLENCO', color: 'text-[#00A9E0]' },
+                { name: 'Mahindra', color: 'text-[#ED1C24]' },
+                { name: 'DECATHLON', color: 'text-[#0082C3]' },
+                { name: 'Haldiram\'s', color: 'text-[#ED1C24]' }
+              ].map((brand, i) => (
+                <div key={i} className="mx-14 flex items-center justify-center">
+                  <span className={`text-xl md:text-2xl font-black ${brand.color} uppercase tracking-tighter opacity-70 hover:opacity-100 transition-all cursor-default`}>
+                    {brand.name}
+                  </span>
                 </div>
               ))}
             </div>
-            <span className="text-xs font-bold text-slate-500">Trusted by Global Brands</span>
+            {/* Mirror for continuous scroll */}
+            <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap py-8 items-center">
+              {[
+                { name: 'ecom express', color: 'text-[#E31E5D]' },
+                { name: 'EICHER', color: 'text-[#E31D24]' },
+                { name: 'FURLENCO', color: 'text-[#00A9E0]' },
+                { name: 'Mahindra', color: 'text-[#ED1C24]' },
+                { name: 'DECATHLON', color: 'text-[#0082C3]' },
+                { name: 'Haldiram\'s', color: 'text-[#ED1C24]' },
+                { name: 'ecom express', color: 'text-[#E31E5D]' },
+                { name: 'EICHER', color: 'text-[#E31D24]' },
+                { name: 'FURLENCO', color: 'text-[#00A9E0]' },
+                { name: 'Mahindra', color: 'text-[#ED1C24]' },
+                { name: 'DECATHLON', color: 'text-[#0082C3]' },
+                { name: 'Haldiram\'s', color: 'text-[#ED1C24]' }
+              ].map((brand, i) => (
+                <div key={i} className="mx-14 flex items-center justify-center">
+                  <span className={`text-xl md:text-2xl font-black ${brand.color} uppercase tracking-tighter opacity-70 hover:opacity-100 transition-all cursor-default`}>
+                    {brand.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Footer Line */}
+          <div className="flex items-center justify-center gap-8 mt-4">
+            <div className="h-[1px] flex-1 max-w-[400px] bg-gradient-to-r from-transparent via-[#FF6600]/40 to-transparent" />
+            <span className="text-[10px] md:text-[12px] font-bold text-slate-400 uppercase tracking-[0.1em] whitespace-nowrap">MORE THAN 150 BRANDS</span>
+            <div className="h-[1px] flex-1 max-w-[400px] bg-gradient-to-l from-transparent via-[#FF6600]/40 to-transparent" />
           </div>
         </div>
-
-
       </div>
 
-      {/* Slider Nav - Re-integrated */}
-      <div className="absolute bottom-12 flex flex-col items-center gap-4">
-        <div className="flex gap-2">
-          {sliderData.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentSlide(i)}
-              className={`h-1.5 transition-all duration-700 rounded-full ${currentSlide === i ? 'w-10 bg-indigo-600' : 'w-4 bg-slate-200 hover:bg-slate-300'
-                }`}
-            />
-          ))}
-        </div>
-        <span className="text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em]">Switch Solution</span>
-      </div>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-100%); }
+        }
+        @keyframes marquee2 {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(0%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        .animate-marquee2 {
+          animation: marquee2 30s linear infinite;
+        }
+      `}} />
     </section>
   );
 }

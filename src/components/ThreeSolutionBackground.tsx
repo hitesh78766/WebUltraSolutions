@@ -20,11 +20,11 @@ function WavingGrid({ count = 45, separation = 0.25 }) {
     return pos;
   }, [count, separation]);
 
-  // Color mapping: variations of the brand's indigo
+  // Color mapping: variations of the brand's orange
   const colors = useMemo(() => {
     const cols = new Float32Array(count * count * 3);
-    const colorA = new THREE.Color('#6366f1');
-    const colorB = new THREE.Color('#38bdf8');
+    const colorA = new THREE.Color('#FF6600');
+    const colorB = new THREE.Color('#FF8C00');
     
     let i = 0;
     for (let x = 0; x < count; x++) {
@@ -95,18 +95,19 @@ function WavingGrid({ count = 45, separation = 0.25 }) {
 
 export default function ThreeSolutionBackground() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none bg-[#f8fafc]">
+    <div className="absolute inset-0 z-0 pointer-events-none bg-[#FFF7F0]">
       {/* Soft Ambient Gradients - High-Status LIGHT THEME */}
-      <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-indigo-100/50 rounded-full blur-[140px] opacity-60" />
-      <div className="absolute bottom-0 left-0 w-[70%] h-[70%] bg-blue-100/40 rounded-full blur-[160px] opacity-50" />
+      <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-orange-100/50 rounded-full blur-[140px] opacity-60" />
+      <div className="absolute bottom-0 left-0 w-[70%] h-[70%] bg-orange-100/40 rounded-full blur-[160px] opacity-50" />
       
       <Canvas 
         camera={{ position: [0, 2.5, 5], fov: 45 }}
         dpr={[1, 2]}
       >
-        <fog attach="fog" args={['#f8fafc', 2, 10]} />
-        <ambientLight intensity={1.2} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#4f46e5" />
+        <fog attach="fog" args={['#FFF7F0', 2, 10]} />
+        <ambientLight intensity={2.5} />
+        <pointLight position={[10, 10, 10]} intensity={2.5} color="#ffffff" />
+        <directionalLight position={[-8, 12, 10]} intensity={1.5} color="#ffffff" />
         <WavingGrid count={50} separation={0.3} />
       </Canvas>
 
@@ -114,7 +115,7 @@ export default function ThreeSolutionBackground() {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#FF6600 1px, transparent 1px)',
           backgroundSize: '48px 48px',
         }}
       />

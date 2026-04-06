@@ -1,29 +1,165 @@
-import { useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Monitor, 
+  Cpu, 
+  ShoppingCart, 
+  Smartphone, 
+  Cloud, 
+  Palette,
+  ChevronRight,
+  ArrowRight,
+  Zap,
+  Globe,
+  Database,
+  Layers,
+  Shield,
+  Box,
+  Terminal,
+  Smartphone as MobileIcon,
+  Code2
+} from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CheckCircle2, Target, ArrowRight, Sparkles } from 'lucide-react';
-import ForceDirectedGraph from '../components/ForceDirectedGraph';
-import ParticleNetwork from '../components/ParticleNetwork';
-import IdentityCore from '../components/IdentityCore';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const techDomains = [
+  {
+    icon: Monitor,
+    title: 'Digital Transformation',
+    subtitle: 'Strategic digital roadmaps for the modern enterprise',
+    technologies: [
+      { name: 'Strategy', icon: Zap },
+      { name: 'Analytics', icon: Database },
+      { name: 'Cloud Migration', icon: Cloud },
+      { name: 'Automation', icon: Cpu },
+      { name: 'Security', icon: Shield },
+      { name: 'Consulting', icon: Globe }
+    ]
+  },
+  {
+    icon: Cpu,
+    title: 'AI & Automation',
+    subtitle: 'Intelligent systems and autonomous workflows',
+    technologies: [
+      { name: 'Machine Learning', icon: BrainIcon },
+      { name: 'NLP', icon: Terminal },
+      { name: 'Computer Vision', icon: Monitor },
+      { name: 'RPA', icon: Zap },
+      { name: 'Predictive AI', icon: Database },
+      { name: 'OpenAI API', icon: Zap }
+    ]
+  },
+  {
+    icon: Code2,
+    title: 'Custom Software',
+    subtitle: 'Tailored software solutions for unique business needs',
+    technologies: [
+      { name: 'Python', icon: Code2 },
+      { name: 'Node.js', icon: Code2 },
+      { name: 'Java', icon: Code2 },
+      { name: 'C#', icon: Code2 },
+      { name: 'Go', icon: Code2 },
+      { name: 'Ruby', icon: Code2 }
+    ]
+  },
+  {
+    icon: ShoppingCart,
+    title: 'eCommerce Development',
+    subtitle: 'Conversion-optimized retail platforms',
+    technologies: [
+      { name: 'Shopify', icon: ShoppingCart },
+      { name: 'Magento', icon: Box },
+      { name: 'WooCommerce', icon: Smartphone },
+      { name: 'Headless', icon: Layers },
+      { name: 'Stripe', icon: Shield },
+      { name: 'Marketplaces', icon: Globe }
+    ]
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile Apps',
+    subtitle: 'High-performance native and cross-platform apps',
+    technologies: [
+      { name: 'React Native', icon: MobileIcon },
+      { name: 'Flutter', icon: Layers },
+      { name: 'Swift', icon: Zap },
+      { name: 'Kotlin', icon: Code2 },
+      { name: 'Objective-C', icon: Code2 },
+      { name: 'Xcode', icon: Monitor },
+      { name: 'SwiftUI', icon: Palette },
+      { name: 'UIKit', icon: Box },
+      { name: 'XCTest', icon: Terminal },
+      { name: 'Java', icon: Code2 },
+      { name: 'Android Studio', icon: Monitor },
+      { name: 'Jetpack Compose', icon: Layers },
+      { name: 'XML Layouts', icon: Code2 },
+      { name: 'KMM', icon: Smartphone },
+      { name: 'Ionic', icon: Layers },
+      { name: '.NET MAUI', icon: Box }
+    ]
+  },
+  {
+    icon: Cloud,
+    title: 'DevOps & Cloud',
+    subtitle: 'Scalable infrastructure and rapid deployment',
+    technologies: [
+      { name: 'AWS', icon: Cloud },
+      { name: 'Azure', icon: Cloud },
+      { name: 'Docker', icon: Box },
+      { name: 'Kubernetes', icon: Layers },
+      { name: 'Jenkins', icon: Terminal },
+      { name: 'Terraform', icon: Code2 }
+    ]
+  },
+  {
+    icon: Palette,
+    title: 'UI/UX Design',
+    subtitle: 'User-centric design that drives engagement',
+    technologies: [
+      { name: 'Figma', icon: Palette },
+      { name: 'Adobe XD', icon: Palette },
+      { name: 'Prototyping', icon: Zap },
+      { name: 'User Testing', icon: Globe },
+      { name: 'Design Systems', icon: Box },
+      { name: 'Visual Identity', icon: Monitor }
+    ]
+  }
+];
+
+function BrainIcon(props: any) {
+  return (
+    <svg 
+      {...props} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+    >
+      <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-5.04Z" />
+      <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-5.04Z" />
+    </svg>
+  );
+}
+
 export default function About() {
-  const containerRef = useRef<HTMLElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0); // Default to Digital Transformation
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const el = containerRef.current;
+    const el = sectionRef.current;
     if (!el) return;
 
-    // Cinematic Reveal
-    gsap.fromTo(el.querySelectorAll('.reveal-up'),
-      { y: 30, opacity: 0 },
+    gsap.fromTo(el.querySelector('.tech-header'),
+      { opacity: 0, y: 30 },
       {
-        y: 0,
         opacity: 1,
+        y: 0,
         duration: 1,
-        stagger: 0.1,
-        ease: 'power3.out',
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: el,
           start: 'top 85%',
@@ -32,130 +168,128 @@ export default function About() {
     );
   }, []);
 
+  const activeDomain = techDomains[activeIndex];
+  const DomainIcon = activeDomain.icon;
+
   return (
-    <section
-      ref={containerRef}
-      id="about"
-      className="relative py-6 lg:py-10 overflow-hidden bg-[#fcfdff]"
-    >
-      
-      {/* 1. Cinematic Particle Network Background */}
-      <div className="absolute inset-0 z-0">
-          <ParticleNetwork />
-      </div>
-
-      {/* 2. Floating Gradient Orbs */}
-      <div className="absolute top-20 left-20 w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full animate-pulse pointer-events-none" />
-      <div className="absolute bottom-20 right-20 w-[400px] h-[400px] bg-indigo-500/10 blur-[100px] rounded-full animate-pulse delay-1000 pointer-events-none" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
-         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            
-            {/* LEFT SIDE - CONTENT (Smaller focus) */}
-            <div className="lg:w-[35%] space-y-6 text-center lg:text-left">
-              <div className="reveal-up space-y-3">
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-500/10 rounded-full border border-indigo-500/5 backdrop-blur-sm">
-                    <Sparkles size={12} className="text-indigo-600" />
-                    <span className="text-[10px] font-black text-indigo-700 uppercase tracking-[0.15em]">Our Identity</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-2.5 py-1 bg-emerald-500/5 rounded-full border border-emerald-500/10">
-                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_6px_rgba(16,185,129,0.5)]" />
-                    <span className="text-[9px] font-bold text-emerald-600 tracking-tight">Active</span>
-                  </div>
-                </div>
-
-                <h2 className="text-2xl md:text-3xl lg:text-5xl font-display font-black text-slate-900 leading-[1.1] tracking-tight">
-                  <span className="inline-block transform hover:scale-110 transition-transform origin-left cursor-default">👋</span> We Build <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 animate-gradient-x">Digital Dreams.</span>
-                </h2>
-
-                <p className="text-slate-500 text-sm lg:text-base font-medium leading-relaxed">
-                   Webultrasolution is a premium IT partner delivering elite websites, eCommerce platforms, and more.
-                </p>
-              </div>
-
-              <div className="reveal-up pt-2">
-                 <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white text-[12px] font-black rounded-full shadow-xl transition-all active:scale-95 overflow-hidden hover:shadow-indigo-500/20">
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="relative z-10 flex items-center gap-2.5">
-                      Start Your Project
-                      <ArrowRight size={16} className="group-hover:translate-y-1 transition-transform" />
-                    </span>
-                 </button>
-              </div>
-            </div>
-
-            {/* RIGHT SIDE - INTERACTIVE VISUAL (Orbital Reference Style) */}
-            <div className="relative lg:w-[68%] flex items-center justify-center min-h-[350px] lg:min-h-[500px]">
-              <div className="relative w-full h-full min-h-[350px] lg:min-h-[500px] reveal-up">
-                
-                {/* 1. Dashboard Orbital Rings - Wide & Subtle */}
-                <div className="absolute inset-x-[-10%] inset-y-[-10%] rounded-full border border-dashed border-emerald-500/15 animate-spin-slow scale-110 opacity-40" />
-                <div className="absolute inset-[-5%] rounded-full border border-dashed border-indigo-500/10 animate-spin-reverse-slow scale-125 opacity-20" />
-
-                {/* 2. CENTRAL AVATAR / LOGO (Animated Hub) */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] lg:w-[280px] lg:h-[280px] z-10 flex items-center justify-center">
-                   
-                   {/* Cinematic Breathing Core */}
-                   <div className="relative w-full h-full animate-[pulse_6s_ease-in-out_infinite]">
-                      
-                      {/* Internal Rotating Energy Ring */}
-                      <div className="absolute inset-0 rounded-full border-[3px] border-transparent border-t-indigo-500/40 border-r-indigo-500/20 animate-spin-slow z-20 pointer-events-none" />
-
-                      <div className="absolute inset-0 rounded-full overflow-hidden border-[6px] border-white shadow-2xl ring-2 ring-indigo-500/10 z-10">
-                        <IdentityCore />
-                      </div>
-                   </div>
-
-                   {/* Orbital Energy Rings (Concentric Animation) */}
-                   <div className="absolute inset-[-15%] rounded-full border border-indigo-500/15 animate-[spin_30s_linear_infinite]" />
-                   <div className="absolute inset-[-8%] rounded-full border border-dashed border-emerald-500/10 animate-[spin_45s_linear_infinite_reverse]" />
-                   <div className="absolute inset-[-25%] rounded-full border border-indigo-500/5 animate-[spin_60s_linear_infinite]" />
-                   
-                   {/* Vivid Core Glow */}
-                   <div className="absolute inset-x-[-30%] inset-y-[-30%] bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 blur-[80px] rounded-full z-[-1] animate-pulse" />
-                </div>
-
-                {/* 3. INTERACTIVE ORBITAL SKILLS (Canvas) */}
-                <div className="absolute inset-0 z-20 w-full h-full bg-transparent flex items-center justify-center">
-                   <ForceDirectedGraph />
-                </div>
-
-                {/* 4. Large Atmospheric Background Diffusion */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[750px] h-[400px] rounded-full bg-indigo-50/10 backdrop-blur-[0.5px] border border-white/10 z-0" />
-                
-                {/* 5. Micro-Badges (Corner Focus) */}
-                <div className="absolute top-0 right-[5%] p-2 bg-white rounded-xl shadow-lg border border-indigo-50 animate-bounce-slow z-30">
-                   <CheckCircle2 size={16} className="text-emerald-500" />
-                </div>
-                <div className="absolute bottom-0 left-[5%] p-2 bg-white rounded-xl shadow-lg border border-indigo-50 animate-float z-30">
-                   <Target size={16} className="text-indigo-500" />
-                </div>
-              </div>
-            </div>
-
-         </div>
-      </div>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes gradient-x {
-          0%, 100% { background-position: 0% 50% }
-          50% { background-position: 100% 50% }
-        }
-        @keyframes spin-slow { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
-        @keyframes spin-reverse-slow { from { transform: rotate(360deg) } to { transform: rotate(0deg) } }
-        @keyframes bounce-slow { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-15px) } }
-        @keyframes float { 0%, 100% { transform: translate(0, 0) } 50% { transform: translate(10px, -20px) } }
+    <section id="about" ref={sectionRef} className="py-10 md:py-20 bg-[#FBFBFC] overflow-hidden font-display">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
         
-        .animate-gradient-x { background-size: 200% 200%; animation: gradient-x 8s linear infinite; }
-        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
-        .animate-spin-reverse-slow { animation: spin-reverse-slow 25s linear infinite; }
-        .animate-spin-extra-slow { animation: spin-slow 35s linear infinite; }
-        .animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
-        .animate-float { animation: float 6s ease-in-out infinite; }
+        {/* Header Section (Elite Mini) */}
+        <div className="tech-header text-center mb-10 lg:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] tracking-tight leading-[1.1]">
+            We've Helped Leaders <span className="text-[#F97316]">Outlast Trends.</span> Your Turn?
+          </h2>
+          <p className="text-slate-500 text-[11px] font-bold uppercase tracking-widest bg-slate-50 inline-block px-4 py-1.5 rounded-full border border-slate-100">
+            Every major platform and emerging technology
+          </p>
+        </div>
+
+        {/* Main Interface - Elite Compact (Fixed Height with Scrolling - Deep Clearance Height) */}
+        <div className="bg-white border border-slate-200 rounded-[1.5rem] overflow-hidden shadow-[0_20px_70px_-15px_rgba(0,0,0,0.04)] grid grid-cols-1 lg:grid-cols-12 h-auto lg:h-[600px]">
+          
+          {/* Sidebar - left side (Scrollable - Enhanced Safe-Zone) */}
+          <div className="lg:col-span-3 bg-[#FFF9F5] p-5 lg:p-7 border-r border-slate-200 flex flex-col relative h-[450px] lg:h-full">
+            <h3 className="text-[12px] font-black text-slate-500 uppercase tracking-[0.25em] mb-8 px-2">
+              Technology Domains
+            </h3>
+            <div className="space-y-1.5 flex-grow overflow-y-auto pr-2 custom-scrollbar pb-16">
+              {techDomains.map((domain, index) => (
+                <button
+                  key={domain.title}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-md transition-all duration-300 group ${
+                    activeIndex === index 
+                      ? 'bg-[#111827] text-white shadow-xl translate-x-1' 
+                      : 'hover:bg-white/70 text-slate-600'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`p-1.5 rounded-md transition-colors ${activeIndex === index ? 'bg-[#F97316] shadow-lg' : 'bg-white shadow-sm border border-slate-100'}`}>
+                      <domain.icon className={`w-3.5 h-3.5 ${activeIndex === index ? 'text-white' : 'text-[#111827]'}`} />
+                    </div>
+                    <span className={`font-bold text-[11.5px] tracking-tight ${activeIndex === index ? 'text-white' : 'text-slate-600'}`}>
+                      {domain.title}
+                    </span>
+                  </div>
+                  <ChevronRight 
+                    className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                      activeIndex === index ? 'text-white opacity-100' : 'text-slate-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
+                    }`} 
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Content Area - right side (Scrollable) */}
+          <div className="lg:col-span-9 p-7 lg:p-10 relative flex flex-col bg-white">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, x: 15 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -15 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="flex-grow overflow-y-auto pr-4 custom-scrollbar pb-24 h-full"
+              >
+                {/* Domain Header (Elite Mini) */}
+                <div className="flex items-center gap-4 mb-10">
+                  <div className="w-10 h-10 bg-[#F97316] rounded-xl flex items-center justify-center shadow-lg shadow-orange-100">
+                    <DomainIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl lg:text-2xl font-bold text-[#111827] tracking-tight">
+                      {activeDomain.title}
+                    </h4>
+                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+                      {activeDomain.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tech Grid (Elite Density) */}
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                  {activeDomain.technologies.map((tech, i) => (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: i * 0.01 }}
+                      className="bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-slate-300 py-6 px-3 rounded-md flex flex-col items-center justify-center gap-3 transition-all group cursor-pointer hover:shadow-xl hover:-translate-y-1"
+                    >
+                      <div className="w-9 h-9 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <tech.icon className="w-4 h-4 text-[#111827] group-hover:text-[#F97316] transition-colors" />
+                      </div>
+                      <span className="text-[10px] font-black text-[#111827] text-center leading-tight">
+                        {tech.name}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* CTA at Bottom Right (High-Status Floating Position) */}
+            <div className="absolute bottom-20 right-14 z-20">
+              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-7 py-3.5 rounded-xl font-black text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
+                <span>Explore Solutions</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #FDF4ED; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #F97316; border-radius: 10px; opacity: 0.6; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #EA580C; }
+        
+        /* Smooth Scrolling */
+        .custom-scrollbar { scroll-behavior: smooth; }
       `}} />
     </section>
   );
 }
-

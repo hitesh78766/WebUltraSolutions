@@ -28,15 +28,15 @@ function AmbientOrbs() {
     <>
       <mesh ref={orb1} position={[0, 0, -2]}>
         <sphereGeometry args={[1.5, 32, 32]} />
-        <meshBasicMaterial color="#6366f1" transparent opacity={0.15} />
+        <meshBasicMaterial color="#FF6600" transparent opacity={0.15} />
       </mesh>
       <mesh ref={orb2} position={[0, 0, -3]}>
         <sphereGeometry args={[2, 32, 32]} />
-        <meshBasicMaterial color="#312e81" transparent opacity={0.12} />
+        <meshBasicMaterial color="#FF8C00" transparent opacity={0.12} />
       </mesh>
       <mesh ref={orb3} position={[0, 0, -1]}>
         <sphereGeometry args={[1.2, 32, 32]} />
-        <meshBasicMaterial color="#e0e7ff" transparent opacity={0.25} />
+        <meshBasicMaterial color="#FFF7F0" transparent opacity={0.25} />
       </mesh>
     </>
   );
@@ -58,8 +58,8 @@ function ParticleStorm({ count = 5000 }) {
 
   const colors = useMemo(() => {
     const temp = new Float32Array(count * 3);
-    const color1 = new THREE.Color('#6366f1');
-    const color2 = new THREE.Color('#1e1b4b');
+    const color1 = new THREE.Color('#FF6600');
+    const color2 = new THREE.Color('#331100');
     for (let i = 0; i < count; i++) {
        const mixedColor = Math.random() > 0.85 ? color2 : color1;
        temp[i * 3] = mixedColor.r;
@@ -93,14 +93,15 @@ function ParticleStorm({ count = 5000 }) {
 
 export default function ThreeResponsiveVortex() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none bg-slate-50">
-      <div className="absolute top-0 right-0 w-[80%] h-[100%] bg-gradient-to-l from-indigo-100/40 via-blue-50/20 to-transparent rounded-full blur-[140px] opacity-70" />
-      <div className="absolute -bottom-20 -left-20 w-[60%] h-[60%] bg-gradient-to-tr from-violet-100/30 to-transparent rounded-full blur-[160px] opacity-50 animate-pulse" />
+    <div className="absolute inset-0 z-0 pointer-events-none bg-[#FFF7F0]">
+      <div className="absolute top-0 right-0 w-[80%] h-[100%] bg-gradient-to-l from-orange-100/40 via-orange-50/20 to-transparent rounded-full blur-[140px] opacity-70" />
+      <div className="absolute -bottom-20 -left-20 w-[60%] h-[60%] bg-gradient-to-tr from-orange-100/30 to-transparent rounded-full blur-[160px] opacity-50 animate-pulse" />
       
       <Canvas camera={{ position: [0, 0, 8], fov: 40 }}>
-         <fog attach="fog" args={['#f8fafc', 5, 15]} />
-         <ambientLight intensity={2.2} />
-         <pointLight position={[10, 10, 10]} intensity={1.8} color="#6366f1" />
+         <fog attach="fog" args={['#FFF7F0', 5, 20]} />
+         <ambientLight intensity={3} />
+         <pointLight position={[10, 10, 10]} intensity={3} color="#ffffff" />
+         <directionalLight position={[-10, 10, 5]} intensity={1.5} color="#ffffff" />
          <AmbientOrbs />
          <ParticleStorm />
       </Canvas>
@@ -108,7 +109,7 @@ export default function ThreeResponsiveVortex() {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(#4f46e5 0.7px, transparent 0.7px)',
+          backgroundImage: 'radial-gradient(#FF6600 0.7px, transparent 0.7px)',
           backgroundSize: '32px 32px',
         }}
       />

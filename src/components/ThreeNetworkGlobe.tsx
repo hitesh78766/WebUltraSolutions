@@ -48,7 +48,7 @@ function DigitalGlobe() {
       <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#1e1b4b" // Darker indigo-950 for better "Elite" definition
+          color="#331100" // Darker orange-950 for better "Elite" definition
           size={0.035}
           sizeAttenuation={true}
           depthWrite={false}
@@ -68,12 +68,12 @@ function DigitalGlobe() {
             args={[lineIndices, 1]}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#4f46e5" transparent opacity={0.12} />
+        <lineBasicMaterial color="#FF6600" transparent opacity={0.12} />
       </lineSegments>
 
       {/* Dynamic Inner Light Mapping */}
       <Sphere args={[1.88, 32, 32]}>
-        <meshBasicMaterial color="#6366f1" transparent opacity={0.012} wireframe />
+        <meshBasicMaterial color="#FF8C00" transparent opacity={0.012} wireframe />
       </Sphere>
     </group>
   );
@@ -81,21 +81,21 @@ function DigitalGlobe() {
 
 export default function ThreeNetworkGlobe() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,_rgba(225,232,255,1)_0%,_rgba(248,250,255,1)_100%)]">
+    <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,_rgba(255,247,240,1)_0%,_rgba(255,255,255,1)_100%)]">
       {/* Background radial gradients - "Little bit dark" Elite refinement */}
       <div
-        className="absolute top-[-25%] right-[-15%] w-[100%] h-[100%] bg-indigo-200/40 rounded-full blur-[170px] opacity-70 animate-pulse"
+        className="absolute top-[-25%] right-[-15%] w-[100%] h-[100%] bg-orange-200/40 rounded-full blur-[170px] opacity-70 animate-pulse"
         style={{ animationDuration: '9s' }}
       />
       <div
-        className="absolute bottom-[-15%] left-[-15%] w-[90%] h-[90%] bg-violet-200/30 rounded-full blur-[190px] opacity-60 animate-pulse"
+        className="absolute bottom-[-15%] left-[-15%] w-[90%] h-[90%] bg-orange-200/30 rounded-full blur-[190px] opacity-60 animate-pulse"
         style={{ animationDuration: '11s' }}
       />
 
       <Canvas camera={{ position: [0, 0, 5], fov: 42 }} dpr={[1, 2]}>
         <fog attach="fog" args={['#ffffff', 3, 9]} />
         <ambientLight intensity={0.7} />
-        <pointLight position={[5, 5, 5]} intensity={1} color="#6366f1" />
+        <pointLight position={[5, 5, 5]} intensity={1} color="#FF6600" />
 
         <Float speed={1.1} rotationIntensity={0.2} floatIntensity={0.6}>
           <DigitalGlobe />
@@ -108,7 +108,7 @@ export default function ThreeNetworkGlobe() {
       <div
         className="absolute inset-0 opacity-[0.01] pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(#312e81 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#FF6600 1px, transparent 1px)',
           backgroundSize: '45px 45px',
         }}
       />
@@ -154,7 +154,7 @@ function Particles({ count = 50 }) {
   return (
     <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
       <sphereGeometry args={[0.04, 16, 16]} />
-      <meshBasicMaterial color="#4f46e5" transparent opacity={0.18} />
+      <meshBasicMaterial color="#FF6600" transparent opacity={0.18} />
     </instancedMesh>
   );
 }

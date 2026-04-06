@@ -46,13 +46,13 @@ function FloatingGrid() {
       {[...Array(12)].map((_, i) => (
         <mesh key={i} position={[(Math.random() - 0.5) * 15, (Math.random() - 0.5) * 10, -3]}>
            <boxGeometry args={[0.01, 12, 0.01]} />
-           <meshBasicMaterial color="#6366f1" transparent opacity={0.05} />
+           <meshBasicMaterial color="#FF6600" transparent opacity={0.05} />
         </mesh>
       ))}
       {[...Array(8)].map((_, i) => (
         <mesh key={i} position={[0, (Math.random() - 0.5) * 8, -4]} rotation={[0, 0, Math.PI / 2]}>
            <boxGeometry args={[0.01, 20, 0.01]} />
-           <meshBasicMaterial color="#4f46e5" transparent opacity={0.03} />
+           <meshBasicMaterial color="#FF8C00" transparent opacity={0.03} />
         </mesh>
       ))}
     </group>
@@ -76,7 +76,7 @@ function PearlStream({ count = 400 }) {
         const speed = Math.random() * 0.5 + 0.2;
         
         const rand = Math.random();
-        const color = rand > 0.95 ? '#4f46e5' : rand > 0.85 ? '#c7d2fe' : '#ffffff';
+        const color = rand > 0.95 ? '#FF6600' : rand > 0.85 ? '#FFCC99' : '#ffffff';
         data.push({ position: [x, y, z] as [number, number, number], size, speed, color });
     }
     return data;
@@ -95,27 +95,27 @@ export default function ThreeEcommercePearls() {
   return (
     <div className="absolute inset-0 z-0 pointer-events-none bg-white">
       {/* High-status background gradients */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[#f8faff]" />
-      <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[70%] bg-indigo-100/40 rounded-full blur-[140px] opacity-70" />
-      <div className="absolute bottom-[-15%] left-[-10%] w-[60%] h-[60%] bg-blue-50/50 rounded-full blur-[120px] opacity-50" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[#FFF7F0]" />
+      <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[70%] bg-orange-100/40 rounded-full blur-[140px] opacity-70" />
+      <div className="absolute bottom-[-15%] left-[-10%] w-[60%] h-[60%] bg-orange-50/50 rounded-full blur-[120px] opacity-50" />
 
       <Canvas camera={{ position: [0, 0, 7], fov: 40 }} dpr={[1, 2]}>
-        <ambientLight intensity={1.8} />
-        <pointLight position={[10, 10, 10]} intensity={2.5} color="#6366f1" />
-        <pointLight position={[-10, -10, -10]} intensity={1.2} color="#312e81" />
-        <spotLight position={[0, 10, 0]} angle={0.5} penumbra={1} intensity={2} color="#ffffff" />
+        <ambientLight intensity={3} />
+        <pointLight position={[10, 10, 10]} intensity={4} color="#ffffff" />
+        <directionalLight position={[-10, 10, 5]} intensity={2} color="#ffffff" />
+        <spotLight position={[0, 10, 0]} angle={0.5} penumbra={1} intensity={3} color="#fff7f0" />
         
         <PearlStream />
         <FloatingGrid />
         
-        <fog attach="fog" args={['#f8faff', 5, 15]} />
+        <fog attach="fog" args={['#FFF7F0', 5, 20]} />
       </Canvas>
 
       {/* Technical Finishing Texture */}
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: 'radial-gradient(#4f46e5 0.5px, transparent 0.5px)',
+          backgroundImage: 'radial-gradient(#FF6600 0.5px, transparent 0.5px)',
           backgroundSize: '40px 40px',
         }}
       />

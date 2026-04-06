@@ -1,225 +1,274 @@
 import { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Plus, Minus, HelpCircle, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Check, ArrowRight, ChevronLeft, ChevronRight, Plus } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const faqItems = [
-  { q: 'What Is The Average Cost?', a: 'The cost varies based on complexity and features. We provide tailored quotes that ensure you only pay for the value and performance your business requires.' },
-  { q: 'How Long Does It Take?', a: 'Typically, a project can take anywhere from 3 to 8 weeks depending on the scope. We prioritize precision and quality over speed.' },
-  { q: 'What Technology Do You Support?', a: 'We excel in modern stacks including React, Next.js, Node.js, and high-performance CMS solutions like Shopify and WordPress.' },
-  { q: 'Can I Track Progress?', a: 'Absolutely. We provide a live staging URL where you can track our progress in real-time. Transparency is our bedrock.' },
-  { q: 'Do you sign NDAs?', a: 'Yes, your intellectual property and business ideas are safe with us. We sign NDAs for all our projects.' },
-  { q: 'Custom Code or CMS?', a: 'We are experts in both. We recommend the path that offers the best balance of flexibility and ease-of-management for you.' },
-  { q: 'What are payment steps?', a: 'We usually work with a milestone-based payment structure: Initial deposit, design approval, and final launch.' },
-  { q: 'Can you manage Hosting?', a: 'We manage the entire procurement and setup process for you, ensuring your hosting is lightning-fast and secure.' }
+const successStories = [
+  {
+    id: 1,
+    brand: "Haldiram's",
+    logoText: "Haldiram's",
+    title: "Haldiram's: Two Decades of Digital Growth & Scalability",
+    image: "https://images.unsplash.com/photo-1605371924599-2d0365da1ae0?auto=format&fit=crop&q=80&w=800",
+    challenge: "High footfall made one-on-one sales assistance impossible, challenges emerged in product discovery, real-time stock checking and data gathering.",
+    solution: "Our custom in-store kiosk application facilitated independently product catalogue browsing, check real-time availability, and access promotions.",
+    results: [
+      "Real-time collection of customer contact information and product interests.",
+      "Immediate self-service access to customers reduced reliance on floor staff.",
+      "Deployment across multiple store locations with reliable separate servers.",
+      "Ensured zero glitches in kiosk accessibility and interface, providing a smooth and consistent experience."
+    ]
+  },
+  {
+    id: 2,
+    brand: "IKEA",
+    logoText: "IKEA",
+    title: "IKEA: Global Automation and Seamless Supply Chain Logic",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    challenge: "International scale required a deterministic automation core to manage complex inventory flows across 50+ countries with zero downtime.",
+    solution: "Engineered a neural-cloud orchestration layer that synchronizes warehouse robotics with real-time customer demand signals.",
+    results: [
+      "25% reduction in manual order routing overhead globally.",
+      "Synchronized inventory states across 400+ physical stores.",
+      "Proprietary AI-driven predictive packing algorithm implementation.",
+      "Seamless integration with third-party logistics through low-latency APIs."
+    ]
+  },
+  {
+    id: 3,
+    brand: "PVR",
+    logoText: "PVR Cinemas",
+    title: "PVR: Empowering the Future of Cinema with Direct Tech",
+    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=800",
+    challenge: "Legacy booking systems couldn't handle high-concurrency trailer drops and movie releases, leading to customer churn and portal lag.",
+    solution: "Transitioned to a high-density serverless architecture optimized for flash-sales and extreme traffic surges.",
+    results: [
+      "Zero server crashes during major blockbuster trailer releases.",
+      "Reduced ticket booking friction by 40% through unified checkout UX.",
+      "Direct-to-consumer loyalty program integration with 10M+ users.",
+      "Ultra-fast loading times (under 1.5s) even during nationwide traffic peaks."
+    ]
+  }
 ];
 
-const ParticleBackground = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef = useRef({ x: -1000, y: -1000 });
+const faqs = [
+  {
+    q: "Why should businesses choose you as their technology partner?",
+    a: "We provide enterprise-grade solutions with a focus on high-density architecture and scalable digital infrastructures, ensuring your business stays ahead."
+  },
+  {
+    q: "What types of digital transformation solutions does orangemantra provide?",
+    a: "We offer a comprehensive suite including AI/ML integration, cloud-native development, industrial automation, and legacy modernization."
+  },
+  {
+    q: "What factors influence the cost and development timeline?",
+    a: "Timelines are influenced by technical complexity, architectural depth, integration requirements, and security compliance standards."
+  },
+  {
+    q: "Do you help with system integration and data migration projects?",
+    a: "Yes, we specialize in seamless data migration and cloud integration with zero-downtime protocols for mission-critical business systems."
+  }
+];
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let particles: Particle[] = [];
-    let animationFrameId: number;
-
-    const resize = () => {
-      if (!canvas.parentElement) return;
-      canvas.width = window.innerWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
-    };
-
-    class Particle {
-      x: number; y: number; vx: number; vy: number; size: number;
-      baseX: number; baseY: number;
-      constructor() {
-        this.x = Math.random() * canvas!.width;
-        this.y = Math.random() * canvas!.height;
-        this.baseX = this.x;
-        this.baseY = this.y;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.size = Math.random() * 2 + 0.5;
-      }
-      update() {
-        // Subtle Mouse Interaction
-        const dx = mouseRef.current.x - this.x;
-        const dy = mouseRef.current.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          const force = (120 - dist) / 120;
-          this.x -= dx * force * 0.03;
-          this.y -= dy * force * 0.03;
-        }
-
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > canvas!.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas!.height) this.vy *= -1;
-      }
-      draw() {
-        ctx!.beginPath();
-        ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx!.fillStyle = 'rgba(15, 23, 42, 0.7)';
-        ctx!.fill();
-      }
-    }
-
-    const init = () => {
-      particles = Array.from({ length: 120 }, () => new Particle());
-    };
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p, i) => {
-        p.update();
-        p.draw();
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = p.x - particles[j].x;
-          const dy = p.y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 180) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(15, 23, 42, ${0.4 * (1 - dist / 180)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      });
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseRef.current = {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      };
-    };
-
-    resize();
-    init();
-    animate();
-    window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', resize);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none opacity-100 z-0" />;
-};
+const commitments = [
+  {
+    title: 'ShikshaMantra',
+    logo: 'ShikshaMantra',
+    color: 'text-[#F97316]',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600'
+  },
+  {
+    title: 'Sammuday',
+    logo: 'Sammuday',
+    color: 'text-slate-500',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600'
+  },
+  {
+    title: 'GreenMantra',
+    logo: 'GreenMantra',
+    color: 'text-emerald-500',
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=600'
+  }
+];
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % successStories.length);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + successStories.length) % successStories.length);
+  };
 
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+    const timer = setInterval(nextSlide, 6000);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
-    gsap.fromTo(el.querySelectorAll('.animate-up'),
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 90%',
-        }
-      }
-    );
-  }, []);
+  const activeStory = successStories[currentIndex];
 
   return (
-    <section
-      ref={containerRef}
-      id="faq"
-      className="relative py-8 lg:py-12 bg-[#f8f9ff] overflow-hidden border-t border-slate-100 font-display"
-    >
-      {/* ELITE DYNAMIC DARK-PARTICLE BACKGROUND */}
-      <ParticleBackground />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,1),transparent_70%)] pointer-events-none" />
+    <div className="bg-white">
+      {/* Success Stories Section */}
+      <section id="success-stories" className="relative py-12 lg:py-16 bg-[#FFFFFF] overflow-hidden font-display">
+        <div className="max-w-[1360px] mx-auto px-6 lg:px-12">
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full relative z-10">
-
-        {/* COMPACT 2-COLUMN GRID ARCHITECTURE */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-          {/* LEFT: NARRATIVE */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="animate-up inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white border border-indigo-50 rounded-full shadow-sm">
-              <HelpCircle size={8} className="text-indigo-600" />
-              <span className="text-[7px] font-black text-slate-500 uppercase tracking-widest leading-none">Support Center</span>
+          <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-14">
+            <div className="inline-flex items-center px-3 py-1 bg-[#FFF1E2] rounded-full mb-4">
+              <span className="text-[10px] font-bold text-[#F97316] uppercase tracking-widest">Success Stories</span>
             </div>
-            <h2 className="animate-up text-2xl md:text-3xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
-              Knowledge <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Base.</span>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] leading-[1.1] tracking-tight mb-5">
+              From Technology Projects into <span className="text-[#F97316]">Business Success Stories</span>
             </h2>
-            <p className="animate-up text-slate-600 text-[10px] font-medium max-w-[240px] leading-relaxed opacity-80">
-              Fast, deterministic answers for your digital journey.
+            <p className="text-slate-500 text-[13px] lg:text-sm font-medium leading-relaxed opacity-90 max-w-4xl mx-auto px-4">
+              When IKEA demanded automation, we innovated. When Eicher aimed for eCommerce presence, we facilitated. When PVR needed tech empowerment, we served it.
             </p>
-
-            <div className="animate-up pt-2">
-              <button className="flex items-center gap-2 group px-4 py-3 bg-slate-900 rounded-xl text-white transition-all hover:bg-indigo-600 hover:shadow-indigo-500/10 active:scale-95 shadow-lg">
-                <MessageCircle size={14} className="group-hover:rotate-12 transition-transform" />
-                <span className="text-[10px] font-black uppercase tracking-widest leading-none">Connect Support</span>
-              </button>
-            </div>
           </div>
 
-          {/* RIGHT: COMPACT 2-COLUMN FAQ GRID */}
-          <div className="lg:col-span-8 grid md:grid-cols-2 gap-2.5 items-start">
-            {faqItems.map((item, i) => (
-              <div
-                key={i}
-                className={`animate-up group relative rounded-xl border transition-all duration-500 ${activeIndex === i ? 'bg-white border-indigo-300 shadow-xl scale-[1.01] z-10' : 'bg-white/95 border-slate-200 shadow-sm hover:bg-white hover:shadow-md hover:border-indigo-200'}`}
+          <div className="relative group/slider max-w-6xl mx-auto">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={currentIndex}
+                custom={direction}
+                initial={{ opacity: 0, x: direction > 0 ? 30 : -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: direction > 0 ? -30 : 30 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-white border border-slate-100 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.05)] grid grid-cols-1 lg:grid-cols-12"
               >
+                <div className="lg:col-span-5 relative h-[240px] lg:h-auto overflow-hidden">
+                  <img src={activeStory.image} alt={activeStory.brand} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute top-6 right-6">
+                    <div className="bg-white px-4 py-2 rounded-xl shadow-xl border border-slate-100 flex items-center justify-center">
+                      <span className="text-[#E11D48] font-black text-base italic tracking-tighter">{activeStory.brand}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-7 p-7 lg:p-10 lg:pl-12 space-y-7 flex flex-col justify-center bg-white">
+                  <div>
+                    <h3 className="text-xl lg:text-3xl font-black text-[#111827] leading-tight tracking-tight mb-6">
+                      {activeStory.title}
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <h4 className="text-[10px] font-black text-[#111827] uppercase tracking-widest">Challenge:</h4>
+                        <p className="text-slate-500 text-[12px] font-medium leading-relaxed">{activeStory.challenge}</p>
+                      </div>
+                      <div className="space-y-2">
+                        <h4 className="text-[10px] font-black text-[#111827] uppercase tracking-widest">The Solution:</h4>
+                        <p className="text-slate-500 text-[12px] font-medium leading-relaxed">{activeStory.solution}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="text-[10px] font-black text-[#111827] uppercase tracking-widest">Results:</h4>
+                    <div className="grid grid-cols-1 gap-2.5">
+                      {activeStory.results.map((result, i) => (
+                        <div key={i} className="flex items-start gap-4 group/result">
+                          <div className="mt-1 w-4.5 h-4.5 rounded-md bg-[#22C55E]/10 flex items-center justify-center border border-[#22C55E]/20 flex-shrink-0">
+                            <Check className="w-2.5 h-2.5 text-[#22C55E]" />
+                          </div>
+                          <p className="text-slate-600 font-bold text-[12px] tracking-tight leading-none pt-1">{result}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <button className="flex items-center gap-2 bg-white border-2 border-[#F97316] text-[#F97316] px-6 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-widest hover:bg-[#F97316] hover:text-white transition-all shadow-xl shadow-orange-500/5 active:scale-95 group">
+                      <span>Read Case Study</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="flex justify-center gap-2.5 mt-8">
+              {successStories.map((_, i) => (
                 <button
-                  onClick={() => setActiveIndex(activeIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between p-3.5 lg:p-4 text-left transition-all"
-                >
-                  <span className={`text-[11px] lg:text-[12px] font-black transition-colors leading-tight ${activeIndex === i ? 'text-indigo-600' : 'text-slate-950'}`}>
-                    {item.q}
+                  key={i}
+                  onClick={() => { setDirection(i > currentIndex ? 1 : -1); setCurrentIndex(i); }}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${currentIndex === i ? 'bg-[#F97316] w-6' : 'bg-slate-200 hover:bg-slate-300'}`}
+                />
+              ))}
+            </div>
+
+            <button onClick={prevSlide} className="absolute left-[-40px] top-1/2 -translate-y-1/2 hidden lg:flex w-10 h-10 rounded-full bg-white border border-slate-100 shadow-lg items-center justify-center text-slate-300 hover:text-[#F97316] transition-all opacity-0 group-hover/slider:opacity-100">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button onClick={nextSlide} className="absolute right-[-40px] top-1/2 -translate-y-1/2 hidden lg:flex w-10 h-10 rounded-full bg-white border border-slate-100 shadow-lg items-center justify-center text-slate-300 hover:text-[#F97316] transition-all opacity-0 group-hover/slider:opacity-100">
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section id="faq-accordions" className="py-12 bg-white font-display border-t border-slate-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] leading-[1.1] tracking-tight mb-5">
+              Frequently <span className="text-[#F97316]">Asked Questions</span>
+            </h2>
+            <p className="text-slate-500 text-[11.5px] font-medium leading-relaxed">Get answers to common questions about our services</p>
+          </div>
+          <div className="space-y-2.5">
+            {faqs.map((item, i) => (
+              <div key={i} className="border border-slate-100 rounded-lg overflow-hidden">
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-slate-50 transition-colors group">
+                  <span className="text-[12.5px] font-bold text-slate-700 tracking-tight flex items-center gap-2.5">
+                    <span className="text-[#F97316]/60">Q:</span>{item.q}
                   </span>
-                  <div className={`w-6 h-6 shrink-0 rounded-lg border flex items-center justify-center transition-all duration-300 ${activeIndex === i ? 'bg-indigo-600 border-indigo-600 text-white rotate-180 scale-110' : 'bg-white border-slate-300 text-slate-400 group-hover:border-indigo-300 group-hover:text-indigo-500'}`}>
-                    {activeIndex === i ? <Minus size={10} /> : <Plus size={10} />}
+                  <div className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300 ${openFaq === i ? 'bg-[#F97316] text-white rotate-45' : 'bg-slate-100 text-slate-400 group-hover:text-[#F97316]'}`}>
+                    <Plus size={12} strokeWidth={3} />
                   </div>
                 </button>
                 <AnimatePresence>
-                  {activeIndex === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: 'circOut' }}
-                    >
-                      <div className="px-4 pb-4 text-[10.5px] text-slate-700 leading-relaxed font-bold border-t border-slate-200 pt-3">
-                        {item.a}
-                      </div>
+                  {openFaq === i && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
+                      <div className="px-10 pb-4 text-[11px] font-medium text-slate-500 leading-relaxed">{item.a}</div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
             ))}
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Social Commitments Section */}
+      <section id="social-commitments" className="py-12 bg-white font-display">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] tracking-tight leading-[1.1] mb-8">
+            Making <span className="text-[#F97316]">Social Commitments</span> That Lasts
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+            {commitments.map((item, i) => (
+              <div key={i} className="bg-white border border-slate-100 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="h-[180px] overflow-hidden bg-slate-100">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <div className="p-3 border-t border-slate-50">
+                  <h4 className={`text-[12px] font-black tracking-tight ${item.color}`}>{item.logo}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button className="bg-[#F97316] text-white px-8 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-[#EA580C] hover:shadow-xl hover:shadow-orange-500/20 transition-all flex items-center gap-2 mx-auto">
+            <span>View All</span>
+            <ArrowRight size={14} />
+          </button>
+        </div>
+      </section>
+    </div>
   );
 }

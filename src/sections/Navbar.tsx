@@ -12,7 +12,7 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '#about', isMega: true },
+  { name: 'About', href: '#about' /* isMega: true */ },
   { name: 'Services', href: '#services', isMega: true },
   { name: 'Our Project', href: '/#portfolio' },
   { name: 'Career', href: '/#insights' },
@@ -179,44 +179,44 @@ export default function Navbar() {
                     {link.name}
                     {link.isMega && <ChevronDown size={14} className={`transition-transform duration-300 ${(isServicesOpen && link.name === 'Services') || (isAboutOpen && link.name === 'About') ? 'rotate-180' : ''}`} />}
                   </button>
-                  {link.isMega && (link.name === 'Services' || link.name === 'About') && (
+                    {link.isMega && link.name === 'Services' && (
                     <AnimatePresence>
-                      {((isServicesOpen && link.name === 'Services') || (isAboutOpen && link.name === 'About')) && (
+                      {isServicesOpen && (
                         <motion.div
                           initial={{ opacity: 0, y: -10, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -10, scale: 0.98 }}
                           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                          className={`absolute top-[52px] left-1/2 -translate-x-1/2 ${link.name === 'Services' ? 'w-[640px]' : 'w-[440px]'} max-w-[95vw] bg-white border border-slate-100 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.12)] z-[100] rounded-3xl overflow-hidden pointer-events-auto p-4 lg:p-4`}
+                          className={`absolute top-[52px] left-1/2 -translate-x-1/2 ${link.name === 'Services' ? 'w-[640px]' : 'w-[440px]'} max-w-[95vw] bg-white border border-slate-100 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.12)] z-[100] rounded-md overflow-hidden pointer-events-auto p-2`}
                           onMouseLeave={() => {
                             setIsServicesOpen(false);
                             setIsAboutOpen(false);
                           }}
                         >
                           {link.name === 'Services' ? (
-                            <div className="grid grid-cols-2 gap-4 relative">
+                            <div className="grid grid-cols-2 gap-2 relative">
                               {megaMenuData.map((section, idx) => (
-                                <div key={idx} className="relative group/column p-4 rounded-2xl transition-colors hover:bg-slate-50/50">
-                                  <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-8 h-8 rounded-xl bg-indigo-50/50 flex items-center justify-center text-[#5e6ad2] shadow-sm transform group-hover/column:rotate-6 transition-transform">
-                                      <section.icon size={16} />
+                                <div key={idx} className="relative group/column p-4 rounded-md transition-colors hover:bg-slate-50/50">
+                                  <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-2">
+                                    <div className="text-[#F97316]">
+                                      <section.icon size={15} />
                                     </div>
-                                    <h4 className="text-[11px] font-black text-slate-800 tracking-[0.2em] uppercase leading-none">
+                                    <h4 className="text-[10px] font-black text-slate-800 tracking-[0.15em] uppercase leading-none">
                                       {section.category}
                                     </h4>
                                   </div>
-                                  <ul className="space-y-2.5">
+                                  <ul className="space-y-1.5">
                                     {section.links.map((sublink, sIdx) => (
                                       <li key={sIdx} className="group/item list-none">
                                         <a
                                           href={typeof sublink === 'string' ? '#services' : sublink.href}
                                           onClick={(e) => handleNavClick(e as any, typeof sublink === 'string' ? '#services' : sublink.href)}
-                                          className="flex items-center gap-3 group-hover/item:translate-x-1 transition-transform"
+                                          className="flex items-center gap-2.5 py-1.5 transition-all text-slate-600 hover:text-[#F97316] group/link"
                                         >
-                                          <div className="w-7 h-7 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 group-hover/item:scale-105 transition-transform flex-shrink-0">
-                                            {typeof sublink === 'object' && sublink.icon ? <sublink.icon size={12} /> : <Target size={12} />}
+                                          <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
+                                            {typeof sublink === 'object' && sublink.icon ? <sublink.icon size={13} /> : <Target size={13} />}
                                           </div>
-                                          <span className="text-[11px] font-black text-slate-700 group-hover/item:text-slate-900 uppercase tracking-[0.1em] transition-colors">
+                                          <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
                                             {typeof sublink === 'string' ? sublink : sublink.name}
                                           </span>
                                         </a>
@@ -227,15 +227,15 @@ export default function Navbar() {
                               ))}
                             </div>
                           ) : (
-                            <div className="p-1 relative">
-                              <div className="flex items-center gap-3 mb-4 px-3 pt-1">
-                                <div className="w-8 h-8 rounded-xl bg-indigo-50/50 flex items-center justify-center text-[#5e6ad2] shadow-sm transform group-hover/column:rotate-6 transition-transform">
-                                  <Target size={16} />
+                            <div className="p-4 relative">
+                              <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-2">
+                                <div className="text-[#F97316]">
+                                  <Target size={15} />
                                 </div>
-                                <h4 className="text-[11px] font-black text-slate-800 tracking-[0.2em] uppercase leading-none">Agency Core</h4>
+                                <h4 className="text-[10px] font-black text-slate-800 tracking-[0.15em] uppercase leading-none">Agency Core</h4>
                               </div>
 
-                              <div className="grid grid-cols-2 gap-1.5">
+                              <div className="grid grid-cols-2 gap-x-6 gap-y-1">
                                 {[
                                   { name: "Overview", icon: Monitor, href: "/company-overview" },
                                   { name: "Mission", icon: Target, href: "/mission" },
@@ -250,12 +250,12 @@ export default function Navbar() {
                                     key={index}
                                     href={item.href}
                                     onClick={(e) => handleNavClick(e as any, item.href)}
-                                    className="group/item flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100"
+                                    className="group/link flex items-center gap-2.5 py-2 transition-all text-slate-600 hover:text-[#F97316]"
                                   >
-                                    <div className="w-7 h-7 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 group-hover/item:scale-105 transition-transform flex-shrink-0">
-                                      <item.icon size={12} />
+                                    <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
+                                      <item.icon size={13} />
                                     </div>
-                                    <span className="text-[11px] font-black text-slate-700 group-hover/item:text-slate-900 uppercase tracking-[0.1em] transition-colors">
+                                    <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
                                       {item.name}
                                     </span>
                                   </a>
@@ -322,7 +322,7 @@ export default function Navbar() {
                     </button>
 
                     <AnimatePresence>
-                      {link.isMega && ((link.name === 'Services' && isServicesOpen) || (link.name === 'About' && isAboutOpen)) && (
+                      {link.isMega && link.name === 'Services' && isServicesOpen && (
                         <motion.div
                           key={link.name}
                           initial={{ opacity: 0, height: 0 }}

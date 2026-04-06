@@ -7,7 +7,12 @@ import {
    Eye, 
    Cpu, 
    Shield,
-   Zap
+   Zap,
+   ArrowRight,
+   Sparkles,
+   Globe,
+   Search,
+   Monitor
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -68,25 +73,25 @@ export default function WebDesign() {
    }, []);
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen">
-         {/* CINEMATIC FULL-BLEED HEADER - SYNCED WITH HOME HERO (COMPACT) */}
-         <div className="relative min-h-[400px] lg:min-h-[450px] bg-[#f8fafc] flex items-center justify-center overflow-hidden border-b border-slate-100">
-            {/* INTERACTIVE NETWORK GLOBE BACKDROP */}
+      <div className="pt-[80px] bg-white min-h-screen font-secondary">
+         {/* CINEMATIC FULL-BLEED HEADER - SYNCED WITH HOME HERO */}
+         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+            {/* INTERACTIVE NETWORK GLOBE BACKDROP - RESTORED */}
             <ThreeNeuralStorm />
-
+            
             {/* Content Core - Centered Elite Architecture */}
-            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-10">
-               <div className="flex flex-col items-center gap-6">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+               <div className="flex flex-col items-center gap-4">
                   <motion.div 
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
-                     className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-indigo-200/50 bg-white/40 backdrop-blur-md shadow-sm"
+                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
-                     <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600">Established Global Leader</span>
+                     <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Established Global Leader</span>
                   </motion.div>
 
-                  <h1 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter leading-[1.05] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ENGINEERING LEGACY DIGITAL EMPIRES.";
                         const words = title.split(" ");
@@ -95,14 +100,15 @@ export default function WebDesign() {
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={{ opacity: 0, y: -50 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{
-                                       duration: 0.8,
-                                       delay: 0.2 + (wordIdx * 0.1) + (charIdx * 0.02),
-                                       ease: [0.16, 1, 0.3, 1]
+                                       type: "spring",
+                                       stiffness: 200,
+                                       damping: 10,
+                                       delay: 0.2 + (wordIdx * 0.1) + (charIdx * 0.02)
                                     }}
-                                    className={`inline-block ${word === "LEGACY" ? "text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600" : ""}`}
+                                    className={`inline-block ${word === "LEGACY" ? "text-[#FF6600]" : ""}`}
                                  >
                                     {char}
                                  </motion.span>
@@ -116,7 +122,7 @@ export default function WebDesign() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-500 text-sm lg:text-xl font-medium max-w-3xl leading-relaxed font-secondary"
+                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
                   >
                      High-status UX/UI architecture for global enterprise leaders. Precision-engineered solutions refined across two decades of dominant industry innovation.
                   </motion.p>
@@ -127,138 +133,126 @@ export default function WebDesign() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
-                  className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto"
+                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
                >
-                  {['Custom Architecture', 'Responsive Excellence', 'Data Driven UX'].map((feature, i) => (
-                     <div key={i} className="px-5 py-2.5 bg-white/60 backdrop-blur-md rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3 transition-all hover:translate-y--1">
-                        <div className="w-2 h-2 rounded-full bg-indigo-500" />
-                        <span className="text-[10px] font-black text-slate-700 uppercase tracking-widest">{feature}</span>
+                  {[
+                     { label: 'Custom Architecture', icon: Globe },
+                     { label: 'Responsive Excellence', icon: Sparkles },
+                     { label: 'Data Driven UX', icon: Monitor }
+                  ].map((feature, i) => (
+                     <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
+                        <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
+                           <feature.icon size={14} />
+                        </div>
+                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
             </div>
          </div>
 
-         <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-10 lg:py-12 bg-[#fdfdff]">
-            <div className="grid grid-cols-1 gap-12 lg:gap-16">
+         <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-8 bg-[#FDFBF9]">
+            <div className="grid grid-cols-1 gap-6 lg:gap-10">
 
-               {/* MAIN SERVICE BANNERS - ALTERNATING ELITE ARCHITECTURE (EXTREME COMPACT) */}
-               <div className="flex flex-col gap-8 lg:gap-10">
+               {/* MAIN SERVICE BANNERS - ALTERNATING ELITE ARCHITECTURE */}
+               <div className="flex flex-col gap-8 lg:gap-12">
                   {servicePillars.map((pillar, idx) => (
                      <div
                         key={idx}
-                        className={`group relative flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 lg:gap-12 items-center`}
+                        className={`group relative flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-6 lg:gap-10 items-center`}
                      >
-                        {/* BANNER IMAGE SECTION: CINEMATIC 3D PERSPECTIVE (COMPACT) */}
+                        {/* BANNER IMAGE SECTION: CINEMATIC 3D PERSPECTIVE */}
                         <motion.div 
                            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
                            whileInView={{ opacity: 1, x: 0 }}
                            viewport={{ once: true, margin: "-50px" }}
-                           whileHover={{ y: -6, scale: 1.02 }}
+                           whileHover={{ y: -6, scale: 1.01 }}
                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[38%] relative h-[180px] lg:h-[230px] rounded-2xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(79,70,229,0.12)] border border-slate-100 group/img cursor-pointer"
+                           className="w-full lg:w-[45%] relative h-[250px] lg:h-[320px] rounded-md overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 group/img cursor-pointer bg-slate-100"
                         >
                            <motion.img 
                               src={pillar.image} 
                               alt={pillar.title}
-                              className="w-full h-full object-cover transition-transform duration-2000 ease-out group-hover/img:scale-110"
+                              className="w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover/img:scale-110"
                            />
-                           <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/30 via-transparent to-white/10" />
+                           <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 via-transparent to-white/10" />
                            
-                           {/* ESTABLISHED EXCELLENCE BADGE - GLASSMIST (COMPACT) */}
-                           <div className="absolute top-5 right-5">
-                              <div className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/50 text-slate-900 shadow-xl flex items-center gap-1.5 transition-all">
-                                 <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
-                                 <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-900">Elite Standard</span>
+                           {/* ESTABLISHED EXCELLENCE BADGE */}
+                           <div className="absolute top-6 right-6">
+                              <div className="px-3 py-1.5 rounded-md bg-[#FF6600] text-white shadow-xl flex items-center gap-2">
+                                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                 <span className="text-[10px] font-bold uppercase tracking-wider">Elite Standard</span>
                               </div>
                            </div>
 
-                           {/* ARCHITECTURAL FLOATING NUMBER - REFINED (COMPACT) */}
-                           <span className={`absolute bottom-6 ${idx % 2 === 0 ? "right-10" : "left-10"} text-[50px] font-black text-white/20 select-none tracking-tighter italic`}>0{idx + 1}</span>
+                           {/* ARCHITECTURAL FLOATING NUMBER - INCREASED VISIBILITY */}
+                           <span className={`absolute bottom-6 ${idx % 2 === 0 ? "right-6" : "left-6"} text-[50px] font-display font-black text-white/60 select-none tracking-tighter italic`}>0{idx + 1}</span>
                         </motion.div>
 
-                        {/* BANNER CONTENT SECTION: COORDINATED ENTRANCE (COMPACT) */}
+                        {/* BANNER CONTENT SECTION */}
                         <motion.div 
                            initial={{ opacity: 0, x: idx % 2 === 0 ? 100 : -100 }}
                            whileInView={{ opacity: 1, x: 0 }}
                            viewport={{ once: true, margin: "-50px" }}
                            transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[62%] space-y-6 px-6 lg:px-0"
+                           className="w-full lg:w-[55%] space-y-6 px-4 lg:px-0"
                         >
                            <div className="space-y-4">
                               <div className="flex items-center gap-5">
                                  <div className="relative">
-                                    <div className="absolute -inset-3 bg-indigo-500/10 rounded-full blur-lg animate-pulse" />
-                                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
-                                       <pillar.icon size={18} />
+                                    <div className="absolute -inset-3 bg-[#FF6600]/10 rounded-full blur-lg animate-pulse" />
+                                    <div className="relative w-12 h-12 rounded-md bg-[#FF6600] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-700">
+                                       <pillar.icon size={22} />
                                     </div>
                                  </div>
                                  <div className="space-y-1">
                                     <div className="flex items-center gap-2">
-                                       <div className="w-6 h-[1px] bg-indigo-500" />
-                                       <span className="text-[9px] font-black uppercase tracking-[0.4em] text-indigo-500">{pillar.tag}</span>
+                                       <div className="w-6 h-[2px] bg-[#FF6600]" />
+                                       <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                                     </div>
-                                    <h3 className="text-2xl lg:text-3xl font-black tracking-tight uppercase leading-[1] text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 group-hover:from-indigo-600 group-hover:to-blue-600 transition-all duration-1000">
+                                    <h3 className="text-xl lg:text-2xl font-display font-bold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
                                        {pillar.title}
                                     </h3>
                                  </div>
                               </div>
                               
-                              <p className="text-[13px] lg:text-[14px] font-medium leading-relaxed text-slate-500 group-hover:text-slate-800 transition-colors max-w-xl">
+                              <p className="text-[12px] lg:text-[14px] font-medium leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
                                  {pillar.desc}
                               </p>
+
+                              <div className="pt-2">
+                                 <button className="flex items-center gap-2 text-[10px] font-bold text-slate-900 uppercase tracking-widest group/link">
+                                    <span>Learn More</span>
+                                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1 text-[#FF6600]" />
+                                 </button>
+                              </div>
                            </div>
-
-
                         </motion.div>
                      </div>
                   ))}
 
-                  {/* CONCLUSION BLOCK - COMPACT ELITE GLASS (FULL WIDTH) */}
+                  {/* CONCLUSION BLOCK - SYNCED WITH PRESTIGE BANNER STYLE */}
                   <motion.div
                      initial={{ opacity: 0, y: 40 }}
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{ once: true }}
                      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                     className="py-12 lg:py-14 px-8 rounded-2xl bg-white border border-slate-100 text-slate-900 relative overflow-hidden shadow-[0_40px_80px_-20px_rgba(79,70,229,0.06)] flex items-center justify-center text-center group/panel cursor-default"
+                     className="relative py-10 lg:py-14 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
                   >
-                     <div className="relative z-10 max-w-4xl mx-auto space-y-8">
-                        {/* ICON CORE: FLOATING ELITE ENTRANCE WITH LIGHTNING PULSE */}
-                        <motion.div 
-                           animate={{ 
-                              y: [0, -8, 0],
-                              rotate: [0, -5, 5, 0],
-                           }}
-                           transition={{ 
-                              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                              rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                           }}
-                           className="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-white shadow-xl shadow-indigo-200 transform group-hover/panel:scale-110 group-hover/panel:rotate-12 transition-all duration-700 relative overflow-hidden"
-                        >
-                           <motion.div
-                              animate={{ 
-                                 scale: [1, 1.2, 0.9, 1.1, 1],
-                                 opacity: [1, 0.8, 1, 0.7, 1],
-                                 rotate: [0, 10, -10, 5, 0]
-                              }}
-                              transition={{ 
-                                 duration: 2.5, 
-                                 repeat: Infinity, 
-                                 ease: "easeInOut" 
-                              }}
-                           >
-                              <Zap size={24} fill="currentColor" />
-                           </motion.div>
+                     {/* Orange Glow Effect */}
+                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
+                     
+                     <div className="relative z-10 max-w-4xl mx-auto space-y-5">
+                        {/* ICON CORE */}
+                        <div className="w-12 h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600] shadow-xl group-hover:scale-110 transition-transform duration-700">
+                           <Zap size={24} />
+                        </div>
 
-                           {/* INTERNAL ENERGY CORE GLOW */}
-                           <div className="absolute inset-0 bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                        </motion.div>
-
-                        {/* QUOTE CORE: PRECISION CHARACTER REVEAL */}
+                        {/* QUOTE CORE */}
                         <div className="relative">
-                           <h3 className="text-[13px] lg:text-sm font-bold tracking-tight leading-relaxed text-slate-800 uppercase italic max-w-3xl mx-auto">
+                           <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic">
                               {(() => {
-                                 const text = "We specialize in creative and innovative approaches to web design and development. Our primary goal is to integrate new features that pave the way for the success of your online business. Before embarking on the design process, our dedicated team takes the time to thoroughly understand your business objectives and target audience.";
+                                 const text = "We specialize in creative and innovative approaches to web design and development. Our primary goal is to integrate new features that pave the way for the success of your online business.";
                                  return text.split(" ").map((word, wordIdx) => (
                                     <span key={wordIdx} className="inline-block mr-1.5 overflow-hidden py-0.5">
                                        <motion.span
@@ -280,47 +274,29 @@ export default function WebDesign() {
                            </h3>
                         </div>
 
-                        {/* BADGE CORE: ALIGNED PRECISION */}
-                        <div className="flex items-center justify-center gap-8">
-                           <motion.div 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: 64 }}
-                              transition={{ duration: 1, delay: 1 }}
-                              className="h-[1px] bg-indigo-100 group-hover/panel:bg-indigo-300 group-hover/panel:w-24 transition-all duration-700" 
-                           />
-                           <motion.span 
-                              initial={{ opacity: 0 }}
-                              whileInView={{ opacity: 1 }}
-                              transition={{ duration: 1, delay: 1.2 }}
-                              className="text-[9px] font-black uppercase tracking-[0.6em] text-indigo-400 group-hover/panel:text-indigo-600 transition-colors"
-                           >
-                              Industry Leader
-                           </motion.span>
-                           <motion.div 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: 64 }}
-                              transition={{ duration: 1, delay: 1 }}
-                              className="h-[1px] bg-indigo-100 group-hover/panel:bg-indigo-300 group-hover/panel:w-24 transition-all duration-700" 
-                           />
+                        {/* CTA ACTION */}
+                        <div className="pt-4">
+                           <button className="group/btn flex items-center gap-2.5 px-4 py-2.5 bg-[#FF6600] hover:bg-white hover:text-[#FF6600] text-white text-[10px] font-bold rounded-md transition-all duration-300 shadow-xl shadow-[#FF6600]/20 mx-auto uppercase tracking-[0.15em]">
+                              <span>Connect with our team</span>
+                              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                           </button>
+                        </div>
+
+                        <div className="flex items-center justify-center gap-8 pt-4">
+                           <div className="h-[1px] w-24 bg-white/10" />
+                           <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Industry Leader</span>
+                           <div className="h-[1px] w-24 bg-white/10" />
                         </div>
                      </div>
 
-                     {/* Dynamic Background Effects: INTERACTIVE ATMOSPHERE */}
+                     {/* Dynamic Background Effects */}
                      <motion.div 
                         animate={{ 
                            scale: [1, 1.2, 1],
-                           opacity: [0.05, 0.08, 0.05]
+                           opacity: [0.1, 0.15, 0.1]
                         }}
                         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full blur-[120px]" 
-                     />
-                     <motion.div 
-                        animate={{ 
-                           scale: [1.2, 1, 1.2],
-                           opacity: [0.05, 0.08, 0.05]
-                        }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-400 rounded-full blur-[120px]" 
+                        className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#FF6600] rounded-full blur-[100px]" 
                      />
                   </motion.div>
                </div>

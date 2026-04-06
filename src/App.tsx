@@ -12,11 +12,14 @@ import Services from './sections/Services';
 import About from './sections/About';
 import ResponsiveDesign from './sections/ResponsiveDesign';
 import FAQ from './sections/FAQ';
+import Arsenal from './sections/Arsenal';
+import IndustryExcellence from './sections/IndustryExcellence';
 import Testimonials from './sections/Testimonials';
-import CTA from './sections/CTA';
+import ScaleAmbition from './sections/ScaleAmbition';
 import Footer from './sections/Footer';
 import LoadingScreen from './sections/LoadingScreen';
 import PrestigeBanner from './sections/PrestigeBanner';
+import ContactSection from './sections/ContactSection';
 
 // Import Pages
 import WebDesign from './pages/WebDesign';
@@ -156,10 +159,13 @@ function HomePage() {
       <Services />
       <About />
       <ResponsiveDesign />
-      <FAQ />
-      <CTA />
+      <Arsenal />
       <PrestigeBanner />
+      <IndustryExcellence />
+      <ScaleAmbition />
       <Testimonials />
+      <FAQ />
+      <ContactSection />
     </main>
   );
 }

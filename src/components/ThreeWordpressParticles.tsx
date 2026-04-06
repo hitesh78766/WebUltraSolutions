@@ -36,7 +36,7 @@ function WordParticles() {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#1e1b4b"
+          color="#FF6600"
           size={0.012}
           sizeAttenuation={true}
           depthWrite={false}
@@ -51,7 +51,7 @@ function WordParticles() {
 function TechGrid() {
     return (
         <gridHelper 
-            args={[25, 25, 0x1e1b4b, 0x1e1b4b]} 
+            args={[25, 25, 0xFF6600, 0xFF6600]} 
             position={[0, -1.5, 0]} 
             rotation={[Math.PI / 10, 0, 0]}
         >
@@ -62,18 +62,18 @@ function TechGrid() {
 
 export default function ThreeWordpressParticles() {
   return (
-    <div className="absolute inset-0 z-0 bg-[#fafbff]">
+    <div className="absolute inset-0 z-0 bg-[#FFF7F0]">
       <Canvas camera={{ position: [0, 0, 4.5], fov: 40 }}>
-        <ambientLight intensity={1.5} />
+        <ambientLight intensity={3.5} />
         <WordParticles />
         <TechGrid />
         <mesh position={[-3, 1, -4]}>
             <sphereGeometry args={[1.5, 32, 32]} />
-            <meshBasicMaterial color="#1e1b4b" opacity={0.02} transparent />
+            <meshBasicMaterial color="#FF6600" opacity={0.02} transparent />
         </mesh>
         <mesh position={[3, -1, -4]}>
             <sphereGeometry args={[1.5, 32, 32]} />
-            <meshBasicMaterial color="#1e1b4b" opacity={0.02} transparent />
+            <meshBasicMaterial color="#FF8C00" opacity={0.02} transparent />
         </mesh>
       </Canvas>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white pointer-events-none" />

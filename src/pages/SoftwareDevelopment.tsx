@@ -1,265 +1,185 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import type { Variants } from 'framer-motion';
-import { Cpu, Workflow, Shield, Monitor, Target, Globe, Code2 } from 'lucide-react';
+import { Cpu, Workflow, Shield, Monitor, Target, Globe, Code2, Sparkles } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ThreeSolutionBackground from '../components/ThreeSolutionBackground';
 import imgBlueprint from '../assets/software_engineering_elite_blueprint_1775316282086.png';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function SoftwareDevelopment() {
+   
    useEffect(() => {
       window.scrollTo(0, 0);
-      gsap.registerPlugin(ScrollTrigger);
       setTimeout(() => ScrollTrigger.refresh(), 500);
    }, []);
 
-   const headingChars = "Software Development".split("");
-   const container: Variants = {
-      hidden: { opacity: 0 },
-      visible: (i: number = 1) => ({
-         opacity: 1,
-         transition: { staggerChildren: 0.04, delayChildren: 0.04 * i },
-      }),
-   };
-   const child: Variants = {
-      visible: {
-         opacity: 1,
-         y: 0,
-         transition: {
-            type: "spring",
-            damping: 12,
-            stiffness: 200,
-         } as any,
-      },
-      hidden: { opacity: 0, y: 30 },
-   };
-
-   const wordAnimation: Variants = {
-      hidden: { opacity: 0, y: 10 },
-      visible: {
-         opacity: 1,
-         y: 0,
-         transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
-      }
-   };
-
-   const paragraphContainer: Variants = {
-      hidden: { opacity: 0 },
-      visible: {
-         opacity: 1,
-         transition: { staggerChildren: 0.012, delayChildren: 0.1 }
-      }
-   };
-
-   const AnimatedText = ({ text, className }: { text: string; className?: string }) => {
-      const words = text.split(" ");
-      return (
-         <motion.p
-            variants={paragraphContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className={className}
-         >
-            {words.map((word, i) => (
-               <motion.span key={i} variants={wordAnimation} className="inline-block mr-[0.25em]">
-                  {word}
-               </motion.span>
-            ))}
-         </motion.p>
-      );
-   };
-
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-primary overflow-x-hidden">
-         {/* HERO SECTION */}
-         <section className="relative h-[250px] lg:h-[280px] flex items-center justify-center bg-[#fafbff] border-b border-indigo-50/50 overflow-hidden">
+      <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
+         {/* CINEMATIC FULL-BLEED HEADER - ELITE COMPACT STYLE */}
+         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+            {/* INTERACTIVE SOLUTION BACKDROP */}
             <ThreeSolutionBackground />
-            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-slate-900">
-               <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={container}
-                  className="space-y-4"
-               >
-                  <h1 className="text-3xl lg:text-5xl font-black leading-[1.1] tracking-[0.06em] uppercase flex justify-center flex-wrap">
-                     {headingChars.map((char, index) => (
-                        <motion.span key={index} variants={child} className={index >= 9 ? "text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-blue-600 to-indigo-700 whitespace-pre" : "whitespace-pre"}>
-                           {char}
-                        </motion.span>
-                     ))}
+            
+            {/* Content Core - Centered Elite Architecture */}
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+               <div className="flex flex-col items-center gap-4">
+                  <motion.div 
+                     initial={{ opacity: 0, y: -20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
+                  >
+                     <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Systems Engineering</span>
+                  </motion.div>
+
+                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                     {(() => {
+                        const title = "SOFTWARE DEVELOPMENT.";
+                        const words = title.split(" ");
+                        return words.map((word, wordIdx) => (
+                           <span key={wordIdx} className="inline-block mr-4">
+                              {word.split("").map((char, charIdx) => (
+                                 <motion.span
+                                    key={`${wordIdx}-${charIdx}`}
+                                    initial={{ opacity: 0, y: -50 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                       type: "spring",
+                                       stiffness: 200,
+                                       damping: 10,
+                                       delay: 0.2 + (wordIdx * 0.1) + (charIdx * 0.02)
+                                    }}
+                                    className={`inline-block ${word === "DEVELOPMENT." ? "text-[#FF6600]" : ""}`}
+                                 >
+                                    {char}
+                                 </motion.span>
+                              ))}
+                           </span>
+                        ));
+                     })()}
                   </h1>
-                  <p className="text-[10px] lg:text-[13px] font-black text-slate-500 uppercase tracking-[0.25em] max-w-5xl mx-auto leading-relaxed text-center">
-                     webultrasolution has evolved as a true professional software company
-                  </p>
+
+                  <motion.p
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                  >
+                     Evolutionized enterprise software solutions. Engineering bespoke digital foundations with absolute integrity and technical precision.
+                  </motion.p>
+               </div>
+
+               {/* REFINED BADGE STACK */}
+               <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 1.5 }}
+                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
+               >
+                  {[
+                     { label: 'Engineering Core', icon: Globe },
+                     { label: 'System Integrity', icon: Sparkles },
+                     { label: 'Global Dominance', icon: Monitor }
+                  ].map((feature, i) => (
+                     <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
+                        <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
+                           <feature.icon size={14} />
+                        </div>
+                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                     </div>
+                  ))}
                </motion.div>
             </div>
-         </section>
+         </div>
 
-         {/* SYSTEM CORE CONTENT PORTAL */}
-         <section className="relative py-12 lg:py-20 bg-white overflow-hidden border-t border-slate-50">
+         {/* SYSTEM CORE CONTENT PORTAL - COMPACT SCALE */}
+         <section className="relative py-8 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
             <div className="relative z-10 max-w-[1300px] mx-auto px-8 lg:px-16">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                   
-                  {/* LEFT COLUMN: SYSTEM ARCHITECTURE (NARRATIVE) */}
-                  <div className="lg:col-span-8 space-y-12">
-                     <div className="space-y-8">
-                        <div className="flex items-center gap-3">
-                           <div className="w-12 h-[2px] bg-indigo-600" />
-                           <span className="text-indigo-600 text-[10px] font-black uppercase tracking-[0.5em]">Systems Engineering</span>
-                        </div>
-                        <h2 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-[0.95]">
-                           Bespoke <span className="text-indigo-600">Enterprise Solutions.</span>
-                        </h2>
-                        
-                        <div className="space-y-6">
-                           <AnimatedText
-                              className="text-[15px] lg:text-[16px] font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-indigo-600 pl-4"
-                              text="webultrasolution is the best Software development company in Noida, India offering complete web solutions with a commitment to surpass customer expectations by providing excellent and timely software solutions. webultrasolution utilizes the latest technology to bring fast and consistent results to grow our client brands. We take pride in offering innovative work ideas, Integrity and timely delivery of projects. We offer quality and affordable web solutions and software development solutions to both small size and enterprises to get a better web presence."
-                           />
-                           <AnimatedText
-                              className="text-[13px] text-slate-600 font-bold leading-relaxed"
-                              text="Software development and enterprise application Software development at webultrasolution has always been an ultimate panacea for distinct needs of clients' across domains."
-                           />
-                           
-                           <AnimatedText
-                              className="text-[12px] text-slate-500 font-bold leading-relaxed opacity-90"
-                              text="webultrasolution has evolved as a true professional software company after successfully completing numerous client projects. We develop solutions that best meet the business objectives of our clients and ensure long-term value. Our solutions help you organize business and technology strategies cost effectively without compromising quality. webultrasolution is a leading Software Development and Payroll Software Company with a state of the art development center in Noida, India. webultrasolution is offering Software Development Services to self-regulating Software Vendors worldwide. We at webultrasolution provide affordable and quality services to various clients across the worldwide. Our Software Development Services include developing custom applications in E-Commerce Solutions Development, Offshore Outsourcing Services, Custom Applications Development, Application Integration, Payroll Software, Customer Relationship Management, Supply Chain Management etc. With the scalability and flexibility to support long-term growth, Development India's solutions provide a single point of accountability to promote rapid return on investment and low total cost of ownership. By using an iterative approach, we avoid 'surprises' at the end of the project. We want you and your employees to try out the software as we are developing it so that we can confirm that the business requirements are being met."
-                           />
-                        </div>
+                  {/* LEFT COLUMN: SYSTEM ARCHITECTURE */}
+                  <div className="lg:col-span-8 space-y-6">
+                     <div className="flex items-center gap-3">
+                        <div className="h-[2px] w-8 bg-[#FF6600]/30" />
+                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Systems Engineering</span>
+                     </div>
+                     <h2 className="text-xl lg:text-3xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                        Bespoke <span className="text-[#FF6600]">Enterprise Solutions.</span>
+                     </h2>
+                     
+                     <div className="space-y-4">
+                        <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
+                           Complete web solutions with a commitment to surpass expectations through excellent and timely software engineering.
+                        </p>
+                        <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                           We utilize latest technology to bring fast and consistent results. Our solutions help you organize business and technology strategies cost-effectively without compromising quality.
+                        </p>
+                        <p className="text-[11px] text-slate-400 font-bold leading-relaxed opacity-80 uppercase tracking-widest">
+                           Leading payroll and software company with state-of-the-art development centers. Iterative approach avoiding surprises.
+                        </p>
+                     </div>
+
+                     {/* HUB CATEGORIES */}
+                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-6 border-t border-slate-100">
+                        {[
+                           { title: "Engineering Core", icon: Code2, items: ["Billing", "Security", "Inventory"] },
+                           { title: "Government Sector", icon: Globe, items: ["Tenders", "Staffing", "Hosting"] },
+                           { title: "Enterprise Hub", icon: Monitor, items: ["Ecommerce", "ERP Systems", "SCM"] }
+                        ].map((hub, hubIdx) => (
+                           <div key={hubIdx} className="p-4 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:border-[#FF6600]">
+                              <div className="flex items-center gap-2 mb-3">
+                                 <hub.icon size={14} className="text-[#FF6600]" />
+                                 <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest">{hub.title}</h4>
+                              </div>
+                              <ul className="space-y-1">
+                                 {hub.items.map((item, i) => (
+                                    <li key={i} className="text-[10px] font-bold text-slate-500 uppercase tracking-tight flex items-center gap-2">
+                                       <div className="w-1 h-1 rounded-full bg-[#FF6600] opacity-40" />
+                                       {item}
+                                    </li>
+                                 ))}
+                              </ul>
+                           </div>
+                        ))}
                      </div>
                   </div>
 
-                  {/* RIGHT COLUMN: TECHNICAL HUB (3D BLUEPRINT + METRICS) */}
-                  <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-8 perspective-[2000px]">
-                     {/* ARCHITECTURAL BLUEPRINT IMAGE - 3D FLIP ENGINE */}
-                     <motion.div 
-                        initial={{ opacity: 0, rotateY: 90, scale: 0.8 }}
-                        whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
-                        whileHover={{ 
-                           rotateY: -10, 
-                           rotateX: 5,
-                           y: -10,
-                           transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-                        }}
-                        transition={{ 
-                           duration: 1.5, 
-                           ease: [0.16, 1, 0.3, 1],
-                           rotateY: { type: "spring", stiffness: 40, damping: 12 }
-                        }}
-                        className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white backdrop-blur-3xl transform-style-3d group cursor-pointer"
-                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-blue-500/10 group-hover:opacity-0 transition-opacity duration-700" />
+                  {/* RIGHT COLUMN: TECHNICAL HUB */}
+                  <div className="lg:col-span-4 relative lg:sticky lg:top-28 space-y-6">
+                     <div className="relative rounded-md overflow-hidden bg-white shadow-2xl border border-slate-100">
                         <img 
                            src={imgBlueprint} 
                            alt="Software Architecture Blueprint" 
-                           className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" 
+                           className="w-full h-auto object-cover" 
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/10 via-transparent to-transparent opacity-60" />
-                        
-                        {/* AMBIENT FLOATING DECORATIONS */}
-                        <motion.div 
-                           animate={{ y: [0, -10, 0] }}
-                           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                           className="absolute -top-6 -right-6 w-24 h-24 bg-indigo-500/10 blur-3xl rounded-full"
-                        />
-                     </motion.div>
+                        <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
+                           <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
+                           <span className="text-[10px] font-black text-white uppercase tracking-widest">Architectural Matrix v4.0</span>
+                        </div>
+                     </div>
 
-                     {/* SYSTEM INTEGRITY SIDEBAR */}
-                     <div className="p-6 rounded-3xl bg-white border border-slate-100 shadow-[0_32px_64px_-16px_rgba(79,70,229,0.08)] space-y-6 relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 blur-3xl rounded-full" />
-                        <h3 className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.3em] flex items-center gap-2">
-                           <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
+                     <div className="p-6 rounded-md bg-white border border-slate-100 shadow-xl space-y-3">
+                        <h3 className="text-[9px] font-black text-[#FF6600] uppercase tracking-[0.3em] flex items-center gap-2">
+                           <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
                            System Integrity
                         </h3>
-                        
-                        <div className="space-y-3">
+                        <div className="space-y-2">
                            {[
                               { label: "Accountability", value: "Single Point", icon: Shield },
-                              { label: "Methodology", value: "Iterative Flow", icon: Workflow },
-                              { label: "Return on Investment", value: "Rapid ROI", icon: Target },
-                              { label: "Cost of Ownership", value: "Optimized TCO", icon: Cpu }
+                              { label: "Methodology", value: "Iterative Flow", icon: Workflow }
                            ].map((item, i) => (
-                              <div key={i} className="flex items-center justify-between p-4 rounded-2xl bg-slate-50/50 border border-slate-100 group-hover:bg-white transition-all shadow-sm group-hover:shadow-indigo-500/5">
-                                 <div className="flex items-center gap-3">
-                                    <div className="p-2 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:bg-indigo-600 group-hover:text-white transition-all">
-                                       <item.icon size={12} />
-                                    </div>
+                              <div key={i} className="flex items-center justify-between p-3 rounded-md bg-slate-50 border border-slate-100 transition-all hover:bg-white">
+                                 <div className="flex items-center gap-2">
+                                    <item.icon size={12} className="text-[#FF6600]" />
                                     <span className="text-[9px] font-black uppercase tracking-wider text-slate-500">{item.label}</span>
                                  </div>
-                                 <span className="text-[10px] font-black text-slate-900">{item.value}</span>
+                                 <span className="text-[10px] font-black text-slate-900 uppercase">{item.value}</span>
                               </div>
                            ))}
                         </div>
                      </div>
-                  </div>
-               </div>
-
-               {/* CATEGORIZATION GRID: ULTRA COMPACT ELITE DATA HUBS (SINGLE ROW) */}
-               <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-4 border-t border-slate-50 pt-6 pb-20">
-                  {/* HUB 1: SOFTWARE ENGINEERING */}
-                  <div className="lg:col-span-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-xl shadow-slate-200/40 space-y-4 hover:shadow-2xl hover:shadow-indigo-500/10 hover:border-indigo-100 transition-all duration-500 group">
-                     <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-indigo-600 text-white shadow-lg group-hover:scale-110 transition-transform">
-                           <Code2 size={18} />
-                        </div>
-                        <h4 className="text-[12px] font-black text-slate-900 tracking-[0.15em] uppercase">Engineering Core</h4>
-                     </div>
-                     <ul className="grid grid-cols-1 gap-y-1.5 pl-1">
-                        {[
-                           "Billing Services", "Security Systems", 
-                           "Inventory Core", "CRM Solution", 
-                           "eLearning Module", "Academic Platform"
-                        ].map((item, i) => (
-                           <li key={i} className="flex items-center gap-2 text-[12px] font-bold text-slate-500 transition-colors group-hover:text-slate-900">
-                              <div className="w-1 h-1 rounded-full bg-indigo-400 opacity-30" />
-                              {item}
-                           </li>
-                        ))}
-                     </ul>
-                  </div>
-
-                  {/* HUB 2: GOVERNMENT SECTOR */}
-                  <div className="lg:col-span-4 p-4 rounded-2xl bg-white border border-blue-50 shadow-xl shadow-blue-100/40 space-y-4 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-100 transition-all duration-500 group/govt">
-                     <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-blue-600 text-white shadow-lg group-hover/govt:scale-110 transition-transform">
-                           <Globe size={18} />
-                        </div>
-                        <h4 className="text-[12px] font-black text-slate-900 tracking-[0.15em] uppercase">Government Sector</h4>
-                     </div>
-                     <ul className="grid grid-cols-1 gap-y-1.5 pl-1">
-                        {[
-                           "Tender Management", "Staffing Hub", "Secure Hosting",
-                           "Sector Analysis", "Deployment Core", "Public Systems"
-                        ].map((item, i) => (
-                           <li key={i} className="flex items-center gap-2 text-[12px] font-bold text-slate-500 transition-colors group-hover/govt:text-slate-900">
-                              <div className="w-1 h-1 rounded-full bg-blue-400 opacity-30" />
-                              {item}
-                           </li>
-                        ))}
-                     </ul>
-                  </div>
-
-                  {/* HUB 3: ENTERPRISE GLOBAL */}
-                  <div className="lg:col-span-4 p-4 rounded-2xl bg-white border border-slate-200/40 shadow-xl shadow-slate-200/40 space-y-4 hover:shadow-2xl hover:shadow-indigo-500/10 hover:border-indigo-100 transition-all duration-500 group/ent">
-                     <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-slate-900 text-white shadow-lg group-hover/ent:scale-110 transition-transform">
-                           <Monitor size={18} />
-                        </div>
-                        <h4 className="text-[12px] font-black text-slate-900 tracking-[0.15em] uppercase">Enterprise Hub</h4>
-                     </div>
-                     <ul className="grid grid-cols-1 gap-y-1.5 pl-1">
-                        {[
-                           "E-commerce Solutions", "Scalable ERP Systems", "Mass E-mail Engine",
-                           "Supply Chain Management", "Cloud Migration", "Architecture Core"
-                        ].map((item, i) => (
-                           <li key={i} className="flex items-center gap-2 text-[12px] font-bold text-slate-500 transition-colors group-hover/ent:text-slate-900">
-                              <div className="w-1 h-1 rounded-full bg-slate-400 opacity-30" />
-                              {item}
-                           </li>
-                        ))}
-                     </ul>
                   </div>
                </div>
             </div>

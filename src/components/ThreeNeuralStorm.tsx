@@ -2,7 +2,7 @@ import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-function ParticleStorm({ count = 3500 }) {
+function ParticleStorm({ count = 5000 }) {
   const mesh = useRef<THREE.Points>(null);
 
   const particles = useMemo(() => {
@@ -40,10 +40,10 @@ function ParticleStorm({ count = 3500 }) {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.035}
-        color="#4338ca"
+        size={0.05}
+        color="#FF6600"
         transparent
-        opacity={0.6}
+        opacity={0.7}
         sizeAttenuation
         blending={THREE.AdditiveBlending}
       />
@@ -53,15 +53,16 @@ function ParticleStorm({ count = 3500 }) {
 
 export default function ThreeNeuralStorm() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none bg-[#f8fafc]">
-      {/* Ambient Depth Gradients */}
-      <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-indigo-100/40 rounded-full blur-[140px] opacity-60 animate-pulse" />
-      <div className="absolute bottom-0 left-0 w-[70%] h-[70%] bg-blue-100/30 rounded-full blur-[160px] opacity-50" />
+    <div className="absolute inset-0 z-0 pointer-events-none bg-[#FFF7F0]">
+      {/* Ambient Depth Gradients - Orange/Amber Focus */}
+      <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-[#FF6600]/10 rounded-full blur-[140px] opacity-60 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-[70%] h-[70%] bg-orange-100/30 rounded-full blur-[160px] opacity-50" />
 
       <Canvas camera={{ position: [0, 0, 7], fov: 45 }}>
-        <fog attach="fog" args={['#f8fafc', 5, 15]} />
-        <ambientLight intensity={1.5} />
-        <pointLight position={[10, 10, 10]} intensity={2} color="#4f46e5" />
+        <fog attach="fog" args={['#FFF7F0', 5, 20]} />
+        <ambientLight intensity={2.5} />
+        <pointLight position={[10, 10, 10]} intensity={3} color="#ffffff" />
+        <directionalLight position={[-10, 10, 5]} intensity={1.5} color="#ffffff" />
         <ParticleStorm />
       </Canvas>
 
@@ -69,7 +70,7 @@ export default function ThreeNeuralStorm() {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#FF6600 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />
