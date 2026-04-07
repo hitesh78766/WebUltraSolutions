@@ -179,7 +179,7 @@ export default function Services() {
                       ))}
                     </div>
 
-                    <button className="w-full bg-[#F97316] text-white py-3.5 rounded-md font-black text-xs flex items-center justify-center gap-2 group hover:bg-[#EA580C] hover:shadow-[0_8px_20px_rgba(249,115,22,0.25)] transition-all active:scale-[0.99]">
+                    <button className="w-full bg-[#F97316] text-white py-3.5 rounded-md font-bold text-xs flex items-center justify-center gap-2 group hover:bg-[#EA580C] hover:shadow-[0_8px_20px_rgba(249,115,22,0.25)] transition-all active:scale-[0.99]">
                       <span>{activeService.cta}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                     </button>

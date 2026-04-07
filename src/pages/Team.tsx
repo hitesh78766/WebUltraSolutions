@@ -1,209 +1,265 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Cpu } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { motion, useScroll, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
+import { Cpu, Zap, Shield, Globe, Users, Target, ArrowRight, ChevronRight, Code, Layout, Network, Activity, Fingerprint } from 'lucide-react';
 import ThreeNeuralStorm from '../components/ThreeNeuralStorm';
-import ParticleNetwork from '../components/ParticleNetwork';
 
 const teamMembers = [
-  { name: "Hitesh", role: "Elite Architect", skill: "System Core", image: "/images/team/professional_team_avatar_3_1775241301225.png", angle: -90 },
-  { name: "Rahul", role: "UI/UX Lead", skill: "Visual Design", image: "/images/team/professional_team_avatar_2_1775241280154.png", angle: -18 },
-  { name: "Nikhil", role: "Full Stack", skill: "Backend Master", image: "/images/team/professional_team_avatar_1_1775241265516.png", angle: 54 },
-  { name: "Sagar", role: "App Dev", skill: "Mobile Specialist", image: "/images/team/professional_team_avatar_5_1775241346010.png", angle: 126 },
-  { name: "Deepak", role: "SEO Lead", skill: "Growth Meta", image: "/images/team/professional_team_avatar_4_1775241326213.png", angle: 198 }
+  { name: "Hitesh", role: "Elite Architect", skill: "System Core", image: "/images/team/professional_team_avatar_3_1775241301225.png" },
+  { name: "Rahul", role: "UI/UX Lead", skill: "Visual Design", image: "/images/team/professional_team_avatar_2_1775241280154.png" },
+  { name: "Nikhil", role: "Full Stack", skill: "Backend Master", image: "/images/team/professional_team_avatar_1_1775241265516.png" },
+  { name: "Sagar", role: "App Dev", skill: "Mobile Specialist", image: "/images/team/professional_team_avatar_5_1775241346010.png" },
+  { name: "Vikram", role: "Creative Director", skill: "Brand Strategy", image: "/images/team/professional_team_avatar_4_1775241326213.png" },
+  { name: "Arpit", role: "Lead Developer", skill: "Cloud Architecture", image: "/images/team/professional_team_avatar_1_1775241265516.png" },
+  { name: "Rohan", role: "Frontend Dev", skill: "Interactive UI", image: "/images/team/professional_team_avatar_2_1775241280154.png" },
+  { name: "Amit", role: "QA Lead", skill: "Precision Testing", image: "/images/team/professional_team_avatar_3_1775241301225.png" },
+  { name: "Deepak", role: "SEO Lead", skill: "Growth Meta", image: "/images/team/professional_team_avatar_4_1775241326213.png" }
+];
+
+const pillars = [
+  { title: "Technical Rigor", icon: Code, desc: "We maintain a 1:1 ratio of senior architects to junior developers, ensuring absolute code precision and reliability." },
+  { title: "Global Delivery", icon: Globe, desc: "Seamless cross-continental operations bridging US standards with Noida's elite talent." },
+  { title: "Strategic Vision", icon: Layout, desc: "Leadership that engineers high-status digital identities that dominate their respective markets." },
+  { title: "Security Protocols", icon: Shield, desc: "Uncompromising data integrity through advanced encryption and enterprise-grade architecture." }
 ];
 
 const Team: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    gsap.registerPlugin(ScrollTrigger);
-  }, []);
+   const containerRef = useRef<HTMLDivElement>(null);
+   const [hoveredMember, setHoveredMember] = React.useState<number | null>(null);
+   
+   const mouseX = useMotionValue(0);
+   const mouseY = useMotionValue(0);
+   const textX = useSpring(useTransform(mouseX, [-500, 500], [20, -20]), { stiffness: 50, damping: 20 });
+   const textY = useSpring(useTransform(mouseY, [-500, 500], [20, -20]), { stiffness: 50, damping: 20 });
 
-  const headingChars = "OUR ELITE TEAM.".split("");
+   useEffect(() => {
+	window.scrollTo(0, 0);
+    const handleMouseMove = (e: MouseEvent) => {
+        const { innerWidth, innerHeight } = window;
+        mouseX.set(e.clientX - innerWidth / 2);
+        mouseY.set(e.clientY - innerHeight / 2);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+   }, []);
 
-  return (
-    <div className="pt-[80px] bg-white min-h-screen font-primary overflow-x-hidden">
-      {/* HERO SECTION */}
-      <section className="relative h-[250px] lg:h-[300px] flex items-center justify-center bg-[#fafaff] border-b border-indigo-100/30 overflow-hidden">
-        <ThreeNeuralStorm />
-        <ParticleNetwork />
+   const SectionHeader = ({ label, title }: { label: string, title: string }) => (
+		<div className="flex flex-col gap-1 mb-4">
+			<div className="flex items-center justify-center gap-2">
+				<div className="h-[1px] w-6 bg-[#FF6600]" />
+				<span className="text-[#FF6600] text-[9px] font-bold uppercase tracking-[0.4em]">{label}</span>
+                <div className="h-[1px] w-6 bg-[#FF6600]" />
+			</div>
+			<h2 className="text-lg lg:text-2xl font-display font-bold tracking-tight uppercase leading-none text-slate-950 italic">
+				{title}
+			</h2>
+		</div>
+	);
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1] tracking-tighter uppercase flex justify-center flex-wrap">
-              {headingChars.map((char, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className={index >= 10 ? "text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 whitespace-pre" : "whitespace-pre"}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </h1>
-            <p className="text-[10px] lg:text-[11px] font-black text-slate-400 uppercase tracking-[0.6em] max-w-2xl mx-auto leading-relaxed">
-               Connecting Human Talent with Technical Precision.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+   return (
+	<div ref={containerRef} className="bg-white min-h-screen font-secondary overflow-x-hidden pt-[70px]">
+	   {/* HERO SECTION - REFINED NEURAL STORM & KINETIC TYPOGRAPHY */}
+	   <section className="relative h-[300px] lg:h-[350px] flex items-center justify-center overflow-hidden border-b border-slate-100 bg-[#FDFBF9]">
+  		<ThreeNeuralStorm />
+        
+        {/* Institutional Pattern Layer */}
+        <div className="absolute inset-0 opacity-[0.03] z-[1] select-none pointer-events-none" 
+            style={{ backgroundImage: 'linear-gradient(rgba(255,102,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,102,0,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
-      {/* HUB AND SPOKE TEAM NETWORK */}
-      <section className="py-20 relative bg-white overflow-hidden min-h-[800px] flex items-center justify-center">
-         {/* Background Grid Lines */}
-         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#5e6ad2_1px,transparent_1px)] [background-size:40px_40px]" />
-         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/95 z-[2] pointer-events-none" />
 
-         <div className="relative w-full max-w-5xl mx-auto aspect-square lg:aspect-video flex items-center justify-center py-20 px-8">
-            
-            {/* CENTRAL HUB: GLASSMORPHIC CORE */}
-            <motion.div 
-               initial={{ opacity: 0, y: 50 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-               className="relative z-20 w-56 h-56 lg:w-72 lg:h-72 flex items-center justify-center"
-            >
-               {/* Multi-layered Glows */}
-               <div className="absolute inset-0 bg-indigo-500/20 rounded-full blur-[80px] animate-pulse" />
-               <div className="absolute inset-[-20%] bg-blue-500/10 rounded-full blur-[100px] animate-pulse delay-700" />
-               
-               {/* Dual Ring System */}
-               <motion.div 
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-2 border-2 border-dashed border-indigo-200/50 rounded-full" 
-               />
-               <motion.div 
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-8 border border-indigo-100/30 rounded-full" 
-               />
+  		<div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-20 w-full flex flex-col items-center justify-center">
+  		   <div className="flex flex-col items-center text-center gap-6 max-w-4xl">
+  			{/* High Status Access Badge */}
+  			<motion.div 
+               initial={{ opacity: 0, scale: 0.8 }}
+               animate={{ opacity: 1, scale: 1 }}
+               className="px-4 py-1.5 bg-slate-950 rounded-full border border-[#FF6600]/40 shadow-[0_15px_40px_-10px_rgba(255,102,0,0.3)] flex items-center gap-3"
+             >
+  			   <Fingerprint size={12} className="text-[#FF6600] animate-pulse" />
+  			   <span className="text-[9px] font-bold uppercase tracking-[0.5em] text-white">Verified Talent Identity</span>
+  			</motion.div>
 
-               {/* Central Glass Capsule */}
-               <div className="relative w-40 h-40 lg:w-48 lg:h-48 bg-white/80 backdrop-blur-3xl rounded-full border border-white shadow-[0_30px_60px_-15px_rgba(94,106,210,0.3)] flex flex-col items-center justify-center p-8 group">
-                  <div className="w-16 h-16 bg-gradient-to-tr from-indigo-600 to-blue-500 rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-500">
-                     <Cpu size={32} />
-                  </div>
-                  <div className="mt-4 text-center">
-                     <h3 className="text-[12px] font-black text-slate-900 tracking-widest uppercase italic">The Core</h3>
-                     <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest mt-0.5">Strategy Hub</p>
-                  </div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+  			<div className="space-y-4">
+               <div className="flex flex-col items-center">
+                 <motion.span 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="block text-[11px] font-bold text-[#FF6600] uppercase tracking-[0.9em] mb-2"
+                 >
+                    Technical Core
+                 </motion.span>
+                 
+                 {/* KINETIC CHARACTER REVEAL - ENHANCED SPRING */}
+                 <h1 className="text-3xl lg:text-5xl font-bold text-slate-950 tracking-tighter leading-[0.8] uppercase flex flex-wrap items-center justify-center gap-[0.2em] [perspective:1000px]">
+                    {['OUR', 'ELITE', 'NETWORK.'].map((word, wordIdx) => (
+                       <span key={wordIdx} className="flex overflow-hidden pb-1">
+                          {word.split('').map((char, charIdx) => (
+                             <motion.span
+                                key={charIdx}
+                                initial={{ rotateX: -90, y: "100%", opacity: 0 }}
+                                animate={{ rotateX: 0, y: 0, opacity: 1 }}
+                                transition={{
+                                   type: "spring",
+                                   stiffness: 120,
+                                   damping: 15,
+                                   delay: 0.3 + (wordIdx * 0.1) + (charIdx * 0.04)
+                                }}
+                                className={`inline-block ${word === 'ELITE' ? 'text-[#FF6600] italic' : ''}`}
+                             >
+                                {char}
+                             </motion.span>
+                          ))}
+                       </span>
+                    ))}
+                 </h1>
                </div>
 
-               {/* CURVED CONNECTOR PATHS (Data Flow) */}
-               <svg className="absolute inset-0 w-full h-full -z-10 overflow-visible">
-                  <defs>
-                     <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#818cf8" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
-                     </linearGradient>
-                  </defs>
-                  {teamMembers.map((member, i) => {
-                     const r = 260; // Spread radius
-                     const x = Math.cos((member.angle * Math.PI) / 180) * r;
-                     const y = Math.sin((member.angle * Math.PI) / 180) * r;
-                     
-                     // Calculate Bezier Control point for curves
-                     const cpX = x * 0.4;
-                     const cpY = y * 0.1;
+               <motion.div
+                 initial={{ opacity: 0, y: 15 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 1 }}
+                 className="flex flex-col items-center gap-4"
+               >
+                 <motion.p className="text-slate-800 text-[13px] lg:text-[15px] font-bold max-w-2xl border-l-4 border-[#FF6600] pl-10 pr-6 py-3 leading-relaxed italic bg-white/40 shadow-sm">
+                   Accelerating digital dominance through a centralized pool of high-status technical architects and creative visionary talent.
+                 </motion.p>
+                 
+                 <div className="flex items-center gap-8 pt-2">
+                    {[
+                       { icon: Target, label: 'Strategic' },
+                       { icon: Cpu, label: 'Technical' },
+                       { icon: Globe, label: 'Global' }
+                    ].map((item, i) => (
+                       <div key={i} className="flex items-center gap-2 group">
+                          <item.icon size={13} className="text-[#FF6600] group-hover:scale-125 transition-transform" />
+                          <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{item.label}</span>
+                       </div>
+                    ))}
+                 </div>
+               </motion.div>
+             </div>
+  		   </div>
+  		</div>
+	   </section>
 
-                     return (
-                        <motion.path
-                           key={i}
-                           d={`M 50% 50% Q calc(50% + ${cpX}px) calc(50% + ${cpY}px) calc(50% + ${x}px) calc(50% + ${y}px)`}
-                           initial={{ pathLength: 0, opacity: 0 }}
-                           animate={{ 
-                              pathLength: 1, 
-                              opacity: 0.4,
-                              strokeDashoffset: [0, -20]
-                           }}
-                           transition={{ 
-                              pathLength: { delay: 1 + i * 0.1, duration: 1.5, ease: "easeOut" },
-                              opacity: { duration: 1 },
-                              strokeDashoffset: { repeat: Infinity, duration: 1.5, ease: "linear" }
-                           }}
-                           fill="none"
-                           stroke="url(#lineGrad)"
-                           strokeWidth="1.5"
-                           strokeDasharray="5 10"
-                        />
-                     );
-                  })}
-               </svg>
-            </motion.div>
+	   {/* CIRCULAR NETWORK */}
+	   <section className="py-20 relative bg-white overflow-hidden min-h-[750px] lg:min-h-[850px] flex items-center justify-center border-b border-slate-100">
+          <motion.div style={{ x: textX, y: textY }} className="absolute inset-0 opacity-[0.05] pointer-events-none select-none flex items-center justify-center">
+             <h2 className="text-[120px] lg:text-[200px] font-bold uppercase text-[#FF6600] leading-none tracking-tighter text-center">ELITE<br/>CORE</h2>
+          </motion.div>
 
-            {/* TEAM NODES: ORGANIC SPREAD */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-               {teamMembers.map((member, i) => {
-                  const r = 260;
-                  const x = Math.cos((member.angle * Math.PI) / 180) * r;
-                  const y = Math.sin((member.angle * Math.PI) / 180) * r;
-                  
-                  return (
-                     <div 
-                        key={i} 
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
-                        style={{ 
-                           transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` 
-                        }}
-                     >
-                        <motion.div
-                           initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                           whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                           viewport={{ once: true }}
-                           transition={{ delay: 1.5 + i * 0.1, duration: 0.8 }}
-                           className="flex flex-col items-center group relative"
-                        >
-                           {/* Outer Ring Glow */}
-                           <div className="absolute -inset-4 bg-indigo-400/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                           
-                           {/* Profile Node with Gradient Border */}
-                           <div className="relative w-20 h-20 p-1 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-[2rem] shadow-2xl overflow-hidden group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-500">
-                              <div className="w-full h-full bg-white rounded-[1.8rem] overflow-hidden">
-                                 <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                              </div>
-                           </div>
+          <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center p-8">
+             <motion.div initial={{ scale: 0.8 }} whileInView={{ scale: 1 }} className="relative z-20 w-48 h-48 lg:w-60 lg:h-60 flex items-center justify-center">
+                <motion.div animate={{ rotate: 360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border-2 border-[#FF6600]/20 rounded-full" />
+                <motion.div animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute inset-[-10%] border-4 border-double border-[#FF6600]/10 rounded-full" />
+                <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 3, repeat: Infinity }} className="absolute inset-[20%] bg-[#FF6600]/15 rounded-full blur-3xl" />
+                
+                <div className="relative w-36 h-36 lg:w-44 lg:h-44 bg-white shadow-[0_20px_60px_-15px_rgba(255,102,0,0.25)] rounded-full border-2 border-[#FF6600]/40 flex flex-col items-center justify-center p-6 group overflow-hidden z-10 transition-all duration-500 hover:scale-105">
+                   <div className="w-14 h-14 bg-slate-950 rounded-full flex items-center justify-center text-white mb-3 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.4)] group-hover:bg-[#FF6600] transition-colors duration-500 relative">
+                      <Network size={26} className="relative z-10" />
+                      <motion.div animate={{ scale: [1, 1.4, 1], opacity: [0, 0.4, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="absolute inset-0 bg-[#FF6600] rounded-full blur-lg" />
+                   </div>
+                   <p className="text-[11px] font-bold text-slate-950 tracking-[0.4em] uppercase italic">NOIDA HUB</p>
+                   <p className="text-[7px] font-bold text-[#FF6600] uppercase tracking-widest mt-1">Established Elite Node</p>
+                </div>
 
-                           {/* Permanent Label below Image */}
-                           <div className="mt-4 opacity-100 transition-all duration-500 min-w-[140px] text-center">
-                              <div className="bg-white/90 backdrop-blur-xl p-2.5 rounded-2xl border border-white shadow-lg group-hover:shadow-indigo-500/10 transition-shadow">
-                                 <p className="text-[11px] font-black text-slate-900 tracking-tight">{member.name}</p>
-                                 <p className="text-[8px] font-black text-indigo-600 uppercase tracking-widest mt-1">{member.role}</p>
-                              </div>
-                           </div>
-                        </motion.div>
-                     </div>
-                  );
-               })}
-            </div>
+                <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 1000" style={{ overflow: 'visible' }}>
+                   {teamMembers.map((_, i) => {
+                      const angle = (i * 360) / teamMembers.length;
+                      const r = 400;
+                      const x = 500 + Math.cos((angle * Math.PI) / 180) * r;
+                      const y = 500 + Math.sin((angle * Math.PI) / 180) * r * 0.92;
+                      const isHovered = hoveredMember === i;
+                      
+                      return (
+                         <g key={i}>
+                            <motion.line initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: isHovered ? 1 : 0.4 }} transition={{ duration: 1.2, delay: i * 0.08 }}
+                               x1="500" y1="500" x2={x} y2={y} stroke={isHovered ? "#FF6600" : "#E2E8F0"} strokeWidth={isHovered ? 4 : 1.5} strokeDasharray={isHovered ? "none" : "5 10"} />
+                            {isHovered && <motion.circle r="4" fill="#FF6600"><animateMotion path={`M 500 500 L ${x} ${y}`} dur="0.6s" repeatCount="indefinite" /></motion.circle>}
+                         </g>
+                      );
+                   })}
+                </svg>
+             </motion.div>
 
-         </div>
-      </section>
+             <div className="absolute inset-0 flex items-center justify-center">
+                {teamMembers.map((member, i) => {
+                   const angle = (i * 360) / teamMembers.length;
+                   const r = 300;
+                   const x = Math.cos((angle * Math.PI) / 180) * r;
+                   const y = Math.sin((angle * Math.PI) / 180) * r * 0.92;
+                   const isHovered = hoveredMember === i;
+                   
+                   return (
+                      <div key={i} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}>
+                         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 + i * 0.05 }}
+                            onMouseEnter={() => setHoveredMember(i)} onMouseLeave={() => setHoveredMember(null)}
+                            className="flex flex-col items-center group cursor-pointer relative"
+                         >
+                            <div className={`relative w-20 h-20 lg:w-24 lg:h-24 p-1.5 bg-white rounded-full shadow-2xl border-2 transition-all duration-700 ${isHovered ? 'border-[#FF6600] scale-125 -translate-y-6 shadow-[#FF6600]/30' : 'border-slate-100'}`}>
+                               <div className="w-full h-full bg-slate-50 rounded-full overflow-hidden relative shadow-inner">
+                                  <motion.img animate={{ scale: isHovered ? 1.2 : 1 }} transition={{ duration: 0.4 }} src={member.image} alt={member.name} className="w-full h-full object-cover grayscale-0" />
+                                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-20'}`} />
+                               </div>
+                               {isHovered && <motion.div animate={{ scale: [1, 1.3], opacity: [0.6, 0] }} transition={{ duration: 1.2, repeat: Infinity }} className="absolute -inset-2 border-2 border-[#FF6600] rounded-full" />}
+                               <div className="absolute top-0 right-0 w-6 h-6 bg-slate-950 rounded-full border-2 border-white flex items-center justify-center shadow-xl group-hover:bg-[#FF6600] group-hover:rotate-[360deg] transition-all duration-700">
+                                  <Zap size={11} className="text-white" />
+                               </div>
+                            </div>
+                            <motion.div animate={{ opacity: isHovered ? 1 : 0.8, y: isHovered ? 0 : 4 }} className="mt-4 text-center">
+                               <h4 className="text-[12px] font-bold text-slate-950 tracking-tight uppercase leading-none">{member.name}</h4>
+                               <p className="text-[8px] font-bold text-[#FF6600] uppercase tracking-widest mt-1.5 leading-none">{member.role}</p>
+                            </motion.div>
+                         </motion.div>
+                      </div>
+                   );
+                })}
+             </div>
+          </div>
+	   </section>
 
-      {/* FOOTER CTA */}
-      <section className="py-20 bg-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20"><ThreeNeuralStorm /></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
-          <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase italic leading-none">
-            Empower Your <span className="text-indigo-400 not-italic">Infrastructure.</span>
-          </h2>
-          <p className="text-slate-400 text-lg font-bold">Uncompromising quality is one conversation away.</p>
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(79, 70, 229, 0.4)' }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-4 bg-indigo-600 text-white rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-2xl transition-all"
-          >
-            Work With the Elite
-          </motion.button>
-        </div>
-      </section>
-    </div>
-  );
+       {/* ETHOS GRID */}
+       <section className="py-20 lg:py-28 bg-[#FDFBF9] border-y border-slate-100">
+          <div className="max-w-[1400px] mx-auto px-8 lg:px-20 grid grid-cols-1 lg:grid-cols-[1fr_0.8fr] gap-12 lg:gap-24 items-center">
+             <div className="space-y-8">
+                <SectionHeader label="Institutional" title="Elite Collaboration" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   {pillars.map((pillar, i) => (
+                      <div key={i} className="p-7 bg-white border border-slate-100 rounded-sm shadow-sm hover:border-[#FF6600] transition-all group">
+                         <div className="w-10 h-10 bg-slate-950 flex items-center justify-center text-white mb-4 group-hover:bg-[#FF6600] transition-all rounded-sm shadow-md">
+                            <pillar.icon size={22} />
+                         </div>
+                         <h4 className="text-[11px] font-bold text-slate-950 uppercase tracking-widest mb-2 border-l-2 border-[#FF6600] pl-3">{pillar.title}</h4>
+                         <p className="text-[12px] lg:text-[14px] text-slate-500 font-medium italic leading-relaxed">{pillar.desc}</p>
+                      </div>
+                   ))}
+                </div>
+             </div>
+
+             <div className="space-y-8 lg:pl-12 border-l-4 border-slate-200">
+                <h3 className="text-xl lg:text-2xl font-display font-bold text-slate-950 uppercase tracking-tighter italic leading-[0.9]">
+                   Synergy At <br /> <span className="text-[#FF6600] not-italic">Every Node.</span>
+                </h3>
+                <p className="text-[14px] lg:text-[16px] text-slate-950 font-bold border-l-4 border-[#FF6600] pl-8 py-2 italic leading-relaxed">
+                   "Innovative infrastructure meets institutional reliability. We prioritize high-status technical solutions over standard corporate protocols."
+                </p>
+                <div className="space-y-3">
+                   {["Noida Technical Centers of Excellence", "US-Compliant Security Protocols", "24/7 Global Delivery Pipeline"].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 text-[10px] font-bold text-slate-950 uppercase tracking-widest leading-none">
+                         <ChevronRight size={14} className="text-[#FF6600]" /> {item}
+                      </div>
+                   ))}
+                </div>
+                <div className="pt-6">
+                   <button className="px-10 py-3.5 bg-slate-950 text-white text-[9px] font-bold uppercase tracking-[0.3em] shadow-2xl hover:bg-[#FF6600] transition-all flex items-center gap-5 group">
+                      Join Our Elite Circle <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                   </button>
+                </div>
+             </div>
+          </div>
+       </section>
+	</div>
+   );
 };
 
 export default Team;

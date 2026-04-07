@@ -98,7 +98,7 @@ export default function WebDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -114,16 +114,16 @@ export default function WebDevelopment() {
                   <div className="lg:col-span-8 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Development Hub</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Development Hub</span>
                      </div>
 
                      <div className="space-y-4">
-                        <h2 className="text-xl lg:text-3xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                        <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                            Website <span className="text-[#FF6600]">Development</span> Company
                         </h2>
 
                         <div className="space-y-4">
-                           <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
+                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
                               WebUltraSolution specializes in crafting dependable and creative solutions. Our systems are fully scalable, addressing both intricate and straightforward needs.
                            </p>
                            <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
@@ -136,7 +136,7 @@ export default function WebDevelopment() {
                      <div className="pt-4 space-y-4">
                         <div className="flex items-center gap-2">
                            <Layers size={16} className="text-[#FF6600]" />
-                           <h3 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.2em]">Technology Expertise</h3>
+                           <h3 className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.2em]">Technology Expertise</h3>
                         </div>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -146,7 +146,7 @@ export default function WebDevelopment() {
                                  className="flex items-start gap-3 p-3 rounded-md bg-white border border-slate-100 group transition-all hover:border-[#FF6600]"
                               >
                                  <ChevronRight size={14} className="mt-0.5 text-[#FF6600]" />
-                                 <span className="text-[11px] font-bold text-slate-700 group-hover:text-slate-900 transition-colors leading-tight">
+                                 <span className="text-[11px] font-medium text-slate-700 group-hover:text-slate-900 transition-colors leading-tight">
                                     {item}
                                  </span>
                               </div>
@@ -168,7 +168,7 @@ export default function WebDevelopment() {
                               <div className="p-2 rounded-md bg-[#FF6600] text-white">
                                  <stat.icon size={14} />
                               </div>
-                              <span className="text-[9px] font-black text-[#FF6600] uppercase tracking-widest">{stat.label}</span>
+                              <span className="text-[9px] font-bold text-[#FF6600] uppercase tracking-widest">{stat.label}</span>
                            </div>
                         ))}
                      </div>
@@ -184,7 +184,7 @@ export default function WebDevelopment() {
                         />
                         <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
                            <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
-                           <span className="text-[10px] font-black text-white uppercase tracking-widest">Ecosystem Matrix</span>
+                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Ecosystem Matrix</span>
                         </div>
                      </div>
 
@@ -203,7 +203,7 @@ export default function WebDevelopment() {
                                     <item.icon size={16} />
                                  </div>
                                  <div className="space-y-0.5">
-                                    <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-tight">{item.title}</h4>
+                                    <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-tight">{item.title}</h4>
                                     <p className="text-[10px] text-slate-500 font-medium leading-tight">{item.desc}</p>
                                  </div>
                               </div>

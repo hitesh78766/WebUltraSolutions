@@ -146,30 +146,30 @@ export default function FAQ() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute top-6 right-6">
                     <div className="bg-white px-4 py-2 rounded-xl shadow-xl border border-slate-100 flex items-center justify-center">
-                      <span className="text-[#E11D48] font-black text-base italic tracking-tighter">{activeStory.brand}</span>
+                      <span className="text-[#E11D48] font-bold text-base italic tracking-tighter">{activeStory.brand}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="lg:col-span-7 p-7 lg:p-10 lg:pl-12 space-y-7 flex flex-col justify-center bg-white">
                   <div>
-                    <h3 className="text-xl lg:text-3xl font-black text-[#111827] leading-tight tracking-tight mb-6">
+                    <h3 className="text-xl lg:text-2xl font-bold text-[#111827] leading-tight tracking-tight mb-6">
                       {activeStory.title}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <h4 className="text-[10px] font-black text-[#111827] uppercase tracking-widest">Challenge:</h4>
+                        <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">Challenge:</h4>
                         <p className="text-slate-500 text-[12px] font-medium leading-relaxed">{activeStory.challenge}</p>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="text-[10px] font-black text-[#111827] uppercase tracking-widest">The Solution:</h4>
+                        <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">The Solution:</h4>
                         <p className="text-slate-500 text-[12px] font-medium leading-relaxed">{activeStory.solution}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    <h4 className="text-[10px] font-black text-[#111827] uppercase tracking-widest">Results:</h4>
+                    <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">Results:</h4>
                     <div className="grid grid-cols-1 gap-2.5">
                       {activeStory.results.map((result, i) => (
                         <div key={i} className="flex items-start gap-4 group/result">
@@ -183,7 +183,7 @@ export default function FAQ() {
                   </div>
 
                   <div className="pt-2">
-                    <button className="flex items-center gap-2 bg-white border-2 border-[#F97316] text-[#F97316] px-6 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-widest hover:bg-[#F97316] hover:text-white transition-all shadow-xl shadow-orange-500/5 active:scale-95 group">
+                    <button className="flex items-center gap-2 bg-white border-2 border-[#F97316] text-[#F97316] px-6 py-2.5 rounded-xl font-bold text-[11px] uppercase tracking-widest hover:bg-[#F97316] hover:text-white transition-all shadow-xl shadow-orange-500/5 active:scale-95 group">
                       <span>Read Case Study</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </button>
@@ -258,7 +258,7 @@ export default function FAQ() {
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
                 <div className="p-3 border-t border-slate-50">
-                  <h4 className={`text-[12px] font-black tracking-tight ${item.color}`}>{item.logo}</h4>
+                  <h4 className={`text-[12px] font-bold tracking-tight ${item.color}`}>{item.logo}</h4>
                 </div>
               </div>
             ))}

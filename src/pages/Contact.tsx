@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1] tracking-tighter uppercase flex justify-center flex-wrap">
+            <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1] tracking-tighter uppercase flex justify-center flex-wrap">
               {headingChars.map((char, index) => (
                 <motion.span
                   key={index}
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
                 </motion.span>
               ))}
             </h1>
-            <p className="text-[10px] lg:text-[11px] font-black text-slate-400 uppercase tracking-[0.6em] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[10px] lg:text-[11px] font-bold text-slate-400 uppercase tracking-[0.6em] max-w-3xl mx-auto leading-relaxed">
                We can assist you in Website Services, E-commerce solutions, CMS Websites, Mobile App development.
             </p>
           </motion.div>
@@ -53,9 +53,9 @@ const Contact: React.FC = () => {
                <div className="space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="h-[2px] w-12 bg-red-600" />
-                    <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.5em]">The Headquarters</span>
+                    <span className="text-red-600 text-[10px] font-bold uppercase tracking-[0.5em]">The Headquarters</span>
                   </div>
-                  <h2 className="text-3xl lg:text-4xl font-black text-slate-900 tracking-tighter uppercase italic leading-none">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tighter uppercase italic leading-none">
                     Digicorn <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 not-italic">Webultrasolution.</span>
                   </h2>
                   <p className="text-[14px] text-slate-500 font-bold leading-relaxed italic">
@@ -82,8 +82,8 @@ const Contact: React.FC = () => {
                         <item.icon size={26} />
                       </div>
                       <div>
-                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{item.label}</p>
-                        <p className="text-[14px] font-bold text-slate-800 leading-tight">{item.value}</p>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">{item.label}</p>
+                        <p className="text-[14px] font-medium text-slate-800 leading-tight">{item.value}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -103,28 +103,28 @@ const Contact: React.FC = () => {
                   
                   <div className="relative z-10 space-y-8">
                      <div className="space-y-4">
-                        <h3 className="text-3xl font-black uppercase italic tracking-tighter">Initiate <span className="text-orange-400 not-italic">Connection.</span></h3>
+                        <h3 className="text-3xl font-bold uppercase italic tracking-tighter">Initiate <span className="text-orange-400 not-italic">Connection.</span></h3>
                         <p className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em]">Our team responds within 12 business hours.</p>
                      </div>
 
                      <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                           <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Name</label>
+                           <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Name</label>
                            <input type="text" className="w-full bg-slate-800 border-none rounded-xl p-4 text-sm font-bold focus:ring-2 focus:ring-orange-500 transition-all outline-none" placeholder="Elite Professional" />
                         </div>
                         <div className="space-y-2">
-                           <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Email Address</label>
+                           <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Email Address</label>
                            <input type="email" className="w-full bg-slate-800 border-none rounded-xl p-4 text-sm font-bold focus:ring-2 focus:ring-orange-500 transition-all outline-none" placeholder="contact@domain.com" />
                         </div>
                         <div className="space-y-2 md:col-span-2">
-                           <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">How can we assist you?</label>
+                           <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">How can we assist you?</label>
                            <textarea className="w-full bg-slate-800 border-none rounded-xl p-4 text-sm font-bold h-32 focus:ring-2 focus:ring-orange-500 transition-all outline-none resize-none" placeholder="Briefly describe your project requirements..." />
                         </div>
                         
                         <motion.button
                            whileHover={{ scale: 1.05 }}
                            whileTap={{ scale: 0.95 }}
-                           className="md:col-span-2 py-5 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl text-sm font-black uppercase tracking-[0.3em] shadow-xl flex items-center justify-center gap-3 group"
+                           className="md:col-span-2 py-5 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl text-sm font-bold uppercase tracking-[0.3em] shadow-xl flex items-center justify-center gap-3 group"
                         >
                            Send Discovery Request <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </motion.button>
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
                         ].map((serv, i) => (
                            <div key={i} className="flex items-center gap-2 opacity-50">
                               <CheckCircle2 size={14} className="text-orange-500" />
-                              <span className="text-[9px] font-black uppercase tracking-widest">{serv}</span>
+                              <span className="text-[9px] font-bold uppercase tracking-widest">{serv}</span>
                            </div>
                         ))}
                      </div>

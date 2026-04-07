@@ -219,7 +219,7 @@ export default function Hero() {
                 { name: 'Haldiram\'s', color: 'text-[#ED1C24]' }
               ].map((brand, i) => (
                 <div key={i} className="mx-14 flex items-center justify-center">
-                  <span className={`text-xl md:text-2xl font-black ${brand.color} uppercase tracking-tighter opacity-70 hover:opacity-100 transition-all cursor-default`}>
+                  <span className={`text-xl md:text-2xl font-bold ${brand.color} uppercase tracking-tighter opacity-70 hover:opacity-100 transition-all cursor-default`}>
                     {brand.name}
                   </span>
                 </div>
@@ -242,7 +242,7 @@ export default function Hero() {
                 { name: 'Haldiram\'s', color: 'text-[#ED1C24]' }
               ].map((brand, i) => (
                 <div key={i} className="mx-14 flex items-center justify-center">
-                  <span className={`text-xl md:text-2xl font-black ${brand.color} uppercase tracking-tighter opacity-70 hover:opacity-100 transition-all cursor-default`}>
+                  <span className={`text-xl md:text-2xl font-bold ${brand.color} uppercase tracking-tighter opacity-70 hover:opacity-100 transition-all cursor-default`}>
                     {brand.name}
                   </span>
                 </div>

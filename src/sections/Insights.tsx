@@ -67,9 +67,9 @@ export default function Insights() {
            <div className="flex-1 space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-100 rounded-full shadow-sm">
                  <Sparkles size={10} className="text-indigo-600" />
-                 <span className="text-[8px] font-black text-slate-600 uppercase tracking-widest leading-none">The WebUltra Edge</span>
+                 <span className="text-[8px] font-bold text-slate-600 uppercase tracking-widest leading-none">The WebUltra Edge</span>
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-display font-black text-slate-900 leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 leading-tight">
                  How we are <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Different.</span>
               </h2>
               <p className="text-slate-500 text-[11px] lg:text-xs font-medium max-w-lg leading-relaxed">
@@ -83,9 +83,9 @@ export default function Insights() {
                 <div key={i} className="p-5 lg:p-6 bg-white rounded-2xl border border-slate-100 shadow-sm group hover:scale-[1.02] transition-transform">
                    <div className="flex items-center gap-2 mb-2">
                       <stat.icon size={12} className={stat.color} />
-                      <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</span>
+                      <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</span>
                    </div>
-                   <div className="text-2xl lg:text-3xl font-display font-black text-slate-900 flex items-baseline">
+                   <div className="text-2xl lg:text-3xl font-display font-bold text-slate-900 flex items-baseline">
                       <span className="counter-val" data-target={stat.val}>0</span>
                       <span className="text-sm font-bold text-indigo-500 ml-0.5">+</span>
                    </div>
@@ -101,11 +101,11 @@ export default function Insights() {
                  <BookOpen size={18} />
               </div>
               <div>
-                 <span className="block text-xs font-black text-slate-900 tracking-tight">Technical Insights & Trends</span>
+                 <span className="block text-xs font-bold text-slate-900 tracking-tight">Technical Insights & Trends</span>
                  <span className="text-[10px] font-medium text-slate-500">Discover essential elements to establish and thrive online.</span>
               </div>
            </div>
-           <button className="group relative px-6 py-3 bg-white border border-slate-200 text-slate-900 text-[11px] font-black rounded-xl shadow-sm hover:border-indigo-600 hover:shadow-md transition-all active:scale-95 flex items-center gap-2">
+           <button className="group relative px-6 py-3 bg-white border border-slate-200 text-slate-900 text-[11px] font-bold rounded-xl shadow-sm hover:border-indigo-600 hover:shadow-md transition-all active:scale-95 flex items-center gap-2">
               <span>View All Blog</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
            </button>

@@ -161,7 +161,7 @@ function TestimonialContent({ item }: any) {
              </div>
           </div>
           {item.tag && (
-            <span className="bg-slate-900 group-hover:bg-[#F97316] text-white text-[6.5px] font-black tracking-widest px-2 py-0.5 rounded-md transition-colors leading-none uppercase">
+            <span className="bg-slate-900 group-hover:bg-[#F97316] text-white text-[6.5px] font-bold tracking-widest px-2 py-0.5 rounded-md transition-colors leading-none uppercase">
               {item.tag}
             </span>
           )}

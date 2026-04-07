@@ -102,7 +102,7 @@ export default function GraphicPage() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -119,15 +119,15 @@ export default function GraphicPage() {
                   <div className="lg:col-span-12 space-y-6">
                      <div className="flex items-center gap-4">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.5em]">Strategic Intent</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.5em]">Strategic Intent</span>
                      </div>
                      
                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
                         <div className="space-y-4">
-                           <h2 className="text-xl lg:text-2xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                           <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                               Unbound Imagination & <span className="text-[#FF6600]">Expertise.</span>
                            </h2>
-                           <p className="text-[14px] font-bold text-slate-700 leading-snug tracking-tight font-secondary">
+                           <p className="text-[14px] font-medium text-slate-700 leading-snug tracking-tight font-secondary">
                               Our expert designers deliver graphic solutions <span className="italic text-slate-400">scalable to your core message.</span>
                            </p>
                            <div className="h-px w-full bg-slate-100" />
@@ -141,7 +141,7 @@ export default function GraphicPage() {
                               These graphics may include photos, animations, and other media. We can also reconsider your existing print logos for web use.
                            </p>
                            <div className="pl-4 border-l-2 border-orange-50">
-                              <p className="text-[11px] font-bold text-slate-600 leading-relaxed italic">
+                              <p className="text-[11px] font-medium text-slate-600 leading-relaxed italic">
                                  "We ensure graphics are fast loading, easy to navigate and enhance your web solutions overall ranking."
                               </p>
                            </div>
@@ -155,7 +155,7 @@ export default function GraphicPage() {
                   {/* CAPABILITY INDEX - COMPACT GRID */}
                   <div className="lg:col-span-12 pt-8 border-t border-slate-100">
                      <div className="flex items-center gap-6 mb-8 group">
-                        <div className="px-4 py-2 bg-[#FF6600] rounded-md text-white text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-orange-500/20">
+                        <div className="px-4 py-2 bg-[#FF6600] rounded-md text-white text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg shadow-orange-500/20">
                            01 CAPABILITY INVENTORY
                         </div>
                         <div className="h-[1px] flex-1 bg-gradient-to-r from-[#FF6600]/20 to-transparent" />
@@ -179,14 +179,14 @@ export default function GraphicPage() {
                            <div key={i} className="group/item flex flex-col gap-2">
                               <div className="flex items-center gap-4">
                                  <div className="w-9 h-9 shrink-0 rounded-md bg-orange-50 flex items-center justify-center group-hover/item:bg-[#FF6600] transition-all shadow-sm">
-                                    <span className="text-[11px] font-black text-[#FF6600] group-hover/item:text-white leading-none">
+                                    <span className="text-[11px] font-bold text-[#FF6600] group-hover/item:text-white leading-none">
                                        {(i + 1).toString().padStart(2, '0')}
                                     </span>
                                  </div>
                                  <div className="space-y-1">
                                     <div className="flex items-center gap-2">
                                        <item.i size={14} className="text-[#FF6600] group-hover/item:scale-110 transition-transform" />
-                                       <h4 className="text-[10px] font-black text-slate-800 uppercase tracking-widest group-hover/item:text-[#FF6600] transition-colors">{item.t}</h4>
+                                       <h4 className="text-[10px] font-medium text-slate-800 uppercase tracking-widest group-hover/item:text-[#FF6600] transition-colors">{item.t}</h4>
                                     </div>
                                  </div>
                               </div>

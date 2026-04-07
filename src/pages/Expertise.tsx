@@ -1,179 +1,186 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Code2, Layout, Smartphone, Search, Briefcase, TrendingUp, ShieldCheck } from 'lucide-react';
-import ThreeNeuralStorm from '../components/ThreeNeuralStorm';
-import ParticleNetwork from '../components/ParticleNetwork';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Layout, Code2, Globe, TrendingUp, Database, ChevronRight, ArrowRight, Layers, BarChart3, Target, Activity, Zap, Command, Terminal, Inbox } from 'lucide-react';
+import ThreeTechnicalLattice from '../components/ThreeTechnicalLattice';
 
-const expertiseCards = [
-  { title: "Custom Software", icon: Code2, desc: "Building scalable, high-performance enterprise applications with modern tech stacks.", color: "bg-indigo-50", text: "text-indigo-600" },
-  { title: "Mobile Innovation", icon: Smartphone, desc: "Developing immersive, high-status iOS and Android experiences for global brands.", color: "bg-blue-50", text: "text-blue-600" },
-  { title: "Global SEO", icon: Search, desc: "Strategic optimization to drive worldwide engagement and search dominance.", color: "bg-indigo-50", text: "text-indigo-600" },
-  { title: "UI/UX Architecture", icon: Layout, desc: "Crafting digital identities with meticulous attention to detail and user flow.", color: "bg-blue-50", text: "text-blue-600" },
-  { title: "Data Security", icon: ShieldCheck, desc: "Uncompromising protection for global corporate data and infrastructure.", color: "bg-slate-50", text: "text-slate-800" },
-  { title: "E-Commerce", icon: Briefcase, desc: "End-to-end commerce solutions for high-status retail and digital trade.", color: "bg-indigo-50", text: "text-indigo-600" }
+const expertisePillars = [
+  {
+    title: "Front End Architecture",
+    icon: Layout,
+    number: "ARC-001",
+    desc: "Crafting high-status digital identities with severe adherence to quality and pixel-perfect precision.",
+    services: ["Web Design", "Responsive Websites", "Graphic Design", "Logo Design", "Custom Design", "Hosting"]
+  },
+  {
+    title: "Web & App Ecosystem",
+    icon: Code2,
+    number: "SYS-002",
+    desc: "Engineering scalable backend frameworks and mobile technical assets for global enterprise requirements.",
+    services: ["Web Dev", "PHP Frameworks", "Ecommerce", "Wordpress", "App Dev", "Software Architecture"]
+  },
+  {
+    title: "Integrated Marketing Hub",
+    icon: TrendingUp,
+    number: "MKT-003",
+    desc: "Strategic search dominance and global engagement infrastructure tailored for high-status market penetration.",
+    services: ["Digital Marketing", "SEO Consulting", "PPC Advertising", "Content Strategy", "Social Media", "Analytics"]
+  },
+  {
+    title: "Advanced Pro Systems",
+    icon: Database,
+    number: "DAT-004",
+    desc: "Developing complex news portals, financial systems, and institutional digital data infrastructure.",
+    services: ["News Portals", "Property Portals", "Classifieds", "Financial Systems", "Live Chat", "Health Portals"]
+  }
 ];
 
 const Expertise: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    gsap.registerPlugin(ScrollTrigger);
-  }, []);
+    const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
-  const headingChars = "OUR EXPERTISE.".split("");
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.05, delayChildren: 0.2 } },
-  };
-
-  const child = {
-    visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 200 } as any },
-    hidden: { opacity: 0, y: 20 },
-  };
-
-  return (
-    <div className="pt-[80px] bg-white min-h-screen font-primary overflow-x-hidden">
-      {/* HERO SECTION */}
-      <section className="relative h-[300px] lg:h-[400px] flex items-center justify-center bg-[#fafaff] border-b border-indigo-100/30 overflow-hidden">
-        <ThreeNeuralStorm />
-        <ParticleNetwork />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <motion.div variants={container} initial="hidden" animate="visible" className="space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1] tracking-tighter uppercase flex justify-center flex-wrap">
-              {headingChars.map((char, index) => (
-                <motion.span
-                  key={index}
-                  variants={child}
-                  className={index >= 4 ? "text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 whitespace-pre" : "whitespace-pre"}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </h1>
-            <p className="text-[10px] lg:text-[11px] font-black text-slate-400 uppercase tracking-[0.6em] max-w-2xl mx-auto leading-relaxed">
-              Technical Rigor Meets Global Ambition.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CORE EXPERTISE GRID */}
-      <section className="py-20 relative bg-white overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-24">
-          <div className="space-y-16">
-            
-            {/* Header Narrative */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-               <div className="lg:col-span-12 space-y-6 text-center max-w-4xl mx-auto">
-                <div className="flex items-center justify-center gap-4">
-                  <div className="h-[2px] w-12 bg-indigo-600" />
-                  <span className="text-indigo-600 text-[10px] font-black uppercase tracking-[0.5em]">Enterprise Capabilities</span>
-                </div>
-                <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter uppercase italic leading-none">
-                  Specialized in <span className="text-indigo-600 not-italic">Technical Precision.</span>
-                </h2>
-                <p className="text-[16px] lg:text-[18px] font-bold text-slate-700 leading-relaxed font-secondary">
-                  At WebUltraSolution, we deliver high-status digital infrastructure that serves as the backbone of global corporate success. Our domain expertise span the most rigorous technological demands.
-                </p>
-               </div>
-            </div>
-
-            {/* Cinematic Visual Banner */}
-            <motion.div
-               initial={{ opacity: 0, scale: 0.95 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true }}
-               transition={{ duration: 1.5 }}
-               className="relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border-8 border-white group"
-            >
-               <img 
-                  src="C:\Users\hs760\.gemini\antigravity\brain\595e57d0-2358-45b3-929a-b6aba06509a3\expertise_technical_architecture_1775240729958.png" 
-                  alt="Technical Excellence" 
-                  className="w-full h-[400px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-[3s]" 
-               />
-               <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/50 via-transparent to-transparent pointer-events-none" />
-               <div className="absolute bottom-10 left-10 text-white space-y-2">
-                  <span className="text-[10px] font-black tracking-widest uppercase opacity-80">Elite Core</span>
-                  <h4 className="text-3xl font-black italic uppercase tracking-tighter">Architectural Precision.</h4>
-               </div>
-            </motion.div>
-
-            {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {expertiseCards.map((card, i) => (
-                <motion.div
-                  key={card.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: i * 0.1 }}
-                  whileHover={{ y: -5, boxShadow: '0 40px 100px -30px rgba(79,70,229,0.1)' }}
-                  className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between h-[380px] group transition-all"
-                >
-                  <div className="space-y-6">
-                    <div className={`w-14 h-14 rounded-2xl ${card.color} flex items-center justify-center ${card.text} group-hover:scale-110 transition-transform duration-500`}>
-                      <card.icon size={28} />
+    return (
+        <div className="bg-white min-h-screen font-secondary overflow-x-hidden pt-[70px]">
+            {/* HERO SECTION - REVERTED TO LIGHT BG WITH DARK ANIMATION */}
+            <section className="relative h-[220px] lg:h-[260px] flex items-center justify-center overflow-hidden border-b border-slate-100 bg-[#FDFBF9]">
+                <ThreeTechnicalLattice />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/98 z-[1]" />
+                <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-20 w-full flex flex-col items-center text-center gap-5">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-3 py-1 bg-[#FF6600] rounded-full flex items-center gap-2 shadow-lg shadow-orange-200">
+                        <Terminal size={10} className="text-white" />
+                        <span className="text-[8px] font-bold uppercase tracking-[0.4em] text-white">Registry Active</span>
+                    </motion.div>
+                    <div className="space-y-2">
+                        {/* REVERTED TO DARK TEXT FOR LIGHT BG */}
+                        <h1 className="text-3xl lg:text-5xl font-bold text-slate-950 tracking-tighter uppercase leading-[0.8] flex items-center justify-center gap-4">
+                            OUR <span className="text-[#FF6600] italic">EXPERTISE.</span>
+                        </h1>
+                        <p className="text-slate-400 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.5em]">Technological Assets Reservoir • Noida Hub</p>
                     </div>
+                </div>
+            </section>
+
+            {/* THEMATIC "UNFOLDING" STACK - ENHANCED READABILITY */}
+            <section className="py-12 lg:py-16 bg-white">
+                <div className="max-w-[1100px] mx-auto px-6">
+                    
+                    <div className="flex flex-col gap-1 mb-10 text-center lg:text-left">
+                        <div className="flex items-center justify-center lg:justify-start gap-2">
+                            <div className="h-[1px] w-8 bg-[#FF6600]" />
+                            <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.5em]">Section 04</span>
+                        </div>
+                        <h2 className="text-xl lg:text-2xl font-display font-bold tracking-tighter uppercase text-slate-950 italic px-4 lg:px-0">
+                            Technical <span className="text-[#FF6600] not-italic">Infrastructure.</span>
+                        </h2>
+                    </div>
+
                     <div className="space-y-3">
-                      <h4 className="text-xl font-black text-slate-900 uppercase italic tracking-tighter leading-none">{card.title}</h4>
-                      <p className="text-sm text-slate-500 leading-relaxed font-medium">{card.desc}</p>
+                        {expertisePillars.map((pillar, i) => {
+                            const isActive = activeIndex === i;
+                            
+                            return (
+                                <div 
+                                    key={i}
+                                    className={`relative border border-slate-100 rounded-md overflow-hidden transition-all duration-500 hover:border-[#FF6600]/30 ${isActive ? 'bg-[#FDFBF9] shadow-xl' : 'bg-white shadow-sm'}`}
+                                >
+                                    <button 
+                                        onClick={() => setActiveIndex(isActive ? null : i)}
+                                        className="w-full text-left px-6 py-5 flex items-center justify-between group"
+                                    >
+                                        <div className="flex items-center gap-12">
+                                            {/* ID Marker - THEMED TECH BADGE (NO BLACK) */}
+                                            <div className={`px-2 py-1 rounded-[2px] border transition-all duration-500 flex items-center justify-center min-w-[65px] h-[22px] ${isActive ? 'bg-[#FF6600] border-[#FF6600]' : 'bg-orange-50 border-orange-100 group-hover:border-[#FF6600]/40'}`}>
+                                                <span className={`text-[8.5px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive ? 'text-white' : 'text-[#FF6600]'}`}>
+                                                    {pillar.number}
+                                                </span>
+                                            </div>
+                                            
+                                            <div className="flex items-center gap-5">
+                                               {/* Icon Container - THEMED ORANGE (NO BLACK) */}
+                                               <div className={`p-2 rounded-sm transition-all duration-500 ${isActive ? 'bg-[#FF6600] text-white shadow-lg shadow-[#FF6600]/20' : 'bg-orange-50 text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white'}`}>
+                                                   <pillar.icon size={16} />
+                                               </div>
+                                               <h3 className={`text-[12px] lg:text-[14px] font-bold uppercase tracking-widest italic transition-all ${isActive ? 'text-[#FF6600]' : 'text-slate-800 group-hover:text-[#FF6600]'}`}>
+                                                   {pillar.title}
+                                               </h3>
+                                            </div>
+                                        </div>
+                                        <div className={`transition-transform duration-500 ${isActive ? 'rotate-180 text-[#FF6600]' : 'text-orange-200'}`}>
+                                            <ChevronRight size={18} />
+                                        </div>
+                                    </button>
+
+                                    <AnimatePresence>
+                                        {isActive && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                            >
+                                                <div className="px-6 lg:px-[120px] pb-10 pt-4 grid grid-cols-1 lg:grid-cols-12 gap-8 border-t border-slate-50">
+                                                    <div className="lg:col-span-5 space-y-5 pt-4">
+                                                        <div className="space-y-3">
+                                                            {/* ENHANCED LABEL FONT SIZE */}
+                                                            <p className="text-[11px] font-medium text-slate-800 uppercase tracking-[0.4em] leading-none flex items-center gap-3">
+                                                                <div className="w-2 h-2 rounded-full bg-[#FF6600]" /> Status Narrative
+                                                            </p>
+                                                            <p className="text-[12px] lg:text-[14px] font-medium text-slate-600 italic leading-relaxed border-l-2 border-[#FF6600] pl-6 py-1">
+                                                                {pillar.desc}
+                                                            </p>
+                                                        </div>
+                                                        {/* CTA Button - THEMED ORANGE (NO BLACK) */}
+                                                        <button className="px-8 py-3.5 bg-[#FF6600] text-white text-[10px] font-bold uppercase tracking-[0.3em] rounded-md hover:bg-slate-950 transition-all flex items-center gap-3 shadow-lg shadow-orange-100">
+                                                           Initialize Project <ArrowRight size={14} />
+                                                        </button>
+                                                    </div>
+
+                                                    <div className="lg:col-span-7 pt-4">
+                                                        <div className="space-y-3 mb-6">
+                                                            {/* ENHANCED LABEL FONT SIZE */}
+                                                            <p className="text-[11px] font-medium text-slate-800 uppercase tracking-[0.4em] leading-none flex items-center gap-3">
+                                                                <div className="w-2 h-2 rounded-full bg-[#FF6600]" /> Internal Registry
+                                                            </p>
+                                                        </div>
+                                                        <div className="grid grid-cols-2 gap-x-12 gap-y-4">
+                                                            {pillar.services.map((service, sIdx) => (
+                                                                <div key={sIdx} className="flex items-center gap-3 group/item cursor-default overflow-hidden py-0.5">
+                                                                    {/* NODE BOLIDFIED BY DEFAULT */}
+                                                                    <div className="w-1.5 h-1.5 bg-[#FF6600] shrink-0" />
+                                                                    <span className="text-[12px] lg:text-[13px] font-medium text-slate-800 uppercase tracking-tight group-hover/item:text-[#FF6600] transition-colors truncate">{service}</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            );
+                        })}
                     </div>
-                  </div>
-                  <div className="pt-6 border-t border-slate-200/50 flex items-center justify-between">
-                    <span className="text-[10px] font-black text-indigo-600 uppercase tracking-widest">Explore Service</span>
-                    <TrendingUp size={16} className="text-slate-300 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* METRICS SECTION */}
-      <section className="py-20 bg-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20"><ThreeNeuralStorm /></div>
-        <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { label: "Reliability", value: "99.9%" },
-                { label: "Global Clients", value: "500+" },
-                { label: "Lines of Code", value: "2M+" },
-                { label: "Market Success", value: "100%" }
-              ].map((stat, i) => (
-                <div key={i} className="text-center space-y-2 p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl">
-                  <span className="text-4xl lg:text-5xl font-black text-indigo-400 tracking-tighter italic block">{stat.value}</span>
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">{stat.label}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
-      {/* CALL TO ACTION */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
-          <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter uppercase italic leading-none">
-            Ready to Leverage <span className="text-indigo-600 not-italic">Our Expertise?</span>
-          </h2>
-          <p className="text-slate-500 text-lg font-bold">Uncompromising quality is one conversation away.</p>
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(79, 70, 229, 0.4)' }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-4 bg-indigo-600 text-white rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-2xl transition-all"
-          >
-            Start Project
-          </motion.button>
+            {/* THEMED COMPACT CTA (NO BLACK BACKGROUND) */}
+            <section className="py-12 bg-white border-y border-slate-100 relative overflow-hidden text-center">
+                <div className="max-w-[1400px] mx-auto px-8 lg:px-20 relative z-10 space-y-6">
+                    <div className="space-y-1">
+                        <h2 className="text-3xl lg:text-5xl font-bold text-slate-950 uppercase tracking-tighter leading-none italic">
+                            Technical <span className="text-[#FF6600] not-italic">Execution.</span>
+                        </h2>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Connect with our Noida Technical team today.</p>
+                    </div>
+                    <button className="px-12 py-4 bg-[#FF6600] text-white text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-slate-950 transition-all shadow-xl rounded-md flex items-center justify-center gap-4 mx-auto">
+                        Connect Elite Architects <ArrowRight size={16} />
+                    </button>
+                </div>
+            </section>
         </div>
-      </section>
-    </div>
-  );
+    );
 };
 
 export default Expertise;

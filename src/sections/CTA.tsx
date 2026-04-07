@@ -79,10 +79,10 @@ export default function CTA() {
                <div className="flex-1 space-y-5 text-center lg:text-left relative z-10" style={{ transform: "translateZ(50px)" }}>
                   <div className="cta-animate inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-slate-100 rounded-full shadow-sm">
                      <Sparkles size={11} className="text-slate-400" />
-                     <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest">Connect With Us</span>
+                     <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest">Connect With Us</span>
                   </div>
 
-                  <h2 className="cta-animate text-2xl md:text-3xl lg:text-5xl font-display font-black text-slate-900 leading-[1.1] tracking-tight">
+                  <h2 className="cta-animate text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 leading-[1.1] tracking-tight">
                      DO YOU HAVE A <span className="text-indigo-600">PROJECT</span> <br />
                      AND WANT TO DISCUSS WITH US?
                   </h2>
@@ -98,7 +98,7 @@ export default function CTA() {
                      whileHover={{ scale: 1.05, y: -2 }}
                      whileTap={{ scale: 0.95 }}
                      onClick={() => window.location.href = '#contact'}
-                     className="group relative inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white text-[12px] font-black rounded-2xl shadow-xl transition-all"
+                     className="group relative inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white text-[12px] font-bold rounded-2xl shadow-xl transition-all"
                   >
                      <span className="relative z-10 flex items-center gap-2">
                         Get Started Now

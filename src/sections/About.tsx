@@ -190,7 +190,7 @@ export default function About() {
           
           {/* Sidebar - left side (Scrollable - Enhanced Safe-Zone) */}
           <div className="lg:col-span-3 bg-[#FFF9F5] p-5 lg:p-7 border-r border-slate-200 flex flex-col relative h-[450px] lg:h-full">
-            <h3 className="text-[12px] font-black text-slate-500 uppercase tracking-[0.25em] mb-8 px-2">
+            <h3 className="text-[12px] font-bold text-slate-500 uppercase tracking-[0.25em] mb-8 px-2">
               Technology Domains
             </h3>
             <div className="space-y-1.5 flex-grow overflow-y-auto pr-2 custom-scrollbar pb-16">
@@ -261,7 +261,7 @@ export default function About() {
                       <div className="w-9 h-9 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform">
                         <tech.icon className="w-4 h-4 text-[#111827] group-hover:text-[#F97316] transition-colors" />
                       </div>
-                      <span className="text-[10px] font-black text-[#111827] text-center leading-tight">
+                      <span className="text-[10px] font-bold text-[#111827] text-center leading-tight">
                         {tech.name}
                       </span>
                     </motion.div>
@@ -272,7 +272,7 @@ export default function About() {
 
             {/* CTA at Bottom Right (High-Status Floating Position) */}
             <div className="absolute bottom-20 right-14 z-20">
-              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-7 py-3.5 rounded-xl font-black text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
+              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-7 py-3.5 rounded-xl font-bold text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
                 <span>Explore Solutions</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
               </button>

@@ -77,7 +77,7 @@ export default function ResponsiveDesign() {
               </p>
             </div>
 
-            <button className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white px-5 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
+            <button className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white px-5 py-3 rounded-xl font-bold text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
               <span>Power My Tech Capability</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -95,7 +95,7 @@ export default function ResponsiveDesign() {
                   <Award className="text-white w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <h4 className="text-lg lg:text-xl font-black text-white tracking-tight">Digital Legacies</h4>
+                  <h4 className="text-lg lg:text-xl font-bold text-white tracking-tight">Digital Legacies</h4>
                   <p className="text-white/60 text-[9px] font-bold uppercase tracking-widest leading-none pt-0.5">Built to Last Decades</p>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function ResponsiveDesign() {
                       <ShoppingCart className="w-3 h-3 text-[#111827]" />
                     </div>
                     <div className="text-center">
-                      <div className="text-lg font-black text-[#111827]">750+</div>
+                      <div className="text-lg font-bold text-[#111827]">750+</div>
                       <p className="text-slate-400 text-[7px] uppercase font-bold tracking-tight leading-[1.1] pt-0.5">eCommerce <br /> Empires</p>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export default function ResponsiveDesign() {
                       <Cloud className="w-3 h-3 text-[#111827]" />
                     </div>
                     <div className="text-center">
-                      <div className="text-lg font-black text-[#111827]">50+</div>
+                      <div className="text-lg font-bold text-[#111827]">50+</div>
                       <p className="text-slate-400 text-[7px] uppercase font-bold tracking-tight leading-[1.1] pt-0.5">Cloud <br /> Foundations</p>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ export default function ResponsiveDesign() {
                       <Zap className="w-3 h-3 text-[#111827]" />
                     </div>
                     <div className="text-center">
-                      <div className="text-lg font-black text-[#111827]">75+</div>
+                      <div className="text-lg font-bold text-[#111827]">75+</div>
                       <p className="text-slate-400 text-[7px] uppercase font-bold tracking-tight leading-[1.1] pt-0.5">AI <br /> Systems</p>
                     </div>
                   </div>
@@ -140,8 +140,8 @@ export default function ResponsiveDesign() {
 
               {/* Card Footer (Purple - Ultra Compact) */}
               <div className="px-6 py-7 lg:py-8 bg-[#4C1D95] flex flex-col items-center gap-3.5">
-                <h5 className="text-base lg:text-xl font-black text-white tracking-tight">Join the Legacy</h5>
-                <button className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white px-6 py-3 rounded-xl font-black text-[9px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
+                <h5 className="text-base lg:text-xl font-bold text-white tracking-tight">Join the Legacy</h5>
+                <button className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white px-6 py-3 rounded-xl font-bold text-[9px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
                   <span>View Success Stories</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </button>

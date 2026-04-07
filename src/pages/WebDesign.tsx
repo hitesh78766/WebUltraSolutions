@@ -144,7 +144,7 @@ export default function WebDesign() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -186,7 +186,7 @@ export default function WebDesign() {
                            </div>
 
                            {/* ARCHITECTURAL FLOATING NUMBER - INCREASED VISIBILITY */}
-                           <span className={`absolute bottom-6 ${idx % 2 === 0 ? "right-6" : "left-6"} text-[50px] font-display font-black text-white/60 select-none tracking-tighter italic`}>0{idx + 1}</span>
+                           <span className={`absolute bottom-6 ${idx % 2 === 0 ? "right-6" : "left-6"} text-[50px] font-display font-bold text-white/60 select-none tracking-tighter italic`}>0{idx + 1}</span>
                         </motion.div>
 
                         {/* BANNER CONTENT SECTION */}

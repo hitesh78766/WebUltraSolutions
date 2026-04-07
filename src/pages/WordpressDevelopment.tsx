@@ -86,7 +86,7 @@ export default function WordpressDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -103,13 +103,13 @@ export default function WordpressDevelopment() {
                      <div className="space-y-4">
                         <div className="flex items-center gap-3">
                            <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                           <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Strategic Hub</span>
+                           <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Strategic Hub</span>
                         </div>
-                        <h2 className="text-xl lg:text-3xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                        <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                            Wordpress <span className="text-[#FF6600]">Development.</span>
                         </h2>
                         <div className="space-y-4">
-                           <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
+                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
                               Leading company creating stunning and robust websites for businesses of all sizes. 100% results and on-time delivery.
                            </p>
                            <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
@@ -120,11 +120,11 @@ export default function WordpressDevelopment() {
 
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-slate-100">
                         <div className="space-y-3">
-                           <h3 className="text-[11px] font-black text-slate-900 uppercase tracking-widest">Benefits & Utility</h3>
+                           <h3 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Benefits & Utility</h3>
                            <p className="text-[12px] text-slate-600 font-medium leading-relaxed">Word Press is easy-to-use, quite powerful, and flexible. Creating a website is a science and art that has quickly evolved.</p>
                         </div>
                         <div className="space-y-3">
-                           <h3 className="text-[11px] font-black text-slate-900 uppercase tracking-widest">Business Impact</h3>
+                           <h3 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Business Impact</h3>
                            <p className="text-[12px] text-slate-600 font-medium leading-relaxed">Flood of traffic and huge revenues! These days, businesses require highly responsive websites; text blurbs no longer count.</p>
                         </div>
                      </div>
@@ -140,7 +140,7 @@ export default function WordpressDevelopment() {
                                  <div className="p-2 rounded-md bg-orange-50 text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all">
                                     <pillar.icon size={16} />
                                  </div>
-                                 <h3 className="text-[13px] font-black text-slate-900 uppercase tracking-tight leading-none">{pillar.title}</h3>
+                                 <h3 className="text-[13px] font-bold text-slate-900 uppercase tracking-tight leading-none">{pillar.title}</h3>
                               </div>
                               <p className="text-[12px] text-slate-600 font-medium leading-relaxed">{pillar.desc}</p>
                            </div>
@@ -151,7 +151,7 @@ export default function WordpressDevelopment() {
                   {/* RIGHT COLUMN: SPECS & SPECIALIZATION PORTAL */}
                   <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
                      <div className="p-6 rounded-md bg-white border border-slate-100 shadow-xl space-y-4">
-                        <h3 className="text-[9px] font-black text-[#FF6600] uppercase tracking-[0.3em] flex items-center gap-2">
+                        <h3 className="text-[9px] font-bold text-[#FF6600] uppercase tracking-[0.3em] flex items-center gap-2">
                            <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
                            Core Specialization
                         </h3>
@@ -164,7 +164,7 @@ export default function WordpressDevelopment() {
                               "WordPress Customization",
                               "Maintenance and Support"
                            ].map((item, i) => (
-                              <div key={i} className="flex items-center gap-3 py-2 px-3 rounded-md bg-slate-50 border border-slate-100 font-bold text-slate-800 text-[10px] hover:bg-white transition-all cursor-default group">
+                              <div key={i} className="flex items-center gap-3 py-2 px-3 rounded-md bg-slate-50 border border-slate-100 font-medium text-slate-800 text-[10px] hover:bg-white transition-all cursor-default group">
                                  <div className="w-1 h-1 rounded-full bg-[#FF6600] opacity-40 group-hover:opacity-100" />
                                  {item}
                               </div>
@@ -173,7 +173,7 @@ export default function WordpressDevelopment() {
                      </div>
 
                      <div className="p-6 rounded-md bg-slate-900 text-white space-y-4">
-                        <h3 className="text-[9px] font-black text-orange-400 uppercase tracking-[0.3em]">Conversion Targets</h3>
+                        <h3 className="text-[9px] font-bold text-orange-400 uppercase tracking-[0.3em]">Conversion Targets</h3>
                         <div className="space-y-3">
                            {[
                               { icon: Globe, text: "Responsive themes to target mobile traffic" },

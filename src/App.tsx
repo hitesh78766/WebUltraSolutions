@@ -40,8 +40,6 @@ import Team from './pages/Team';
 import Expertise from './pages/Expertise';
 import Feedback from './pages/Feedback';
 import WhyUs from './pages/WhyUs';
-import Clients from './pages/Clients';
-import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -194,8 +192,6 @@ function App() {
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/why-us" element={<WhyUs />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </MainLayout>

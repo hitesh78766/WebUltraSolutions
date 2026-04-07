@@ -36,7 +36,7 @@ export default function Listing() {
       className="relative py-24 bg-gradient-to-tr from-teal-400/20 via-white/5 to-rose-500/20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-slate-800 text-center mb-16 uppercase tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-800 text-center mb-16 uppercase tracking-tight">
           Website <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-rose-600">Listing</span>
         </h2>
 
@@ -49,7 +49,7 @@ export default function Listing() {
               <div className="absolute inset-0 bg-gradient-to-br from-accent-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               
               {/* Fallback to text logo if images aren't present - elite typography */}
-              <div className={`text-xl font-display font-black tracking-tight ${partner.color} group-hover:scale-110 transition-transform duration-500 px-4 text-center`}>
+              <div className={`text-xl font-display font-bold tracking-tight ${partner.color} group-hover:scale-110 transition-transform duration-500 px-4 text-center`}>
                 {partner.name}
               </div>
             </div>

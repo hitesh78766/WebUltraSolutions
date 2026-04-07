@@ -87,7 +87,7 @@ export default function SoftwareDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -103,14 +103,14 @@ export default function SoftwareDevelopment() {
                   <div className="lg:col-span-8 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Systems Engineering</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Systems Engineering</span>
                      </div>
-                     <h2 className="text-xl lg:text-3xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                     <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                         Bespoke <span className="text-[#FF6600]">Enterprise Solutions.</span>
                      </h2>
                      
                      <div className="space-y-4">
-                        <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
+                        <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
                            Complete web solutions with a commitment to surpass expectations through excellent and timely software engineering.
                         </p>
                         <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
@@ -131,7 +131,7 @@ export default function SoftwareDevelopment() {
                            <div key={hubIdx} className="p-4 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:border-[#FF6600]">
                               <div className="flex items-center gap-2 mb-3">
                                  <hub.icon size={14} className="text-[#FF6600]" />
-                                 <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest">{hub.title}</h4>
+                                 <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">{hub.title}</h4>
                               </div>
                               <ul className="space-y-1">
                                  {hub.items.map((item, i) => (
@@ -156,12 +156,12 @@ export default function SoftwareDevelopment() {
                         />
                         <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
                            <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
-                           <span className="text-[10px] font-black text-white uppercase tracking-widest">Architectural Matrix v4.0</span>
+                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Architectural Matrix v4.0</span>
                         </div>
                      </div>
 
                      <div className="p-6 rounded-md bg-white border border-slate-100 shadow-xl space-y-3">
-                        <h3 className="text-[9px] font-black text-[#FF6600] uppercase tracking-[0.3em] flex items-center gap-2">
+                        <h3 className="text-[9px] font-bold text-[#FF6600] uppercase tracking-[0.3em] flex items-center gap-2">
                            <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
                            System Integrity
                         </h3>
@@ -173,9 +173,9 @@ export default function SoftwareDevelopment() {
                               <div key={i} className="flex items-center justify-between p-3 rounded-md bg-slate-50 border border-slate-100 transition-all hover:bg-white">
                                  <div className="flex items-center gap-2">
                                     <item.icon size={12} className="text-[#FF6600]" />
-                                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-500">{item.label}</span>
+                                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-500">{item.label}</span>
                                  </div>
-                                 <span className="text-[10px] font-black text-slate-900 uppercase">{item.value}</span>
+                                 <span className="text-[10px] font-bold text-slate-900 uppercase">{item.value}</span>
                               </div>
                            ))}
                         </div>

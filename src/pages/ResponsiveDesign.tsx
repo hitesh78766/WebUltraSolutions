@@ -94,7 +94,7 @@ export default function ResponsivePage() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -108,7 +108,7 @@ export default function ResponsivePage() {
                <div className="space-y-10">
                   {/* FULL INTRODUCTORY NARRATIVE - SOFT TONES */}
                   <div className="space-y-4">
-                     <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FF6600] flex items-center gap-3">
+                     <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#FF6600] flex items-center gap-3">
                         <div className="w-6 h-[1px] bg-[#FF6600]/20" /> Responsive Mobile Website
                      </span>
                      <div className="space-y-4 text-slate-800 text-[12px] lg:text-[14px] font-bold leading-relaxed max-w-3xl">
@@ -123,7 +123,7 @@ export default function ResponsivePage() {
 
                   {/* HOW CAN WE MAKE RWD SECTION */}
                   <div className="space-y-4">
-                     <h3 className="text-xl font-black text-slate-900 uppercase tracking-tighter">How Can we Make Responsive Web Design For Your Business</h3>
+                     <h3 className="text-xl font-bold text-slate-900 uppercase tracking-tighter">How Can we Make Responsive Web Design For Your Business</h3>
                      <p className="text-slate-500 text-[12px] font-bold leading-relaxed italic border-l-2 border-[#FF6600] pl-4">
                         Many people, especially small businesses, are wary of investing in a separate mobile website. Having a mobile responsive style is the excellent option because it adjusts automatically on any good device and you do not get to get a separate website designed for mobile use.
                      </p>
@@ -170,11 +170,11 @@ export default function ResponsivePage() {
                            className="group relative p-6 rounded-md bg-white border border-slate-100 hover:border-[#FF6600] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer overflow-hidden"
                         >
                            <div className="flex items-center gap-4">
-                              <div className="w-10 h-10 shrink-0 rounded-md bg-orange-50 flex items-center justify-center text-[12px] font-black text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-300 shadow-sm">
+                              <div className="w-10 h-10 shrink-0 rounded-md bg-orange-50 flex items-center justify-center text-[12px] font-bold text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-300 shadow-sm">
                                  0{i + 1}
                               </div>
                               <div className="space-y-1">
-                                 <h4 className="text-[12px] lg:text-[14px] font-black uppercase tracking-tight text-slate-900 group-hover:text-[#FF6600]">
+                                 <h4 className="text-[12px] lg:text-[14px] font-bold uppercase tracking-tight text-slate-900 group-hover:text-[#FF6600]">
                                     {card.h}
                                  </h4>
                                  <p className="text-[11px] lg:text-[12px] font-bold text-slate-500 leading-snug group-hover:text-slate-700">
@@ -199,7 +199,7 @@ export default function ResponsivePage() {
                            <div className="w-6 h-6 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] shrink-0">
                               <Target size={12} />
                            </div>
-                           <p className="text-slate-800 text-[10px] font-black leading-tight">
+                           <p className="text-slate-800 text-[10px] font-bold leading-tight">
                               Achieve targeted goals, <br className="hidden lg:block" />
                               necessary for every business.
                            </p>
@@ -207,13 +207,13 @@ export default function ResponsivePage() {
 
                         {/* PART 2 - ACCENT */}
                         <div className="px-6 border-x border-slate-100 flex flex-col items-center justify-center min-w-[160px] py-1">
-                           <span className="text-[11px] font-black uppercase tracking-tighter text-[#FF6600] leading-none">responsive</span>
-                           <span className="text-[11px] font-black uppercase tracking-tighter text-slate-800 leading-none">web design</span>
+                           <span className="text-[11px] font-bold uppercase tracking-tighter text-[#FF6600] leading-none">responsive</span>
+                           <span className="text-[11px] font-bold uppercase tracking-tighter text-slate-800 leading-none">web design</span>
                         </div>
 
                         {/* PART 3 */}
                         <div className="flex-1">
-                           <p className="text-slate-800 text-[10px] font-black leading-tight">
+                           <p className="text-slate-800 text-[10px] font-bold leading-tight">
                               Professionals working at <br className="hidden lg:block" />
                               <span className="text-[#FF6600]">WebUltraSolution</span>
                            </p>
@@ -240,12 +240,12 @@ export default function ResponsivePage() {
                         <div className="absolute inset-x-0 bottom-0 p-6 text-white text-left">
                            <div className="space-y-4">
                               <div className="h-0.5 w-10 bg-[#FF6600] rounded-full" />
-                              <p className="text-[11px] lg:text-[13px] font-black leading-relaxed italic">
+                              <p className="text-[11px] lg:text-[13px] font-bold leading-relaxed italic">
                                  "If you fail to offer a mobile version of your website then it is a great possibility to lose a big customer base."
                               </p>
                               <div className="flex items-center gap-2">
                                  <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
-                                 <span className="text-[9px] font-black text-slate-200 uppercase tracking-widest leading-none">Market Validation</span>
+                                 <span className="text-[9px] font-bold text-slate-200 uppercase tracking-widest leading-none">Market Validation</span>
                               </div>
                            </div>
                         </div>

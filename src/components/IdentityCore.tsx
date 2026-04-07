@@ -94,7 +94,7 @@ export default function IdentityCore() {
     labels.forEach((text, i) => {
         const span = document.createElement('span');
         span.innerText = text;
-        span.className = 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8px] font-black text-white opacity-40 whitespace-nowrap tracking-[0.4em]';
+        span.className = 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8px] font-bold text-white opacity-40 whitespace-nowrap tracking-[0.4em]';
         
         const angle = (i / labels.length) * Math.PI * 2;
         const radius = container.clientWidth * 0.44;

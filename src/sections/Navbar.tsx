@@ -12,10 +12,9 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '#about' /* isMega: true */ },
+  { name: 'About', href: '#about', isMega: true },
   { name: 'Services', href: '#services', isMega: true },
   { name: 'Our Project', href: '/#portfolio' },
-  { name: 'Career', href: '/#insights' },
   { name: 'Contact Us', href: '/contact' },
 ];
 
@@ -179,9 +178,9 @@ export default function Navbar() {
                     {link.name}
                     {link.isMega && <ChevronDown size={14} className={`transition-transform duration-300 ${(isServicesOpen && link.name === 'Services') || (isAboutOpen && link.name === 'About') ? 'rotate-180' : ''}`} />}
                   </button>
-                    {link.isMega && link.name === 'Services' && (
+                  {link.isMega && (link.name === 'Services' || link.name === 'About') && (
                     <AnimatePresence>
-                      {isServicesOpen && (
+                      {((isServicesOpen && link.name === 'Services') || (isAboutOpen && link.name === 'About')) && (
                         <motion.div
                           initial={{ opacity: 0, y: -10, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -242,9 +241,7 @@ export default function Navbar() {
                                   { name: "Team", icon: Cpu, href: "/team" },
                                   { name: "Why Us", icon: Target, href: "/why-us" },
                                   { name: "Expertise", icon: Monitor, href: "/expertise" },
-                                  { name: "Clients", icon: Target, href: "/clients" },
-                                  { name: "Feedback", icon: Cpu, href: "/feedback" },
-                                  { name: "Careers", icon: Monitor, href: "/careers" }
+                                  { name: "Feedback", icon: Cpu, href: "/feedback" }
                                 ].map((item, index) => (
                                   <a
                                     key={index}
@@ -322,7 +319,7 @@ export default function Navbar() {
                     </button>
 
                     <AnimatePresence>
-                      {link.isMega && link.name === 'Services' && isServicesOpen && (
+                      {link.isMega && ((link.name === 'Services' && isServicesOpen) || (link.name === 'About' && isAboutOpen)) && (
                         <motion.div
                           key={link.name}
                           initial={{ opacity: 0, height: 0 }}
@@ -365,9 +362,7 @@ export default function Navbar() {
                                   { name: "Team", href: "/team" },
                                   { name: "Why Us", href: "/why-us" },
                                   { name: "Expertise", href: "/expertise" },
-                                  { name: "Clients", href: "/clients" },
-                                  { name: "Feedback", href: "/feedback" },
-                                  { name: "Careers", href: "/careers" }
+                                  { name: "Feedback", href: "/feedback" }
                                 ].map((item, index) => (
                                   <li key={index}>
                                     <a

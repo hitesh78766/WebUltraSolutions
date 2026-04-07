@@ -87,7 +87,7 @@ export default function AndroidAppDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -103,14 +103,14 @@ export default function AndroidAppDevelopment() {
                   <div className="lg:col-span-8 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Mobile Engineering</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Mobile Engineering</span>
                      </div>
-                     <h2 className="text-xl lg:text-3xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                     <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                         Premier <span className="text-[#FF6600]">Android Ecosystems.</span>
                      </h2>
                      
                      <div className="space-y-4">
-                        <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
+                        <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
                            From design and development through launch and maintenance. We plan, design & develop employing platform functionalities to full extent.
                         </p>
                         <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
@@ -126,7 +126,7 @@ export default function AndroidAppDevelopment() {
                         <div className="p-5 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:border-[#FF6600]">
                            <div className="flex items-center gap-3 mb-3">
                               <Zap size={16} className="text-[#FF6600]" />
-                              <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-widest">Investing In Mobile</h4>
+                              <h4 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Investing In Mobile</h4>
                            </div>
                            <ul className="grid grid-cols-2 gap-2">
                               {["Real-time engagement", "Intuitive Interface", "Loyalty Integration", "Pulse Alerts"].map((item, i) => (
@@ -140,7 +140,7 @@ export default function AndroidAppDevelopment() {
                         <div className="p-5 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:border-[#FF6600]">
                            <div className="flex items-center gap-3 mb-3">
                               <Shield size={16} className="text-[#FF6600]" />
-                              <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-widest">Technical Advantage</h4>
+                              <h4 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Technical Advantage</h4>
                            </div>
                            <ul className="grid grid-cols-2 gap-2">
                               {["Hardware Optimization", "Market Edge", "Lightweight Arch", "Elite Support"].map((item, i) => (
@@ -164,14 +164,14 @@ export default function AndroidAppDevelopment() {
                         />
                         <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
                            <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
-                           <span className="text-[10px] font-black text-white uppercase tracking-widest">Platform Matrix v4.0</span>
+                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Platform Matrix v4.0</span>
                         </div>
                      </div>
                      
                      <div className="mt-8 p-6 rounded-md bg-slate-900 text-white space-y-3">
                         <div className="flex items-center gap-3">
                            <Layers size={14} className="text-orange-400" />
-                           <h3 className="text-[10px] font-black text-white uppercase tracking-widest">Platform Evolution</h3>
+                           <h3 className="text-[10px] font-bold text-white uppercase tracking-widest">Platform Evolution</h3>
                         </div>
                         <p className="text-[11px] font-medium text-slate-300 leading-relaxed">Leveraging screen sizes and technical features to full extent. Optimizing light-weight applications for mass traffic.</p>
                      </div>

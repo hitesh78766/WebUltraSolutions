@@ -68,12 +68,12 @@ function DigitalGlobe() {
             args={[lineIndices, 1]}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#FF6600" transparent opacity={0.12} />
+        <lineBasicMaterial color="#4D1F00" transparent opacity={0.2} />
       </lineSegments>
 
       {/* Dynamic Inner Light Mapping */}
       <Sphere args={[1.88, 32, 32]}>
-        <meshBasicMaterial color="#FF8C00" transparent opacity={0.012} wireframe />
+        <meshBasicMaterial color="#993D00" transparent opacity={0.015} wireframe />
       </Sphere>
     </group>
   );
@@ -84,13 +84,14 @@ export default function ThreeNetworkGlobe() {
     <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,_rgba(255,247,240,1)_0%,_rgba(255,255,255,1)_100%)]">
       {/* Background radial gradients - "Little bit dark" Elite refinement */}
       <div
-        className="absolute top-[-25%] right-[-15%] w-[100%] h-[100%] bg-orange-200/40 rounded-full blur-[170px] opacity-70 animate-pulse"
+        className="absolute top-[-25%] right-[-15%] w-[100%] h-[100%] bg-orange-300/20 rounded-full blur-[170px] opacity-70 animate-pulse"
         style={{ animationDuration: '9s' }}
       />
       <div
-        className="absolute bottom-[-15%] left-[-15%] w-[90%] h-[90%] bg-orange-200/30 rounded-full blur-[190px] opacity-60 animate-pulse"
+        className="absolute bottom-[-15%] left-[-15%] w-[90%] h-[90%] bg-orange-300/15 rounded-full blur-[190px] opacity-60 animate-pulse"
         style={{ animationDuration: '11s' }}
       />
+
 
       <Canvas camera={{ position: [0, 0, 5], fov: 42 }} dpr={[1, 2]}>
         <fog attach="fog" args={['#ffffff', 3, 9]} />
@@ -154,7 +155,7 @@ function Particles({ count = 50 }) {
   return (
     <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
       <sphereGeometry args={[0.04, 16, 16]} />
-      <meshBasicMaterial color="#FF6600" transparent opacity={0.18} />
+      <meshBasicMaterial color="#B34700" transparent opacity={0.18} />
     </instancedMesh>
   );
 }

@@ -102,14 +102,14 @@ export default function Arsenal() {
                     <div className="w-4.5 h-4.5 rounded-full bg-white flex items-center justify-center border border-slate-200 group-hover/check:border-[#F97316]/40 group-hover/check:bg-[#F97316]/5 transition-all">
                       <CheckCircle2 className={`w-2.5 h-2.5 ${i === 0 || i === 3 ? 'text-[#F97316]' : 'text-slate-400'}`} />
                     </div>
-                    <span className="text-[12px] font-black text-slate-700 tracking-tight leading-none pt-0.5">{item}</span>
+                    <span className="text-[12px] font-bold text-slate-700 tracking-tight leading-none pt-0.5">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="arsenal-text-item pt-2">
-              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-3.5 rounded-xl font-black text-[11px] uppercase tracking-widest transition-all shadow-[0_15px_40px_-10px_rgba(249,115,22,0.3)] active:scale-95 group">
+              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-3.5 rounded-xl font-bold text-[11px] uppercase tracking-widest transition-all shadow-[0_15px_40px_-10px_rgba(249,115,22,0.3)] active:scale-95 group">
                 <span>Explore Our Arsenal</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </button>
@@ -121,8 +121,8 @@ export default function Arsenal() {
             {/* Industry Leader Badge */}
             <div className="absolute -top-3 left-6 z-20">
               <div className="bg-white px-4 py-1 rounded-full shadow-md border border-slate-100 flex items-center gap-1.5">
-                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Industry</span>
-                <span className="text-[9px] font-black text-[#111827] uppercase tracking-widest leading-none">Leader</span>
+                <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none">Industry</span>
+                <span className="text-[9px] font-bold text-[#111827] uppercase tracking-widest leading-none">Leader</span>
               </div>
             </div>
 
@@ -226,7 +226,7 @@ export default function Arsenal() {
                       </div>
                       <div className="space-y-0">
                         <div className="text-base lg:text-lg font-bold text-[#111827] tracking-tight leading-none group-hover/box:text-[#F97316] transition-colors">{box.value}</div>
-                        <p className="text-slate-500 text-[7.5px] font-black uppercase tracking-widest leading-none pt-0.5">{box.label}</p>
+                        <p className="text-slate-500 text-[7.5px] font-bold uppercase tracking-widest leading-none pt-0.5">{box.label}</p>
                       </div>
                       <div className="w-8 h-0.5 bg-slate-200 rounded-full overflow-hidden">
                         <div
@@ -246,8 +246,8 @@ export default function Arsenal() {
                     { val: "95%", label: "On-Time", color: "text-orange-500" }
                   ].map((stat) => (
                     <div key={stat.label} className="mini-metric text-center">
-                      <div className={`text-[12px] font-black ${stat.color}`}>{stat.val}</div>
-                      <p className="text-[6px] font-black text-slate-400 uppercase tracking-widest leading-none pt-0.5">{stat.label}</p>
+                      <div className={`text-[12px] font-bold ${stat.color}`}>{stat.val}</div>
+                      <p className="text-[6px] font-bold text-slate-400 uppercase tracking-widest leading-none pt-0.5">{stat.label}</p>
                     </div>
                   ))}
                 </div>

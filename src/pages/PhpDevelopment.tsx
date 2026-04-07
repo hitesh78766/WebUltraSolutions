@@ -99,7 +99,7 @@ export default function PhpDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -114,16 +114,16 @@ export default function PhpDevelopment() {
                   <div className="lg:col-span-8 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Development Hub</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Development Hub</span>
                      </div>
 
                      <div className="space-y-4">
-                        <h2 className="text-xl lg:text-2xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                        <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                            PHP Web <span className="text-[#FF6600]">Development</span>
                         </h2>
                         
                         <div className="space-y-4">
-                           <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
+                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
                               Result-driven PHP websites & applications for your custom development needs. Engineering robust software for the digital frontier.
                            </p>
                            <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
@@ -139,7 +139,7 @@ export default function PhpDevelopment() {
                               <div className="mt-1">
                                  <Star size={12} className="text-[#FF6600] fill-[#FF6600]" />
                               </div>
-                              <span className="text-[11px] font-bold text-slate-700 group-hover:text-slate-900 transition-colors">
+                              <span className="text-[11px] font-medium text-slate-700 group-hover:text-slate-900 transition-colors">
                                  {feature}
                               </span>
                            </div>
@@ -154,18 +154,18 @@ export default function PhpDevelopment() {
                         <div className="space-y-6">
                            <div className="flex items-center gap-3">
                               <Terminal size={18} className="text-[#FF6600]" />
-                              <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-widest">Global Scale</h4>
+                              <h4 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Global Scale</h4>
                            </div>
                            <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
                               Over 20 million sites have been developed using PHP. We provide the expertise essential for crafting quality solutions through advanced techniques.
                            </p>
                            <div className="grid grid-cols-2 gap-3 pt-2">
                               <div className="p-3 bg-slate-50 rounded-md text-center">
-                                 <div className="text-[#FF6600] text-[14px] font-black">20M+</div>
+                                 <div className="text-[#FF6600] text-[14px] font-bold">20M+</div>
                                  <div className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Installations</div>
                               </div>
                               <div className="p-3 bg-slate-50 rounded-md text-center">
-                                 <div className="text-[#FF6600] text-[14px] font-black">Secure</div>
+                                 <div className="text-[#FF6600] text-[14px] font-bold">Secure</div>
                                  <div className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Architecture</div>
                               </div>
                            </div>
@@ -174,7 +174,7 @@ export default function PhpDevelopment() {
 
                      <div className="flex items-center gap-3 p-4 bg-orange-50 rounded-md border border-orange-100">
                         <Cpu size={16} className="text-[#FF6600]" />
-                        <span className="text-[10px] font-black text-[#FF6600] uppercase tracking-widest leading-tight">Runtime Execution Engineering</span>
+                        <span className="text-[10px] font-bold text-[#FF6600] uppercase tracking-widest leading-tight">Runtime Execution Engineering</span>
                      </div>
                   </div>
 

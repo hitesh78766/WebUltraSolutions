@@ -85,7 +85,7 @@ export default function LogoDesign() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -100,15 +100,15 @@ export default function LogoDesign() {
                   <div className="lg:col-span-12 space-y-8">
                      <div className="flex items-center gap-4">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.5em]">Identity Core</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.5em]">Identity Core</span>
                      </div>
 
                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
                         <div className="lg:col-span-7 space-y-6">
-                           <h2 className="text-xl lg:text-2xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                           <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                               Compelling & <span className="text-[#FF6600]">Distinctive.</span>
                            </h2>
-                           <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight font-secondary">
+                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight font-secondary">
                               A compelling logo should always be distinctive and reflect the essence of a company. Our professional designers specialize in crafting logos for high-growth enterprises.
                            </p>
                            <div className="h-px w-full bg-slate-100" />
@@ -126,7 +126,7 @@ export default function LogoDesign() {
                            <div className="space-y-3 group">
                               <div className="flex items-center gap-3">
                                  <Lightbulb size={16} className="text-[#FF6600] group-hover:scale-110 transition-transform" />
-                                 <h3 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Why you need a logo</h3>
+                                 <h3 className="text-[10px] font-bold text-slate-900 uppercase tracking-[0.3em]">Why you need a logo</h3>
                               </div>
                               <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
                                  Logo creates a value of your strong brand recognition and familiarity. It makes people think of your service or product instantly.
@@ -136,7 +136,7 @@ export default function LogoDesign() {
                            <div className="space-y-3 group">
                               <div className="flex items-center gap-3">
                                  <CheckCircle2 size={16} className="text-[#FF6600] group-hover:scale-110 transition-transform" />
-                                 <h3 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Why webultrasolution</h3>
+                                 <h3 className="text-[10px] font-bold text-slate-900 uppercase tracking-[0.3em]">Why webultrasolution</h3>
                               </div>
                               <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
                                  We have helped hundreds of companies to establish their brands. We understand the perfect position a logo has in creating brand identity.

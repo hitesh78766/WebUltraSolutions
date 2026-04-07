@@ -109,7 +109,7 @@ export default function PrestigeBanner() {
               <span className="text-white font-medium mx-1">WebUltraSolutions'</span> proven expertise.
             </p>
 
-            <button className="group/btn flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-white hover:text-orange-600 text-white text-[12px] font-black rounded-full transition-all duration-300 shadow-xl shadow-orange-500/20">
+            <button className="group/btn flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-white hover:text-orange-600 text-white text-[12px] font-bold rounded-full transition-all duration-300 shadow-xl shadow-orange-500/20">
               <span className="uppercase tracking-widest">View All Success Stories</span>
               <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
             </button>
@@ -124,7 +124,7 @@ export default function PrestigeBanner() {
             <div className="section-header mb-8">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-full mb-4 shadow-sm">
                 <Target size={11} className="text-orange-500" />
-                <span className="text-[10px] font-black text-slate-800 uppercase tracking-widest leading-none">Innovation First</span>
+                <span className="text-[10px] font-bold text-slate-800 uppercase tracking-widest leading-none">Innovation First</span>
               </div>
               <h3 className="text-2xl lg:text-4xl font-display font-bold text-slate-950 mb-4 tracking-tight leading-tight">
                 We Bring Your <span className="text-orange-500">Business Edge</span>
@@ -171,7 +171,7 @@ export default function PrestigeBanner() {
                 <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
                   <CheckCircle2 size={12} className="text-white" />
                 </div>
-                <span className="text-[11px] font-black text-slate-800 uppercase tracking-wider">Excellence Delivered</span>
+                <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Excellence Delivered</span>
               </div>
             </div>
 
@@ -230,8 +230,8 @@ function StatCard({ icon: Icon, value, label, sub }: any) {
       <div className="w-7 h-7 rounded-full bg-orange-50 flex items-center justify-center mb-2 border border-orange-100/50">
         <Icon className="w-3.5 h-3.5 text-orange-500" />
       </div>
-      <div className="font-display font-black text-base lg:text-lg text-slate-950 leading-none mb-1 group-hover:text-orange-600 transition-colors">{value}</div>
-      <div className="text-[9px] font-black text-slate-900 leading-tight mb-1 uppercase tracking-tight">{label}</div>
+      <div className="font-display font-bold text-base lg:text-lg text-slate-950 leading-none mb-1 group-hover:text-orange-600 transition-colors">{value}</div>
+      <div className="text-[9px] font-bold text-slate-900 leading-tight mb-1 uppercase tracking-tight">{label}</div>
       <div className="text-[7.5px] text-slate-400 leading-tight font-bold uppercase tracking-tighter opacity-80">{sub}</div>
     </div>
   );

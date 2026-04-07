@@ -49,7 +49,7 @@ export default function Footer() {
             {/* MINIMAL CORPORATE BRANDING (SIMPLIFIED) */}
             <div className="animate-up flex flex-col lg:flex-row items-center justify-between gap-8 pb-12 border-b border-white/5">
                <div className="space-y-2 text-center lg:text-left">
-                  <h2 className="text-xl lg:text-2xl font-display font-black text-white/90 leading-tight tracking-tight px-1">
+                  <h2 className="text-xl lg:text-2xl font-display font-bold text-white/90 leading-tight tracking-tight px-1">
                      Digicorn Webultrasolution <span className="text-indigo-500">Pvt Ltd.</span>
                   </h2>
                </div>
@@ -57,7 +57,7 @@ export default function Footer() {
                <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-8 gap-y-4">
                   {companyDetails.map((detail, i) => (
                      <div key={i} className="flex items-center gap-2 group cursor-default">
-                        <div className="text-[8px] font-black text-indigo-500/80 uppercase tracking-[0.2em]">{detail.label}</div>
+                        <div className="text-[8px] font-bold text-indigo-500/80 uppercase tracking-[0.2em]">{detail.label}</div>
                         <div className="text-[10px] font-bold text-white/50 group-hover:text-white/80 transition-colors uppercase tabular-nums">{detail.value}</div>
                      </div>
                   ))}
@@ -91,11 +91,11 @@ export default function Footer() {
                {/* LINKS COLS */}
                <div className="animate-up lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10">
                   <div>
-                     <span className="block text-[8px] font-black text-white/20 uppercase tracking-[0.3em] mb-6">Navigation</span>
+                     <span className="block text-[8px] font-bold text-white/20 uppercase tracking-[0.3em] mb-6">Navigation</span>
                      <ul className="space-y-4">
                         {['Home', 'Services', 'About', 'Insights', 'FAQ'].map((link, i) => (
                            <li key={i}>
-                              <a href={`#${link.toLowerCase()}`} className="text-xs font-black text-white/60 hover:text-indigo-400 transition-colors tracking-tight">
+                              <a href={`#${link.toLowerCase()}`} className="text-xs font-bold text-white/60 hover:text-indigo-400 transition-colors tracking-tight">
                                  {link}
                               </a>
                            </li>
@@ -103,11 +103,11 @@ export default function Footer() {
                      </ul>
                   </div>
                   <div>
-                     <span className="block text-[8px] font-black text-white/20 uppercase tracking-[0.3em] mb-6">Specialties</span>
+                     <span className="block text-[8px] font-bold text-white/20 uppercase tracking-[0.3em] mb-6">Specialties</span>
                      <ul className="space-y-4">
                         {['Web Architecture', 'Elastic Scaling', 'UI Systems', 'Mobile Core'].map((link, i) => (
                            <li key={i}>
-                              <span className="text-xs font-black text-white/60 hover:text-indigo-400 transition-colors tracking-tight cursor-pointer">
+                              <span className="text-xs font-bold text-white/60 hover:text-indigo-400 transition-colors tracking-tight cursor-pointer">
                                  {link}
                               </span>
                            </li>
@@ -115,15 +115,15 @@ export default function Footer() {
                      </ul>
                   </div>
                   <div>
-                     <span className="block text-[8px] font-black text-white/20 uppercase tracking-[0.3em] mb-6">Contact</span>
+                     <span className="block text-[8px] font-bold text-white/20 uppercase tracking-[0.3em] mb-6">Contact</span>
                      <div className="space-y-5">
                         <div className="group cursor-pointer">
-                           <span className="block text-[8px] font-black text-white/20 uppercase tracking-widest mb-1">Direct Line</span>
-                           <span className="text-xs font-black text-white group-hover:text-indigo-400 transition-colors">+91 87978 06959</span>
+                           <span className="block text-[8px] font-bold text-white/20 uppercase tracking-widest mb-1">Direct Line</span>
+                           <span className="text-xs font-bold text-white group-hover:text-indigo-400 transition-colors">+91 87978 06959</span>
                         </div>
                         <div className="group cursor-pointer">
-                           <span className="block text-[8px] font-black text-white/20 uppercase tracking-widest mb-1">Global Mail</span>
-                           <span className="text-xs font-black text-white group-hover:text-indigo-400 transition-colors">webultrasolution@gmail.com</span>
+                           <span className="block text-[8px] font-bold text-white/20 uppercase tracking-widest mb-1">Global Mail</span>
+                           <span className="text-xs font-bold text-white group-hover:text-indigo-400 transition-colors">webultrasolution@gmail.com</span>
                         </div>
                      </div>
                   </div>
@@ -133,12 +133,12 @@ export default function Footer() {
 
             {/* FOOTER BOTTOM */}
             <div className="animate-up pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-               <div className="text-[9px] font-black text-white/20 uppercase tracking-widest">
+               <div className="text-[9px] font-bold text-white/20 uppercase tracking-widest">
                   © {new Date().getFullYear()} WebUltra Solution. All rights reserved.
                </div>
                <div className="flex items-center gap-6">
                   <div className="flex items-center gap-2 px-3 py-1 bg-white/5 text-white/40 rounded-full border border-white/10 transition-all hover:bg-white/10">
-                     <span className="text-[8px] font-black uppercase tracking-widest">Digital Legacy Built With</span>
+                     <span className="text-[8px] font-bold uppercase tracking-widest">Digital Legacy Built With</span>
                      <Heart size={10} className="fill-indigo-500 text-indigo-500" />
                   </div>
                </div>

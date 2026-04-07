@@ -111,7 +111,7 @@ export default function ScaleAmbition() {
                   <tier.icon size={18} />
                 </div>
                 {tier.popular && (
-                  <span className="bg-[#F97316] text-white text-[8px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-sm animate-pulse">
+                  <span className="bg-[#F97316] text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-sm animate-pulse">
                     Popular
                   </span>
                 )}

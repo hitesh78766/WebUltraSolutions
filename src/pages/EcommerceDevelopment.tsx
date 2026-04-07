@@ -87,7 +87,7 @@ export default function EcommerceDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -103,16 +103,16 @@ export default function EcommerceDevelopment() {
                   <div className="lg:col-span-8 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Development Hub</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Development Hub</span>
                      </div>
 
                      <div className="space-y-4">
-                        <h2 className="text-xl lg:text-2xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                        <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                            Elite Ecommerce <span className="text-[#FF6600]">Architectures</span>
                         </h2>
 
                         <div className="space-y-4">
-                           <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
+                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
                               eCommerce is growing globally for both B2B and B2C segments. We deliver powerful solutions allowing your business to stand out with authority.
                            </p>
                            <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
@@ -135,7 +135,7 @@ export default function EcommerceDevelopment() {
                               <div className="p-2 rounded-md bg-[#FF6600] text-white shrink-0">
                                  <item.icon size={14} />
                               </div>
-                              <span className="text-[9px] font-black text-[#FF6600] uppercase tracking-widest leading-none">
+                              <span className="text-[9px] font-bold text-[#FF6600] uppercase tracking-widest leading-none">
                                  {item.label}
                               </span>
                            </div>
@@ -149,12 +149,12 @@ export default function EcommerceDevelopment() {
                         <img src={imgEcommerce} alt="Global Trade Hub" className="w-full h-auto object-cover" />
                         <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
                            <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
-                           <span className="text-[10px] font-black text-white uppercase tracking-widest">Global scaling engine</span>
+                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Global scaling engine</span>
                         </div>
                      </div>
 
                      <div className="mt-8 p-6 rounded-md bg-slate-900 text-white space-y-3">
-                        <h5 className="text-[9px] font-black uppercase tracking-[0.3em] text-orange-400">Optimization</h5>
+                        <h5 className="text-[9px] font-bold uppercase tracking-[0.3em] text-orange-400">Optimization</h5>
                         <p className="text-[11px] font-medium text-slate-300 leading-relaxed">
                            We turn complex selling ideas into simple e-commerce models that make shopping fun for customers. System v4.0 Active.
                         </p>

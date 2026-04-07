@@ -87,7 +87,7 @@ export default function AppDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -103,14 +103,14 @@ export default function AppDevelopment() {
                   <div className="lg:col-span-7 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">System Architecture</span>
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">System Architecture</span>
                      </div>
-                     <h2 className="text-xl lg:text-3xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                     <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
                         Platform Engineering <span className="text-[#FF6600]">Simplified.</span>
                      </h2>
                      
                      <div className="space-y-4">
-                        <p className="text-[14px] font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
+                        <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
                            Our expertise lies in building Android and iOS applications supported by a strong cloud-based backend infrastructure. Engineered for scale.
                         </p>
                         <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
@@ -131,7 +131,7 @@ export default function AppDevelopment() {
                               <div className="w-8 h-8 rounded-md bg-orange-50 text-[#FF6600] flex items-center justify-center group-hover:bg-[#FF6600] group-hover:text-white transition-all">
                                  <item.icon size={14} />
                               </div>
-                              <span className="text-[10px] font-black text-slate-800 uppercase tracking-widest leading-none">{item.name}</span>
+                              <span className="text-[10px] font-medium text-slate-800 uppercase tracking-widest leading-none">{item.name}</span>
                            </div>
                         ))}
                      </div>
@@ -147,7 +147,7 @@ export default function AppDevelopment() {
                         />
                         <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
                            <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
-                           <span className="text-[10px] font-black text-white uppercase tracking-widest">Matrix Architecture v4.0</span>
+                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Matrix Architecture v4.0</span>
                         </div>
                      </div>
                   </div>
