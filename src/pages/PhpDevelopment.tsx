@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Cpu, Terminal, Zap, Layers, Monitor, Sparkles, Globe } from 'lucide-react';
+import { Star, Cpu, Terminal, Zap, Layers, Monitor, Sparkles, Globe, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ThreeSolutionBackground from '../components/ThreeSolutionBackground';
@@ -29,7 +29,7 @@ export default function PhpDevelopment() {
 
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
-         {/* CINEMATIC FULL-BLEED HEADER - ELITE COMPACT STYLE */}
+         {/* CINEMATIC FULL-BLEED HEADER - ELITE TYPOGRAPHY SCALE */}
          <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* INTERACTIVE SOLUTION BACKDROP */}
             <ThreeSolutionBackground />
@@ -46,9 +46,9 @@ export default function PhpDevelopment() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Backend Logic</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
-                        const title = "PHP DEVELOPMENT.";
+                        const title = "PHP DEVELOPMENT SOLUTIONS.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
                            <span key={wordIdx} className="inline-block mr-4">
@@ -63,7 +63,7 @@ export default function PhpDevelopment() {
                                        damping: 10,
                                        delay: 0.2 + (wordIdx * 0.1) + (charIdx * 0.02)
                                     }}
-                                    className={`inline-block ${word === "DEVELOPMENT." ? "text-[#FF6600]" : ""}`}
+                                    className={`inline-block ${word === "DEVELOPMENT" || word === "SOLUTIONS." ? "text-[#FF6600]" : ""}`}
                                  >
                                     {char}
                                  </motion.span>
@@ -77,7 +77,7 @@ export default function PhpDevelopment() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
                   >
                      Crafting result-driven PHP applications that yield measurable results. Engineering scalable server-side dominance for global brands.
                   </motion.p>
@@ -99,82 +99,116 @@ export default function PhpDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
             </div>
          </div>
 
-         {/* CONTENT SECTION - COMPACT SCALE */}
-         <section className="relative py-8 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+         {/* CONTENT SECTION - ENHANCED SCALE & POLISH */}
+         <section className="relative py-12 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                   
-                  <div className="lg:col-span-8 space-y-6">
+                  <div className="lg:col-span-8 space-y-8">
                      <div className="flex items-center gap-3">
-                        <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Development Hub</span>
+                        <div className="h-[2px] w-12 bg-[#FF6600]" />
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.5em]">Engineering Hub</span>
                      </div>
 
-                     <div className="space-y-4">
-                        <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
-                           PHP Web <span className="text-[#FF6600]">Development</span>
+                     <div className="space-y-6">
+                        <h2 className="text-xl lg:text-3xl font-display font-extrabold text-slate-900 tracking-tight uppercase leading-[1.1]">
+                           PHP Web <span className="text-[#FF6600]">Development</span> Authority
                         </h2>
                         
-                        <div className="space-y-4">
-                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
+                        <div className="space-y-6">
+                           <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-6 py-1">
                               Result-driven PHP websites & applications for your custom development needs. Engineering robust software for the digital frontier.
                            </p>
-                           <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                           <p className="text-sm lg:text-base text-slate-500 font-semibold leading-relaxed max-w-3xl">
                               Our efforts assist clients in creating a dominant web presence. We blend creativity with latest web standards, secure codes, and search engine friendly logic.
                            </p>
                         </div>
                      </div>
 
-                     {/* Features Grid */}
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
+                     {/* Features Grid - Elite Industrial Spec Upgrade (3-Column Density) */}
+                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-6">
                         {features.map((feature, i) => (
-                           <div key={i} className="group flex items-start gap-4 p-3 bg-white border border-slate-100 rounded-md transition-all hover:border-[#FF6600]">
-                              <div className="mt-1">
-                                 <Star size={12} className="text-[#FF6600] fill-[#FF6600]" />
+                           <div 
+                              key={i} 
+                              className="group relative flex flex-col p-3.5 bg-white border border-slate-100 rounded-md transition-all duration-500 hover:border-[#FF6600]/20 hover:shadow-[0_20px_40px_rgba(255,102,0,0.05)] hover:-translate-y-1 overflow-hidden"
+                           >
+                              {/* NEURAL BACKGROUND GLOW */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-orange-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                              {/* MONOSPACED METADATA */}
+                              <div className="flex justify-between items-start mb-2 relative z-10">
+                                 <span className="text-[9px] font-mono font-bold text-slate-900 uppercase tracking-tighter group-hover:text-[#FF6600] transition-colors">PHP-SPEC_{String(i + 1).padStart(2, '0')}</span>
+                                 <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
+                                    <span className="text-[8px] font-bold text-[#FF6600] uppercase tracking-widest">Active</span>
+                                 </div>
                               </div>
-                              <span className="text-[11px] font-medium text-slate-700 group-hover:text-slate-900 transition-colors">
-                                 {feature}
-                              </span>
+
+                              <div className="flex items-start gap-3">
+                                 <div className="mt-1 relative">
+                                    <div className="absolute -inset-1 bg-[#FF6600]/10 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <Star size={12} className="relative text-[#FF6600] fill-[#FF6600]/10 group-hover:fill-[#FF6600] group-hover:scale-110 transition-all duration-500" />
+                                 </div>
+                                 <span className="text-[11px] lg:text-[13px] font-semibold text-slate-500 group-hover:text-slate-950 transition-colors leading-tight relative z-10">
+                                    {feature}
+                                 </span>
+                              </div>
+
+                              {/* INDUSTRIAL OVERLAY DETAIL */}
+                              <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#FF6600]/[0.01] rounded-tl-3xl translate-y-1/2 translate-x-1/2 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700" />
                            </div>
                         ))}
                      </div>
                   </div>
 
-                  {/* RIGHT COLUMN - TECHNICAL HIGHLIGHTS */}
-                  <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-28">
-                     <div className="p-6 bg-white border border-slate-100 rounded-md shadow-xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-8 h-8 bg-orange-50 rounded-bl-3xl" />
-                        <div className="space-y-6">
+                  {/* RIGHT COLUMN - ELITE TECHNICAL SPEC */}
+                  <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-32">
+                     <div className="p-8 bg-white border border-slate-100 rounded-md shadow-2xl relative group overflow-hidden">
+                        <div className="absolute top-0 left-0 w-1.5 h-full bg-[#FF6600] transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                        <div className="absolute top-0 right-0 w-12 h-12 bg-orange-50/50 rounded-bl-3xl group-hover:bg-orange-100 transition-colors duration-500" />
+                        
+                        <div className="space-y-6 relative z-10">
                            <div className="flex items-center gap-3">
-                              <Terminal size={18} className="text-[#FF6600]" />
-                              <h4 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Global Scale</h4>
+                              <div className="p-2.5 rounded-md bg-orange-50 text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-500">
+                                 <Terminal size={20} />
+                              </div>
+                              <h4 className="text-[13px] font-extrabold text-slate-900 uppercase tracking-[0.2em] group-hover:text-[#FF6600] transition-colors">Global Scale</h4>
                            </div>
-                           <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                           <p className="text-[14px] text-slate-500 font-semibold leading-relaxed">
                               Over 20 million sites have been developed using PHP. We provide the expertise essential for crafting quality solutions through advanced techniques.
                            </p>
-                           <div className="grid grid-cols-2 gap-3 pt-2">
-                              <div className="p-3 bg-slate-50 rounded-md text-center">
-                                 <div className="text-[#FF6600] text-[14px] font-bold">20M+</div>
-                                 <div className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Installations</div>
+                           <div className="grid grid-cols-2 gap-4 pt-2">
+                              <div className="p-4 bg-slate-50/50 rounded-md text-center group/stat transition-all hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
+                                 <div className="text-[#FF6600] text-[16px] font-extrabold font-display">20M+</div>
+                                 <div className="text-[9px] font-extrabold text-slate-400 uppercase tracking-tighter">Installations</div>
                               </div>
-                              <div className="p-3 bg-slate-50 rounded-md text-center">
-                                 <div className="text-[#FF6600] text-[14px] font-bold">Secure</div>
-                                 <div className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Architecture</div>
+                              <div className="p-4 bg-slate-50/50 rounded-md text-center group/stat transition-all hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100">
+                                 <div className="text-[#FF6600] text-[16px] font-extrabold font-display">Secure</div>
+                                 <div className="text-[9px] font-extrabold text-slate-400 uppercase tracking-tighter">Architecture</div>
                               </div>
                            </div>
                         </div>
                      </div>
 
-                     <div className="flex items-center gap-3 p-4 bg-orange-50 rounded-md border border-orange-100">
-                        <Cpu size={16} className="text-[#FF6600]" />
-                        <span className="text-[10px] font-bold text-[#FF6600] uppercase tracking-widest leading-tight">Runtime Execution Engineering</span>
+                     <div className="group flex items-center gap-4 p-5 bg-orange-50/50 rounded-md border border-orange-100/50 hover:bg-[#FF6600] transition-all duration-500 shadow-sm hover:shadow-xl">
+                        <div className="p-2 rounded-md bg-white text-[#FF6600] group-hover:scale-110 transition-transform duration-500 shadow-sm">
+                           <Cpu size={18} />
+                        </div>
+                        <span className="text-[11px] font-extrabold text-[#FF6600] group-hover:text-white uppercase tracking-[0.2em] leading-tight transition-colors">Runtime Execution Engineering</span>
+                     </div>
+                     
+                     <div className="pt-2 text-center">
+                        <button className="inline-flex items-center gap-2.5 px-6 py-3 bg-[#FF6600] text-white rounded-md text-[10px] font-extrabold uppercase tracking-[0.2em] shadow-xl shadow-[#FF6600]/20 hover:shadow-none hover:translate-y-0.5 transition-all">
+                           <span>Request Consultation</span>
+                           <ArrowRight size={14} />
+                        </button>
                      </div>
                   </div>
 

@@ -41,6 +41,30 @@ import Expertise from './pages/Expertise';
 import Feedback from './pages/Feedback';
 import WhyUs from './pages/WhyUs';
 import Contact from './pages/Contact';
+import IntegratedMarket from './pages/IntegratedMarket';
+import WebPortal from './pages/WebPortal';
+
+// Integrated Marketing Suite
+import DigitalMarketing from './pages/DigitalMarketing';
+import SEOConsulting from './pages/SEOConsulting';
+import PPCAdvertising from './pages/PPCAdvertising';
+import ContentMarketing from './pages/ContentMarketing';
+import SocialMediaMarketing from './pages/SocialMediaMarketing';
+import WebAnalytics from './pages/WebAnalytics';
+import ReputationManagement from './pages/ReputationManagement';
+import ContentWriting from './pages/ContentWriting';
+import OnlineReputationManagement from './pages/OnlineReputationManagement';
+
+// Web Portal Suite
+import NewsPortal from './pages/NewsPortal';
+import PropertyPortal from './pages/PropertyPortal';
+import ClassifiedPortal from './pages/ClassifiedPortal';
+import MatrimonialPortal from './pages/MatrimonialPortal';
+import OnlineChat from './pages/OnlineChat';
+import FinancialPortal from './pages/FinancialPortal';
+
+import AdvertisementPortal from './pages/AdvertisementPortal';
+import HealthPortal from './pages/HealthPortal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -193,6 +217,30 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/why-us" element={<WhyUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/integrated-market" element={<IntegratedMarket />} />
+          <Route path="/web-portal" element={<WebPortal />} />
+
+          {/* Integrated Marketing Sub-routes */}
+          <Route path="/digital-marketing" element={<DigitalMarketing />} />
+          <Route path="/seo-consulting" element={<SEOConsulting />} />
+          <Route path="/ppc-advertising" element={<PPCAdvertising />} />
+          <Route path="/content-marketing" element={<ContentMarketing />} />
+          <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
+          <Route path="/web-analytics" element={<WebAnalytics />} />
+          <Route path="/reputation-management" element={<ReputationManagement />} />
+          <Route path="/content-writing" element={<ContentWriting />} />
+          <Route path="/online-reputation-management" element={<OnlineReputationManagement />} />
+
+          {/* Web Portal Sub-routes */}
+          <Route path="/news-portal" element={<NewsPortal />} />
+          <Route path="/property-portal" element={<PropertyPortal />} />
+          <Route path="/classified-portal" element={<ClassifiedPortal />} />
+          <Route path="/matrimonial-portal" element={<MatrimonialPortal />} />
+          <Route path="/online-chat" element={<OnlineChat />} />
+          <Route path="/financial-portal" element={<FinancialPortal />} />
+
+          <Route path="/advertisement-portal" element={<AdvertisementPortal />} />
+          <Route path="/health-portal" element={<HealthPortal />} />
         </Routes>
       </MainLayout>
     </Router>

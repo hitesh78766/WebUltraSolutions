@@ -27,7 +27,7 @@ export default function WebDevelopment() {
 
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
-         {/* CINEMATIC FULL-BLEED HEADER - ELITE COMPACT STYLE */}
+         {/* CINEMATIC FULL-BLEED HEADER - ELITE UPGRADED TYPOGRAPHY */}
          <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* INTERACTIVE NEURAL BACKDROP */}
             <ThreeNeuralStorm />
@@ -45,7 +45,7 @@ export default function WebDevelopment() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Development Core</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "WEB DEVELOPMENT.";
                         const words = title.split(" ");
@@ -76,7 +76,7 @@ export default function WebDevelopment() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
                   >
                      Specialize in developing reliable yet creative Web Development solutions. Engineering scalable ecosystems for the digital future.
                   </motion.p>
@@ -98,55 +98,62 @@ export default function WebDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
             </div>
          </div>
 
-         {/* CONTENT SECTION - COMPACT SCALE */}
-         <section className="relative py-8 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
-            <div className="relative z-10 max-w-[1300px] mx-auto px-6 lg:px-12">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+         {/* CONTENT SECTION - RESTORED ORIGINAL LAYOUT WITH ENHANCED FONTS/GAPS */}
+         <section className="relative py-12 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                   
                   {/* LEFT CONTENT */}
-                  <div className="lg:col-span-8 space-y-6">
+                  <div className="lg:col-span-8 space-y-8">
                      <div className="flex items-center gap-3">
-                        <div className="h-[2px] w-8 bg-[#FF6600]/30" />
-                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Development Hub</span>
+                        <div className="h-[2px] w-12 bg-[#FF6600]" />
+                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.5em]">Development Hub</span>
                      </div>
 
-                     <div className="space-y-4">
-                        <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
+                     <div className="space-y-6">
+                        <h2 className="text-xl lg:text-3xl font-display font-extrabold text-slate-900 tracking-tight uppercase leading-[1.1]">
                            Website <span className="text-[#FF6600]">Development</span> Company
                         </h2>
 
-                        <div className="space-y-4">
-                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4">
+                        <div className="space-y-6">
+                           <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-6 py-1">
                               WebUltraSolution specializes in crafting dependable and creative solutions. Our systems are fully scalable, addressing both intricate and straightforward needs.
                            </p>
-                           <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                           <p className="text-sm lg:text-base text-slate-500 font-semibold leading-relaxed max-w-3xl">
                               Situated in Delhi-Noida, our development center minimizes costs while delivering a spectrum of online solutions. As a leading professional company, we offer affordable web development and portals worldwide.
                            </p>
                         </div>
                      </div>
 
                      {/* TECHNOLOGY EXPERTISE LIST */}
-                     <div className="pt-4 space-y-4">
-                        <div className="flex items-center gap-2">
-                           <Layers size={16} className="text-[#FF6600]" />
-                           <h3 className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.2em]">Technology Expertise</h3>
+                     <div className="pt-6 space-y-6">
+                        <div className="flex items-center gap-3">
+                           <Layers size={18} className="text-[#FF6600]" />
+                           <h3 className="text-[12px] font-extrabold text-slate-900 uppercase tracking-[0.3em]">Technology Expertise</h3>
                         </div>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                            {expertiseList.map((item, i) => (
                               <div
                                  key={i}
-                                 className="flex items-start gap-3 p-3 rounded-md bg-white border border-slate-100 group transition-all hover:border-[#FF6600]"
+                                 className="flex items-start gap-4 p-4 rounded-md bg-white border border-slate-100 group transition-all duration-500 hover:border-[#FF6600]/30 hover:shadow-[0_10px_30px_rgba(255,102,0,0.05)] hover:-translate-y-1 relative overflow-hidden"
                               >
-                                 <ChevronRight size={14} className="mt-0.5 text-[#FF6600]" />
-                                 <span className="text-[11px] font-medium text-slate-700 group-hover:text-slate-900 transition-colors leading-tight">
+                                 {/* Background Micro-Detail */}
+                                 <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF6600]/[0.02] rounded-full -mr-12 -mt-12 group-hover:bg-[#FF6600]/[0.05] transition-colors duration-500" />
+                                 
+                                 <div className="relative">
+                                    <div className="absolute -inset-1 bg-[#FF6600]/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <ChevronRight size={16} className="relative mt-0.5 text-[#FF6600] group-hover:translate-x-1 transition-transform" />
+                                 </div>
+                                 
+                                 <span className="text-[12px] lg:text-[13px] font-semibold text-slate-500 group-hover:text-slate-950 transition-colors leading-tight relative z-10">
                                     {item}
                                  </span>
                               </div>
@@ -154,7 +161,7 @@ export default function WebDevelopment() {
                         </div>
                      </div>
 
-                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-6">
+                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
                         {[
                            { label: "Scalable", icon: Cpu },
                            { label: "Intuitive", icon: Zap },
@@ -163,48 +170,59 @@ export default function WebDevelopment() {
                         ].map((stat, i) => (
                            <div 
                               key={i}
-                              className="flex flex-col items-center gap-1.5 p-3 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:-translate-y-1 text-center"
+                              className="flex flex-col items-center gap-3 p-6 rounded-md bg-white border border-slate-100 shadow-sm transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl text-center group relative overflow-hidden"
                            >
-                              <div className="p-2 rounded-md bg-[#FF6600] text-white">
-                                 <stat.icon size={14} />
+                              {/* Dynamic Glow backdrop */}
+                              <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-[#FF6600]/5 rounded-full blur-2xl group-hover:bg-[#FF6600]/10 transition-colors duration-700" />
+
+                              <div className="relative">
+                                 <div className="absolute -inset-4 bg-[#FF6600]/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700" />
+                                 <div className="relative p-3 rounded-md bg-[#FF6600] text-white shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
+                                    <stat.icon size={18} />
+                                 </div>
                               </div>
-                              <span className="text-[9px] font-bold text-[#FF6600] uppercase tracking-widest">{stat.label}</span>
+                              <span className="text-[10px] font-display font-extrabold text-[#FF6600] uppercase tracking-[0.2em]">{stat.label}</span>
                            </div>
                         ))}
                      </div>
                   </div>
 
                   {/* RIGHT IMAGE / TECH SPEC */}
-                  <div className="lg:col-span-4 relative lg:sticky lg:top-28">
-                     <div className="relative rounded-md overflow-hidden shadow-2xl border border-slate-100 bg-white">
+                  <div className="lg:col-span-4 relative lg:sticky lg:top-32">
+                     <div className="relative rounded-md overflow-hidden shadow-2xl border border-slate-100 bg-white group cursor-crosshair">
                         <img 
                            src={imgWebDev} 
                            alt="Web Development Ecosystem" 
-                           className="w-full h-auto object-cover" 
+                           className="w-full h-auto object-cover transition-transform duration-[4000ms] group-hover:scale-110" 
                         />
-                        <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
-                           <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
-                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Ecosystem Matrix</span>
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex flex-col justify-end p-8">
+                           <div className="flex items-center gap-3 mb-3">
+                              <div className="h-1 w-12 bg-[#FF6600] rounded-full" />
+                              <span className="text-[9px] font-bold text-[#FF6600] uppercase tracking-[0.4em] animate-pulse">Monitoring Active</span>
+                           </div>
+                           <h4 className="text-lg font-display font-extrabold text-white uppercase tracking-tight">Ecosystem Matrix</h4>
+                           <p className="text-[10px] text-slate-300 font-semibold uppercase tracking-widest mt-1">Status: Optimized for Scale</p>
                         </div>
                      </div>
 
                      {/* TECH STACK INDICATOR */}
                      <div className="mt-8 space-y-4">
-                        <div className="grid grid-cols-1 gap-3">
+                        <div className="grid grid-cols-1 gap-4">
                            {[
                               { icon: Server, title: "Robust Architecture", desc: "High-availability engineering." },
                               { icon: Database, title: "Data Integrity", desc: "Complex ecosystem management." }
                            ].map((item, i) => (
                               <div
                                  key={i}
-                                 className="flex items-center gap-3 bg-white p-3 rounded-md border border-slate-100"
+                                 className="flex items-center gap-4 bg-white p-5 rounded-md border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 relative group overflow-hidden"
                               >
-                                 <div className="p-2 rounded-md bg-orange-50 text-[#FF6600]">
-                                    <item.icon size={16} />
+                                 <div className="absolute top-0 left-0 w-1 h-full bg-[#FF6600] transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                                 <div className="relative p-3 rounded-md bg-orange-50 text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-500">
+                                    <item.icon size={20} />
                                  </div>
-                                 <div className="space-y-0.5">
-                                    <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-tight">{item.title}</h4>
-                                    <p className="text-[10px] text-slate-500 font-medium leading-tight">{item.desc}</p>
+                                 <div className="space-y-1">
+                                    <h4 className="text-[11px] font-extrabold text-slate-900 uppercase tracking-tight group-hover:text-[#FF6600] transition-colors">{item.title}</h4>
+                                    <p className="text-[11px] text-slate-400 font-semibold leading-tight">{item.desc}</p>
                                  </div>
                               </div>
                            ))}

@@ -32,7 +32,7 @@ export default function LogoDesign() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Identity Core</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "LOGO DESIGN.";
                         const words = title.split(" ");
@@ -63,7 +63,7 @@ export default function LogoDesign() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
                   >
                      Crafting Compelling Visual Identities for Global Enterprises. Memorable, distinctive, and professionally engineered for dominance.
                   </motion.p>
@@ -85,7 +85,7 @@ export default function LogoDesign() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -93,7 +93,7 @@ export default function LogoDesign() {
          </div>
 
          {/* THE IDENTITY BLUEPRINT - COMPACT SCALE */}
-         <section className="relative py-8 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
+         <section className="relative py-8 bg-white overflow-hidden border-t border-slate-50">
             <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-24">
                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
@@ -105,15 +105,22 @@ export default function LogoDesign() {
 
                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
                         <div className="lg:col-span-7 space-y-6">
-                           <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
+                           <h2 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
                               Compelling & <span className="text-[#FF6600]">Distinctive.</span>
                            </h2>
-                           <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight font-secondary">
+                           <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed">
                               A compelling logo should always be distinctive and reflect the essence of a company. Our professional designers specialize in crafting logos for high-growth enterprises.
                            </p>
                            <div className="h-px w-full bg-slate-100" />
-                           <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                           <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed">
                               We prioritize our clients' objectives, creating logos that help their companies gain a competitive edge through a compelling visual identity. Memory-engineered for brand endurance.
+                           </p>
+                           <div className="h-px w-full bg-slate-100" />
+                           <p className="text-base lg:text-lg font-semibold text-[#FF6600] leading-relaxed italic">
+                              Deliverables include Master Vector Assets (AI/EPS), High-Fidelity Chromatic Systems (Pantone/CMYK), and Custom Typographic Protocols.
+                           </p>
+                           <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed">
+                              We bridge the gap between pure strategic intent and visual impact. Every design is built to exceed institutional standards and sustain market dominance.
                            </p>
                         </div>
 
@@ -123,22 +130,26 @@ export default function LogoDesign() {
                            {/* CINEMATIC LUMINOUS AXIS */}
                            <div className="absolute left-0 top-0 w-px h-[100%] bg-gradient-to-b from-[#FF6600] via-[#FF6600]/40 to-transparent" />
 
-                           <div className="space-y-3 group">
+                           <div className="space-y-3 group/sidebar hover:translate-x-1 transition-transform duration-500 p-4 rounded-md hover:bg-orange-50/30">
                               <div className="flex items-center gap-3">
-                                 <Lightbulb size={16} className="text-[#FF6600] group-hover:scale-110 transition-transform" />
-                                 <h3 className="text-[10px] font-bold text-slate-900 uppercase tracking-[0.3em]">Why you need a logo</h3>
+                                 <div className="w-8 h-8 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover/sidebar:bg-[#FF6600] group-hover/sidebar:text-white transition-all duration-500 shadow-sm">
+                                    <Lightbulb size={16} />
+                                 </div>
+                                 <h3 className="text-xs lg:text-sm font-display font-extrabold text-slate-900 tracking-tight">Why You Need a Logo</h3>
                               </div>
-                              <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                              <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed pl-11">
                                  Logo creates a value of your strong brand recognition and familiarity. It makes people think of your service or product instantly.
                               </p>
                            </div>
 
-                           <div className="space-y-3 group">
+                           <div className="space-y-3 group/sidebar hover:translate-x-1 transition-transform duration-500 p-4 rounded-md hover:bg-orange-50/30">
                               <div className="flex items-center gap-3">
-                                 <CheckCircle2 size={16} className="text-[#FF6600] group-hover:scale-110 transition-transform" />
-                                 <h3 className="text-[10px] font-bold text-slate-900 uppercase tracking-[0.3em]">Why webultrasolution</h3>
+                                 <div className="w-8 h-8 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover/sidebar:bg-[#FF6600] group-hover/sidebar:text-white transition-all duration-500 shadow-sm">
+                                    <CheckCircle2 size={16} />
+                                 </div>
+                                 <h3 className="text-xs lg:text-sm font-display font-extrabold text-slate-900 tracking-tight">Why WebUltraSolution</h3>
                               </div>
-                              <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                              <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed pl-11">
                                  We have helped hundreds of companies to establish their brands. We understand the perfect position a logo has in creating brand identity.
                               </p>
                            </div>

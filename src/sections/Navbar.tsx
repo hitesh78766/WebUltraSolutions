@@ -26,7 +26,8 @@ const megaMenuData = [
       { name: "Web Design", icon: Monitor, href: "/web-design" },
       { name: "Responsive + Mobile Websites", icon: Monitor, href: "/responsive-design" },
       { name: "Graphic Design", icon: Target, href: "/graphic-design" },
-      { name: "Logo Design", icon: Target, href: "/logo-design" }
+      { name: "Logo Design", icon: Target, href: "/logo-design" },
+      // { name: "Custom Web Design", icon: Monitor, href: "/web-design" }
     ]
   },
   {
@@ -40,6 +41,35 @@ const megaMenuData = [
       { name: "App Development", icon: Cpu, href: "/app-development" },
       { name: "Software Development", icon: Cpu, href: "/software-development" },
       { name: "Android App Development", icon: Monitor, href: "/android-app-development" }
+    ]
+  },
+  {
+    category: "INTEGRATED MARKETING",
+    icon: Target,
+    links: [
+      { name: "Digital Marketing", icon: Target, href: "/digital-marketing" },
+      { name: "SEO Consulting", icon: Target, href: "/seo-consulting" },
+      { name: "PPC Advertising", icon: Target, href: "/ppc-advertising" },
+      { name: "Content Marketing", icon: Target, href: "/content-marketing" },
+      { name: "Social Media Marketing", icon: Target, href: "/social-media-marketing" },
+      { name: "Web Analytics", icon: Target, href: "/web-analytics" },
+      { name: "Reputation Management", icon: Target, href: "/reputation-management" },
+      { name: "Content Writing", icon: Target, href: "/content-writing" },
+      { name: "Online Reputation Management", icon: Target, href: "/online-reputation-management" }
+    ]
+  },
+  {
+    category: "WEB PORTAL",
+    icon: Cpu,
+    links: [
+      { name: "News Portal", icon: Cpu, href: "/news-portal" },
+      { name: "Property Portal", icon: Cpu, href: "/property-portal" },
+      { name: "Classified Portal", icon: Cpu, href: "/classified-portal" },
+      { name: "Matrimonial Portal", icon: Cpu, href: "/matrimonial-portal" },
+      { name: "On Line Chat", icon: Cpu, href: "/online-chat" },
+      { name: "Financial Portal", icon: Cpu, href: "/financial-portal" },
+      { name: "Advertisement Portal", icon: Cpu, href: "/advertisement-portal" },
+      { name: "Health Portal", icon: Cpu, href: "/health-portal" }
     ]
   }
 ];
@@ -186,80 +216,82 @@ export default function Navbar() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -10, scale: 0.98 }}
                           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                          className={`absolute top-[52px] left-1/2 -translate-x-1/2 ${link.name === 'Services' ? 'w-[640px]' : 'w-[440px]'} max-w-[95vw] bg-white border border-slate-100 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.12)] z-[100] rounded-md overflow-hidden pointer-events-auto p-2`}
+                          className={`fixed top-[74px] left-0 right-0 z-[100] pointer-events-auto px-4 lg:px-8`}
                           onMouseLeave={() => {
                             setIsServicesOpen(false);
                             setIsAboutOpen(false);
                           }}
                         >
-                          {link.name === 'Services' ? (
-                            <div className="grid grid-cols-2 gap-2 relative">
-                              {megaMenuData.map((section, idx) => (
-                                <div key={idx} className="relative group/column p-4 rounded-md transition-colors hover:bg-slate-50/50">
-                                  <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-2">
-                                    <div className="text-[#F97316]">
-                                      <section.icon size={15} />
+                          <div className={`mx-auto ${link.name === 'Services' ? 'max-w-7xl' : 'max-w-lg'} bg-white border border-slate-100 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.12)] rounded-md overflow-hidden p-4 lg:p-6`}>
+                            {link.name === 'Services' ? (
+                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 relative">
+                                {megaMenuData.map((section, idx) => (
+                                  <div key={idx} className="relative group/column p-2 lg:p-4 rounded-md transition-colors hover:bg-slate-50/50">
+                                    <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-2">
+                                      <div className="text-[#F97316]">
+                                        <section.icon size={15} />
+                                      </div>
+                                      <h4 className="text-[10px] font-black text-slate-800 tracking-[0.15em] uppercase leading-none">
+                                        {section.category}
+                                      </h4>
                                     </div>
-                                    <h4 className="text-[10px] font-black text-slate-800 tracking-[0.15em] uppercase leading-none">
-                                      {section.category}
-                                    </h4>
+                                    <ul className="space-y-1.5">
+                                      {section.links.map((sublink, sIdx) => (
+                                        <li key={sIdx} className="group/item list-none">
+                                          <a
+                                            href={typeof sublink === 'string' ? '#services' : sublink.href}
+                                            onClick={(e) => handleNavClick(e as any, typeof sublink === 'string' ? '#services' : sublink.href)}
+                                            className="flex items-center gap-2.5 py-1.5 transition-all text-slate-600 hover:text-[#F97316] group/link"
+                                          >
+                                            <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
+                                              {typeof sublink === 'object' && sublink.icon ? <sublink.icon size={13} /> : <Target size={13} />}
+                                            </div>
+                                            <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
+                                              {typeof sublink === 'string' ? sublink : sublink.name}
+                                            </span>
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
                                   </div>
-                                  <ul className="space-y-1.5">
-                                    {section.links.map((sublink, sIdx) => (
-                                      <li key={sIdx} className="group/item list-none">
-                                        <a
-                                          href={typeof sublink === 'string' ? '#services' : sublink.href}
-                                          onClick={(e) => handleNavClick(e as any, typeof sublink === 'string' ? '#services' : sublink.href)}
-                                          className="flex items-center gap-2.5 py-1.5 transition-all text-slate-600 hover:text-[#F97316] group/link"
-                                        >
-                                          <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
-                                            {typeof sublink === 'object' && sublink.icon ? <sublink.icon size={13} /> : <Target size={13} />}
-                                          </div>
-                                          <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
-                                            {typeof sublink === 'string' ? sublink : sublink.name}
-                                          </span>
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <div className="p-4 relative">
-                              <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-2">
-                                <div className="text-[#F97316]">
-                                  <Target size={15} />
-                                </div>
-                                <h4 className="text-[10px] font-black text-slate-800 tracking-[0.15em] uppercase leading-none">Agency Core</h4>
-                              </div>
-
-                              <div className="grid grid-cols-2 gap-x-6 gap-y-1">
-                                {[
-                                  { name: "Overview", icon: Monitor, href: "/company-overview" },
-                                  { name: "Mission", icon: Target, href: "/mission" },
-                                  { name: "Team", icon: Cpu, href: "/team" },
-                                  { name: "Why Us", icon: Target, href: "/why-us" },
-                                  { name: "Expertise", icon: Monitor, href: "/expertise" },
-                                  { name: "Feedback", icon: Cpu, href: "/feedback" }
-                                ].map((item, index) => (
-                                  <a
-                                    key={index}
-                                    href={item.href}
-                                    onClick={(e) => handleNavClick(e as any, item.href)}
-                                    className="group/link flex items-center gap-2.5 py-2 transition-all text-slate-600 hover:text-[#F97316]"
-                                  >
-                                    <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
-                                      <item.icon size={13} />
-                                    </div>
-                                    <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
-                                      {item.name}
-                                    </span>
-                                  </a>
                                 ))}
                               </div>
-                            </div>
-                          )}
+                            ) : (
+                              <div className="p-4 relative">
+                                <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-2">
+                                  <div className="text-[#F97316]">
+                                    <Target size={15} />
+                                  </div>
+                                  <h4 className="text-[10px] font-black text-slate-800 tracking-[0.15em] uppercase leading-none">Agency Core</h4>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                                  {[
+                                    { name: "Overview", icon: Monitor, href: "/company-overview" },
+                                    { name: "Mission", icon: Target, href: "/mission" },
+                                    { name: "Team", icon: Cpu, href: "/team" },
+                                    { name: "Why Us", icon: Target, href: "/why-us" },
+                                    { name: "Expertise", icon: Monitor, href: "/expertise" },
+                                    { name: "Feedback", icon: Cpu, href: "/feedback" }
+                                  ].map((item, index) => (
+                                    <a
+                                      key={index}
+                                      href={item.href}
+                                      onClick={(e) => handleNavClick(e as any, item.href)}
+                                      className="group/link flex items-center gap-2.5 py-2 transition-all text-slate-600 hover:text-[#F97316]"
+                                    >
+                                      <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
+                                        <item.icon size={13} />
+                                      </div>
+                                      <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
+                                        {item.name}
+                                      </span>
+                                    </a>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Zap, Shield, Cpu, Target, Layers, Globe, Monitor, Code2, Sparkles } from 'lucide-react';
+import { Smartphone, Zap, Shield, Cpu, Target, Layers, Globe, Monitor, Code2, Sparkles, ChevronRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ThreeAndroidArchitecture from '../components/ThreeAndroidArchitecture';
-import imgArchitecture from '../assets/android_architecture_elite_blueprint_1775317450948.png';
+import imgArchitecture from '../assets/android_architecture_vibrant_elite_1775760813364.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +34,7 @@ export default function AndroidAppDevelopment() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Android Engineering</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ANDROID APP DEVELOPMENT.";
                         const words = title.split(" ");
@@ -65,7 +65,7 @@ export default function AndroidAppDevelopment() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
                   >
                      End-to-end solutions for custom mobile app development. Leveraging platform functionalities to build high-quality, high-status custom Android apps.
                   </motion.p>
@@ -87,7 +87,7 @@ export default function AndroidAppDevelopment() {
                         <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={14} />
                         </div>
-                        <span className="text-[10px] font-medium text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -105,52 +105,45 @@ export default function AndroidAppDevelopment() {
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
                         <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Mobile Engineering</span>
                      </div>
-                     <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
+                     <h2 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 tracking-tight uppercase leading-none">
                         Premier <span className="text-[#FF6600]">Android Ecosystems.</span>
                      </h2>
                      
                      <div className="space-y-4">
-                        <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
+                        <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed max-w-2xl border-l-4 border-[#FF6600] pl-4">
                            From design and development through launch and maintenance. We plan, design & develop employing platform functionalities to full extent.
                         </p>
-                        <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
+                        <p className="text-base font-semibold text-slate-500 leading-relaxed">
                            Android has enabled its users to explore the world of ease. Its lightweight and compatibility with hardware makes it an outstanding operating system.
                         </p>
-                        <p className="text-[11px] text-slate-400 font-bold leading-relaxed opacity-80 uppercase tracking-widest">
+                        <p className="text-sm font-bold text-slate-400 leading-relaxed opacity-80 uppercase tracking-widest">
                            Used by billions globally, substantially impacting the mobile market. Our center in Noida minimizes costs while delivering a spectrum of online solutions.
                         </p>
                      </div>
 
                      {/* HUBS */}
-                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-6 border-t border-slate-100">
-                        <div className="p-5 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:border-[#FF6600]">
-                           <div className="flex items-center gap-3 mb-3">
-                              <Zap size={16} className="text-[#FF6600]" />
-                              <h4 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Investing In Mobile</h4>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-8 border-t border-slate-100">
+                        {[
+                           { title: "Investing In Mobile", icon: Zap, items: ["Real-time engagement", "Intuitive Interface", "Loyalty Integration", "Pulse Alerts"] },
+                           { title: "Technical Advantage", icon: Shield, items: ["Hardware Optimization", "Market Edge", "Lightweight Arch", "Elite Support"] }
+                        ].map((hub, hubIdx) => (
+                           <div key={hubIdx} className="group p-6 rounded-xl bg-white border border-slate-50 shadow-sm transition-all duration-500 hover:shadow-2xl hover:border-orange-100/50 hover:-translate-y-1.5 flex flex-col items-start gap-4">
+                              <div className="w-10 h-10 rounded-full bg-orange-50 text-[#FF6600] flex items-center justify-center group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-300 shadow-sm">
+                                 <hub.icon size={18} />
+                              </div>
+                              <div className="space-y-4">
+                                 <h4 className="text-[13px] font-display font-extrabold text-slate-900 uppercase tracking-widest leading-none">{hub.title}</h4>
+                                 <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
+                                    {hub.items.map((item, i) => (
+                                       <li key={i} className="text-[11px] font-bold text-slate-500 uppercase tracking-tight flex items-center gap-2 group/item">
+                                          <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] opacity-40 group-hover/item:opacity-100 transition-opacity" />
+                                          {item}
+                                       </li>
+                                    ))}
+                                 </ul>
+                              </div>
                            </div>
-                           <ul className="grid grid-cols-2 gap-2">
-                              {["Real-time engagement", "Intuitive Interface", "Loyalty Integration", "Pulse Alerts"].map((item, i) => (
-                                 <li key={i} className="text-[10px] font-bold text-slate-500 uppercase tracking-tight flex items-center gap-2">
-                                    <div className="w-1 h-1 rounded-full bg-[#FF6600] opacity-40" />
-                                    {item}
-                                 </li>
-                              ))}
-                           </ul>
-                        </div>
-                        <div className="p-5 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:border-[#FF6600]">
-                           <div className="flex items-center gap-3 mb-3">
-                              <Shield size={16} className="text-[#FF6600]" />
-                              <h4 className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">Technical Advantage</h4>
-                           </div>
-                           <ul className="grid grid-cols-2 gap-2">
-                              {["Hardware Optimization", "Market Edge", "Lightweight Arch", "Elite Support"].map((item, i) => (
-                                 <li key={i} className="text-[10px] font-bold text-slate-500 uppercase tracking-tight flex items-center gap-2">
-                                    <div className="w-1 h-1 rounded-full bg-[#FF6600] opacity-40" />
-                                    {item}
-                                 </li>
-                              ))}
-                           </ul>
-                        </div>
+                        ))}
                      </div>
                   </div>
 
@@ -177,6 +170,84 @@ export default function AndroidAppDevelopment() {
                      </div>
                   </div>
                </div>
+            </div>
+         </section>
+
+         {/* PEHRA NARRATIVE SECTION - HIGH DENSITY TECHNICAL BLOCKS */}
+         <section className="py-20 bg-white">
+            <div className="max-w-[1300px] mx-auto px-8 lg:px-16 space-y-16">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+                  <div className="space-y-4">
+                     <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
+                        Hardware Mastery <span className="text-[#FF6600]">& SDK Orchestration</span>
+                     </h3>
+                     <p className="text-base font-semibold text-slate-500 leading-relaxed">
+                        Our engineering philosophy for the Android ecosystem focuses on absolute hardware mastery. By leveraging the latest NDK and SDK protocols, we optimize application performance for a diverse range of devices—from high-end flagships to resource-constrained hardware. We ensure low-latency responsiveness and efficient memory management, delivering a high-fidelity experience that utilizes the vertical power of the Android platform.
+                     </p>
+                  </div>
+                  <div className="space-y-4">
+                     <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
+                        Market Scalability <span className="text-[#FF6600]">& Distribution</span>
+                     </h3>
+                     <p className="text-base font-semibold text-slate-500 leading-relaxed">
+                        We navigate the complex dynamics of the global Android market with institutional authority. Our deployment strategies go beyond standard Play Store submissions; we engineer applications for massive traffic, utilizing localized CDN distributions and versioning matrices that ensure compatibility across fragmented OS versions. This enables your brand to dominate mobile markets with absolute scalability.
+                     </p>
+                  </div>
+               </div>
+
+               <div className="pt-12 border-t border-slate-100">
+                  <div className="max-w-4xl space-y-4">
+                     <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
+                        Security-First <span className="text-[#FF6600]">Enterprise Protocols</span>
+                     </h3>
+                     <p className="text-base font-semibold text-slate-500 leading-relaxed">
+                        Integrity is the core of our Android development matrix. We implement enterprise-grade security protocols, including biometric authentication, sophisticated data encryption, and sandboxed storage environments. Our applications undergo rigorous penetration testing to ensure that your corporate and user data remains impenetrable within the increasingly complex digital landscape.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         {/* PRESTIGE BANNER - CINEMATIC CONCLUSION */}
+         <section className="relative py-24 bg-slate-950 overflow-hidden">
+            {/* RADIAL GLOW EFFECT */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF6600]/10 rounded-full blur-[120px]" />
+            
+            <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
+               <div className="space-y-4">
+                  <motion.div
+                     initial={{ opacity: 0, scale: 0.9 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     viewport={{ once: true }}
+                     className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FF6600]/30 bg-[#FF6600]/5 text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.3em]"
+                  >
+                     <Sparkles size={12} />
+                     Future Intelligence
+                  </motion.div>
+                  <h2 className="text-4xl lg:text-6xl font-display font-extrabold text-white tracking-tighter uppercase leading-[0.9]">
+                     Digital <span className="text-[#FF6600]">Dominance.</span>
+                  </h2>
+               </div>
+               
+               <p className="text-lg lg:text-xl font-semibold text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                  We don't just build Android apps; we engineer the high-performance digital ecosystems that define market leaders.
+               </p>
+
+               <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="pt-4"
+               >
+                  <button className="group relative px-8 py-4 bg-[#FF6600] text-white overflow-hidden rounded-md transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,102,0,0.3)]">
+                     <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
+                     <span className="relative z-10 font-bold uppercase tracking-widest flex items-center gap-2">
+                        Initiate Strategic Consultation
+                        <ChevronRight size={18} />
+                     </span>
+                  </button>
+               </motion.div>
             </div>
          </section>
       </div>

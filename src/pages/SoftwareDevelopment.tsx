@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Workflow, Shield, Monitor, Target, Globe, Code2, Sparkles } from 'lucide-react';
+import { Cpu, Workflow, Shield, Monitor, Target, Globe, Code2, Sparkles, ChevronRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ThreeSolutionBackground from '../components/ThreeSolutionBackground';
@@ -9,7 +9,7 @@ import imgBlueprint from '../assets/software_engineering_elite_blueprint_1775316
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SoftwareDevelopment() {
-   
+
    useEffect(() => {
       window.scrollTo(0, 0);
       setTimeout(() => ScrollTrigger.refresh(), 500);
@@ -21,11 +21,11 @@ export default function SoftwareDevelopment() {
          <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* INTERACTIVE SOLUTION BACKDROP */}
             <ThreeSolutionBackground />
-            
+
             {/* Content Core - Centered Elite Architecture */}
             <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
                <div className="flex flex-col items-center gap-4">
-                  <motion.div 
+                  <motion.div
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
                      className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
@@ -34,7 +34,7 @@ export default function SoftwareDevelopment() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Systems Engineering</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "SOFTWARE DEVELOPMENT.";
                         const words = title.split(" ");
@@ -65,14 +65,14 @@ export default function SoftwareDevelopment() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
                   >
                      Evolutionized enterprise software solutions. Engineering bespoke digital foundations with absolute integrity and technical precision.
                   </motion.p>
                </div>
 
                {/* REFINED BADGE STACK */}
-               <motion.div 
+               <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
@@ -98,23 +98,23 @@ export default function SoftwareDevelopment() {
          <section className="relative py-8 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
             <div className="relative z-10 max-w-[1300px] mx-auto px-8 lg:px-16">
                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-                  
+
                   {/* LEFT COLUMN: SYSTEM ARCHITECTURE */}
                   <div className="lg:col-span-8 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
                         <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Systems Engineering</span>
                      </div>
-                     <h2 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
+                     <h2 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 tracking-tight uppercase leading-none">
                         Bespoke <span className="text-[#FF6600]">Enterprise Solutions.</span>
                      </h2>
-                     
+
                      <div className="space-y-4">
-                        <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-4">
-                           Complete web solutions with a commitment to surpass expectations through excellent and timely software engineering.
+                        <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed max-w-2xl border-l-4 border-[#FF6600] pl-4">
+                           Our engineering philosophy centers on the surgical delivery of enterprise-grade software, surpassing market expectations through excellence in full-stack architecture and timely execution.
                         </p>
-                        <p className="text-[12px] text-slate-600 font-medium leading-relaxed">
-                           We utilize latest technology to bring fast and consistent results. Our solutions help you organize business and technology strategies cost-effectively without compromising quality.
+                        <p className="text-base font-semibold text-slate-500 leading-relaxed">
+                           We utilize state-of-the-art technology to bring fast, consistent, and secure results. Our bespoke solutions are engineered to help you organize business and technology strategies cost-effectively without compromising on quality or performance.
                         </p>
                         <p className="text-[11px] text-slate-400 font-bold leading-relaxed opacity-80 uppercase tracking-widest">
                            Leading payroll and software company with state-of-the-art development centers. Iterative approach avoiding surprises.
@@ -122,25 +122,27 @@ export default function SoftwareDevelopment() {
                      </div>
 
                      {/* HUB CATEGORIES */}
-                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-6 border-t border-slate-100">
+                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-8 border-t border-slate-100">
                         {[
-                           { title: "Engineering Core", icon: Code2, items: ["Billing", "Security", "Inventory"] },
-                           { title: "Government Sector", icon: Globe, items: ["Tenders", "Staffing", "Hosting"] },
-                           { title: "Enterprise Hub", icon: Monitor, items: ["Ecommerce", "ERP Systems", "SCM"] }
+                           { title: "Engineering Core", icon: Code2, items: ["Billing Architecture", "Security Protocols", "Inventory Systems"] },
+                           { title: "Government Sector", icon: Globe, items: ["Tenders & Compliance", "Staffing Solutions", "Dedicated Hosting"] },
+                           { title: "Enterprise Hub", icon: Monitor, items: ["Ecommerce Matrix", "ERP Ecosystems", "SCM Orchestration"] }
                         ].map((hub, hubIdx) => (
-                           <div key={hubIdx} className="p-4 rounded-md bg-white border border-slate-100 shadow-sm transition-all hover:border-[#FF6600]">
-                              <div className="flex items-center gap-2 mb-3">
-                                 <hub.icon size={14} className="text-[#FF6600]" />
-                                 <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">{hub.title}</h4>
+                           <div key={hubIdx} className="group p-6 rounded-xl bg-white border border-slate-50 shadow-sm transition-all duration-500 hover:shadow-2xl hover:border-orange-100/50 hover:-translate-y-1.5 flex flex-col items-start gap-4">
+                              <div className="w-10 h-10 rounded-full bg-orange-50 text-[#FF6600] flex items-center justify-center group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-300 shadow-sm">
+                                 <hub.icon size={18} />
                               </div>
-                              <ul className="space-y-1">
-                                 {hub.items.map((item, i) => (
-                                    <li key={i} className="text-[10px] font-bold text-slate-500 uppercase tracking-tight flex items-center gap-2">
-                                       <div className="w-1 h-1 rounded-full bg-[#FF6600] opacity-40" />
-                                       {item}
-                                    </li>
-                                 ))}
-                              </ul>
+                              <div className="space-y-4">
+                                 <h4 className="text-[13px] font-display font-extrabold text-slate-900 uppercase tracking-widest leading-none">{hub.title}</h4>
+                                 <ul className="space-y-3">
+                                    {hub.items.map((item, i) => (
+                                       <li key={i} className="text-sm font-semibold text-slate-500 tracking-tight flex items-center gap-2.5 group/item">
+                                          <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] opacity-40 group-hover/item:opacity-100 transition-opacity" />
+                                          {item}
+                                       </li>
+                                    ))}
+                                 </ul>
+                              </div>
                            </div>
                         ))}
                      </div>
@@ -149,10 +151,10 @@ export default function SoftwareDevelopment() {
                   {/* RIGHT COLUMN: TECHNICAL HUB */}
                   <div className="lg:col-span-4 relative lg:sticky lg:top-28 space-y-6">
                      <div className="relative rounded-md overflow-hidden bg-white shadow-2xl border border-slate-100">
-                        <img 
-                           src={imgBlueprint} 
-                           alt="Software Architecture Blueprint" 
-                           className="w-full h-auto object-cover" 
+                        <img
+                           src={imgBlueprint}
+                           alt="Software Architecture Blueprint"
+                           className="w-full h-auto object-cover"
                         />
                         <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end">
                            <div className="h-0.5 w-10 bg-[#FF6600] mb-2" />
@@ -160,26 +162,64 @@ export default function SoftwareDevelopment() {
                         </div>
                      </div>
 
-                     <div className="p-6 rounded-md bg-white border border-slate-100 shadow-xl space-y-3">
-                        <h3 className="text-[9px] font-bold text-[#FF6600] uppercase tracking-[0.3em] flex items-center gap-2">
+                     <div className="p-6 rounded-xl bg-white border border-slate-50 shadow-xl space-y-4 overflow-hidden relative">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-orange-50/30 rounded-full blur-3xl -mr-12 -mt-12" />
+                        <h3 className="relative z-10 text-[11px] font-display font-extrabold text-[#FF6600] uppercase tracking-[0.3em] flex items-center gap-2">
                            <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
                            System Integrity
                         </h3>
-                        <div className="space-y-2">
+                        <div className="relative z-10 space-y-3">
                            {[
                               { label: "Accountability", value: "Single Point", icon: Shield },
                               { label: "Methodology", value: "Iterative Flow", icon: Workflow }
                            ].map((item, i) => (
-                              <div key={i} className="flex items-center justify-between p-3 rounded-md bg-slate-50 border border-slate-100 transition-all hover:bg-white">
-                                 <div className="flex items-center gap-2">
-                                    <item.icon size={12} className="text-[#FF6600]" />
-                                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-500">{item.label}</span>
+                              <div key={i} className="flex items-center justify-between px-4 py-4 rounded-lg bg-slate-50/50 border border-slate-100 transition-all duration-300 hover:bg-white hover:shadow-lg hover:border-orange-100/30 group/status">
+                                 <div className="flex items-center gap-3">
+                                    <div className="w-7 h-7 rounded-md bg-white shadow-sm flex items-center justify-center text-slate-400 group-hover/status:text-[#FF6600] transition-colors">
+                                       <item.icon size={14} />
+                                    </div>
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 group-hover/status:text-slate-600 transition-colors">{item.label}</span>
                                  </div>
-                                 <span className="text-[10px] font-bold text-slate-900 uppercase">{item.value}</span>
+                                 <span className="text-xs font-display font-extrabold text-slate-900 uppercase tracking-tight">{item.value}</span>
                               </div>
                            ))}
                         </div>
                      </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         {/* PEHRA NARRATIVE SECTION - HIGH DENSITY TECHNICAL BLOCKS */}
+         <section className="py-20 bg-white">
+            <div className="max-w-[1300px] mx-auto px-8 lg:px-16 space-y-16">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+                  <div className="space-y-4">
+                     <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
+                        Legacy <span className="text-[#FF6600]">Modernization</span>
+                     </h3>
+                     <p className="text-base font-semibold text-slate-500 leading-relaxed">
+                        Our approach to legacy modernization involves a surgical refactoring of monolithic systems into agile, cloud-native microservices. We ensure that mission-critical business logic is preserved while upgrading the underlying infrastructure to modern standards, enabling your enterprise to achieve greater scalability and operational resilience.
+                     </p>
+                  </div>
+                  <div className="space-y-4">
+                     <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
+                        Full-Stack <span className="text-[#FF6600]">Orchestration</span>
+                     </h3>
+                     <p className="text-base font-semibold text-slate-500 leading-relaxed">
+                        We excel in full-stack orchestration, engineering cohesive digital environments where frontend responsiveness meets backend power. By utilizing state-of-the-art technologies such as React, Node.js, and high-performance database architectures, we build bespoke software solutions that are as intuitive as they are technically robust.
+                     </p>
+                  </div>
+               </div>
+
+               <div className="pt-12 border-t border-slate-100">
+                  <div className="max-w-4xl space-y-4">
+                     <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
+                        Rigorous <span className="text-[#FF6600]">Quality Assurance</span>
+                     </h3>
+                     <p className="text-base font-semibold text-slate-500 leading-relaxed">
+                        Integrity is at the heart of our engineering process, manifested through absolute quality assurance. Every line of code undergoes a rigorous development matrix, including automated security audits, unit testing, and continuous integration pipelines. This commitment ensures that your software ecosystem remains stable, secure, and future-proof.
+                     </p>
                   </div>
                </div>
             </div>
