@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ThreeNetworkGlobe from '../components/ThreeNetworkGlobe';
+import ThreeNeuralStorm from '../components/ThreeNeuralStorm';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,11 +98,11 @@ export default function OnlineChat() {
                   repeat: Infinity, 
                   ease: "easeInOut" 
                }}
-               className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-200/40 rounded-full blur-[120px] -mr-40 -mt-40 z-0"
+               className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-400/30 rounded-full blur-[120px] -mr-40 -mt-40 z-0"
             />
             
-            <div className="absolute inset-0 opacity-[0.15] z-0 pointer-events-none">
-               <ThreeNetworkGlobe />
+            <div className="absolute inset-0 opacity-[0.4] z-0 pointer-events-none">
+               <ThreeNeuralStorm />
             </div>
 
             <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
@@ -116,7 +116,7 @@ export default function OnlineChat() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Chat Architectures</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-950 tracking-tighter uppercase leading-none flex flex-wrap justify-center lg:justify-start gap-x-3">
+                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-3">
                      {(() => {
                         const words = ["On", "Line", "Chat."];
                         return words.map((word, wordIdx) => (
@@ -140,6 +140,28 @@ export default function OnlineChat() {
                         ));
                      })()}
                   </h1>
+
+                  {/* ELITE STATUS STACK */}
+                  <motion.div 
+                     initial={{ opacity: 0, scale: 0.95 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2"
+                  >
+                     {[
+                        { label: "Channel Latency", val: "Sub-10ms", icon: Activity },
+                        { label: "Security Layer", val: "Encrypted", icon: Shield },
+                        { label: "Sync Protocol", val: "Neural", icon: Zap }
+                     ].map((badge, i) => (
+                        <div key={i} className="px-3 py-1.5 bg-white border border-orange-100 rounded flex items-center gap-2 group hover:shadow-lg transition-all">
+                           <badge.icon size={12} className="text-orange-600" />
+                           <div className="flex flex-col items-start">
+                              <span className="text-[9px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
+                              <span className="text-[7px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
+                           </div>
+                        </div>
+                     ))}
+                  </motion.div>
                </div>
 
                <motion.div
@@ -148,7 +170,7 @@ export default function OnlineChat() {
                   transition={{ delay: 0.8, duration: 1 }}
                   className="max-w-md"
                >
-                  <p className="text-[12px] lg:text-[14px] font-semibold text-slate-600 leading-relaxed border-l-4 border-orange-600 pl-6 lg:pl-8 py-1 uppercase tracking-tight italic">
+                  <p className="text-[12px] lg:text-[14px] font-semibold text-slate-600 leading-relaxed border-l-4 border-orange-600 pl-6 lg:pl-8 py-1 uppercase tracking-tight italic max-w-xl">
                      "Chat messages are typically concise to facilitate prompt responses from other participants."
                   </p>
                </motion.div>
@@ -168,16 +190,16 @@ export default function OnlineChat() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-3xl lg:text-5xl font-display font-black text-slate-900 uppercase tracking-tighter leading-none">
+                        <h2 className="text-xl lg:text-3xl font-display font-black text-slate-950 uppercase tracking-tight leading-[0.9]">
                            Interface <span className="text-orange-600">Protocol.</span>
                         </h2>
                         <div className="w-20 h-1 bg-orange-600" />
                      </div>
-                     <div className="space-y-6 text-slate-600 text-base lg:text-lg font-medium leading-relaxed">
+                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed">
                         <p>
                            Online chat is an interpreter between two or more people; offering communication through web and SMS protocols. We provide the architectural alignment needed to capture premium engagement for global brands.
                         </p>
-                        <p className="text-slate-900 font-bold border-l-4 border-slate-900 pl-8 py-2 uppercase text-sm tracking-tight italic bg-slate-50">
+                        <p className="text-slate-950 font-black border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-tight italic bg-slate-50">
                            &quot;webultrasolution provide both direct one-on-one and text based group chat applications tailored to your specific connectivity requirements.&quot;
                         </p>
                      </div>
@@ -226,8 +248,12 @@ export default function OnlineChat() {
                            </div>
                            <div className="space-y-2">
                               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600">{protocol.tag}</span>
-                              <h3 className="text-2xl lg:text-3xl font-display font-black text-slate-900 uppercase tracking-tighter leading-none">
-                                 {protocol.title}
+                              <h3 className="text-lg lg:text-2xl font-display font-black uppercase tracking-tight leading-none">
+                                 {protocol.title.split(' ').map((word, i) => (
+                                    <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
+                                       {word}{' '}
+                                    </span>
+                                 ))}
                               </h3>
                            </div>
                            <div className="pt-4 flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
@@ -246,7 +272,7 @@ export default function OnlineChat() {
                                     className="w-full bg-orange-600"
                                  />
                               </div>
-                              <p className="text-lg lg:text-xl font-medium text-slate-700 leading-relaxed lg:pl-0">
+                              <p className="text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0">
                                  {protocol.desc}
                               </p>
                            </div>

@@ -48,12 +48,12 @@ function DigitalGlobe() {
       <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#331100" // Darker orange-950 for better "Elite" definition
-          size={0.035}
+          color="#000000" // Pure black for sharpest definition
+          size={0.038} // Slightly larger for better visibility
           sizeAttenuation={true}
           depthWrite={false}
           blending={THREE.NormalBlending}
-          opacity={0.45} // Higher opacity for more "darker" definition
+          opacity={0.6} // Higher opacity for more "darker" presence
         />
       </Points>
 
@@ -68,7 +68,7 @@ function DigitalGlobe() {
             args={[lineIndices, 1]}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#4D1F00" transparent opacity={0.2} />
+        <lineBasicMaterial color="#1a1a1a" transparent opacity={0.35} />
       </lineSegments>
 
       {/* Dynamic Inner Light Mapping */}
@@ -155,7 +155,7 @@ function Particles({ count = 50 }) {
   return (
     <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
       <sphereGeometry args={[0.04, 16, 16]} />
-      <meshBasicMaterial color="#B34700" transparent opacity={0.18} />
+      <meshBasicMaterial color="#000000" transparent opacity={0.25} />
     </instancedMesh>
   );
 }

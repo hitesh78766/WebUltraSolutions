@@ -18,7 +18,11 @@ import {
    Users,
    MessageSquare,
    Monitor,
-   Layers
+   Layers,
+   HelpCircle,
+   Command,
+   Hash,
+   Terminal
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -32,37 +36,43 @@ const strategicNodes = [
       title: "The Spider Logic", 
       icon: Search, 
       tag: "Search Algorithm",
-      desc: "Search Engines like Google and Yahoo have got smarter! They hike up the content that is Relevant, Easy-to-Interpret and Unique! Feeding the spiders, we create Content with fresh ideas and concepts!" 
+      desc: "Search Engines like Google and Yahoo have got smarter! They hike up the content that is Relevant, Easy-to-Interpret and Unique! Feeding the spiders, we create Content with fresh ideas and concepts!",
+      specs: ["Neural Keywords", "Semantic Mapping", "Crawler Engagement"]
    },
    { 
       title: "Perfect Catalyst for SEO", 
       icon: TrendingUp, 
       tag: "Ranking Power",
-      desc: "Website content plays a vital role in obtaining a leading position. Since the Internet is an influential marketing tool, survival of the business is important. Search engines will crawl your website and help you increase your traffic." 
+      desc: "Website content plays a vital role in obtaining a leading position. Since the Internet is an influential marketing tool, survival of the business is important. Search engines will crawl your website and help you increase your traffic.",
+      specs: ["Index Optimization", "Traffic Sourcing", "Global Visibility"]
    },
    { 
       title: "Quality Analysis", 
       icon: BarChart3, 
       tag: "Perspective",
-      desc: "We provide you the best content that provides you with the best result. We make the best content according to the market wave demands. Our content is modern and easy-to-relate-to the market perspective." 
+      desc: "We provide you the best content that provides you with the best result. We make the best content according to the market wave demands. Our content is modern and easy-to-relate-to the market perspective.",
+      specs: ["Market Sync", "Demand Mapping", "Trend Recognition"]
    },
    { 
       title: "Interactive Synthesis", 
       icon: MessageSquare, 
       tag: "Communications",
-      desc: "We create Content according to the voice of the website and perfectly communication to the masses. We choose better content for look feel easy and provide you promotion regularly." 
+      desc: "We create Content according to the voice of the website and perfectly communication to the masses. We choose better content for look feel easy and provide you promotion regularly.",
+      specs: ["Voice Alignment", "Mass Outreach", "Active Promotion"]
    },
    { 
       title: "Professional Copywriting", 
       icon: Edit3, 
       tag: "Business Goals",
-      desc: "Copywriting is not just to impress, but also to achieve specific business objectives. Every copywriting project begins with first analyzing the target customers, their needs, and your solution offerings." 
+      desc: "Copywriting is not just to impress, but also to achieve specific business objectives. Every copywriting project begins with first analyzing the target customers, their needs, and your solution offerings.",
+      specs: ["Persona Analysis", "Offer Logic", "Conversion Hooks"]
    },
    { 
       title: "Appealing Originality", 
       icon: Sparkles, 
       tag: "Engagement",
-      desc: "Originality is the key to attract visitors. Our writers approach every topic with a new angle, creating curiosity for your offerings and services while leaving a long-lasting impression." 
+      desc: "Originality is the key to attract visitors. Our writers approach every topic with a new angle, creating curiosity for your offerings and services while leaving a long-lasting impression.",
+      specs: ["Angle Innovation", "Retention Mechanics", "Brand Authority"]
    },
 ];
 
@@ -97,7 +107,7 @@ export default function ContentWriting() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Narrative Engineering Elite</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ENGINEERING WRITING DOMINANCE.";
                         const words = title.split(" ");
@@ -128,7 +138,7 @@ export default function ContentWriting() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-2xl leading-relaxed italic"
+                     className="text-slate-600 text-sm lg:text-base font-semibold max-w-2xl leading-relaxed italic"
                   >
                      "On the hunt for captivating content? Your quest concludes right here! Precision narrative architectures designed to leave a long-lasting impression."
                   </motion.p>
@@ -139,168 +149,219 @@ export default function ContentWriting() {
                    initial={{ opacity: 0, scale: 0.9 }}
                    animate={{ opacity: 1, scale: 1 }}
                    transition={{ duration: 1, delay: 1.5 }}
-                   className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto pt-4"
+                   className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto pt-4"
                 >
-                   {writingMetrics.map((metric, i) => (
-                      <div key={i} className="px-5 py-3 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-4 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                         <div className="w-8 h-8 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                            <metric.icon size={16} />
-                         </div>
-                         <div className="flex flex-col items-start">
-                            <span className="text-sm font-bold text-[#FF6600] leading-none">{metric.value}</span>
-                            <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{metric.label}</span>
-                         </div>
-                      </div>
-                   ))}
+                    {writingMetrics.map((metric, i) => (
+                       <div key={i} className="px-5 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-4 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
+                          <div className="w-8 h-8 rounded bg-[#FF6600] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform">
+                             <metric.icon size={16} />
+                          </div>
+                          <div className="flex flex-col items-start">
+                             <span className="text-sm font-black text-[#FF6600] leading-none">{metric.value}</span>
+                             <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{metric.label}</span>
+                          </div>
+                       </div>
+                    ))}
                 </motion.div>
             </div>
          </div>
 
-         {/* STRATEGIC WRITING INTERFACE */}
-         <section className="relative py-16 bg-[#FDFBF9] border-t border-slate-50">
-            <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-16">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-                  
-                  {/* LEFT CONTENT CORE */}
-                  <div className="lg:col-span-8 space-y-12">
-                     <div className="space-y-8">
-                        <div className="flex items-center gap-3">
-                           <div className="h-[2px] w-12 bg-[#FF6600]/30" />
-                           <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Content Ecology</span>
-                        </div>
-
-                        <div className="space-y-8">
-                           <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
-                              The Million-Service <span className="text-[#FF6600]">Paradox</span>
-                           </h2>
-                           
-                           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                              <div className="space-y-4">
-                                 <p className="text-[14px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-6 py-2">
-                                    Why hire us when there are a million similar services? We have over 4 years of content writing experience and we re-do the work until the customer is 100% SATISFIED.
-                                 </p>
-                                 <p className="text-[13px] text-slate-500 font-medium leading-relaxed">
-                                    Be it articles, blog posts, forum posts, edits, ghostwriting, biographies, or eBooks—we cater to all content requirements. We cover any niche from relationships and health to forex, business, and Internet marketing.
-                                 </p>
-                              </div>
-                              <div className="relative rounded-lg overflow-hidden shadow-2xl border border-slate-100 group/intro h-full min-h-[220px]">
-                                 <img 
-                                    src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1000" 
-                                    alt="Creative Authoring"
-                                    className="w-full h-full object-cover transition-transform duration-[5000ms] group-hover/intro:scale-110"
-                                 />
-                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                                 <div className="absolute bottom-4 left-4 text-white">
-                                    <span className="text-[10px] font-bold uppercase tracking-widest">Narrative Governance</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     {/* REFINED STRATEGIC NODES */}
-                     <div className="pt-10 space-y-8">
-                        <div className="flex items-center gap-3">
-                            <Layers size={16} className="text-[#FF6600]" />
-                            <h3 className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.2em]">Operational Objectives</h3>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                           {strategicNodes.map((item, i) => (
-                              <div
-                                 key={i}
-                                 className="flex flex-col gap-4 p-7 rounded bg-white border border-slate-100 group transition-all hover:border-[#FF6600] hover:shadow-soft relative overflow-hidden"
-                              >
-                                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <item.icon size={60} />
-                                 </div>
-                                 <div className="flex items-center gap-4">
-                                    <div className="p-3 rounded-md bg-orange-50 text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all shadow-sm">
-                                       <item.icon size={20} />
-                                    </div>
-                                    <div className="flex flex-col">
-                                       <span className="text-[9px] font-bold text-[#FF6600] uppercase tracking-widest">{item.tag}</span>
-                                       <span className="text-[14px] font-bold text-slate-900 transition-colors uppercase tracking-tight">
-                                          {item.title}
-                                       </span>
-                                    </div>
-                                 </div>
-                                 <p className="text-[12px] text-slate-500 font-medium leading-relaxed group-hover:text-slate-700 relative z-10">
-                                    {item.desc}
-                                 </p>
-                              </div>
-                           ))}
-                        </div>
-                     </div>
+         {/* COMPACT NARRATIVE PIPELINE ARCHITECTURE */}
+         <section className="relative py-12 bg-[#FDFBF9] border-t border-slate-50">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-20 space-y-20">
+               
+               <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="flex items-center gap-3">
+                     <Layers size={18} className="text-[#FF6600]" />
+                     <span className="text-[11px] font-black text-[#FF6600] uppercase tracking-[0.6em]">Process Intelligence</span>
                   </div>
+                  <h3 className="text-2xl lg:text-4xl font-display font-black text-slate-900 uppercase tracking-tighter">Narrative <span className="text-[#FF6600]">Governance</span></h3>
+               </div>
 
-                  {/* RIGHT SYSTEM SPECS */}
-                  <div className="lg:col-span-4 relative lg:sticky lg:top-32 flex flex-col gap-8 h-fit">
-                     <div className="p-8 rounded-xl bg-white border border-slate-100 shadow-soft-lg space-y-8 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -mr-16 -mt-16 z-0" />
+               <div className="relative max-w-6xl mx-auto">
+                  {/* Vertical Pipeline Thread */}
+                  <div className="absolute left-[23px] lg:left-1/2 top-0 bottom-0 w-[2px] bg-slate-200/50 -translate-x-1/2 hidden md:block" />
+
+                  <div className="space-y-16 lg:space-y-20">
+                     {/* INTEGRATED PARADOX NODE */}
+                     <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="relative flex flex-col md:flex-row items-center gap-8 lg:gap-16"
+                     >
+                        <div className="absolute lg:left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#FF6600] z-10 hidden md:block" />
                         
-                        <div className="relative z-10 space-y-8">
-                           <div className="flex items-center gap-3 pb-4 border-b border-slate-50">
-                               <Monitor size={20} className="text-[#FF6600]" />
-                               <h4 className="text-[12px] font-bold text-slate-900 uppercase tracking-[0.2em]">Editorial Protocol</h4>
+                        <div className="flex-1 w-full space-y-4 text-center md:text-right">
+                           <div className="space-y-4">
+                              <div className="flex items-center justify-center md:justify-end gap-4 text-slate-400">
+                                 <span className="text-[11px] font-black uppercase tracking-[0.4em]">Paradox Protocol</span>
+                                 <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center shrink-0">
+                                    <HelpCircle size={16} />
+                                 </div>
+                              </div>
+                              <h4 className="text-xl lg:text-2xl font-display font-black text-slate-900 uppercase tracking-tight">
+                                 The Million-Service <span className="text-[#FF6600]">Paradox</span>
+                              </h4>
                            </div>
-                           
-                           <div className="grid grid-cols-1 gap-4">
-                               {[
-                                   { label: "Turnaround", val: "24-48 Hours", sub: "Rapid Delivery", icon: Clock },
-                                   { label: "Uniqueness", val: "100%", sub: "Copyscape Passed", icon: ShieldCheck },
-                                   { label: "Governance", val: "Full Copyright", sub: "Client Ownership", icon: Zap },
-                                   { label: "Experience", val: "4+ Years", sub: "Market Tenure", icon: Users }
-                               ].map((spec, i) => (
-                                   <div key={i} className="flex items-center justify-between p-4 rounded-lg bg-slate-50 border border-slate-100 group/spec hover:bg-white hover:border-orange-200 transition-all">
-                                       <div className="flex items-center gap-4">
-                                          <div className="p-2 bg-white rounded shadow-sm text-slate-400 group-hover/spec:text-[#FF6600] transition-colors">
-                                             <spec.icon size={16} />
-                                          </div>
-                                          <div className="flex flex-col">
-                                              <span className="text-[10px] font-bold text-slate-900 uppercase tracking-tight">{spec.label}</span>
-                                              <span className="text-[9px] text-slate-400 font-medium uppercase tracking-widest">{spec.sub}</span>
-                                          </div>
-                                       </div>
-                                       <span className="text-[10px] items-end font-mono text-[#FF6600] font-bold">{spec.val}</span>
-                                   </div>
-                               ))}
-                           </div>
+                        </div>
 
-                           <div className="pt-6 border-t border-slate-50 space-y-4">
-                              <p className="text-[13px] text-slate-500 font-medium leading-relaxed italic">
-                                 "Originality is the key to attract visitors. Our website content writers create content that really appeals to the reader."
+                        <div className="hidden md:block w-px h-1 bg-transparent" />
+
+                        <div className="flex-1 w-full space-y-4 text-center md:text-left">
+                           <div className="space-y-4">
+                              <p className="text-sm lg:text-base font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-orange-100 pl-6 py-1 italic">
+                                 Why hire us when there are a million similar services? We have over 4 years of experience and we re-do the work until the customer is 100% SATISFIED.
                               </p>
-                              <button className="w-full py-4 bg-[#FF6600] text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded-md shadow-lg shadow-orange-200 hover:bg-[#E65C00] transition-all flex items-center justify-center gap-2 group/btn">
-                                 <span>Deploy Narrative</span>
-                                 <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                              </button>
+                              <div className="flex flex-wrap gap-2 pt-2">
+                                 {["Articles", "Blogs", "Edits", "eBooks", "Ghostwriting"].map((tag, i) => (
+                                    <span key={i} className="text-[9px] font-black uppercase tracking-widest px-2 py-1 bg-slate-100 text-slate-500 rounded border border-slate-200">
+                                       {tag}
+                                    </span>
+                                 ))}
+                              </div>
                            </div>
                         </div>
-                     </div>
+                     </motion.div>
 
-                     <div className="p-6 rounded-xl bg-slate-900 text-white space-y-4 overflow-hidden relative">
-                        <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-[#FF6600] opacity-20 blur-3xl" />
-                        <h5 className="text-[10px] font-bold uppercase tracking-[0.2em] text-orange-400">Mission Critical</h5>
-                        <p className="text-[12px] font-medium leading-relaxed opacity-80">
-                           Survival of business depends on attractive and fresh content that search engines will crawl to increase your traffic.
-                        </p>
-                        <div className="flex items-center gap-2 pt-2">
-                           <div className="h-1 flex-1 bg-white/20 rounded-full overflow-hidden">
-                              <motion.div 
-                                 initial={{ width: 0 }}
-                                 whileInView={{ width: "90%" }}
-                                 transition={{ duration: 2, ease: "easeOut" }}
-                                 className="h-full bg-[#FF6600]"
-                              />
+                     {/* DATA NODES */}
+                     {strategicNodes.map((item, i) => (
+                        <motion.div 
+                           key={i}
+                           initial={{ opacity: 0, y: 30 }}
+                           whileInView={{ opacity: 1, y: 0 }}
+                           viewport={{ once: true }}
+                           className="relative flex flex-col md:flex-row items-center gap-8 lg:gap-16"
+                        >
+                           <div className="absolute lg:left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#FF6600] z-10 hidden md:block" />
+
+                           <div className="flex-1 w-full space-y-4 text-center md:text-right">
+                              {i % 2 !== 0 ? (
+                                 <div className="space-y-4">
+                                    <div className="flex items-center justify-center md:justify-end gap-4">
+                                       <h4 className="text-lg lg:text-xl font-display font-black text-slate-900 uppercase tracking-tight">
+                                          {(() => {
+                                             const words = item.title.split(" ");
+                                             return (<>{words.slice(0, -1).join(" ")} <span className="text-[#FF6600]">{words[words.length - 1]}</span></>);
+                                          })()}
+                                       </h4>
+                                       <div className="w-11 h-11 rounded bg-[#FF6600] flex items-center justify-center text-white shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+                                          <item.icon size={18} />
+                                       </div>
+                                    </div>
+                                    <p className="text-[12px] lg:text-sm text-slate-500 font-semibold leading-relaxed max-w-lg ml-auto">
+                                       {item.desc}
+                                    </p>
+                                    <div className="flex justify-center md:justify-end gap-3 pt-2">
+                                       {item.specs.map((spec, si) => (
+                                          <div key={si} className="flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-100 rounded shadow-sm">
+                                             <div className="w-1 h-1 rounded-full bg-[#FF6600]" />
+                                             <span className="text-[10px] font-black text-slate-600 uppercase tracking-tighter">{spec}</span>
+                                          </div>
+                                       ))}
+                                    </div>
+                                 </div>
+                              ) : (
+                                 <div className="hidden md:block" />
+                              )}
                            </div>
-                           <span className="text-[10px] font-bold">90% Survival</span>
-                        </div>
-                     </div>
+
+                           <div className="hidden md:block w-px h-1 bg-transparent" />
+
+                           <div className="flex-1 w-full space-y-4 text-center md:text-left">
+                              {i % 2 === 0 ? (
+                                 <div className="space-y-4">
+                                    <div className="flex items-center justify-center md:justify-start gap-4">
+                                       <div className="w-11 h-11 rounded bg-[#FF6600] flex items-center justify-center text-white shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+                                          <item.icon size={18} />
+                                       </div>
+                                       <h4 className="text-lg lg:text-xl font-display font-black text-slate-900 uppercase tracking-tight">
+                                          {(() => {
+                                             const words = item.title.split(" ");
+                                             return (<>{words.slice(0, -1).join(" ")} <span className="text-[#FF6600]">{words[words.length - 1]}</span></>);
+                                          })()}
+                                       </h4>
+                                    </div>
+                                    <p className="text-[12px] lg:text-sm text-slate-500 font-semibold leading-relaxed max-w-lg mr-auto">
+                                       {item.desc}
+                                    </p>
+                                    <div className="flex justify-center md:justify-start gap-3 pt-2">
+                                       {item.specs.map((spec, si) => (
+                                          <div key={si} className="flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-100 rounded shadow-sm">
+                                             <div className="w-1 h-1 rounded-full bg-[#FF6600]" />
+                                             <span className="text-[10px] font-black text-slate-600 uppercase tracking-tighter">{spec}</span>
+                                          </div>
+                                       ))}
+                                    </div>
+                                 </div>
+                              ) : (
+                                 <div className="hidden md:block" />
+                              )}
+                           </div>
+                        </motion.div>
+                     ))}
                   </div>
-
                </div>
             </div>
+         </section>
+
+         {/* CONCLUSION PRESTIGE BLOCK */}
+         <section className="max-w-[1400px] mx-auto px-8 lg:px-20 py-12">
+            <motion.div
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+               className="relative py-10 lg:py-12 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
+            >
+               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
+
+               <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+                  <div className="w-12 h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600] shadow-xl group-hover:scale-110 transition-transform duration-700">
+                     <Edit3 size={24} />
+                  </div>
+
+                  <div className="relative">
+                     <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 mx-auto italic">
+                        {(() => {
+                           const text = "Originality is the currency of influence. We engineer surgical narratives that don't just fill space—they command attention and drive 100% market satisfaction.";
+                           return text.split(" ").map((word, wordIdx) => (
+                              <span key={wordIdx} className="inline-block mr-2 relative">
+                                 <motion.span
+                                    initial={{ y: "100%" }}
+                                    whileInView={{ y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                       duration: 0.8,
+                                       delay: 0.3 + (wordIdx * 0.012),
+                                       ease: [0.16, 1, 0.3, 1]
+                                    }}
+                                    className="inline-block"
+                                 >
+                                    {word}
+                                 </motion.span>
+                              </span>
+                           ));
+                        })()}
+                     </h3>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-8 pt-4">
+                     <div className="h-[1px] w-20 bg-white/10" />
+                     <span className="text-[9px] font-black uppercase tracking-[0.6em] text-[#FF6600]">Elite Narrative</span>
+                     <div className="h-[1px] w-20 bg-white/10" />
+                  </div>
+               </div>
+
+               <motion.div
+                  animate={{
+                     scale: [1, 1.2, 1],
+                     opacity: [0.1, 0.15, 0.1]
+                  }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#FF6600] rounded-full blur-[100px]"
+               />
+            </motion.div>
          </section>
       </div>
    );

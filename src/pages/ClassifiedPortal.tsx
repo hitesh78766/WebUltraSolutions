@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-   Tag, 
-   Search, 
-   Globe, 
-   Zap, 
-   TrendingUp, 
+import {
+   Tag,
+   Search,
+   Globe,
+   Zap,
+   TrendingUp,
    ArrowRight,
    Monitor,
    Cpu,
@@ -40,6 +40,20 @@ const classifiedPillars = [
       desc: "Architected for sustained platform integrity through proactive listing management. We use precision-engineered verification protocols to ensure your digital ecosystem remains robust and secure.",
       icon: Shield,
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
+   },
+   {
+      tag: "Conversion",
+      title: "MONETIZATION PROTOCOLS",
+      desc: "High-yield monetization architectures designed for elite classified platforms. We implement advanced regional ad-tech and micro-transaction protocols that maximize platform throughput and revenue scaling.",
+      icon: TrendingUp,
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000"
+   },
+   {
+      tag: "Agility",
+      title: "BEHAVIOR INTELLIGENCE",
+      desc: "Real-time user behavior analysis systems integrated with predictive search logic. Our classified platforms evolve based on precise interaction data, ensuring your ecosystem stays ahead of global market trends.",
+      icon: Cpu,
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
    }
 ];
 
@@ -55,10 +69,10 @@ export default function ClassifiedPortal() {
          {/* CINEMATIC FULL-BLEED HEADER */}
          <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeNeuralStorm />
-            
+
             <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
                <div className="flex flex-col items-center gap-4">
-                  <motion.div 
+                  <motion.div
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
                      className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
@@ -67,7 +81,7 @@ export default function ClassifiedPortal() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite Classified Ecosystems</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ENGINEERING CLASSIFIED DOMINANCE.";
                         const words = title.split(" ");
@@ -98,15 +112,37 @@ export default function ClassifiedPortal() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-2xl leading-relaxed"
                   >
                      High-performance classified portal architectures for global market leaders. We unify your digital footprint through strategic listing distribution and verifiable growth protocols.
                   </motion.p>
+
+                  {/* ELITE STATUS STACK */}
+                  <motion.div
+                     initial={{ opacity: 0, scale: 0.95 }}
+                     animate={{ opacity: 1, scale: 1 }}
+                     transition={{ duration: 1, delay: 1.5 }}
+                     className="flex flex-wrap justify-center gap-3 pt-4"
+                  >
+                     {[
+                        { label: "Active Nodes", val: "Global", icon: Globe },
+                        { label: "Data Integrity", val: "Institutional", icon: Shield },
+                        { label: "Sync Velocity", val: "Instant", icon: Zap }
+                     ].map((badge, i) => (
+                        <div key={i} className="px-4 py-2 bg-white/80 backdrop-blur-md border border-slate-100 shadow-sm rounded flex items-center gap-3 group hover:shadow-xl transition-all">
+                           <badge.icon size={14} className="text-[#FF6600]" />
+                           <div className="flex flex-col items-start translate-y-[1px]">
+                              <span className="text-[10px] font-black text-slate-900 uppercase leading-none tracking-tight">{badge.val}</span>
+                              <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
+                           </div>
+                        </div>
+                     ))}
+                  </motion.div>
                </div>
             </div>
          </div>
 
-         <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-8 bg-[#FDFBF9]">
+         <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-8 ">
             <div className="grid grid-cols-1 gap-6 lg:gap-10">
                <div className="flex flex-col gap-8 lg:gap-12">
                   {classifiedPillars.map((pillar, idx) => (
@@ -114,7 +150,7 @@ export default function ClassifiedPortal() {
                         key={idx}
                         className={`group relative flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-6 lg:gap-10 items-center`}
                      >
-                        <motion.div 
+                        <motion.div
                            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
                            whileInView={{ opacity: 1, x: 0 }}
                            viewport={{ once: true, margin: "-50px" }}
@@ -122,16 +158,23 @@ export default function ClassifiedPortal() {
                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                            className="w-full lg:w-[45%] relative h-[250px] lg:h-[320px] rounded-md overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 group/img cursor-pointer bg-slate-100"
                         >
-                           <motion.img 
-                               src={pillar.image} 
-                               alt={pillar.title}
-                               className="w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover/img:scale-110"
-                            />
+                           <motion.img
+                              src={pillar.image}
+                              alt={pillar.title}
+                              className="w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover/img:scale-110"
+                           />
                            <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 via-transparent to-white/10" />
-                           <span className={`absolute bottom-6 ${idx % 2 === 0 ? "right-6" : "left-6"} text-[50px] font-display font-bold text-white/60 select-none tracking-tighter italic`}>0{idx + 1}</span>
+                           {/* ELITE BADGE */}
+                           <div className="absolute top-6 right-6">
+                              <div className="px-3 py-1.5 rounded-md bg-[#FF6600] text-white shadow-xl flex items-center gap-2">
+                                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                 <span className="text-[10px] font-bold uppercase tracking-wider">Elite standard</span>
+                              </div>
+                           </div>
+                           <span className={`absolute bottom-6 ${idx % 2 === 0 ? "right-6" : "left-6"} text-[50px] font-display font-extrabold text-white/60 select-none tracking-tighter italic`}>0{idx + 1}</span>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                            initial={{ opacity: 0, x: idx % 2 === 0 ? 100 : -100 }}
                            whileInView={{ opacity: 1, x: 0 }}
                            viewport={{ once: true, margin: "-50px" }}
@@ -148,12 +191,12 @@ export default function ClassifiedPortal() {
                                        <div className="w-6 h-[2px] bg-[#FF6600]" />
                                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                                     </div>
-                                    <h3 className="text-xl lg:text-2xl font-display font-bold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
+                                    <h3 className="text-xl lg:text-2xl font-display font-extrabold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
                                        {pillar.title}
                                     </h3>
                                  </div>
                               </div>
-                              <p className="text-[12px] lg:text-[14px] font-medium leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
+                              <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
                                  {pillar.desc}
                               </p>
                               <div className="pt-2">

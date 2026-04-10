@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ThreeNetworkGlobe from '../components/ThreeNetworkGlobe';
+import ThreeNeuralStorm from '../components/ThreeNeuralStorm';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,24 +106,22 @@ export default function MatrimonialPortal() {
 
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">
-         {/* ULTRA-COMPACT PROFESSIONAL HERO */}
-         <div className="relative h-[250px] lg:h-[320px] bg-slate-950 flex items-center overflow-hidden">
-            <div className="absolute inset-0 opacity-60">
-               <ThreeNetworkGlobe />
-            </div>
+         {/* CINEMATIC FULL-BLEED HEADER */}
+         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+            <ThreeNeuralStorm />
 
             <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
                <div className="space-y-4 text-center lg:text-left">
                   <motion.div
-                     initial={{ opacity: 0, x: -20 }}
-                     animate={{ opacity: 1, x: 0 }}
-                     className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-sm"
+                     initial={{ opacity: 0, y: -20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
-                     <div className="w-1.5 h-1.5 rounded-full bg-orange-600 animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite Matrimonial Hub</span>
+                     <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite Matrimonial Ecosystems</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-black text-white tracking-tighter uppercase leading-none flex flex-wrap justify-center lg:justify-start gap-x-3">
+                  <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-3">
                      {(() => {
                         const words = ["Relational", "Dominance."];
                         return words.map((word, wordIdx) => (
@@ -155,7 +153,7 @@ export default function MatrimonialPortal() {
                   transition={{ delay: 0.8, duration: 1 }}
                   className="max-w-md"
                >
-                  <p className="text-[12px] lg:text-[14px] font-semibold text-slate-300 leading-relaxed border-l-4 border-orange-600 pl-6 lg:pl-8 py-1 uppercase tracking-tight italic">
+                  <p className="text-[12px] lg:text-[14px] font-semibold text-slate-500 leading-relaxed border-l-4 border-orange-600 pl-6 lg:pl-8 py-1 uppercase tracking-tight italic">
                      "Engineering high-performance matrimonial foundations through precision architectures and real-time relational synchronization."
                   </p>
                </motion.div>
@@ -175,16 +173,16 @@ export default function MatrimonialPortal() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-3xl lg:text-5xl font-display font-black text-slate-900 uppercase tracking-tighter leading-none">
+                        <h2 className="text-3xl lg:text-5xl font-display font-black text-slate-950 uppercase tracking-tight leading-[0.9]">
                            System <span className="text-orange-600">Architecture.</span>
                         </h2>
                         <div className="w-20 h-1 bg-orange-600" />
                      </div>
-                     <div className="space-y-6 text-slate-600 text-base lg:text-lg font-medium leading-relaxed">
+                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed">
                         <p>
                            Our strategic planning begins by considering your matrimonial platform goals, strengths, and relational challenges. We get to know your user ecosystem inside and out to create an architecture that exceeds expectations for institutional growth.
                         </p>
-                        <p className="text-slate-900 font-bold border-l-4 border-slate-900 pl-8 py-2 uppercase text-sm tracking-tight italic bg-slate-50">
+                        <p className="text-slate-950 font-black border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-tight italic bg-slate-50">
                            &quot;We have helped scores of platforms redefine what they are doing online. Whether you need help refining your current matching strategy or need to start from scratch, we can help you create a plan that works.&quot;
                         </p>
                      </div>
@@ -233,8 +231,12 @@ export default function MatrimonialPortal() {
                            </div>
                            <div className="space-y-2">
                               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600">{protocol.tag}</span>
-                              <h3 className="text-2xl lg:text-3xl font-display font-black text-slate-900 uppercase tracking-tighter leading-none">
-                                 {protocol.title}
+                              <h3 className="text-lg lg:text-2xl font-display font-black uppercase tracking-tight leading-none">
+                                 {protocol.title.split(' ').map((word, i) => (
+                                    <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
+                                       {word}{' '}
+                                    </span>
+                                 ))}
                               </h3>
                            </div>
                            <div className="pt-4 flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
@@ -253,7 +255,7 @@ export default function MatrimonialPortal() {
                                     className="w-full bg-orange-600"
                                  />
                               </div>
-                              <p className="text-lg lg:text-xl font-medium text-slate-700 leading-relaxed lg:pl-0">
+                              <p className="text-base lg:text-lg font-semibold text-slate-700 leading-relaxed lg:pl-0">
                                  {protocol.desc}
                               </p>
                            </div>

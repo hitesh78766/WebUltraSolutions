@@ -1,18 +1,92 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ThreeNetworkGlobe from '../components/ThreeNetworkGlobe';
+import {
+   Globe,
+   Zap,
+   Shield,
+   ArrowRight,
+   Activity,
+   Sparkles,
+   ChevronRight,
+   Target,
+   Heart,
+   PlusCircle,
+   Microscope,
+   ClipboardCheck
+} from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ThreeHealthNeural from '../components/ThreeHealthNeural';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const healthProtocols = [
+   {
+      tag: "Framework",
+      title: "WORLD HEALTH ORGANIZATION CHARTER",
+      desc: "Health promotion, as defined in the World Health Organization's India Charter for Health Promotion in a Globalized World, involves 'enabling people to increase control over their health and its determinants, thereby improving their health.' This strategic framework provides a comprehensive roadmap for transforming health systems by emphasizing patient empowerment and the integration of social determinants into every layer of institutional medical care.",
+      icon: Heart
+   },
+   {
+      tag: "Policy",
+      title: "PRINCIPAL PROMOTION AVENUES",
+      desc: "The principal avenue for health promotion lies in the development of healthy public policies that address essential health prerequisites, including income, housing, food security, employment, and the quality of working conditions. Our mission is to facilitate the creation of high-fidelity social health infrastructures where the development of every public policy is viewed through the lens of human well-being and equitable medical resource distribution.",
+      icon: ClipboardCheck
+   },
+   {
+      tag: "Integration",
+      title: "HEALTH IN ALL POLICIES",
+      desc: "Recent efforts have adopted the concept of 'Health in All Policies,' emphasizing actions that integrate health considerations into all public policies. This approach requires a sophisticated multi-sectoral digital ecosystem where health impacts are mathematically modeled and integrated into urban planning, economic development, and educational frameworks, ensuring that every institutional policy actively contributes to the global health mission.",
+      icon: Microscope
+   },
+   {
+      tag: "Theory",
+      title: "HEALTH PROMOTION MODEL",
+      desc: "This lesson delves into the health promotion model, exploring its impact on health behaviors. It provides insights into the underlying theory of the health promotion model and how this theoretical framework influences the outcomes of health promotion initiatives. By analyzing behavioral psychology and clinical data, we engineer digital health interventions that facilitate successful positive life-cycle transformations for patients globally.",
+      icon: Target
+   },
+   {
+      tag: "Evolution",
+      title: "DIGITIZATION OF MEDICAL RECORDS",
+      desc: "The health portal facilitates the seamless transition from legacy documentation to a robust digital medical data architecture. This ensures that health records are universally accessible, secure, and integrated into the global health promotion framework for improved institutional efficiency. Our solutions eliminate data silos, enabling a neural-like flow of information that empowers providers to make surgical-grade decisions grounded in real-time patient data.",
+      icon: PlusCircle
+   },
+   {
+      tag: "Network",
+      title: "GLOBAL PROVIDER CONNECTIVITY",
+      desc: "Our medical-grade systems enable sub-millisecond connectivity between global providers, patient portals, and public health entities. This digital lattice ensures that health promotion strategies are deployed with mathematical precision across the entire health network. By establishing a high-frequency communication layer, we optimize medical research collaboration and emergency response protocols, creating a resilient, globalized health infrastructure.",
+      icon: Globe
+   }
+];
 
 export default function HealthPortal() {
 
    useEffect(() => {
       window.scrollTo(0, 0);
+      
+      // GSAP Entrance
+      gsap.fromTo(".protocol-node", 
+         { opacity: 0, y: 30 },
+         { 
+            opacity: 1, 
+            y: 0, 
+            duration: 1, 
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+               trigger: ".protocol-section",
+               start: "top 80%",
+            }
+         }
+      );
+
+      setTimeout(() => ScrollTrigger.refresh(), 500);
    }, []);
 
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">
-         
-         {/* LIGHT THEME CINEMATIC HERO */}
-         <div className="relative h-[250px] lg:h-[320px] bg-[#FDFBF9] flex items-center overflow-hidden border-b border-orange-100/30">
+         {/* LIGHT THEME CINEMATIC HERO WITH MEDICAL-TECH ANIMATION */}
+         <div className="relative h-[250px] lg:h-[350px] bg-[#FDFBF9] flex items-center overflow-hidden border-b border-orange-100/30">
             {/* Subtle Orange Glow Animation */}
             <motion.div 
                animate={{ 
@@ -29,8 +103,8 @@ export default function HealthPortal() {
                className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-200/40 rounded-full blur-[120px] -mr-40 -mt-40 z-0"
             />
             
-            <div className="absolute inset-0 opacity-[0.15] z-0 pointer-events-none">
-               <ThreeNetworkGlobe />
+            <div className="absolute inset-0 opacity-[0.8] z-0 pointer-events-none">
+               <ThreeHealthNeural />
             </div>
 
             <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
@@ -41,10 +115,10 @@ export default function HealthPortal() {
                      className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-orange-100 rounded-sm shadow-sm"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-orange-600 animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Health Systems</span>
+                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Medical Systems</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-950 tracking-tighter uppercase leading-none flex flex-wrap justify-center lg:justify-start gap-x-3">
+                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-3">
                      {(() => {
                         const words = ["Health", "Portal."];
                         return words.map((word, wordIdx) => (
@@ -68,6 +142,28 @@ export default function HealthPortal() {
                         ));
                      })()}
                   </h1>
+
+                  {/* MEDICAL PRECISION STATUS STACK */}
+                  <motion.div 
+                     initial={{ opacity: 0, scale: 0.95 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2"
+                  >
+                     {[
+                        { label: "Data Integrity", val: "Medical-Grade", icon: Shield },
+                        { label: "System Sync", val: "Neural Layer", icon: Zap },
+                        { label: "Compliance", val: "WHO-Standard", icon: ClipboardCheck }
+                     ].map((badge, i) => (
+                        <div key={i} className="px-3 py-1.5 bg-white border border-orange-100 rounded flex items-center gap-2 group hover:shadow-lg transition-all">
+                           <badge.icon size={12} className="text-orange-600" />
+                           <div className="flex flex-col items-start">
+                              <span className="text-[9px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
+                              <span className="text-[7px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
+                           </div>
+                        </div>
+                     ))}
+                  </motion.div>
                </div>
 
                <motion.div
@@ -83,44 +179,147 @@ export default function HealthPortal() {
             </div>
          </div>
 
-         {/* MAIN CONTENT AREA */}
-         <section className="max-w-7xl mx-auto px-8 lg:px-12 py-12 lg:py-20 bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-               
-               {/* LEFT CONTENT */}
-               <div className="lg:col-span-7 space-y-8">
-                  <div className="space-y-4">
-                     <h2 className="text-2xl lg:text-3xl font-bold text-[#FF6600]">
-                        Health Portal
-                     </h2>
-                     <p className="text-slate-700 text-sm lg:text-base leading-relaxed font-medium">
-                        The Health Portal plays a pivotal role in transforming health organizations, both in India and globally. Health promotion, as defined in the World Health Organization's India Charter for Health Promotion in a Globalized World, involves "enabling people to increase control over their health and its determinants, thereby improving their health." The principal avenue for health promotion lies in the development of healthy public policies that address essential health prerequisites, including income, housing, food security, employment, and the quality of working conditions. Recent efforts have adopted the concept of "Health in All Policies," emphasizing actions that integrate health considerations into all public policies.
-                     </p>
-                  </div>
+         {/* THE PERIPHERY: HIGH-FIDELITY HEALTH SECTIONS */}
+         <section className="bg-white relative py-20 lg:py-32 protocol-section">
+            <div className="max-w-7xl mx-auto px-8 lg:px-12 space-y-32">
 
-                  <div className="space-y-4 pt-4">
-                     <p className="text-slate-700 text-sm lg:text-base leading-relaxed font-medium italic border-l-2 border-orange-100 pl-4">
-                        This lesson delves into the health promotion model, exploring its impact on health behaviors. It provides insights into the underlying theory of the health promotion model and how this theoretical framework influences the outcomes of health promotion initiatives.
-                     </p>
-                  </div>
-               </div>
+               {/* INTRO BLOCK with MEDICAL VISUALIZATION */}
+               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                  <motion.div
+                     initial={{ opacity: 0, x: -40 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     viewport={{ once: true }}
+                     className="space-y-8"
+                  >
+                     <div className="space-y-4">
+                        <h2 className="text-xl lg:text-3xl font-display font-black text-slate-950 uppercase tracking-tight leading-[0.9]">
+                           Health <span className="text-orange-600">Promotion.</span>
+                        </h2>
+                        <div className="w-20 h-1 bg-orange-600" />
+                     </div>
+                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed">
+                        <p>
+                           The Health Portal plays a pivotal role in transforming health organizations, both in India and globally. We provide the architectural alignment needed to transform the health sector into a high-status digital ecosystem.
+                        </p>
+                        <p className="text-slate-950 font-black border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-tight italic bg-slate-50">
+                           &quot;Recent efforts have adopted the concept of 'Health in All Policies,' emphasizing actions that integrate health considerations into all public policies.&quot;
+                        </p>
+                     </div>
+                  </motion.div>
 
-               {/* RIGHT CONTENT - IMAGE */}
-               <div className="lg:col-span-5 flex justify-center">
-                  <motion.div 
-                     initial={{ opacity: 0, scale: 0.9 }}
+                  <motion.div
+                     initial={{ opacity: 0, scale: 0.95 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true }}
-                     className="relative w-full max-w-md"
+                     className="relative aspect-[16/10] group"
                   >
-                     <img 
-                        src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1000" 
-                        alt="Digital Health Interface" 
-                        className="w-full h-auto rounded-lg shadow-2xl"
-                     />
-                     <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-orange-600/10 rounded-full blur-3xl z-0" />
+                     <div className="absolute -inset-4 bg-orange-600/5 -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
+                     <div className="relative h-full overflow-hidden shadow-2xl border border-slate-100 bg-white">
+                        <img
+                           src="/images/health_interface.png"
+                           alt="Medical Architecture"
+                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3000ms]"
+                        />
+                         <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
+                            <span className="text-[10px] font-bold text-orange-500 uppercase tracking-widest">Global Medical Matrix</span>
+                            <h4 className="text-xl font-bold uppercase tracking-tight">Health Promotion Infrastructure</h4>
+                         </div>
+                     </div>
                   </motion.div>
                </div>
+
+               {/* INTERACTIVE PROTOCOL LIST - PEHRA PATTERN */}
+               <div className="space-y-32">
+                  {healthProtocols.map((protocol, idx) => (
+                     <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-24 items-start protocol-node`}
+                     >
+                        <div className="lg:w-1/3 space-y-6 sticky top-32">
+                           <div className="flex items-center gap-4">
+                              <div className="relative group">
+                                 <div className="absolute -inset-2 bg-orange-600/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                                 <div className="relative w-16 h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
+                                    <protocol.icon size={32} />
+                                 </div>
+                              </div>
+                              <div className="text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
+                           </div>
+                           <div className="space-y-2">
+                              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600">{protocol.tag}</span>
+                              <h3 className="text-lg lg:text-2xl font-display font-black uppercase tracking-tight leading-none group">
+                                 {protocol.title.split(' ').map((word, i) => (
+                                    <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
+                                       {word}{' '}
+                                    </span>
+                                 ))}
+                              </h3>
+                           </div>
+                           <div className="pt-4 flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                              <ChevronRight size={12} className="text-orange-600" />
+                              Active Protocol
+                           </div>
+                        </div>
+
+                        <div className="lg:w-2/3">
+                           <div className="relative">
+                              <div className="absolute -left-12 top-0 bottom-0 w-[2px] bg-slate-100 hidden lg:block overflow-hidden">
+                                 <motion.div
+                                    initial={{ height: 0 }}
+                                    whileInView={{ height: '100%' }}
+                                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                                    className="w-full bg-orange-600"
+                                 />
+                              </div>
+                              <p className="text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0">
+                                 {protocol.desc}
+                              </p>
+                           </div>
+                        </div>
+                     </motion.div>
+                  ))}
+               </div>
+
+               {/* CONCLUSION BLOCK - SIGNATURE PRESTIGE */}
+               <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative py-10 lg:py-14 px-8 rounded-sm bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
+               >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
+
+                  <div className="relative z-10 max-w-4xl mx-auto space-y-5">
+                     <div className="w-10 h-10 mx-auto rounded-sm bg-orange-600/10 border border-orange-600/20 flex items-center justify-center text-orange-600 shadow-xl group-hover:scale-110 transition-transform duration-700">
+                        <Zap size={20} />
+                     </div>
+
+                     <div className="relative">
+                        <h3 className="text-sm lg:text-base font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic">
+                           "Deploy high-fidelity health promotion models across our sophisticated medical infrastructure to increase control over health determinants and improve institutional outcomes with mathematical certainty."
+                        </h3>
+                     </div>
+
+                     <div className="flex items-center justify-center gap-8 pt-4">
+                        <div className="h-[1px] w-24 bg-white/10" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Industry Leader</span>
+                        <div className="h-[1px] w-24 bg-white/10" />
+                     </div>
+                  </div>
+
+                  <motion.div
+                     animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.15, 0.1]
+                     }}
+                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                     className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange-600/20 rounded-full blur-[100px]"
+                  />
+               </motion.div>
 
             </div>
          </section>

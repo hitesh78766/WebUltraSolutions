@@ -106,7 +106,7 @@ export default function WebAnalytics() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Data Intelligence Core</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ENGINEERING ANALYTIC DOMINANCE.";
                         const words = title.split(" ");
@@ -137,7 +137,7 @@ export default function WebAnalytics() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-medium max-w-xl leading-relaxed"
+                     className="text-slate-600 text-sm lg:text-base font-semibold max-w-xl leading-relaxed"
                   >
                      Moving beyond "average reports" to precision insights. We engineer high-fidelity analytic architectures that drive institutional growth and market dominance.
                   </motion.p>
@@ -159,7 +159,7 @@ export default function WebAnalytics() {
                          <div className="w-6 h-6 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                             <feature.icon size={12} />
                          </div>
-                         <span className="text-[9px] font-bold text-slate-700 uppercase tracking-[0.15em]">{feature.label}</span>
+                         <span className="text-[9px] font-semibold text-slate-700 uppercase tracking-[0.15em]">{feature.label}</span>
                       </div>
                    ))}
                 </motion.div>
@@ -180,15 +180,15 @@ export default function WebAnalytics() {
                         </div>
 
                         <div className="space-y-6">
-                           <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tighter uppercase leading-none">
+                           <h2 className="text-xl lg:text-3xl font-display font-black text-slate-900 tracking-tighter uppercase leading-none">
                               Mastering The <span className="text-[#FF6600]">Insight</span> Flow
                            </h2>
                            
                            <div className="space-y-6">
-                              <p className="text-[15px] font-medium text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-5">
+                              <p className="text-base lg:text-xl font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-5 italic">
                                  Whether you own a small business, a medium enterprise, or a Fortune 500 company—you need a Digital Analytics expert who can help you manage your making right business decisions.
                               </p>
-                              <p className="text-[13px] text-slate-500 font-medium leading-relaxed">
+                              <p className="text-sm lg:text-base text-slate-500 font-semibold leading-relaxed">
                                  Many organizations have plenty of valuable insights but few have mastered what's already there. We address this challenge by providing a birds-eye view of your helpdesk and customer base, transforming common "findings" into surgical market dominance.
                               </p>
                            </div>
@@ -203,20 +203,20 @@ export default function WebAnalytics() {
                         </div>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                           {strategicNodes.map((item, i) => (
+                           {strategicNodes.slice(0, 4).map((item, i) => (
                               <div
                                  key={i}
-                                 className="flex flex-col gap-3 p-5 rounded bg-white border border-slate-100 group transition-all hover:border-[#FF6600] hover:shadow-soft"
+                                 className="flex flex-col gap-3 p-8 rounded-md bg-white border border-slate-100 group transition-all hover:border-[#FF6600] hover:shadow-soft"
                               >
                                  <div className="flex items-center gap-3">
-                                    <div className="p-2 rounded bg-orange-50 text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all">
-                                       <item.icon size={16} />
+                                    <div className="p-2.5 rounded-md bg-[#FF6600] text-white transition-all shadow-lg group-hover:scale-110">
+                                       <item.icon size={18} />
                                     </div>
-                                    <span className="text-[12px] font-bold text-slate-900 transition-colors uppercase tracking-tight">
+                                    <span className="text-sm lg:text-base font-black text-slate-900 transition-colors uppercase tracking-tight">
                                        {item.title}
                                     </span>
                                  </div>
-                                 <p className="text-[12px] text-slate-500 font-medium leading-relaxed group-hover:text-slate-700">
+                                 <p className="text-[12px] lg:text-sm text-slate-500 font-semibold leading-relaxed group-hover:text-slate-700">
                                     {item.desc}
                                  </p>
                               </div>
@@ -252,25 +252,125 @@ export default function WebAnalytics() {
                                     { label: "Technical Environment", val: "Documented", desc: "Server & Mobile Audit" },
                                     { label: "Reporting Velocity", icon: Sparkles, val: "Advanced", desc: "Satisfaction & Timesheets" }
                                 ].map((spec, i) => (
-                                    <div key={i} className="flex items-center justify-between p-3 rounded bg-slate-50 border border-slate-100">
+                                    <div key={i} className="flex items-center justify-between p-4 rounded bg-slate-50 border border-slate-100">
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] font-bold text-slate-900 uppercase tracking-tight">{spec.label}</span>
-                                            <span className="text-[9px] text-slate-400 font-medium uppercase tracking-widest">{spec.desc}</span>
+                                            <span className="text-[11px] font-extrabold text-slate-900 uppercase tracking-tight">{spec.label}</span>
+                                            <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-[0.2em]">{spec.desc}</span>
                                         </div>
-                                        <span className="text-[10px] font-mono text-[#FF6600] font-bold">{spec.val}</span>
+                                        <span className="text-[11px] font-mono text-[#FF6600] font-black">{spec.val}</span>
                                     </div>
                                 ))}
                             </div>
 
-                            <p className="text-[13px] text-slate-500 font-medium leading-relaxed italic border-t border-slate-50 pt-4">
-                                "The Advanced reporting suite enables you to generate timesheet and satisfaction reports to understand levels with precision."
+                            <p className="text-sm lg:text-base text-slate-500 font-semibold leading-relaxed border-t border-slate-50 pt-4">
+                                "The Advanced reporting suite enables you to generate timesheet and satisfaction reports to understand client levels with precision."
                             </p>
                         </div>
                      </div>
                   </div>
 
                </div>
+
+               {/* PEHRA PROTOCOL - FULL WIDTH ELITE SECTION */}
+               <div className="mt-24 pt-16 border-t border-slate-100 space-y-16">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                     <div className="flex items-center gap-3">
+                        <Sparkles size={20} className="text-[#FF6600]" />
+                        <span className="text-[11px] font-black text-[#FF6600] uppercase tracking-[0.6em]">System Architecture</span>
+                     </div>
+                     <h3 className="text-2xl lg:text-4xl font-display font-black text-slate-900 uppercase tracking-tighter">Strategic <span className="text-[#FF6600]">Protocols</span></h3>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 lg:gap-y-16">
+                     {strategicNodes.slice(4).map((item, i) => (
+                        <div key={i} className="group relative space-y-4 hover:translate-x-2 transition-transform duration-500">
+                           <div className="flex items-center gap-4">
+                              <div className="w-8 h-[2px] bg-[#FF6600]/20 group-hover:w-12 group-hover:bg-[#FF6600] transition-all" />
+                              <h4 className="text-base lg:text-lg font-display font-black text-slate-900 uppercase tracking-tight group-hover:text-[#FF6600] transition-colors">
+                                 {(() => {
+                                    const words = item.title.split(" ");
+                                    if (words.length > 1) {
+                                       return (
+                                          <>
+                                             {words.slice(0, -1).join(" ")} <span className="text-[#FF6600]">{words[words.length - 1]}</span>
+                                          </>
+                                       );
+                                    }
+                                    return item.title;
+                                 })()}
+                              </h4>
+                           </div>
+                           <p className="text-[12px] lg:text-sm text-slate-500 font-semibold leading-relaxed max-w-xl">
+                              {item.desc}
+                           </p>
+                        </div>
+                     ))}
+                  </div>
+               </div>
             </div>
+         </section>
+
+         {/* CONCLUSION PRESTIGE BLOCK - ELITE SYNC */}
+         <section className="max-w-[1400px] mx-auto px-8 lg:px-20 py-12">
+            <motion.div
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+               className="relative py-10 lg:py-12 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
+            >
+               {/* Orange Glow Effect */}
+               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
+
+               <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+                  {/* ICON CORE */}
+                  <div className="w-12 h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600] shadow-xl group-hover:scale-110 transition-transform duration-700">
+                     <Activity size={24} />
+                  </div>
+
+                  {/* QUOTE CORE */}
+                  <div className="relative">
+                     <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 mx-auto italic">
+                        {(() => {
+                           const text = "We transform raw data into a narrative of dominance. Our analytical frameworks are designed to provide the clarity required for high-stakes enterprise decision making.";
+                           return text.split(" ").map((word, wordIdx) => (
+                              <span key={wordIdx} className="inline-block mr-2 relative">
+                                 <motion.span
+                                    initial={{ y: "100%" }}
+                                    whileInView={{ y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                       duration: 0.8,
+                                       delay: 0.3 + (wordIdx * 0.012),
+                                       ease: [0.16, 1, 0.3, 1]
+                                    }}
+                                    className="inline-block"
+                                 >
+                                    {word}
+                                 </motion.span>
+                              </span>
+                           ));
+                        })()}
+                     </h3>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-8 pt-4">
+                     <div className="h-[1px] w-20 bg-white/10" />
+                     <span className="text-[9px] font-black uppercase tracking-[0.6em] text-[#FF6600]">Elite Intelligence</span>
+                     <div className="h-[1px] w-20 bg-white/10" />
+                  </div>
+               </div>
+
+               {/* Dynamic Background Effects */}
+               <motion.div
+                  animate={{
+                     scale: [1, 1.2, 1],
+                     opacity: [0.1, 0.15, 0.1]
+                  }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#FF6600] rounded-full blur-[100px]"
+               />
+            </motion.div>
          </section>
       </div>
    );

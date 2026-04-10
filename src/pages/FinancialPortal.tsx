@@ -14,7 +14,8 @@ import {
    Sparkles,
    ChevronRight,
    TrendingUp,
-   Database
+   Database,
+   CheckCircle2
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -87,7 +88,7 @@ export default function FinancialPortal() {
                className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-200/40 rounded-full blur-[120px] -mr-40 -mt-40 z-0"
             />
             
-            <div className="absolute inset-0 opacity-[0.15] z-0 pointer-events-none">
+            <div className="absolute inset-0 opacity-[0.4] z-0 pointer-events-none">
                <ThreeNetworkGlobe />
             </div>
 
@@ -102,7 +103,7 @@ export default function FinancialPortal() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Financial Hub</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-950 tracking-tighter uppercase leading-none flex flex-wrap justify-center lg:justify-start gap-x-3">
+                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-3">
                      {(() => {
                         const words = ["Financial", "Portal."];
                         return words.map((word, wordIdx) => (
@@ -126,6 +127,28 @@ export default function FinancialPortal() {
                         ));
                      })()}
                   </h1>
+
+                  {/* ELITE STATUS STACK */}
+                  <motion.div 
+                     initial={{ opacity: 0, scale: 0.95 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2"
+                  >
+                     {[
+                        { label: "Market Intel", val: "Real-Time", icon: TrendingUp },
+                        { label: "Data Integrity", val: "Institutional", icon: Shield },
+                        { label: "System Sync", val: "Neural", icon: Zap }
+                     ].map((badge, i) => (
+                        <div key={i} className="px-3 py-1.5 bg-white border border-orange-100 rounded flex items-center gap-2 group hover:shadow-lg transition-all">
+                           <badge.icon size={12} className="text-orange-600" />
+                           <div className="flex flex-col items-start">
+                              <span className="text-[9px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
+                              <span className="text-[7px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
+                           </div>
+                        </div>
+                     ))}
+                  </motion.div>
                </div>
 
                <motion.div
@@ -154,14 +177,17 @@ export default function FinancialPortal() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-3xl lg:text-5xl font-display font-black text-slate-900 uppercase tracking-tighter leading-none">
+                        <h2 className="text-xl lg:text-3xl font-display font-black text-slate-950 uppercase tracking-tight leading-[0.9]">
                            Information <span className="text-orange-600">Hub.</span>
                         </h2>
                         <div className="w-20 h-1 bg-orange-600" />
                      </div>
-                     <div className="space-y-6 text-slate-600 text-base lg:text-lg font-medium leading-relaxed">
+                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed">
                         <p>
                            Financial portals are giving information to all clients the finance-related they need. Often, the portals themselves will provide visitors, research, articles, and analyst recommendations.
+                        </p>
+                        <p className="text-slate-950 font-black border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-tight italic bg-slate-50">
+                           &quot;Financial portals provide email accounts, chat rooms, and web forums to ensure a comprehensive investment ecosystem.&quot;
                         </p>
                      </div>
                   </motion.div>
@@ -175,13 +201,13 @@ export default function FinancialPortal() {
                      <div className="absolute -inset-4 bg-orange-600/5 -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
                      <div className="relative h-full overflow-hidden shadow-2xl border border-slate-100 bg-white">
                         <img
-                           src="https://images.unsplash.com/photo-1551288049-bbdac8626ad1?auto=format&fit=crop&q=80&w=1000"
+                           src="/images/financial_hub.png"
                            alt="Financial Hub"
                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3000ms]"
                         />
                          <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                            <span className="text-[10px] font-bold text-orange-500 uppercase tracking-widest">Financial Portal</span>
-                            <h4 className="text-xl font-bold text-white uppercase tracking-tight">Market Analytics Hub</h4>
+                            <span className="text-[10px] font-bold text-orange-500 uppercase tracking-widest">Financial Architecture</span>
+                            <h4 className="text-xl font-bold text-white uppercase tracking-tight">Market Analytics Matrix</h4>
                          </div>
                      </div>
                   </motion.div>
@@ -199,16 +225,27 @@ export default function FinancialPortal() {
                      >
                         <div className="lg:w-1/3 space-y-6 sticky top-32">
                            <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
-                                 <protocol.icon size={32} />
+                              <div className="relative group">
+                                 <div className="absolute -inset-2 bg-orange-600/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                                 <div className="relative w-16 h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
+                                    <protocol.icon size={32} />
+                                 </div>
                               </div>
                               <div className="text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
                            </div>
                            <div className="space-y-2">
                               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600">{protocol.tag}</span>
-                              <h3 className="text-2xl lg:text-3xl font-display font-black text-slate-900 uppercase tracking-tighter leading-none">
-                                 {protocol.title}
+                              <h3 className="text-lg lg:text-2xl font-display font-black uppercase tracking-tight leading-none group">
+                                 {protocol.title.split(' ').map((word, i) => (
+                                    <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
+                                       {word}{' '}
+                                    </span>
+                                 ))}
                               </h3>
+                           </div>
+                           <div className="pt-4 flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                              <ChevronRight size={12} className="text-orange-600" />
+                              Active Protocol
                            </div>
                         </div>
 
@@ -222,7 +259,7 @@ export default function FinancialPortal() {
                                     className="w-full bg-orange-600"
                                  />
                               </div>
-                              <p className="text-lg lg:text-xl font-medium text-slate-700 leading-relaxed lg:pl-0">
+                              <p className="text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0">
                                  {protocol.desc}
                               </p>
                            </div>
@@ -230,6 +267,53 @@ export default function FinancialPortal() {
                      </motion.div>
                   ))}
                </div>
+
+               {/* CONCLUSION BLOCK - SYNCED WITH PRESTIGE BANNER STYLE */}
+               <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative py-12 lg:py-20 px-8 rounded-sm bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
+               >
+                  {/* Orange Glow Effect */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
+
+                  <div className="relative z-10 max-w-4xl mx-auto space-y-6">
+                     <div className="w-12 h-12 mx-auto rounded-sm bg-orange-600/10 border border-orange-600/20 flex items-center justify-center text-orange-600 shadow-xl group-hover:scale-110 transition-transform duration-700">
+                        <Zap size={24} />
+                     </div>
+
+                     <div className="relative">
+                        <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic">
+                           "Our financial portals are engineered to provide visitors with the research, articles, and analyst recommendations necessary to navigate complex market economies with precision and clarity."
+                        </h3>
+                     </div>
+
+                     <div className="pt-6">
+                        <button className="group/btn flex items-center gap-2.5 px-6 py-3 bg-orange-600 hover:bg-white hover:text-orange-600 text-white text-[10px] font-bold rounded-sm transition-all duration-300 shadow-xl shadow-orange-600/20 mx-auto uppercase tracking-[0.2em]">
+                           <span>Initialize Hub Access</span>
+                           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                        </button>
+                     </div>
+
+                     <div className="flex items-center justify-center gap-8 pt-6">
+                        <div className="h-[1px] w-24 bg-white/10" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Industry Leader</span>
+                        <div className="h-[1px] w-24 bg-white/10" />
+                     </div>
+                  </div>
+
+                  {/* Dynamic Background Effects */}
+                  <motion.div
+                     animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.15, 0.1]
+                     }}
+                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                     className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange-600/20 rounded-full blur-[100px]"
+                  />
+               </motion.div>
             </div>
          </section>
       </div>
