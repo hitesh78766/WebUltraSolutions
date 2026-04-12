@@ -111,17 +111,27 @@ export default function Hero() {
 
               {/* Hero Title (Border-less) */}
               <div className="py-2">
-                <h1 className={`text-4xl md:text-5xl font-display font-bold leading-tight tracking-tight ${slide.accent}`}>
-                  {slide.title.split('').map((char, i) => (
-                    <span key={`${currentSlide}-${i}`} className="hero-char inline-block whitespace-pre">
-                      {char}
-                    </span>
-                  ))}
+                <h1 className="text-3xl md:text-5xl font-display font-extrabold leading-[1.1] tracking-tight uppercase">
+                  {(() => {
+                    const words = slide.title.split(' ');
+                    return words.map((word, wordIdx) => (
+                      <span 
+                        key={wordIdx} 
+                        className={`inline-block mr-3 lg:mr-4 ${wordIdx === words.length - 1 ? slide.accent : 'text-slate-900'}`}
+                      >
+                        {word.split('').map((char, charIdx) => (
+                          <span key={`${currentSlide}-${wordIdx}-${charIdx}`} className="hero-char inline-block whitespace-pre">
+                            {char}
+                          </span>
+                        ))}
+                      </span>
+                    ));
+                  })()}
                 </h1>
               </div>
 
               {/* Subtitle */}
-              <p className="text-base md:text-lg text-slate-700 max-w-lg font-medium leading-relaxed font-secondary">
+              <p className="text-slate-600 text-xs md:text-sm max-w-lg font-semibold leading-relaxed font-secondary">
                 {slide.subtitle}
               </p>
 

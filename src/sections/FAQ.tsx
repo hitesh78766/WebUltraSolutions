@@ -119,13 +119,13 @@ export default function FAQ() {
         <div className="max-w-[1360px] mx-auto px-6 lg:px-12">
 
           <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-14">
-            <div className="inline-flex items-center px-3 py-1 bg-[#FFF1E2] rounded-full mb-4">
-              <span className="text-[10px] font-bold text-[#F97316] uppercase tracking-widest">Success Stories</span>
+            <div className="inline-flex items-center px-4 py-1.5 bg-[#FFF1E2] rounded-md mb-4 shadow-sm">
+              <span className="text-[10px] font-bold text-[#FF6600] uppercase tracking-widest">Success Stories</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] leading-[1.1] tracking-tight mb-5">
-              From Technology Projects into <span className="text-[#F97316]">Business Success Stories</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
+              From Technology Projects into <span className="text-[#FF6600]">Business Success Stories</span>
             </h2>
-            <p className="text-slate-500 text-[13px] lg:text-sm font-medium leading-relaxed opacity-90 max-w-4xl mx-auto px-4">
+            <p className="text-slate-600 text-[11px] lg:text-[13px] font-semibold leading-relaxed max-w-4xl mx-auto px-4">
               When IKEA demanded automation, we innovated. When Eicher aimed for eCommerce presence, we facilitated. When PVR needed tech empowerment, we served it.
             </p>
           </div>
@@ -159,11 +159,11 @@ export default function FAQ() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">Challenge:</h4>
-                        <p className="text-slate-500 text-[12px] font-medium leading-relaxed">{activeStory.challenge}</p>
+                        <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed">{activeStory.challenge}</p>
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">The Solution:</h4>
-                        <p className="text-slate-500 text-[12px] font-medium leading-relaxed">{activeStory.solution}</p>
+                        <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed">{activeStory.solution}</p>
                       </div>
                     </div>
                   </div>
@@ -216,17 +216,17 @@ export default function FAQ() {
       <section id="faq-accordions" className="py-12 bg-white font-display border-t border-slate-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] leading-[1.1] tracking-tight mb-5">
-              Frequently <span className="text-[#F97316]">Asked Questions</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
+              Frequently <span className="text-[#FF6600]">Asked Questions</span>
             </h2>
-            <p className="text-slate-500 text-[11.5px] font-medium leading-relaxed">Get answers to common questions about our services</p>
+            <p className="text-slate-600 text-[11.5px] font-semibold leading-relaxed">Get answers to common questions about our services</p>
           </div>
           <div className="space-y-2.5">
             {faqs.map((item, i) => (
               <div key={i} className="border border-slate-100 rounded-lg overflow-hidden">
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-slate-50 transition-colors group">
-                  <span className="text-[12.5px] font-bold text-slate-700 tracking-tight flex items-center gap-2.5">
-                    <span className="text-[#F97316]/60">Q:</span>{item.q}
+                  <span className="text-[13.5px] font-bold text-slate-700 tracking-tight flex items-center gap-2.5">
+                    <span className="text-[#FF6600]/60">Q:</span>{item.q}
                   </span>
                   <div className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300 ${openFaq === i ? 'bg-[#F97316] text-white rotate-45' : 'bg-slate-100 text-slate-400 group-hover:text-[#F97316]'}`}>
                     <Plus size={12} strokeWidth={3} />
@@ -235,7 +235,7 @@ export default function FAQ() {
                 <AnimatePresence>
                   {openFaq === i && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
-                      <div className="px-10 pb-4 text-[11px] font-medium text-slate-500 leading-relaxed">{item.a}</div>
+                      <div className="px-10 pb-4 text-[12px] font-medium text-slate-500 leading-relaxed">{item.a}</div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -248,8 +248,8 @@ export default function FAQ() {
       {/* Social Commitments Section */}
       <section id="social-commitments" className="py-12 bg-white font-display">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] tracking-tight leading-[1.1] mb-8">
-            Making <span className="text-[#F97316]">Social Commitments</span> That Lasts
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] mb-8 uppercase">
+            Making <span className="text-[#FF6600]">Social Commitments</span> That Lasts
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
             {commitments.map((item, i) => (

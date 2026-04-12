@@ -88,33 +88,7 @@ export default function PrestigeBanner() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
 
-        {/* --- CTA CARD --- */}
-        <div
-          ref={ctaRef}
-          className="relative mb-14 rounded-[24px] overflow-hidden bg-[#0d0d0f] p-8 lg:p-12 text-center group border border-white/5 shadow-2xl"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(249,115,22,0.1),transparent_70%)] pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col items-center">
-            <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-4">
-              <Users className="w-5 h-5 text-orange-500" />
-            </div>
-
-            <h2 className="text-xl lg:text-3xl font-display font-bold text-white mb-2 tracking-tight leading-tight">
-              Ready to Join Our <span className="text-orange-500">Success Stories?</span>
-            </h2>
-
-            <p className="max-w-xl text-slate-400 text-[11px] lg:text-[14px] leading-relaxed mb-6">
-              Discover how 2000+ industry leaders have built lasting digital legacies with
-              <span className="text-white font-medium mx-1">WebUltraSolutions'</span> proven expertise.
-            </p>
-
-            <button className="group/btn flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-white hover:text-orange-600 text-white text-[12px] font-bold rounded-full transition-all duration-300 shadow-xl shadow-orange-500/20">
-              <span className="uppercase tracking-widest">View All Success Stories</span>
-              <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-            </button>
-          </div>
-        </div>
 
         {/* --- BUSINESS EDGE SECTION --- */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16">
@@ -126,10 +100,10 @@ export default function PrestigeBanner() {
                 <Target size={11} className="text-orange-500" />
                 <span className="text-[10px] font-bold text-slate-800 uppercase tracking-widest leading-none">Innovation First</span>
               </div>
-              <h3 className="text-2xl lg:text-4xl font-display font-bold text-slate-950 mb-4 tracking-tight leading-tight">
-                We Bring Your <span className="text-orange-500">Business Edge</span>
+              <h3 className="text-2xl lg:text-4xl font-display font-extrabold text-slate-950 mb-4 tracking-tight leading-tight uppercase">
+                We Bring Your <span className="text-[#FF6600]">Business Edge</span>
               </h3>
-              <p className="text-slate-500 text-[12px] lg:text-[14px] leading-relaxed max-w-md">
+              <p className="text-slate-600 text-base lg:text-lg font-semibold leading-relaxed max-w-md">
                 Our <span className="text-slate-900 font-bold">95% timely project delivery</span> and quality outcome give you
                 an edge that no competitor has.
               </p>
@@ -208,16 +182,22 @@ function FeatureItem({ icon: Icon, title, body, tagline }: any) {
     <div className="feature-card group p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-slate-200 hover:border-orange-200 transition-all duration-400 cursor-pointer relative overflow-hidden">
       <div className="absolute top-0 left-0 w-1 h-full bg-orange-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
       <div className="flex items-start gap-5">
-        <div className="shrink-0 w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-orange-50 transition-all duration-500 border border-slate-100 group-hover:border-orange-100">
-          <Icon className="w-5 h-5 text-slate-400 group-hover:text-orange-500 transition-colors" />
-        </div>
-        <div className="flex-1">
-          <div className="flex items-center justify-between mb-1">
-            <h4 className="text-[15px] font-bold text-slate-900 group-hover:text-orange-600 transition-colors tracking-tight">{title}</h4>
-            <ArrowRight className="w-4 h-4 text-slate-200 group-hover:text-orange-400 opacity-0 group-hover:translate-x-1 group-hover:opacity-100 transition-all" />
+          <div className="shrink-0 w-10 h-10 rounded-xl bg-[#FF6600] flex items-center justify-center shadow-lg shadow-orange-100 border border-orange-200/20 group-hover:scale-110 transition-transform duration-500">
+            <Icon className="w-5 h-5 text-white" />
           </div>
-          <p className="text-slate-500 text-[12px] leading-relaxed mb-1.5">{body}</p>
-          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none block italic opacity-70 group-hover:opacity-100 transition-opacity">{tagline}</span>
+          <div className="flex-1">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-[16px] lg:text-[18px] font-display font-extrabold text-slate-900 tracking-tight uppercase">
+                {title.split(' ').map((word, i, arr) => (
+                  <span key={i} className={i === arr.length - 1 ? "text-[#FF6600]" : ""}>
+                    {word}{i < arr.length - 1 ? ' ' : ''}
+                  </span>
+                ))}
+              </h4>
+              <ArrowRight className="w-4 h-4 text-slate-200 group-hover:text-orange-400 opacity-0 group-hover:translate-x-1 group-hover:opacity-100 transition-all" />
+            </div>
+          <p className="text-slate-500 text-sm lg:text-[15.5px] font-semibold leading-relaxed mb-2">{body}</p>
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.15em] leading-none block italic opacity-70 group-hover:opacity-100 transition-opacity">{tagline}</span>
         </div>
       </div>
     </div>

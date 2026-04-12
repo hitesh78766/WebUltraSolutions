@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Monitor, 
-  Cpu, 
-  ShoppingCart, 
-  Smartphone, 
-  Cloud, 
+import {
+  Monitor,
+  Cpu,
+  ShoppingCart,
+  Smartphone,
+  Cloud,
   Palette,
   ChevronRight,
   ArrowRight,
@@ -130,14 +130,14 @@ const techDomains = [
 
 function BrainIcon(props: any) {
   return (
-    <svg 
-      {...props} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <svg
+      {...props}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-5.04Z" />
       <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-5.04Z" />
@@ -174,20 +174,20 @@ export default function About() {
   return (
     <section id="about" ref={sectionRef} className="py-10 md:py-20 bg-[#FBFBFC] overflow-hidden font-display">
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
-        
+
         {/* Header Section (Elite Mini) */}
         <div className="tech-header text-center mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] tracking-tight leading-[1.1]">
-            We've Helped Leaders <span className="text-[#F97316]">Outlast Trends.</span> Your Turn?
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] uppercase">
+            We've Helped Leaders <span className="text-[#FF6600]">Outlast Trends.</span> Your Turn?
           </h2>
-          <p className="text-slate-500 text-[11px] font-bold uppercase tracking-widest bg-slate-50 inline-block px-4 py-1.5 rounded-full border border-slate-100">
+          <p className="text-slate-600 text-[11px] font-semibold uppercase tracking-[0.2em] bg-slate-50 inline-block px-4 py-1.5 rounded-md border border-slate-100 mt-4">
             Every major platform and emerging technology
           </p>
         </div>
 
         {/* Main Interface - Elite Compact (Fixed Height with Scrolling - Deep Clearance Height) */}
         <div className="bg-white border border-slate-200 rounded-[1.5rem] overflow-hidden shadow-[0_20px_70px_-15px_rgba(0,0,0,0.04)] grid grid-cols-1 lg:grid-cols-12 h-auto lg:h-[600px]">
-          
+
           {/* Sidebar - left side (Scrollable - Enhanced Safe-Zone) */}
           <div className="lg:col-span-3 bg-[#FFF9F5] p-5 lg:p-7 border-r border-slate-200 flex flex-col relative h-[450px] lg:h-full">
             <h3 className="text-[12px] font-bold text-slate-500 uppercase tracking-[0.25em] mb-8 px-2">
@@ -198,11 +198,10 @@ export default function About() {
                 <button
                   key={domain.title}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-md transition-all duration-300 group ${
-                    activeIndex === index 
-                      ? 'bg-[#111827] text-white shadow-xl translate-x-1' 
-                      : 'hover:bg-white/70 text-slate-600'
-                  }`}
+                  className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-md transition-all duration-300 group ${activeIndex === index
+                    ? 'bg-[#111827] text-white shadow-xl translate-x-1'
+                    : 'hover:bg-white/70 text-slate-600'
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`p-1.5 rounded-md transition-colors ${activeIndex === index ? 'bg-[#F97316] shadow-lg' : 'bg-white shadow-sm border border-slate-100'}`}>
@@ -212,10 +211,9 @@ export default function About() {
                       {domain.title}
                     </span>
                   </div>
-                  <ChevronRight 
-                    className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                      activeIndex === index ? 'text-white opacity-100' : 'text-slate-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
-                    }`} 
+                  <ChevronRight
+                    className={`w-3.5 h-3.5 transition-transform duration-300 ${activeIndex === index ? 'text-white opacity-100' : 'text-slate-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
+                      }`}
                   />
                 </button>
               ))}
@@ -235,14 +233,14 @@ export default function About() {
               >
                 {/* Domain Header (Elite Mini) */}
                 <div className="flex items-center gap-4 mb-10">
-                  <div className="w-10 h-10 bg-[#F97316] rounded-xl flex items-center justify-center shadow-lg shadow-orange-100">
+                  <div className="w-10 h-10 bg-[#F97316] rounded-md flex items-center justify-center shadow-lg shadow-orange-100">
                     <DomainIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl lg:text-2xl font-bold text-[#111827] tracking-tight">
+                    <h4 className="text-2xl lg:text-2xl font-display font-extrabold text-[#111827] tracking-tight uppercase">
                       {activeDomain.title}
                     </h4>
-                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+                    <p className="text-slate-400 text-[10px] font-semibold uppercase tracking-wider">
                       {activeDomain.subtitle}
                     </p>
                   </div>
@@ -272,7 +270,7 @@ export default function About() {
 
             {/* CTA at Bottom Right (High-Status Floating Position) */}
             <div className="absolute bottom-20 right-14 z-20">
-              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-7 py-3.5 rounded-xl font-bold text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
+              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-7 py-3.5 rounded-md font-bold text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
                 <span>Explore Solutions</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
               </button>
@@ -281,7 +279,8 @@ export default function About() {
 
         </div>
       </div>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #FDF4ED; border-radius: 10px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #F97316; border-radius: 10px; opacity: 0.6; }

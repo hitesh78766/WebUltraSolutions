@@ -94,10 +94,10 @@ export default function Services() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="service-header text-center max-w-4xl mx-auto mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] leading-[1.1] tracking-tight">
-            Our Core <span className="text-[#F97316]">Technology Services</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight uppercase">
+            Our Core <span className="text-[#FF6600]">Technology Services</span>
           </h2>
-          <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium mt-4 max-w-xl mx-auto">
+          <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-semibold mt-4 max-w-xl mx-auto">
             From strengthening your digital presence to automating your workflow we offer end-to-end transformation.
           </p>
         </div>
@@ -154,10 +154,10 @@ export default function Services() {
 
                 {/* Info Side - More Compact */}
                 <div className="flex flex-col flex-1 py-1">
-                  <h3 className="text-2xl lg:text-3xl font-extrabold text-[#111827] mb-3 tracking-tight">
+                  <h3 className="text-xl lg:text-2xl font-display font-extrabold text-[#111827] mb-3 tracking-tight uppercase">
                     {activeService.title}
                   </h3>
-                  <p className="text-slate-500 text-[11px] lg:text-[13px] leading-relaxed mb-6">
+                  <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed mb-6">
                     {activeService.subtitle}
                   </p>
 

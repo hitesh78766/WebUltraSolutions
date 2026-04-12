@@ -94,12 +94,12 @@ export default function Testimonials() {
         
         {/* Header content */}
         <div className="testimonial-header mb-8 lg:mb-10">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] tracking-tight leading-[1.1]">
-            Voices <span className="text-[#F97316]">of Trust</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] uppercase">
+            Voices <span className="text-[#FF6600]">of Trust</span>
           </h2>
-          <div className="w-12 h-1.5 bg-[#F97316] mx-auto rounded-full mt-3" />
-          <p className="text-slate-500 text-[13px] font-medium leading-relaxed mt-4">
-            Real results from real partnerships with <span className="text-[#F97316]">industry leaders</span>
+          <div className="w-12 h-1.5 bg-[#FF6600] mx-auto rounded-full mt-3" />
+          <p className="text-slate-600 text-[13px] font-semibold leading-relaxed mt-4">
+            Real results from real partnerships with <span className="text-[#FF6600]">industry leaders</span>
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export default function Testimonials() {
               <button 
                 key={i} 
                 onClick={() => setCurrentIndex(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${currentIndex === i ? 'bg-[#F97316] w-6' : 'bg-slate-200'}`}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${currentIndex === i ? 'bg-[#FF6600] w-6' : 'bg-slate-200'}`}
               />
            ))}
         </div>
@@ -152,16 +152,16 @@ function TestimonialContent({ item }: any) {
     <div className="space-y-5 relative h-full flex flex-col items-start text-left group">
        {/* Meta Info: Rating & Quote */}
        <div className="flex items-center justify-between w-full">
-          <div className="flex items-center gap-1.5 p-1.5 bg-slate-50 border border-slate-100 rounded-lg group-hover:border-[#F97316]/20 transition-colors">
-             <Quote size={11} className="text-[#F97316] fill-[#F97316]/10" />
+          <div className="flex items-center gap-1.5 p-1.5 bg-slate-50 border border-slate-100 rounded-lg group-hover:border-[#FF6600]/20 transition-colors">
+             <Quote size={11} className="text-[#FF6600] fill-[#FF6600]/10" />
              <div className="flex items-center gap-0.5 ml-1.5">
                 {[...Array(item.rating)].map((_, idx) => (
-                  <Star key={idx} size={9} className="fill-[#F97316] text-[#F97316]" />
+                  <Star key={idx} size={9} className="fill-[#FF6600] text-[#FF6600]" />
                 ))}
              </div>
           </div>
           {item.tag && (
-            <span className="bg-slate-900 group-hover:bg-[#F97316] text-white text-[6.5px] font-bold tracking-widest px-2 py-0.5 rounded-md transition-colors leading-none uppercase">
+            <span className="bg-slate-900 group-hover:bg-[#FF6600] text-white text-[9px] font-bold tracking-widest px-2.5 py-1 rounded-md transition-colors leading-none uppercase">
               {item.tag}
             </span>
           )}
@@ -169,7 +169,7 @@ function TestimonialContent({ item }: any) {
 
        {/* Narrative */}
        <div className="flex-grow space-y-3">
-          <p className="text-slate-600 text-[11.5px] lg:text-[12.5px] font-medium leading-[1.6] italic opacity-90 group-hover:opacity-100 transition-opacity">
+          <p className="text-slate-600 text-sm lg:text-[15.5px] font-semibold leading-relaxed italic opacity-90 group-hover:opacity-100 transition-opacity">
              {item.content}
           </p>
        </div>
@@ -177,15 +177,15 @@ function TestimonialContent({ item }: any) {
        {/* Attribution */}
        <div className="flex items-end justify-between w-full pt-3.5 border-t border-slate-50 group-hover:border-slate-100 transition-colors">
           <div>
-             <h4 className="text-[12.5px] font-bold text-[#111827] leading-none mb-1.5 group-hover:text-[#F97316] transition-colors">{item.name}</h4>
-             <p className="text-[9.5px] font-bold text-slate-400 leading-none">{item.role}</p>
+             <h4 className="text-[14px] lg:text-[16px] font-display font-extrabold text-[#111827] leading-none mb-2 group-hover:text-[#FF6600] transition-colors uppercase tracking-tight">{item.name}</h4>
+             <p className="text-[11px] lg:text-[12px] font-bold text-slate-400 leading-none">{item.role}</p>
           </div>
           
-          <div className="flex items-center gap-1.2 px-1.5 py-0.5 bg-emerald-50 border border-emerald-100/50 rounded-md">
-             <div className="w-3 h-3 rounded-full bg-emerald-500 flex items-center justify-center">
-                <CheckCircle2 size={7} className="text-white" />
+          <div className="flex items-center gap-1.5 px-2 py-1 bg-emerald-50 border border-emerald-100/50 rounded-md">
+             <div className="w-3.5 h-3.5 rounded-full bg-emerald-500 flex items-center justify-center">
+                <CheckCircle2 size={9} className="text-white" />
              </div>
-             <span className="text-[7.5px] font-bold text-emerald-600 uppercase tracking-widest leading-none pt-0.5 ml-1">Verified</span>
+             <span className="text-[9px] font-bold text-emerald-600 uppercase tracking-widest leading-none pt-0.5 ml-1">Verified</span>
           </div>
        </div>
     </div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function ParticleNetwork() {
+export default function ParticleNetwork({ color = 'orange' }: { color?: 'orange' | 'dark' }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -12,6 +12,13 @@ export default function ParticleNetwork() {
     let animationFrameId: number;
     let particles: { x: number; y: number; vx: number; vy: number; radius: number }[] = [];
     let orbs: { x: number; y: number; rx: number; ry: number; speed: number; angle: number; size: number }[] = [];
+
+    // Configuration based on theme color prop
+    const config = {
+      orbColor: color === 'dark' ? '15, 23, 42' : '255, 102, 0',
+      particleColor: color === 'dark' ? '30, 41, 59' : '255, 102, 0',
+      lineColor: color === 'dark' ? '71, 85, 105' : '255, 102, 0',
+    };
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -56,8 +63,8 @@ export default function ParticleNetwork() {
         const oy = orb.y + Math.sin(orb.angle) * orb.ry;
 
         const grad = ctx.createRadialGradient(ox, oy, 0, ox, oy, orb.size);
-        grad.addColorStop(0, 'rgba(255, 102, 0, 0.04)');
-        grad.addColorStop(1, 'rgba(255, 102, 0, 0)');
+        grad.addColorStop(0, `rgba(${config.orbColor}, 0.04)`);
+        grad.addColorStop(1, `rgba(${config.orbColor}, 0)`);
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(ox, oy, orb.size, 0, Math.PI * 2);
@@ -65,8 +72,8 @@ export default function ParticleNetwork() {
       });
 
       // Draw Particles & Connections
-      ctx.fillStyle = 'rgba(255, 102, 0, 0.12)';
-      ctx.strokeStyle = 'rgba(255, 102, 0, 0.06)';
+      ctx.fillStyle = `rgba(${config.particleColor}, 0.12)`;
+      ctx.strokeStyle = `rgba(${config.lineColor}, 0.06)`;
       
       particles.forEach((p, i) => {
         p.x += p.vx;
@@ -109,12 +116,12 @@ export default function ParticleNetwork() {
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [color]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none z-0 opacity-60"
+      className={`absolute inset-0 pointer-events-none z-0 ${color === 'dark' ? 'opacity-[0.15]' : 'opacity-60'}`}
     />
   );
 }

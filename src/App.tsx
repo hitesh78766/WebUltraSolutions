@@ -65,6 +65,30 @@ import FinancialPortal from './pages/FinancialPortal';
 
 import AdvertisementPortal from './pages/AdvertisementPortal';
 import HealthPortal from './pages/HealthPortal';
+import Portfolio from './pages/Portfolio';
+
+// Product Suite Imports
+import BillingSoftware from './pages/BillingSoftware';
+import DigifyIVR from './pages/DigifyIVR';
+import SecurityManagement from './pages/SecurityManagement';
+import InventoryManagement from './pages/InventoryManagement';
+import OMRSolution from './pages/OMRSolution';
+import CRMPage from './pages/CRMPage';
+import ELearning from './pages/ELearning';
+import ConstructionSoftware from './pages/ConstructionSoftware';
+import SchoolCollegeERP from './pages/SchoolCollegeERP';
+import SchoolManagementERP from './pages/SchoolManagementERP';
+import HRPayroll from './pages/HRPayroll';
+import DoctorBooking from './pages/DoctorBooking';
+import GSTSoftware from './pages/GSTSoftware';
+import TenderManagement from './pages/TenderManagement';
+
+import EcommerceSoftware from './pages/EcommerceSoftware';
+import ERPSoftware from './pages/ERPSoftware';
+import MassEmail from './pages/MassEmail';
+import RecruitmentSoftware from './pages/RecruitmentSoftware';
+import PMSSoftware from './pages/PMSSoftware';
+import EnterpriseERP from './pages/EnterpriseERP';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -241,6 +265,30 @@ function App() {
 
           <Route path="/advertisement-portal" element={<AdvertisementPortal />} />
           <Route path="/health-portal" element={<HealthPortal />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+
+          {/* Product Suite Routes */}
+          <Route path="/billing-software" element={<BillingSoftware />} />
+          <Route path="/digify-ivr" element={<DigifyIVR />} />
+          <Route path="/security-management" element={<SecurityManagement />} />
+          <Route path="/inventory-management" element={<InventoryManagement />} />
+          <Route path="/omr-solution" element={<OMRSolution />} />
+          <Route path="/crm" element={<CRMPage />} />
+          <Route path="/elearning-module" element={<ELearning />} />
+          <Route path="/construction-software" element={<ConstructionSoftware />} />
+          <Route path="/school-college-erp" element={<SchoolCollegeERP />} />
+          <Route path="/school-management-erp" element={<SchoolManagementERP />} />
+          <Route path="/hr-payroll" element={<HRPayroll />} />
+          <Route path="/doctor-patient-booking" element={<DoctorBooking />} />
+          <Route path="/gst-software" element={<GSTSoftware />} />
+          <Route path="/tender-management" element={<TenderManagement />} />
+
+          <Route path="/ecommerce-software" element={<EcommerceSoftware />} />
+          <Route path="/erp-software" element={<ERPSoftware />} />
+          <Route path="/mass-email" element={<MassEmail />} />
+          <Route path="/recruitment-software" element={<RecruitmentSoftware />} />
+          <Route path="/pms-software" element={<PMSSoftware />} />
+          <Route path="/enterprise-erp" element={<EnterpriseERP />} />
         </Routes>
       </MainLayout>
     </Router>

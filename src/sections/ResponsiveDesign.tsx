@@ -59,8 +59,8 @@ export default function ResponsiveDesign() {
 
         {/* Main Section Header - Ultra Compact */}
         <div className="text-center mb-10 lg:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.05]">
-            We've Helped Leaders <span className="text-[#F97316]">Outlast Trends.</span> Your Turn?
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] uppercase">
+            We've Helped Leaders <span className="text-[#FF6600]">Outlast Trends.</span> Your Turn?
           </h2>
         </div>
 
@@ -69,15 +69,15 @@ export default function ResponsiveDesign() {
           {/* Left Column: Narrative (Tighter) */}
           <div ref={textRef} className="lg:w-[48%] space-y-5">
             <div className="space-y-3">
-              <h3 className="text-xl lg:text-3xl font-extrabold text-[#111827] leading-[1.1] tracking-tight">
-                Global Presence. 500+ elite engineers. <br /> 100+ Digital Transformations.
+              <h3 className="text-lg lg:text-2xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight uppercase">
+                Global Presence. 500+ elite engineers. <br /> <span className="text-[#FF6600]">100+ Digital Transformations.</span>
               </h3>
-              <p className="text-slate-500 text-sm lg:text-base font-medium leading-relaxed max-w-lg">
+              <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed max-w-lg">
                 While others chase fads, we build digital legacies— <span className="text-[#111827] font-bold">750+ eCommerce empires</span>, <span className="text-[#111827] font-bold">50+ Cloud foundations</span>, <span className="text-[#111827] font-bold">75+ AI systems</span> dominant for decades.
               </p>
             </div>
 
-            <button className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white px-5 py-3 rounded-xl font-bold text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
+            <button className="flex items-center gap-2 bg-[#FF6600] hover:bg-[#EA580C] text-white px-5 py-3 rounded-md font-bold text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
               <span>Power My Tech Capability</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -106,33 +106,33 @@ export default function ResponsiveDesign() {
                   {/* Stat Box 1 */}
                   <div className="group/stat bg-[#FBFBFC] border border-slate-100 p-3 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50">
                     <div className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center">
-                      <ShoppingCart className="w-3 h-3 text-[#111827]" />
+                      <ShoppingCart className="w-3 h-3 text-[#FF6600]" />
                     </div>
                     <div className="text-center">
                       <div className="text-lg font-bold text-[#111827]">750+</div>
-                      <p className="text-slate-400 text-[7px] uppercase font-bold tracking-tight leading-[1.1] pt-0.5">eCommerce <br /> Empires</p>
+                      <p className="text-slate-400 text-[10px] uppercase font-bold tracking-tight leading-tight pt-1">eCommerce <br /> Empires</p>
                     </div>
                   </div>
 
                   {/* Stat Box 2 */}
                   <div className="group/stat bg-[#FBFBFC] border border-slate-100 p-3 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50">
                     <div className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center">
-                      <Cloud className="w-3 h-3 text-[#111827]" />
+                      <Cloud className="w-3 h-3 text-[#FF6600]" />
                     </div>
                     <div className="text-center">
                       <div className="text-lg font-bold text-[#111827]">50+</div>
-                      <p className="text-slate-400 text-[7px] uppercase font-bold tracking-tight leading-[1.1] pt-0.5">Cloud <br /> Foundations</p>
+                      <p className="text-slate-400 text-[10px] uppercase font-bold tracking-tight leading-tight pt-1">Cloud <br /> Foundations</p>
                     </div>
                   </div>
 
                   {/* Stat Box 3 */}
                   <div className="group/stat bg-[#FBFBFC] border border-slate-100 p-3 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50">
                     <div className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center">
-                      <Zap className="w-3 h-3 text-[#111827]" />
+                      <Zap className="w-3 h-3 text-[#FF6600]" />
                     </div>
                     <div className="text-center">
                       <div className="text-lg font-bold text-[#111827]">75+</div>
-                      <p className="text-slate-400 text-[7px] uppercase font-bold tracking-tight leading-[1.1] pt-0.5">AI <br /> Systems</p>
+                      <p className="text-slate-400 text-[10px] uppercase font-bold tracking-tight leading-tight pt-1">AI <br /> Systems</p>
                     </div>
                   </div>
                 </div>

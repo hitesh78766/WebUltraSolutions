@@ -76,16 +76,16 @@ export default function Arsenal() {
           {/* Left Column: Narrative (Compact) */}
           <div ref={textRef} className="lg:w-[48%] space-y-6">
             <div className="space-y-4">
-              <h2 className="arsenal-text-item text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111827] leading-[1.1] tracking-tight">
-                Your <span className="text-[#F97316]">Digital Dominance</span> <br />
+              <h2 className="arsenal-text-item text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight uppercase">
+                Your <span className="text-[#FF6600]">Digital Dominance</span> <br />
                 That <span className="text-slate-500">Outlives</span> Market Shifts
               </h2>
 
               <div className="arsenal-text-item space-y-4">
-                <p className="text-base lg:text-lg font-bold text-slate-800 leading-snug">
-                  We don't just build tech—we forge <span className="text-[#F97316]">unshakeable competitive foundations.</span>
+                <p className="text-base lg:text-lg font-semibold text-slate-800 leading-snug">
+                  We don't just build tech—we forge <span className="text-[#FF6600]">unshakeable competitive foundations.</span>
                 </p>
-                <p className="text-slate-500 text-[13px] lg:text-[15px] font-medium leading-relaxed max-w-lg opacity-80">
+                <p className="text-slate-600 text-base lg:text-lg font-semibold leading-relaxed max-w-lg">
                   For leaders who refuse to be disrupted: Choose the arsenal that keeps you ahead of trends, not chasing them.
                 </p>
               </div>
@@ -102,7 +102,7 @@ export default function Arsenal() {
                     <div className="w-4.5 h-4.5 rounded-full bg-white flex items-center justify-center border border-slate-200 group-hover/check:border-[#F97316]/40 group-hover/check:bg-[#F97316]/5 transition-all">
                       <CheckCircle2 className={`w-2.5 h-2.5 ${i === 0 || i === 3 ? 'text-[#F97316]' : 'text-slate-400'}`} />
                     </div>
-                    <span className="text-[12px] font-bold text-slate-700 tracking-tight leading-none pt-0.5">{item}</span>
+                    <span className="text-sm font-bold text-slate-700 tracking-tight leading-none pt-0.5">{item}</span>
                   </div>
                 ))}
               </div>
@@ -225,8 +225,8 @@ export default function Arsenal() {
                         <box.icon className="w-3 h-3 text-[#F97316] group-hover/box:text-white transition-colors" />
                       </div>
                       <div className="space-y-0">
-                        <div className="text-base lg:text-lg font-bold text-[#111827] tracking-tight leading-none group-hover/box:text-[#F97316] transition-colors">{box.value}</div>
-                        <p className="text-slate-500 text-[7.5px] font-bold uppercase tracking-widest leading-none pt-0.5">{box.label}</p>
+                        <div className="text-base lg:text-lg font-bold text-[#111827] tracking-tight leading-none group-hover/box:text-[#FF6600] transition-colors">{box.value}</div>
+                        <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest leading-none pt-1">{box.label}</p>
                       </div>
                       <div className="w-8 h-0.5 bg-slate-200 rounded-full overflow-hidden">
                         <div
@@ -246,8 +246,8 @@ export default function Arsenal() {
                     { val: "95%", label: "On-Time", color: "text-orange-500" }
                   ].map((stat) => (
                     <div key={stat.label} className="mini-metric text-center">
-                      <div className={`text-[12px] font-bold ${stat.color}`}>{stat.val}</div>
-                      <p className="text-[6px] font-bold text-slate-400 uppercase tracking-widest leading-none pt-0.5">{stat.label}</p>
+                      <div className={`text-[13px] font-bold ${stat.color}`}>{stat.val}</div>
+                      <p className="text-[8.5px] font-bold text-slate-400 uppercase tracking-widest leading-none pt-1">{stat.label}</p>
                     </div>
                   ))}
                 </div>
