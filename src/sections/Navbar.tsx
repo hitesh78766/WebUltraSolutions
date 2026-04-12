@@ -24,7 +24,6 @@ const productsMegaMenuData = [
     category: "SOFTWARE DEVELOPMENT",
     links: [
       { name: "Billing Software", href: "/billing-software" },
-      { name: "Digify IVR Machine", href: "/digify-ivr" },
       { name: "Security Management Software", href: "/security-management" },
       { name: "Inventory Management Software", href: "/inventory-management" },
       { name: "OMR Solution", href: "/omr-solution" },
@@ -255,7 +254,7 @@ export default function Navbar() {
                           handleNavClick(e, link.href);
                         }
                       }}
-                      className={`px-3 py-1.5 text-xs lg:text-sm font-black transition-all duration-300 rounded-l-lg hover:text-[#F97316] text-white/90 ${(isServicesOpen && link.isMega && link.name === 'Services') || (isAboutOpen && link.isMega && link.name === 'About') || (isProductsOpen && link.isMega && link.name === 'Products') ? 'text-[#F97316]' : ''}`}
+                      className={`px-3 py-1.5 text-[13px] lg:text-[13px] font-black transition-all duration-300 rounded-l-lg hover:text-[#F97316] text-white/90 ${(isServicesOpen && link.isMega && link.name === 'Services') || (isAboutOpen && link.isMega && link.name === 'About') || (isProductsOpen && link.isMega && link.name === 'Products') ? 'text-[#F97316]' : ''}`}
                     >
                       {link.name}
                     </a>
@@ -308,7 +307,7 @@ export default function Navbar() {
                                     <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-[#F97316]">
                                       <Monitor size={16} />
                                     </div>
-                                    <h3 className="text-[11px] font-display font-black text-slate-900 tracking-[0.2em] uppercase">
+                                    <h3 className="text-xs font-display font-black text-slate-900 tracking-[0.2em] uppercase">
                                       {productsMegaMenuData[0].category}
                                     </h3>
                                   </div>
@@ -321,7 +320,7 @@ export default function Navbar() {
                                           className="flex items-center gap-2.5 py-1.5 transition-all text-slate-500 hover:text-[#F97316] group-hover:translate-x-1"
                                         >
                                           <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover/item:bg-[#F97316] transition-colors shrink-0" />
-                                          <span className="text-[10px] font-bold uppercase tracking-wide leading-none">{sublink.name}</span>
+                                          <span className="text-[11px] font-bold uppercase tracking-wide leading-none">{sublink.name}</span>
                                         </a>
                                       </li>
                                     ))}
@@ -347,7 +346,7 @@ export default function Navbar() {
                                             className="flex items-center gap-2.5 py-1 transition-all text-slate-505 hover:text-[#F97316] group-hover:translate-x-1"
                                           >
                                             <ArrowRight size={12} className="text-slate-300" />
-                                            <span className="text-[10px] font-bold uppercase tracking-wide leading-none">{sublink.name}</span>
+                                            <span className="text-[11px] font-bold uppercase tracking-wide leading-none">{sublink.name}</span>
                                           </a>
                                         </li>
                                       ))}
@@ -371,7 +370,7 @@ export default function Navbar() {
                                             className="flex items-center gap-2.5 py-1 transition-all text-slate-500 hover:text-[#F97316] group-hover:translate-x-1"
                                           >
                                             <ArrowRight size={12} className="text-slate-300" />
-                                            <span className="text-[10px] font-bold uppercase tracking-wide leading-none">{sublink.name}</span>
+                                            <span className="text-[11px] font-bold uppercase tracking-wide leading-none">{sublink.name}</span>
                                           </a>
                                         </li>
                                       ))}
@@ -402,7 +401,7 @@ export default function Navbar() {
                                             <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
                                               {typeof sublink === 'object' && sublink.icon ? <sublink.icon size={13} /> : <Target size={13} />}
                                             </div>
-                                            <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
+                                            <span className="text-[11px] font-bold uppercase tracking-wide leading-none transition-colors">
                                               {typeof sublink === 'string' ? sublink : sublink.name}
                                             </span>
                                           </a>
@@ -439,7 +438,7 @@ export default function Navbar() {
                                       <div className="text-[#F97316] group-hover/link:opacity-80 transition-opacity shrink-0">
                                         <item.icon size={13} />
                                       </div>
-                                      <span className="text-[10px] font-bold uppercase tracking-wide leading-none transition-colors">
+                                      <span className="text-[11px] font-bold uppercase tracking-wide leading-none transition-colors">
                                         {item.name}
                                       </span>
                                     </a>
@@ -460,7 +459,7 @@ export default function Navbar() {
               <a
                 href="/#cta"
                 onClick={(e) => handleNavClick(e, '/#cta')}
-                className="px-6 py-2.5 bg-[#F97316] text-white text-sm font-black rounded-lg shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-white hover:text-[#F97316] transition-all duration-300"
+                className="px-6 py-2.5 bg-[#F97316] text-white text-sm lg:text-[15px] font-black rounded-lg shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-white hover:text-[#F97316] transition-all duration-300"
               >
                 Schedule Meeting
               </a>

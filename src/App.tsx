@@ -69,7 +69,6 @@ import Portfolio from './pages/Portfolio';
 
 // Product Suite Imports
 import BillingSoftware from './pages/BillingSoftware';
-import DigifyIVR from './pages/DigifyIVR';
 import SecurityManagement from './pages/SecurityManagement';
 import InventoryManagement from './pages/InventoryManagement';
 import OMRSolution from './pages/OMRSolution';
@@ -269,7 +268,6 @@ function App() {
 
           {/* Product Suite Routes */}
           <Route path="/billing-software" element={<BillingSoftware />} />
-          <Route path="/digify-ivr" element={<DigifyIVR />} />
           <Route path="/security-management" element={<SecurityManagement />} />
           <Route path="/inventory-management" element={<InventoryManagement />} />
           <Route path="/omr-solution" element={<OMRSolution />} />
