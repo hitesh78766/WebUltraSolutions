@@ -91,7 +91,7 @@ export default function ScaleAmbition() {
 
         {/* Header content */}
         <div className="ambition-header text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
             Scale With the <span className="text-[#FF6600]">Power of Your Ambition</span>
           </h2>
           <div className="w-12 h-1 bg-[#FF6600] mx-auto rounded-full mt-2" />
@@ -117,7 +117,7 @@ export default function ScaleAmbition() {
                 )}
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-display font-extrabold text-[#111827] mb-6 tracking-tight capitalize group-hover:text-[#FF6600] transition-colors">{tier.title}</h3>
+              <h3 className="text-xl lg:text-2xl font-display font-bold text-[#111827] mb-6 tracking-tight capitalize group-hover:text-[#FF6600] transition-colors">{tier.title}</h3>
 
               <div className="space-y-3 flex-grow mb-6">
                 <p className="text-[#FF6600] text-sm lg:text-[15px] font-bold italic leading-snug tracking-tight">

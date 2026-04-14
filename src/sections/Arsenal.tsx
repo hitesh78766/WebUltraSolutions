@@ -76,7 +76,7 @@ export default function Arsenal() {
           {/* Left Column: Narrative (Compact) */}
           <div ref={textRef} className="lg:w-[48%] space-y-6">
             <div className="space-y-4">
-              <h2 className="arsenal-text-item text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight uppercase">
+              <h2 className="arsenal-text-item text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
                 Your <span className="text-[#FF6600]">Digital Dominance</span> <br />
                 That <span className="text-slate-500">Outlives</span> Market Shifts
               </h2>
@@ -120,9 +120,9 @@ export default function Arsenal() {
           <div ref={cardRef} className="lg:w-[44%] relative group">
             {/* Industry Leader Badge */}
             <div className="absolute -top-3 left-6 z-20">
-              <div className="bg-white px-4 py-1 rounded-full shadow-md border border-slate-100 flex items-center gap-1.5">
-                <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none">Industry</span>
-                <span className="text-[9px] font-bold text-[#111827] uppercase tracking-widest leading-none">Leader</span>
+              <div className="bg-white px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center gap-1.5">
+                <span className="text-[10px] font-bold text-[#F97316] capitalize tracking-widest leading-none">Industry</span>
+                <span className="text-[10px] font-bold text-[#111827] capitalize tracking-widest leading-none">Leader</span>
               </div>
             </div>
 
@@ -211,7 +211,7 @@ export default function Arsenal() {
               {/* Metric Card Content (Ultra High Density Nano UI) */}
               <div className="px-5 pt-5 lg:pt-6 pb-8 bg-white relative z-10 rounded-t-[2.25rem] border-t border-slate-100 shadow-inner -mt-6">
                 <div className="text-center mb-4">
-                  <h5 className="text-base font-bold text-[#111827] tracking-tight relative inline-block">
+                  <h5 className="text-xl font-bold text-[#111827] tracking-tight relative inline-block">
                     Performance <span className="text-[#F97316]">Indicators</span>
                     <div className="absolute -bottom-1.5 w-6 h-0.5 bg-[#F97316] rounded-full left-1/2 -translate-x-1/2" />
                   </h5>
@@ -220,7 +220,7 @@ export default function Arsenal() {
                 {/* Metric Grid - Nano Compact */}
                 <div className="grid grid-cols-2 gap-2">
                   {metricBoxes.map((box, i) => (
-                    <div key={i} className="mini-metric bg-slate-50 border border-slate-200 p-2 lg:p-2.5 rounded-xl flex flex-col items-center justify-center text-center gap-1.5 transition-all duration-500 hover:bg-white hover:border-[#F97316] hover:shadow-xl hover:shadow-orange-500/10 group/box hover:-translate-y-1">
+                    <div key={i} className="mini-metric bg-slate-50 border border-slate-200 p-2 lg:p-2.5 rounded-md flex flex-col items-center justify-center text-center gap-1.5 transition-all duration-500 hover:bg-white hover:border-[#F97316] hover:shadow-xl hover:shadow-orange-500/10 group/box hover:-translate-y-1">
                       <div className="w-7 h-7 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center group-hover/box:bg-[#F97316] transition-all duration-300">
                         <box.icon className="w-3 h-3 text-[#F97316] group-hover/box:text-white transition-colors" />
                       </div>
@@ -247,7 +247,7 @@ export default function Arsenal() {
                   ].map((stat) => (
                     <div key={stat.label} className="mini-metric text-center">
                       <div className={`text-[13px] font-bold ${stat.color}`}>{stat.val}</div>
-                      <p className="text-[8.5px] font-bold text-slate-400 uppercase tracking-widest leading-none pt-1">{stat.label}</p>
+                      <p className="text-[12px] font-bold text-slate-400 capitalize tracking-widest leading-none pt-1">{stat.label}</p>
                     </div>
                   ))}
                 </div>

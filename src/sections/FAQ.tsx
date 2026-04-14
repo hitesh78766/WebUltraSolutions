@@ -122,10 +122,10 @@ export default function FAQ() {
             <div className="inline-flex items-center px-4 py-1.5 bg-[#FFF1E2] rounded-md mb-4 shadow-sm">
               <span className="text-[10px] font-bold text-[#FF6600] uppercase tracking-widest">Success Stories</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
               From Technology Projects into <span className="text-[#FF6600]">Business Success Stories</span>
             </h2>
-            <p className="text-slate-600 text-[11px] lg:text-[13px] font-semibold leading-relaxed max-w-4xl mx-auto px-4">
+            <p className="text-slate-600 text-[11px] lg:text-[14px] font-semibold leading-relaxed max-w-4xl mx-auto px-4">
               When IKEA demanded automation, we innovated. When Eicher aimed for eCommerce presence, we facilitated. When PVR needed tech empowerment, we served it.
             </p>
           </div>
@@ -159,11 +159,11 @@ export default function FAQ() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">Challenge:</h4>
-                        <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed">{activeStory.challenge}</p>
+                        <p className="text-slate-500 text-base lg:text-base font-semibold leading-relaxed">{activeStory.challenge}</p>
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">The Solution:</h4>
-                        <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed">{activeStory.solution}</p>
+                        <p className="text-slate-500 text-base lg:text-base font-semibold leading-relaxed">{activeStory.solution}</p>
                       </div>
                     </div>
                   </div>
@@ -173,17 +173,17 @@ export default function FAQ() {
                     <div className="grid grid-cols-1 gap-2.5">
                       {activeStory.results.map((result, i) => (
                         <div key={i} className="flex items-start gap-4 group/result">
-                          <div className="mt-1 w-4.5 h-4.5 rounded-md bg-[#22C55E]/10 flex items-center justify-center border border-[#22C55E]/20 flex-shrink-0">
+                          <div className="mt-1.5 w-4.5 h-4.5 rounded-md bg-[#22C55E]/10 flex items-center justify-center border border-[#22C55E]/20 flex-shrink-0">
                             <Check className="w-2.5 h-2.5 text-[#22C55E]" />
                           </div>
-                          <p className="text-slate-600 font-bold text-[12px] tracking-tight leading-none pt-1">{result}</p>
+                          <p className="text-slate-600 font-bold text-sm tracking-tight leading-none pt-1">{result}</p>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="pt-2">
-                    <button className="flex items-center gap-2 bg-white border-2 border-[#F97316] text-[#F97316] px-6 py-2.5 rounded-xl font-bold text-[11px] uppercase tracking-widest hover:bg-[#F97316] hover:text-white transition-all shadow-xl shadow-orange-500/5 active:scale-95 group">
+                    <button className="flex items-center gap-2 bg-white border-2 border-[#F97316] text-[#F97316] px-6 py-2.5 rounded-md font-bold text-[11px] uppercase tracking-widest hover:bg-[#F97316] hover:text-white transition-all shadow-xl shadow-orange-500/5 active:scale-95 group">
                       <span>Read Case Study</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </button>
@@ -216,16 +216,16 @@ export default function FAQ() {
       <section id="faq-accordions" className="py-12 bg-white font-display border-t border-slate-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
               Frequently <span className="text-[#FF6600]">Asked Questions</span>
             </h2>
-            <p className="text-slate-600 text-[11.5px] font-semibold leading-relaxed">Get answers to common questions about our services</p>
+            <p className="text-slate-600 text-[14px] font-semibold leading-relaxed">Get answers to common questions about our services</p>
           </div>
           <div className="space-y-2.5">
             {faqs.map((item, i) => (
               <div key={i} className="border border-slate-100 rounded-lg overflow-hidden">
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-slate-50 transition-colors group">
-                  <span className="text-[13.5px] font-bold text-slate-700 tracking-tight flex items-center gap-2.5">
+                  <span className="text-[14px] font-bold text-slate-700 tracking-tight flex items-center gap-2.5">
                     <span className="text-[#FF6600]/60">Q:</span>{item.q}
                   </span>
                   <div className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300 ${openFaq === i ? 'bg-[#F97316] text-white rotate-45' : 'bg-slate-100 text-slate-400 group-hover:text-[#F97316]'}`}>
@@ -235,7 +235,7 @@ export default function FAQ() {
                 <AnimatePresence>
                   {openFaq === i && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
-                      <div className="px-10 pb-4 text-[12px] font-medium text-slate-500 leading-relaxed">{item.a}</div>
+                      <div className="px-10 pb-4 text-[13px] font-medium text-slate-500 leading-relaxed">{item.a}</div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -248,7 +248,7 @@ export default function FAQ() {
       {/* Social Commitments Section */}
       <section id="social-commitments" className="py-12 bg-white font-display">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] mb-8 uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] mb-8 uppercase">
             Making <span className="text-[#FF6600]">Social Commitments</span> That Lasts
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
@@ -258,12 +258,12 @@ export default function FAQ() {
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
                 <div className="p-3 border-t border-slate-50">
-                  <h4 className={`text-[12px] font-bold tracking-tight ${item.color}`}>{item.logo}</h4>
+                  <h4 className={`text-[13px] font-bold tracking-tight ${item.color}`}>{item.logo}</h4>
                 </div>
               </div>
             ))}
           </div>
-          <button className="bg-[#F97316] text-white px-8 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-[#EA580C] hover:shadow-xl hover:shadow-orange-500/20 transition-all flex items-center gap-2 mx-auto">
+          <button className="bg-[#F97316] text-white px-8 py-2.5 rounded-sm font-bold text-[10px] capitalize tracking-widest hover:bg-[#EA580C] hover:shadow-xl hover:shadow-orange-500/20 transition-all flex items-center gap-2 mx-auto">
             <span>View All</span>
             <ArrowRight size={14} />
           </button>

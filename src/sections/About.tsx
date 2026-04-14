@@ -177,7 +177,7 @@ export default function About() {
 
         {/* Header Section (Elite Mini) */}
         <div className="tech-header text-center mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
             We've Helped Leaders <span className="text-[#FF6600]">Outlast Trends.</span> Your Turn?
           </h2>
           <p className="text-slate-600 text-[11px] font-semibold uppercase tracking-[0.2em] bg-slate-50 inline-block px-4 py-1.5 rounded-md border border-slate-100 mt-4">
@@ -207,7 +207,7 @@ export default function About() {
                     <div className={`p-1.5 rounded-md transition-colors ${activeIndex === index ? 'bg-[#F97316] shadow-lg' : 'bg-white shadow-sm border border-slate-100'}`}>
                       <domain.icon className={`w-3.5 h-3.5 ${activeIndex === index ? 'text-white' : 'text-[#111827]'}`} />
                     </div>
-                    <span className={`font-bold text-[11.5px] tracking-tight ${activeIndex === index ? 'text-white' : 'text-slate-600'}`}>
+                    <span className={`font-bold text-[14px] tracking-tight ${activeIndex === index ? 'text-white' : 'text-slate-600'}`}>
                       {domain.title}
                     </span>
                   </div>
@@ -237,7 +237,7 @@ export default function About() {
                     <DomainIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-2xl lg:text-2xl font-display font-extrabold text-[#111827] tracking-tight uppercase">
+                    <h4 className="text-2xl lg:text-2xl font-display font-bold text-[#111827] tracking-tight capitalize">
                       {activeDomain.title}
                     </h4>
                     <p className="text-slate-400 text-[10px] font-semibold uppercase tracking-wider">
@@ -257,9 +257,9 @@ export default function About() {
                       className="bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-slate-300 py-6 px-3 rounded-md flex flex-col items-center justify-center gap-3 transition-all group cursor-pointer hover:shadow-xl hover:-translate-y-1"
                     >
                       <div className="w-9 h-9 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <tech.icon className="w-4 h-4 text-[#111827] group-hover:text-[#F97316] transition-colors" />
+                        <tech.icon className="w-4 h-4 text-[#111827] group-hover:text-[#F97316] group-hover:stroke-[3px] transition-all" />
                       </div>
-                      <span className="text-[10px] font-bold text-[#111827] text-center leading-tight">
+                      <span className="text-[13px] font-bold text-[#111827] text-center leading-tight">
                         {tech.name}
                       </span>
                     </motion.div>

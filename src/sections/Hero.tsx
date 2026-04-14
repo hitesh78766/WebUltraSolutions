@@ -105,18 +105,18 @@ export default function Hero() {
             {/* Left Content */}
             <div className="flex flex-col items-start gap-8">
               {/* Experience Badge (Sharpened) */}
-              <div className={`inline-flex items-center gap-2 px-6 py-2 ${slide.color} rounded-md shadow-lg`}>
-                <span className="text-[14px] font-bold text-white uppercase tracking-wider">{slide.badge}</span>
+              <div className={`inline-flex items-center gap-2 px-5 py-1.5 ${slide.color} rounded-md shadow-lg`}>
+                <span className="text-[12px] font-bold text-white uppercase tracking-wider">{slide.badge}</span>
               </div>
 
               {/* Hero Title (Border-less) */}
               <div className="py-2">
-                <h1 className="text-3xl md:text-5xl font-display font-extrabold leading-[1.1] tracking-tight uppercase">
+                <h1 className="text-3xl md:text-3xl lg:text-5xl font-display font-bold leading-[1.1] tracking-tight uppercase lg:whitespace-nowrap">
                   {(() => {
                     const words = slide.title.split(' ');
                     return words.map((word, wordIdx) => (
-                      <span 
-                        key={wordIdx} 
+                      <span
+                        key={wordIdx}
                         className={`inline-block mr-3 lg:mr-4 ${wordIdx === words.length - 1 ? slide.accent : 'text-slate-900'}`}
                       >
                         {word.split('').map((char, charIdx) => (
@@ -131,7 +131,7 @@ export default function Hero() {
               </div>
 
               {/* Subtitle */}
-              <p className="text-slate-600 text-xs md:text-sm max-w-lg font-semibold leading-relaxed font-secondary">
+              <p className="text-slate-600 text-sm md:text-base max-w-none lg:whitespace-nowrap font-semibold leading-relaxed font-secondary">
                 {slide.subtitle}
               </p>
 
@@ -155,9 +155,9 @@ export default function Hero() {
 
               {/* CTA Button (Sharpened) */}
               <div className="pt-4">
-                <button className={`group relative px-8 py-4 ${slide.color} text-white text-sm font-bold rounded-md transition-all hover:shadow-2xl hover:scale-105 active:scale-95 flex items-center gap-3 shadow-orange-500/20`}>
+                <button className={`group relative px-6 py-3 ${slide.color} text-white text-sm font-bold rounded-md transition-all hover:shadow-2xl hover:scale-105 active:scale-95 flex items-center gap-3 shadow-orange-500/20`}>
                   <span>{slide.cta}</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>

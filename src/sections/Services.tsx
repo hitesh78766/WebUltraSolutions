@@ -94,28 +94,27 @@ export default function Services() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="service-header text-center max-w-4xl mx-auto mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] leading-[1.1] tracking-tight uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
             Our Core <span className="text-[#FF6600]">Technology Services</span>
           </h2>
-          <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-semibold mt-4 max-w-xl mx-auto">
+          <p className="text-slate-600 text-xs md:text-base leading-relaxed font-semibold mt-4 max-w-xl mx-auto">
             From strengthening your digital presence to automating your workflow we offer end-to-end transformation.
           </p>
         </div>
 
         {/* Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left Side Buttons - Reference Style */}
           <div className="lg:col-span-3 space-y-3.5">
             {services.map((service, index) => (
               <button
                 key={service.title}
                 onClick={() => setActiveIndex(index)}
-                className={`w-full flex items-center gap-3.5 px-5 py-4 rounded-md transition-all duration-300 text-left group ${
-                  activeIndex === index 
-                    ? 'bg-[#F97316] text-white shadow-[0_8px_20px_-4px_rgba(249,115,22,0.35)]' 
-                    : 'bg-white border border-slate-50 shadow-[0_4px_10px_rgba(0,0,0,0.02)] hover:shadow-md text-[#F97316] hover:bg-slate-50/50'
-                }`}
+                className={`w-full flex items-center gap-3.5 px-5 py-4 rounded-md transition-all duration-300 text-left group ${activeIndex === index
+                  ? 'bg-[#F97316] text-white shadow-[0_8px_20px_-4px_rgba(249,115,22,0.35)]'
+                  : 'bg-white border border-slate-50 shadow-[0_4px_10px_rgba(0,0,0,0.02)] hover:shadow-md text-[#F97316] hover:bg-slate-50/50'
+                  }`}
               >
                 <div className={`p-1 rounded-lg shrink-0 ${activeIndex === index ? 'text-white' : 'text-[#F97316]'}`}>
                   <service.icon className="w-4.5 h-4.5" />
@@ -154,17 +153,17 @@ export default function Services() {
 
                 {/* Info Side - More Compact */}
                 <div className="flex flex-col flex-1 py-1">
-                  <h3 className="text-xl lg:text-2xl font-display font-extrabold text-[#111827] mb-3 tracking-tight uppercase">
+                  <h3 className="text-xl lg:text-2xl font-display font-bold text-[#111827] mb-3 tracking-tight uppercase">
                     {activeService.title}
                   </h3>
-                  <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed mb-6">
+                  <p className="text-slate-500 text-sm lg:text-sm font-semibold leading-relaxed mb-6">
                     {activeService.subtitle}
                   </p>
 
                   <div className="mt-auto">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="h-[1px] flex-grow bg-sky-50"></div>
-                      <span className="text-[9px] font-bold text-slate-400 capitalize whitespace-nowrap">Key technologies</span>
+                      <span className="text-[13px] font-bold text-slate-400 capitalize whitespace-nowrap">Key technologies</span>
                       <div className="h-[1px] flex-grow bg-slate-50"></div>
                     </div>
 
@@ -172,7 +171,7 @@ export default function Services() {
                       {activeService.keyTechnologies.map((tech) => (
                         <div
                           key={tech}
-                          className="px-3.5 py-1.5 rounded-full border border-slate-100 bg-slate-50/30 text-slate-500 text-[9px] font-bold hover:border-[#F97316] hover:text-[#F97316] transition-all cursor-default"
+                          className="px-3.5 py-1.5 rounded-full border border-slate-100 bg-slate-50/30 text-slate-500 text-[12px] font-semibold hover:bg-[#F97316] hover:text-white hover:border-[#F97316] hover:-translate-y-1 transition-all cursor-default"
                         >
                           {tech}
                         </div>

@@ -125,15 +125,15 @@ export default function IndustryExcellence() {
 
         {/* Section Header */}
         <div className="industry-header text-center max-w-4xl mx-auto mb-10 space-y-3">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-[#111827] tracking-tight leading-[1.1] uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
             Industry-Specific <span className="text-[#FF6600]">Excellence</span>
           </h2>
-          <p className="text-slate-600 text-[12px] md:text-[14px] font-semibold leading-relaxed opacity-80 uppercase tracking-widest max-w-xl mx-auto italic">
+          <p className="text-slate-600 text-[12px] md:text-[14px] font-semibold leading-relaxed opacity-80 capitalize tracking-widest max-w-xl mx-auto italic">
             Specialized solutions engineered for your industry's unique challenges and opportunities.
           </p>
           <div className="flex items-center justify-center gap-2 pt-1">
             <span className="h-px w-5 bg-orange-200" />
-            <p className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em]">Deep domain expertise across 6 core industries</p>
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Deep domain expertise across 6 core industries</p>
             <span className="h-px w-5 bg-orange-200" />
           </div>
         </div>
@@ -151,18 +151,18 @@ export default function IndustryExcellence() {
 
 function IndustryCard({ title, category, icon: Icon, achievement, description, impact, timeline }: any) {
   return (
-    <div className="industry-card bg-white border border-slate-200 rounded-xl p-4 lg:p-5 flex flex-col h-full group hover:border-[#F97316] shadow-2xl shadow-slate-200/40 hover:shadow-orange-500/10 transition-all duration-500 relative overflow-hidden">
+    <div className="industry-card bg-white border border-slate-200 rounded-md p-4 lg:p-5 flex flex-col h-full group hover:border-[#F97316] shadow-2xl shadow-slate-200/40 hover:shadow-orange-500/10 transition-all duration-500 relative overflow-hidden">
       {/* Decorative Corner Refraction */}
       <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-slate-50 to-transparent rounded-bl-[3rem] group-hover:from-[#F97316]/10 transition-colors" />
 
       {/* Icon & Title Row (Micro-Scaled for Readability) */}
       <div className="flex items-center gap-3 mb-4 relative z-10">
-        <div className="w-9 h-9 rounded-lg bg-orange-50 text-[#F97316] flex items-center justify-center border border-orange-100/50 group-hover:bg-[#F97316] group-hover:text-white transition-all duration-500">
+        <div className="w-9 h-9 rounded-md bg-orange-50 text-[#F97316] flex items-center justify-center border border-orange-100/50 group-hover:bg-[#F97316] group-hover:text-white transition-all duration-500">
           <Icon size={16} className="group-hover:scale-110 transition-transform" />
         </div>
         <div>
-          <h4 className="text-xl lg:text-2xl font-display font-extrabold text-[#111827] group-hover:text-[#FF6600] tracking-tight leading-none transition-colors capitalize">{title}</h4>
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">{category}</p>
+          <h4 className="text-xl lg:text-2xl font-display font-bold text-[#111827] group-hover:text-[#FF6600] tracking-tight leading-none transition-colors capitalize">{title}</h4>
+          <p className="text-[12px] font-semibold text-slate-400 capitalize tracking-widest mt-2">{category}</p>
         </div>
       </div>
 
@@ -170,7 +170,7 @@ function IndustryCard({ title, category, icon: Icon, achievement, description, i
       <div className="mb-4 px-3 py-2 bg-orange-50/80 border border-orange-100/30 rounded-lg relative z-10 hover:bg-orange-100/40 transition-colors">
         <div className="flex items-center gap-2">
           <TrendingUp size={14} className="text-[#FF6600] shrink-0" />
-          <p className="text-sm lg:text-base font-bold text-[#FF6600] leading-tight tracking-tight italic">{achievement}</p>
+          <p className="text-sm lg:text-sm font-bold text-[#FF6600] leading-tight tracking-tight italic">{achievement}</p>
         </div>
       </div>
 
@@ -192,7 +192,7 @@ function IndustryCard({ title, category, icon: Icon, achievement, description, i
       </div>
 
       {/* Action Button (Increased Interactive Font Size) */}
-      <button className="w-full py-3 rounded-lg bg-white text-[#FF6600] border border-[#FF6600]/30 font-bold text-[11px] uppercase tracking-[0.18em] hover:bg-[#FF6600] hover:text-white shadow-sm hover:shadow-lg hover:shadow-orange-500/20 transition-all active:scale-95 flex items-center justify-center gap-2">
+      <button className="w-full py-3 rounded-md bg-white text-[#FF6600] border border-[#FF6600]/30 font-bold text-[11px] uppercase tracking-[0.18em] hover:bg-[#FF6600] hover:text-white shadow-sm hover:shadow-lg hover:shadow-orange-500/20 transition-all active:scale-95 flex items-center justify-center gap-2">
         <span>Explore Solutions</span>
         <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
       </button>

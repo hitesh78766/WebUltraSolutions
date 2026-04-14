@@ -209,9 +209,9 @@ export default function Navbar() {
       >
         <div className="relative w-full pointer-events-auto">
           <div
-            className={`w-full px-8 lg:px-16 py-3 transition-all duration-700 flex items-center justify-between border-b ${isScrolled
-              ? 'bg-[#1a1b26] shadow-2xl border-white/10'
-              : 'bg-[#1a1b26]/90 backdrop-blur-xl border-white/5'
+            className={`w-full px-8 lg:px-16 py-2 transition-all duration-500 flex items-center justify-between border-b ${isScrolled
+              ? 'bg-white shadow-lg border-slate-200/60'
+              : 'bg-white/95 backdrop-blur-xl border-slate-200/40'
               }`}
           >
             {/* Logo */}
@@ -223,7 +223,7 @@ export default function Navbar() {
               <img
                 src="/images/webUltraSolution-logo.png"
                 alt="WebUltra Solution Logo"
-                className="h-10 lg:h-14 w-auto object-contain brightness-110 contrast-110 p-1 transition-all group-hover:scale-105 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                className="h-9 lg:h-11 w-auto object-contain transition-all group-hover:scale-105"
               />
             </a>
 
@@ -254,7 +254,7 @@ export default function Navbar() {
                           handleNavClick(e, link.href);
                         }
                       }}
-                      className={`px-3 py-1.5 text-[13px] lg:text-[13px] font-black transition-all duration-300 rounded-l-lg hover:text-[#F97316] text-white/90 ${(isServicesOpen && link.isMega && link.name === 'Services') || (isAboutOpen && link.isMega && link.name === 'About') || (isProductsOpen && link.isMega && link.name === 'Products') ? 'text-[#F97316]' : ''}`}
+                      className={`px-3 py-1.5 text-[13px] lg:text-[13px] font-black transition-all duration-300 rounded-l-lg hover:text-[#F97316] text-slate-800 ${(isServicesOpen && link.isMega && link.name === 'Services') || (isAboutOpen && link.isMega && link.name === 'About') || (isProductsOpen && link.isMega && link.name === 'Products') ? 'text-[#F97316]' : ''}`}
                     >
                       {link.name}
                     </a>
@@ -277,7 +277,7 @@ export default function Navbar() {
                             setIsAboutOpen(false);
                           }
                         }}
-                        className={`p-1.5 transition-all duration-300 rounded-r-lg hover:text-[#F97316] text-white/90`}
+                        className={`p-1.5 transition-all duration-300 rounded-r-lg hover:text-[#F97316] text-slate-800`}
                       >
                         <ChevronDown size={14} className={`transition-transform duration-300 ${(isServicesOpen && link.name === 'Services') || (isAboutOpen && link.name === 'About') || (isProductsOpen && link.name === 'Products') ? 'rotate-180' : ''}`} />
                       </button>
@@ -455,19 +455,11 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="hidden md:block">
-              <a
-                href="/#cta"
-                onClick={(e) => handleNavClick(e, '/#cta')}
-                className="px-6 py-2.5 bg-[#F97316] text-white text-sm lg:text-[15px] font-black rounded-lg shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-white hover:text-[#F97316] transition-all duration-300"
-              >
-                Schedule Meeting
-              </a>
-            </div>
+
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors"
+              className="md:hidden p-2 text-slate-800 hover:bg-slate-100 rounded-full transition-colors"
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -634,13 +626,7 @@ export default function Navbar() {
                 ))}
               </div>
 
-              <a
-                href="/#cta"
-                onClick={(e) => handleNavClick(e, '/#cta')}
-                className="mt-12 px-10 py-3.5 bg-slate-900 text-white text-sm font-black rounded-xl shadow-xl transition-all hover:bg-slate-800 active:scale-95 uppercase tracking-widest"
-              >
-                Schedule Meeting
-              </a>
+
             </div>
           </motion.div>
         )}
