@@ -67,10 +67,10 @@ export default function CompanyOverview() {
          {/* CINEMATIC FULL-BLEED HEADER - RESPONSIVE DESIGN STYLE */}
          <div className="relative min-h-[250px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeResponsiveVortex />
-            
+
             <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
                <div className="flex flex-col items-center gap-4">
-                  <motion.div 
+                  <motion.div
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
                      className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
@@ -79,7 +79,7 @@ export default function CompanyOverview() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Agency Intelligence</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ABOUT WEBULTRASOLUTION.";
                         const words = title.split(" ");
@@ -110,7 +110,7 @@ export default function CompanyOverview() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
+                     className="text-slate-600 text-xs lg:text-base font-semibold max-w-4xl leading-relaxed"
                   >
                      Standing at the forefront of the global digital landscape. Engineering powerful offshore solutions with technical precision and market-leading expertise.
                   </motion.p>
@@ -121,7 +121,7 @@ export default function CompanyOverview() {
          {/* NARRATIVE SECTION - RESPONSIVE DESIGN STYLE (GREY TEXT) */}
          <section className="max-w-[1400px] mx-auto px-8 lg:px-20 py-16 relative z-20 border-t border-slate-50">
             <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-10 lg:gap-20 items-start">
-               
+
                <div className="space-y-12">
                   <div className="space-y-6">
                      <div className="flex items-center gap-3">
@@ -129,11 +129,11 @@ export default function CompanyOverview() {
                         <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.3em]">Identity Protocol</span>
                      </div>
                      <div className="space-y-6">
-                        <AnimatedText 
-                           className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed max-w-3xl"
+                        <AnimatedText
+                           className="text-slate-500 text-base lg:text-base font-semibold leading-relaxed max-w-3xl"
                            text="Webultrasolution Services is a proficiency-driven Web Design, Software Development, and IT agency headquartered in Noida. Serving as a comprehensive offshore service provider, we cater to the diverse design and IT infrastructure needs of both corporate entities and enterprise projects. With a wealth of experience in Custom Software Development, Mobile Apps, and SEO, WebUltraSolution has consistently delivered top-notch digital solutions globally."
                         />
-                        <p className="p-5 bg-white border-l-4 border-[#FF6600] shadow-sm rounded-md text-slate-500 text-base lg:text-lg font-semibold leading-relaxed">
+                        <p className="p-5 bg-white border-l-4 border-[#FF6600] shadow-sm rounded-md text-slate-500 text-base lg:text-base font-semibold leading-relaxed">
                            As a low IT cost structure provider, we are committed to providing truly cost-effective, customized IT solutions that meet our client's rigorous technological demands. From remote infrastructure management to security and compliance, we excel in delivering comprehensive and seamless solutions.
                         </p>
                      </div>
@@ -200,7 +200,7 @@ export default function CompanyOverview() {
                                     {item.h}
                                  </h4>
                                  <div className="w-10 h-0.5 bg-slate-100 group-hover:w-20 group-hover:bg-[#FF6600] transition-all duration-700" />
-                                 <p className="text-sm lg:text-base font-semibold text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors duration-500">
+                                 <p className="text-sm lg:text-base font-semibold text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-500">
                                     {item.p}
                                  </p>
                               </div>
@@ -211,7 +211,7 @@ export default function CompanyOverview() {
                                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#FF6600]" />
                               </div>
                            </div>
-                           
+
                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FF6600]/0 to-transparent group-hover:via-[#FF6600] transition-all duration-700" />
                         </motion.div>
                      ))}
