@@ -59,20 +59,20 @@ export default function ResponsiveDesign() {
 
         {/* Main Section Header - Ultra Compact */}
         <div className="text-center mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
             We've Helped Leaders <span className="text-[#FF6600]">Outlast Trends.</span> Your Turn?
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-16">
 
           {/* Left Column: Narrative (Tighter) */}
           <div ref={textRef} className="lg:w-[48%] space-y-5">
             <div className="space-y-3">
-              <h3 className="text-lg lg:text-2xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
                 Global Presence. 500+ elite engineers. <br /> <span className="text-[#FF6600]">100+ Digital Transformations.</span>
               </h3>
-              <p className="text-slate-500 text-base lg:text-lg font-semibold leading-relaxed max-w-lg">
+              <p className="text-slate-500 text-sm sm:text-base lg:text-lg font-semibold leading-relaxed max-w-lg">
                 While others chase fads, we build digital legacies— <span className="text-[#111827] font-bold">750+ eCommerce empires</span>, <span className="text-[#111827] font-bold">50+ Cloud foundations</span>, <span className="text-[#111827] font-bold">75+ AI systems</span> dominant for decades.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function ResponsiveDesign() {
 
               {/* Card Footer (Purple - Ultra Compact) */}
               <div className="px-6 py-6 lg:py-6 bg-[#4C1D95] flex flex-col items-center gap-3.5">
-                <h5 className="text-base lg:text-xl font-bold text-white tracking-tight">Join the Legacy</h5>
+                <h5 className="text-lg md:text-base lg:text-xl font-bold text-white tracking-tight">Join the Legacy</h5>
                 <button className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA580C] text-white px-6 py-3 rounded-md font-bold text-[12px] capitalize tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
                   <span>View Success Stories</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />

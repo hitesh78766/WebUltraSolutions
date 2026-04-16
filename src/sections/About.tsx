@@ -177,19 +177,19 @@ export default function About() {
 
         {/* Header Section (Elite Mini) */}
         <div className="tech-header text-center mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
             We've Helped Leaders <span className="text-[#FF6600]">Outlast Trends.</span> Your Turn?
           </h2>
-          <p className="text-slate-600 text-[11px] font-semibold uppercase tracking-[0.2em] bg-slate-50 inline-block px-4 py-1.5 rounded-md border border-slate-100 mt-4">
+          <p className="text-slate-600 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] bg-slate-50 inline-block px-4 py-1.5 rounded-md border border-slate-100 mt-4">
             Every major platform and emerging technology
           </p>
         </div>
 
         {/* Main Interface - Elite Compact (Fixed Height with Scrolling - Deep Clearance Height) */}
-        <div className="bg-white border border-slate-200 rounded-[1.5rem] overflow-hidden shadow-[0_20px_70px_-15px_rgba(0,0,0,0.04)] grid grid-cols-1 lg:grid-cols-12 h-auto lg:h-[600px]">
+        <div className="bg-white border border-slate-200 rounded-[1.5rem] overflow-hidden shadow-[0_20px_70px_-15px_rgba(0,0,0,0.04)] grid grid-cols-1 md:grid-cols-12 h-auto md:h-[600px] lg:h-[600px]">
 
           {/* Sidebar - left side (Scrollable - Enhanced Safe-Zone) */}
-          <div className="lg:col-span-3 bg-[#FFF9F5] p-5 lg:p-7 border-r border-slate-200 flex flex-col relative h-[450px] lg:h-full">
+          <div className="md:col-span-4 lg:col-span-3 bg-[#FFF9F5] p-5 lg:p-7 border-b md:border-b-0 md:border-r border-slate-200 flex flex-col relative h-[350px] sm:h-[450px] md:h-full">
             <h3 className="text-[12px] font-bold text-slate-500 uppercase tracking-[0.25em] mb-8 px-2">
               Technology Domains
             </h3>
@@ -221,7 +221,7 @@ export default function About() {
           </div>
 
           {/* Content Area - right side (Scrollable) */}
-          <div className="lg:col-span-9 p-7 lg:p-10 relative flex flex-col bg-white">
+          <div className="md:col-span-8 lg:col-span-9 p-5 sm:p-7 lg:p-10 relative flex flex-col bg-white">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -237,10 +237,10 @@ export default function About() {
                     <DomainIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-2xl lg:text-2xl font-display font-bold text-[#111827] tracking-tight capitalize">
+                    <h4 className="text-lg sm:text-xl lg:text-2xl font-display font-bold text-[#111827] tracking-tight capitalize">
                       {activeDomain.title}
                     </h4>
-                    <p className="text-slate-400 text-[10px] font-semibold uppercase tracking-wider">
+                    <p className="text-slate-400 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider">
                       {activeDomain.subtitle}
                     </p>
                   </div>
@@ -254,7 +254,7 @@ export default function About() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: i * 0.01 }}
-                      className="bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-slate-300 py-6 px-3 rounded-md flex flex-col items-center justify-center gap-3 transition-all group cursor-pointer hover:shadow-xl hover:-translate-y-1"
+                      className="bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-slate-300 py-4 sm:py-6 px-3 rounded-md flex flex-col items-center justify-center gap-2 sm:gap-3 transition-all group cursor-pointer hover:shadow-xl hover:-translate-y-1"
                     >
                       <div className="w-9 h-9 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform">
                         <tech.icon className="w-4 h-4 text-[#111827] group-hover:text-[#F97316] group-hover:stroke-[3px] transition-all" />
@@ -269,8 +269,8 @@ export default function About() {
             </AnimatePresence>
 
             {/* CTA at Bottom Right (High-Status Floating Position) */}
-            <div className="absolute bottom-20 right-14 z-20">
-              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-7 py-3.5 rounded-md font-bold text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
+            <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 lg:bottom-20 lg:right-14 z-20">
+              <button className="flex items-center gap-2.5 bg-[#F97316] hover:bg-[#EA580C] text-white px-5 sm:px-7 py-3 sm:py-3.5 rounded-md font-bold text-[10px] sm:text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-orange-500/20 active:scale-95 group">
                 <span>Explore Solutions</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
               </button>

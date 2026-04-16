@@ -100,7 +100,7 @@ export default function Hero() {
         </div>
 
         <div className="relative z-10 max-w-full mx-auto px-6 md:px-14 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-12 items-center">
 
             {/* Left Content */}
             <div className="flex flex-col items-start gap-8">
@@ -111,7 +111,7 @@ export default function Hero() {
 
               {/* Hero Title (Border-less) */}
               <div className="py-2">
-                <h1 className="text-3xl md:text-3xl lg:text-5xl font-display font-bold leading-[1.1] tracking-tight uppercase lg:whitespace-nowrap">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold leading-[1.1] tracking-tight uppercase lg:whitespace-nowrap">
                   {(() => {
                     const words = slide.title.split(' ');
                     return words.map((word, wordIdx) => (
@@ -131,25 +131,25 @@ export default function Hero() {
               </div>
 
               {/* Subtitle */}
-              <p className="text-slate-600 text-sm md:text-base max-w-none lg:whitespace-nowrap font-semibold leading-relaxed font-secondary">
+              <p className="text-slate-600 text-[11px] sm:text-sm md:text-base max-w-none lg:whitespace-nowrap font-semibold leading-relaxed font-secondary">
                 {slide.subtitle}
               </p>
 
               {/* Avatars & Transformations */}
-              <div className="flex items-center gap-6">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                 <div className="flex -space-x-4">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-slate-200 shadow-xl overflow-hidden">
+                    <div key={i} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-white bg-slate-200 shadow-xl overflow-hidden">
                       <img src={`https://i.pravatar.cc/150?u=u${i + currentSlide}`} alt="Transformations" />
                     </div>
                   ))}
-                  <div className="w-12 h-12 rounded-full border-4 border-white bg-white shadow-xl flex items-center justify-center text-[#FF6600] font-bold text-xl">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-white bg-white shadow-xl flex items-center justify-center text-[#FF6600] font-bold text-lg sm:text-xl">
                     +
                   </div>
                 </div>
                 <div className="space-y-0.5">
-                  <div className="text-lg font-bold text-slate-900">500+</div>
-                  <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Transformations</div>
+                  <div className="text-base sm:text-lg font-bold text-slate-900">500+</div>
+                  <div className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Transformations</div>
                 </div>
               </div>
 
@@ -163,7 +163,7 @@ export default function Hero() {
             </div>
 
             {/* Right Image Mockup (Significantly Smaller) */}
-            <div className="relative flex justify-center lg:justify-end">
+            <div className="relative flex justify-center md:justify-end lg:justify-end">
               <div className="relative w-full max-w-[450px] transform hover:scale-[1.02] transition-transform duration-700">
                 <img
                   src={`/${slide.mockup}`}
@@ -179,7 +179,7 @@ export default function Hero() {
       {/* Bottom Stats Row (Elite White & Compact) */}
       <div className="relative z-10 w-full bg-[#FDFBF9] px-6 md:px-14 py-6 border-t border-slate-100/50">
         <div className="max-w-full mx-auto">
-          <div className="mt-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          <div className="mt-0 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-4">
             {slide.features.map((feature, i) => {
               const [val, ...rest] = feature.split(' ');
               return (
@@ -228,7 +228,7 @@ export default function Hero() {
                 { name: 'DECATHLON', color: 'text-[#0082C3]' },
                 { name: 'Haldiram\'s', color: 'text-[#ED1C24]' }
               ].map((brand, i) => (
-                <div key={i} className="mx-14 flex items-center justify-center">
+                <div key={i} className="mx-6 sm:mx-10 md:mx-14 flex items-center justify-center">
                   <span className={`text-xl md:text-2xl font-bold ${brand.color} uppercase tracking-tighter opacity-70 hover:opacity-100 transition-all cursor-default`}>
                     {brand.name}
                   </span>

@@ -125,16 +125,18 @@ export default function IndustryExcellence() {
 
         {/* Section Header */}
         <div className="industry-header text-center max-w-4xl mx-auto mb-10 space-y-3">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] uppercase">
             Industry-Specific <span className="text-[#FF6600]">Excellence</span>
           </h2>
           <p className="text-slate-600 text-[12px] md:text-[14px] font-semibold leading-relaxed opacity-80 capitalize tracking-widest max-w-xl mx-auto italic">
             Specialized solutions engineered for your industry's unique challenges and opportunities.
           </p>
-          <div className="flex items-center justify-center gap-2 pt-1">
-            <span className="h-px w-5 bg-orange-200" />
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Deep domain expertise across 6 core industries</p>
-            <span className="h-px w-5 bg-orange-200" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-1">
+            <div className="flex items-center gap-2">
+              <span className="h-px w-5 bg-orange-200" />
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] text-center">Deep domain expertise across 6 core industries</p>
+              <span className="h-px w-5 bg-orange-200" />
+            </div>
           </div>
         </div>
 
@@ -161,7 +163,7 @@ function IndustryCard({ title, category, icon: Icon, achievement, description, i
           <Icon size={16} className="group-hover:scale-110 transition-transform" />
         </div>
         <div>
-          <h4 className="text-xl lg:text-2xl font-display font-bold text-[#111827] group-hover:text-[#FF6600] tracking-tight leading-none transition-colors capitalize">{title}</h4>
+          <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-bold text-[#111827] group-hover:text-[#FF6600] tracking-tight leading-none transition-colors capitalize">{title}</h4>
           <p className="text-[12px] font-semibold text-slate-400 capitalize tracking-widest mt-2">{category}</p>
         </div>
       </div>
@@ -175,7 +177,7 @@ function IndustryCard({ title, category, icon: Icon, achievement, description, i
       </div>
 
       {/* Description (Increased Readability) */}
-      <p className="text-slate-500 text-sm lg:text-[15.5px] font-semibold leading-relaxed mb-5 flex-grow">
+      <p className="text-slate-500 text-xs sm:text-sm lg:text-[15.5px] font-semibold leading-relaxed mb-5 flex-grow">
         {description}
       </p>
 

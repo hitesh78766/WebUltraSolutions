@@ -122,7 +122,7 @@ export default function FAQ() {
             <div className="inline-flex items-center px-4 py-1.5 bg-[#FFF1E2] rounded-md mb-4 shadow-sm">
               <span className="text-[10px] font-bold text-[#FF6600] uppercase tracking-widest">Success Stories</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
               From Technology Projects into <span className="text-[#FF6600]">Business Success Stories</span>
             </h2>
             <p className="text-slate-600 text-[11px] lg:text-[14px] font-semibold leading-relaxed max-w-4xl mx-auto px-4">
@@ -159,11 +159,11 @@ export default function FAQ() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">Challenge:</h4>
-                        <p className="text-slate-500 text-base lg:text-base font-semibold leading-relaxed">{activeStory.challenge}</p>
+                        <p className="text-slate-500 text-sm sm:text-base lg:text-base font-semibold leading-relaxed">{activeStory.challenge}</p>
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-[10px] font-bold text-[#111827] uppercase tracking-widest">The Solution:</h4>
-                        <p className="text-slate-500 text-base lg:text-base font-semibold leading-relaxed">{activeStory.solution}</p>
+                        <p className="text-slate-500 text-sm sm:text-base lg:text-base font-semibold leading-relaxed">{activeStory.solution}</p>
                       </div>
                     </div>
                   </div>
@@ -216,7 +216,7 @@ export default function FAQ() {
       <section id="faq-accordions" className="py-12 bg-white font-display border-t border-slate-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight mb-5 uppercase">
               Frequently <span className="text-[#FF6600]">Asked Questions</span>
             </h2>
             <p className="text-slate-600 text-[14px] font-semibold leading-relaxed">Get answers to common questions about our services</p>
@@ -248,7 +248,7 @@ export default function FAQ() {
       {/* Social Commitments Section */}
       <section id="social-commitments" className="py-12 bg-white font-display">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] mb-8 uppercase">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] tracking-tight leading-[1.1] mb-8 uppercase">
             Making <span className="text-[#FF6600]">Social Commitments</span> That Lasts
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">

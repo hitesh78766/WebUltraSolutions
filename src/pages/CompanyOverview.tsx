@@ -65,10 +65,10 @@ export default function CompanyOverview() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER - RESPONSIVE DESIGN STYLE */}
-         <div className="relative min-h-[250px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[300px] sm:min-h-[320px] md:min-h-[350px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeResponsiveVortex />
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-4 lg:space-y-5">
                <div className="flex flex-col items-center gap-4">
                   <motion.div
                      initial={{ opacity: 0, y: -20 }}
@@ -79,7 +79,7 @@ export default function CompanyOverview() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Agency Intelligence</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ABOUT WEBULTRASOLUTION.";
                         const words = title.split(" ");
@@ -110,7 +110,7 @@ export default function CompanyOverview() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-base font-semibold max-w-4xl leading-relaxed"
+                     className="text-slate-600 text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold max-w-4xl leading-relaxed"
                   >
                      Standing at the forefront of the global digital landscape. Engineering powerful offshore solutions with technical precision and market-leading expertise.
                   </motion.p>
@@ -119,8 +119,8 @@ export default function CompanyOverview() {
          </div>
 
          {/* NARRATIVE SECTION - RESPONSIVE DESIGN STYLE (GREY TEXT) */}
-         <section className="max-w-[1400px] mx-auto px-8 lg:px-20 py-16 relative z-20 border-t border-slate-50">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-10 lg:gap-20 items-start">
+         <section className="max-w-[1400px] mx-auto px-4 sm:px-10 md:px-16 lg:px-20 py-12 md:py-16 relative z-20 border-t border-slate-50">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-12 md:gap-16 lg:gap-20 items-start">
 
                <div className="space-y-12">
                   <div className="space-y-6">
@@ -130,17 +130,17 @@ export default function CompanyOverview() {
                      </div>
                      <div className="space-y-6">
                         <AnimatedText
-                           className="text-slate-500 text-base lg:text-base font-semibold leading-relaxed max-w-3xl"
+                           className="text-slate-500 text-sm md:text-base lg:text-base font-semibold leading-relaxed max-w-3xl"
                            text="Webultrasolution Services is a proficiency-driven Web Design, Software Development, and IT agency headquartered in Noida. Serving as a comprehensive offshore service provider, we cater to the diverse design and IT infrastructure needs of both corporate entities and enterprise projects. With a wealth of experience in Custom Software Development, Mobile Apps, and SEO, WebUltraSolution has consistently delivered top-notch digital solutions globally."
                         />
-                        <p className="p-5 bg-white border-l-4 border-[#FF6600] shadow-sm rounded-md text-slate-500 text-base lg:text-base font-semibold leading-relaxed">
+                        <p className="p-5 bg-white border-l-4 border-[#FF6600] shadow-sm rounded-md text-slate-500 text-sm md:text-base lg:text-base font-semibold leading-relaxed">
                            As a low IT cost structure provider, we are committed to providing truly cost-effective, customized IT solutions that meet our client's rigorous technological demands. From remote infrastructure management to security and compliance, we excel in delivering comprehensive and seamless solutions.
                         </p>
                      </div>
                   </div>
 
                   {/* PILLAR GRID - RESPONSIVE DESIGN CARD STYLE */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-5">
                      {[
                         {
                            h: "Client Contentment",
@@ -219,13 +219,13 @@ export default function CompanyOverview() {
                </div>
 
                {/* STICKY VISUAL POD - RESPONSIVE DESIGN STYLE */}
-               <div className="relative sticky top-28" ref={rightImageRef}>
+               <div className="relative sticky top-28 mt-10 md:mt-16 lg:mt-0" ref={rightImageRef}>
                   <motion.div
                      initial={{ opacity: 0, x: 20 }}
                      whileInView={{ opacity: 1, x: 0 }}
                      className="bg-white p-2 rounded-md shadow-xl border border-slate-50 overflow-hidden group"
                   >
-                     <div className="rounded-md overflow-hidden relative aspect-[4/5]">
+                     <div className="rounded-md overflow-hidden relative aspect-[16/10] md:aspect-video lg:aspect-[4/5]">
                         <img src={imgNetwork} alt="Global Network" className="w-full h-full object-cover transition-transform duration-[6000ms] group-hover:scale-110" />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                         <div className="absolute inset-x-0 bottom-0 p-6 text-white text-left">

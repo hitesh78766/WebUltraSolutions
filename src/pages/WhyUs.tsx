@@ -39,7 +39,7 @@ const WhyUs: React.FC = () => {
    const SectionHeader = ({ label, title }: { label: string, title: React.ReactNode }) => (
       <div className="flex flex-col gap-1 mb-6 text-left">
          <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">{label}</span>
-         <h2 className="text-lg lg:text-2xl font-display font-bold tracking-tight uppercase leading-snug text-slate-950">
+         <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase leading-snug text-slate-950">
             {title}
          </h2>
       </div>
@@ -48,28 +48,28 @@ const WhyUs: React.FC = () => {
    return (
       <div className="bg-white min-h-screen font-secondary overflow-x-hidden pt-[80px]">
          {/* HERO SECTION - REFINED WITH SOLUTION BACKGROUND */}
-         <section className="relative h-[280px] lg:h-[350px] flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <section className="relative h-[300px] sm:h-[320px] md:h-[350px] lg:h-[350px] flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeSolutionBackground />
 
             {/* Soft Contrast Mask */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/95 z-[1] pointer-events-none" />
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-12 lg:px-20 text-center space-y-4 lg:space-y-5">
                <div className="flex flex-col items-center gap-4">
                   {/* Differentiation Badge */}
-                  <motion.div
-                     initial={{ opacity: 0, scale: 0.8 }}
-                     animate={{ opacity: 1, scale: 1 }}
-                     className="px-4 py-1.5 bg-slate-950 rounded-full border border-[#FF6600]/40 shadow-2xl flex items-center gap-3"
-                  >
-                     <CheckCircle2 size={12} className="text-[#FF6600]" />
-                     <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-white">Differentiator Core</span>
-                  </motion.div>
+                   <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="px-3.5 sm:px-4 lg:px-5 py-1 sm:py-1.5 lg:py-2 bg-slate-950 rounded-full border border-[#FF6600]/40 shadow-2xl flex items-center gap-2 lg:gap-3"
+                   >
+                      <CheckCircle2 size={12} className="text-[#FF6600]" />
+                      <span className="text-[8px] sm:text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.3em] lg:tracking-[0.4em] text-white">Differentiator Core</span>
+                   </motion.div>
 
                   <div className="space-y-4">
                      <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="space-y-1">
                         <span className="block text-[11px] font-bold text-[#FF6600] uppercase tracking-[0.6em] mb-1">Choosing Excellence</span>
-                        <h1 className="text-3xl lg:text-5xl font-bold text-slate-950 tracking-tighter leading-[1] uppercase flex items-center justify-center gap-3">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tighter leading-[1] uppercase flex items-center justify-center gap-2 sm:gap-3">
                            Why <span className="text-[#FF6600]">Choose Us.</span>
                         </h1>
                      </motion.div>
@@ -78,7 +78,7 @@ const WhyUs: React.FC = () => {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 1.2 }}
-                        className="text-slate-600 text-base font-semibold max-w-2xl leading-relaxed"
+                        className="text-slate-600 text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold max-w-2xl leading-relaxed italic"
                      >
                         Basic service delivery isn't enough to differentiate any firm in today's competitive marketplace. We propel clients beyond satisfaction to absolute loyalty.
                      </motion.p>
@@ -88,18 +88,18 @@ const WhyUs: React.FC = () => {
          </section>
 
          {/* STRATEGIC NARRATIVE & PILLARS GRID */}
-         <section className="py-16 lg:py-28 bg-white">
-            <div className="max-w-[1400px] mx-auto px-8 lg:px-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+         <section className="py-12 sm:py-16 lg:py-28 bg-white">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-12 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
 
                {/* Main Narrative Column */}
                <div className="lg:col-span-7 space-y-12">
                   <div className="space-y-8">
                      <SectionHeader label="Strategic Core" title={<>Corporate <span className="text-[#FF6600]">Reputation</span></>} />
                      <div className="space-y-6">
-                        <p className="text-base lg:text-[16px] text-slate-950 font-semibold border-l-4 border-[#FF6600] pl-10 py-3 leading-relaxed bg-[#FDFBF9] rounded-r-md shadow-sm">
+                         <p className="text-sm sm:text-base lg:text-[16px] text-slate-950 font-semibold border-l-4 border-[#FF6600] pl-6 sm:pl-10 py-3 leading-relaxed bg-[#FDFBF9] rounded-r-md shadow-sm">
                            "Understanding not only our client's web needs but their business needs have propelled webultrasolution beyond customer satisfaction."
                         </p>
-                        <p className="text-sm lg:text-base text-slate-500 font-semibold leading-relaxed border-l-2 border-slate-100 pl-10">
+                         <p className="text-sm sm:text-base text-slate-500 font-semibold leading-relaxed border-l-2 border-slate-100 pl-6 sm:pl-10">
                            We have established a reputation for consistently delivering mission-critical, technically challenging projects under tight timelines, while also providing exceptional customer service and support to our clientele. This, in turn, has led to extremely positive long-term working relationships with both clients and solution partners alike.
                         </p>
                      </div>
@@ -110,13 +110,13 @@ const WhyUs: React.FC = () => {
                         <motion.div
                            key={i}
                            whileHover={{ x: 10 }}
-                           className="p-5 bg-[#FDFBF9] border border-slate-100 rounded-md hover:border-[#FF6600] transition-all group shadow-sm flex gap-5 items-center"
+                           className="p-4 sm:p-5 bg-[#FDFBF9] border border-slate-100 rounded-md hover:border-[#FF6600] transition-all group shadow-sm flex gap-4 sm:gap-5 items-center"
                         >
                            <div className="w-10 h-10 bg-white flex items-center justify-center text-[#FF6600] shadow-xl rounded-sm shrink-0 border border-slate-50 group-hover:bg-[#FF6600] group-hover:text-white transition-all transform group-hover:rotate-6">
                               <pillar.icon size={16} />
                            </div>
-                           <div className="space-y-1.5">
-                              <h4 className="text-[14px] font-bold text-slate-950 capitalize tracking-[0.2em]">
+                           <div className="space-y-1">
+                              <h4 className="text-[14px] font-bold text-slate-950 capitalize tracking-[0.12em] sm:tracking-[0.2em]">
                                  {i === 0 ? (
                                     <>Understanding The <span className="text-[#FF6600]">Client Base</span></>
                                  ) : i === 1 ? (
@@ -134,7 +134,7 @@ const WhyUs: React.FC = () => {
 
                {/* The "Why Choose Us?" Callout Column */}
                <div className="lg:col-span-5 lg:sticky lg:top-[120px]">
-                  <div className="bg-[#FDFBF9] p-6 lg:p-10 rounded-md border border-slate-100 shadow-2xl relative overflow-hidden group">
+                   <div className="bg-[#FDFBF9] p-6 sm:p-8 lg:p-10 rounded-md border border-slate-100 shadow-2xl relative overflow-hidden group">
                      <div className="absolute inset-0 bg-[#FF6600]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                      <div className="relative z-10 space-y-8">
                         <div className="space-y-3 text-center lg:text-left">
@@ -153,8 +153,8 @@ const WhyUs: React.FC = () => {
                                  transition={{ delay: i * 0.1 }}
                                  className="flex items-center gap-5 group/item cursor-default"
                               >
-                                 <span className="text-xl font-display font-bold text-[#FF6600] opacity-40 group-hover/item:opacity-100 transition-all">0{i + 1}</span>
-                                 <span className="text-[14px] font-bold text-slate-950 capitalize tracking-[0.05em] group-hover/item:translate-x-3 transition-transform">{pillar}</span>
+                                  <span className="text-lg sm:text-xl font-display font-bold text-[#FF6600] opacity-40 group-hover/item:opacity-100 transition-all">0{i + 1}</span>
+                                  <span className="text-sm sm:text-[14px] lg:text-[14px] font-bold text-slate-950 capitalize tracking-[0.05em] group-hover/item:translate-x-3 transition-transform">{pillar}</span>
                               </motion.div>
                            ))}
                         </div>

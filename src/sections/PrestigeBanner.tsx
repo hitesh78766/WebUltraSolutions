@@ -100,10 +100,10 @@ export default function PrestigeBanner() {
                 <Target size={11} className="text-orange-500" />
                 <span className="text-[10px] font-bold text-slate-800 uppercase tracking-widest leading-none">Innovation First</span>
               </div>
-              <h3 className="text-2xl lg:text-4xl font-display font-bold text-slate-950 mb-4 tracking-tight leading-tight uppercase">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-slate-950 mb-4 tracking-tight leading-tight uppercase">
                 We Bring Your <span className="text-[#FF6600]">Business Edge</span>
               </h3>
-              <p className="text-slate-600 text-base lg:text-lg font-semibold leading-relaxed max-w-md">
+              <p className="text-slate-600 text-sm sm:text-base lg:text-lg font-semibold leading-relaxed max-w-md">
                 Our <span className="text-slate-900 font-bold">95% timely project delivery</span> and quality outcome give you
                 an edge that no competitor has.
               </p>

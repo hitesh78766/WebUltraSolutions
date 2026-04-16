@@ -23,7 +23,7 @@ const Feedback: React.FC = () => {
   const SectionHeader = ({ label, title }: { label: string, title: React.ReactNode }) => (
     <div className="flex flex-col gap-1 mb-8 text-left">
       <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">{label}</span>
-      <h2 className="text-lg lg:text-3xl font-display font-bold tracking-tighter uppercase leading-snug text-slate-950">
+      <h2 className="text-base sm:text-lg md:text-xl lg:text-3xl font-display font-bold tracking-tighter uppercase leading-snug text-slate-950">
         {title}
       </h2>
     </div>
@@ -32,25 +32,25 @@ const Feedback: React.FC = () => {
   return (
     <div className="bg-white min-h-screen font-secondary overflow-x-hidden pt-[80px]">
       {/* HERO SECTION - REFINED ELITE TYPOGRAPHY */}
-      <section className="relative h-[220px] lg:h-[280px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 bg-[#FDFBF9]">
+      <section className="relative h-[240px] sm:h-[260px] md:h-[280px] lg:h-[280px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 bg-[#FDFBF9]">
         <ThreeNetworkGlobe />
         <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/98 z-[1]" />
         
-        <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-20 w-full flex flex-col items-center text-center gap-6">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-12 md:px-16 lg:px-20 w-full flex flex-col items-center text-center gap-6">
           <motion.div 
             initial={{ opacity: 0, y: -10 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="px-4 py-1.5 bg-slate-950 rounded-full flex items-center gap-3 shadow-2xl border border-[#FF6600]/30"
+            className="px-3.5 sm:px-4 lg:px-5 py-1 sm:py-1.5 lg:py-2 bg-slate-950 rounded-full flex items-center gap-2 lg:gap-3 shadow-2xl border border-[#FF6600]/30"
           >
-            <Fingerprint size={12} className="text-[#FF6600] animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white">Trust Registry Active</span>
+            <Fingerprint className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-[#FF6600] animate-pulse" />
+            <span className="text-[8px] sm:text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.3em] lg:tracking-[0.4em] text-white">Trust Registry Active</span>
           </motion.div>
 
           <div className="space-y-4">
-            <h1 className="text-3xl lg:text-5xl font-bold text-slate-950 tracking-tighter uppercase leading-[1] flex items-center justify-center gap-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tighter uppercase leading-[1] flex items-center justify-center gap-3 sm:gap-4">
                 CLIENT <span className="text-[#FF6600]">FEEDBACK.</span>
             </h1>
-            <p className="text-slate-500 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.6em]">Resonating Global Excellence • Noida Hub</p>
+            <p className="text-slate-500 text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.4em] sm:tracking-[0.6em]">Resonating Global Excellence • Noida Hub</p>
           </div>
         </div>
       </section>
@@ -62,7 +62,7 @@ const Feedback: React.FC = () => {
 
             <div className="max-w-4xl space-y-6">
               <SectionHeader label="Voice of Partners" title={<>Delivering <span className="text-[#FF6600]">Proven Results</span></>} />
-              <p className="text-base lg:text-lg font-semibold text-slate-950 border-l-4 border-[#FF6600] pl-10 py-3 leading-relaxed bg-[#FDFBF9] shadow-sm rounded-r-md">
+              <p className="text-sm sm:text-base lg:text-lg font-semibold text-slate-950 border-l-4 border-[#FF6600] pl-6 sm:pl-10 py-3 leading-relaxed bg-[#FDFBF9] shadow-sm rounded-r-md">
                 "The success of WebUltraSolution is intricately tied to the achievements of our global corporate clients."
               </p>
             </div>
@@ -76,7 +76,7 @@ const Feedback: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className="p-7 bg-white rounded-md border border-slate-100 flex flex-col justify-between shadow-sm hover:border-[#FF6600]/40 hover:shadow-2xl hover:shadow-orange-500/10 transition-all h-[340px] group relative overflow-hidden"
+                  className="p-5 sm:p-7 bg-white rounded-md border border-slate-100 flex flex-col justify-between shadow-sm hover:border-[#FF6600]/40 hover:shadow-2xl hover:shadow-orange-500/10 transition-all h-auto min-h-[300px] sm:h-[340px] group relative overflow-hidden"
                 >
                   <div className="absolute top-0 left-0 px-3 py-1 bg-orange-50 border-r border-b border-orange-100 rounded-br-md">
                     <span className="text-[9px] font-bold text-[#FF6600] uppercase tracking-[0.2em]">{`REV-${(i + 1).toString().padStart(3, '0')}`}</span>

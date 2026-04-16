@@ -227,7 +227,7 @@ export default function Navbar() {
               />
             </a>
 
-            <div className="hidden md:flex items-center gap-2 xl:gap-4">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-4">
               {navLinks.map((link) => (
                 <div key={link.name} className="relative group/nav">
                   <div className="flex items-center">
@@ -459,7 +459,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-slate-800 hover:bg-slate-100 rounded-full transition-colors"
+              className="lg:hidden p-2 text-slate-800 hover:bg-slate-100 rounded-full transition-colors"
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -480,7 +480,7 @@ export default function Navbar() {
               className="absolute inset-0 bg-white/80 backdrop-blur-2xl"
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            <div className="relative h-full overflow-y-auto pt-24 pb-12 px-6 flex flex-col items-center" style={{ pointerEvents: 'auto' }}>
+            <div className="relative h-full overflow-y-auto pt-20 sm:pt-24 pb-12 px-4 sm:px-6 flex flex-col items-center" style={{ pointerEvents: 'auto' }}>
               <div className="flex flex-col items-center gap-6 w-full max-w-sm">
                 {navLinks.map((link) => (
                   <div key={link.name} className="w-full flex flex-col items-center">
@@ -507,7 +507,7 @@ export default function Navbar() {
                             handleNavClick(e, link.href);
                           }
                         }}
-                        className={`text-2xl font-black uppercase tracking-tight transition-all duration-300 ${location.pathname === link.href ? 'text-[#F97316]' : 'text-slate-800'} hover:text-[#5e6ad2] active:scale-95`}
+                        className={`text-lg sm:text-xl md:text-2xl font-black uppercase tracking-tight transition-all duration-300 ${location.pathname === link.href ? 'text-[#F97316]' : 'text-slate-800'} hover:text-[#5e6ad2] active:scale-95`}
                       >
                         {link.name}
                       </a>

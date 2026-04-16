@@ -71,27 +71,27 @@ export default function Arsenal() {
       <div className="absolute bottom-[20%] -left-[10%] w-[35%] h-[45%] bg-[#F5F3FF] rounded-full blur-[120px] opacity-40 pointer-events-none" />
 
       <div className="max-w-[1360px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
 
           {/* Left Column: Narrative (Compact) */}
-          <div ref={textRef} className="lg:w-[48%] space-y-6">
+          <div ref={textRef} className="md:w-[48%] lg:w-[48%] space-y-6">
             <div className="space-y-4">
-              <h2 className="arsenal-text-item text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
+              <h2 className="arsenal-text-item text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
                 Your <span className="text-[#FF6600]">Digital Dominance</span> <br />
                 That <span className="text-slate-500">Outlives</span> Market Shifts
               </h2>
 
               <div className="arsenal-text-item space-y-4">
-                <p className="text-base lg:text-lg font-semibold text-slate-800 leading-snug">
+                <p className="text-sm sm:text-base lg:text-lg font-semibold text-slate-800 leading-snug">
                   We don't just build tech—we forge <span className="text-[#FF6600]">unshakeable competitive foundations.</span>
                 </p>
-                <p className="text-slate-600 text-base lg:text-lg font-semibold leading-relaxed max-w-lg">
+                <p className="text-slate-600 text-sm sm:text-base lg:text-lg font-semibold leading-relaxed max-w-lg">
                   For leaders who refuse to be disrupted: Choose the arsenal that keeps you ahead of trends, not chasing them.
                 </p>
               </div>
 
               {/* Advanced Checklist (Nano UI) */}
-              <div className="arsenal-text-item grid grid-cols-2 gap-x-4 gap-y-3 pt-2">
+              <div className="arsenal-text-item grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 pt-2">
                 {[
                   "Battle-tested expertise",
                   "Future-proof architecture",
@@ -117,7 +117,7 @@ export default function Arsenal() {
           </div>
 
           {/* Right Column: Arsenal Metrics Card (Compact HD) */}
-          <div ref={cardRef} className="lg:w-[44%] relative group">
+          <div ref={cardRef} className="md:w-[46%] lg:w-[44%] relative group">
             {/* Industry Leader Badge */}
             <div className="absolute -top-3 left-6 z-20">
               <div className="bg-white px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center gap-1.5">
@@ -194,7 +194,7 @@ export default function Arsenal() {
                       <BarChart3 className="text-white w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-white tracking-tight leading-none">Arsenal <span className="text-[#F97316]">Metrics</span></h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-none">Arsenal <span className="text-[#F97316]">Metrics</span></h4>
                       <p className="text-white/40 text-[8.5px] font-bold uppercase tracking-[0.15em] leading-none pt-1.5 flex items-center gap-2">
                         <span className="w-1 h-1 rounded-full bg-[#F97316] animate-pulse" />
                         Proven Excellence
@@ -213,7 +213,7 @@ export default function Arsenal() {
                 <div className="text-center mb-4">
                   <h5 className="text-xl font-bold text-[#111827] tracking-tight relative inline-block">
                     Performance <span className="text-[#F97316]">Indicators</span>
-                    <div className="absolute -bottom-1.5 w-6 h-0.5 bg-[#F97316] rounded-full left-1/2 -translate-x-1/2" />
+                    <div className="hidden sm:block absolute -bottom-1.5 w-6 h-0.5 bg-[#F97316] rounded-full left-1/2 -translate-x-1/2" />
                   </h5>
                 </div>
 

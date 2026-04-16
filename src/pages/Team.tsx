@@ -46,7 +46,7 @@ const Team: React.FC = () => {
    const SectionHeader = ({ label, title }: { label: string, title: string }) => (
       <div className="flex flex-col gap-1 mb-6 text-left">
          <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">{label}</span>
-         <h2 className="text-lg lg:text-2xl font-display font-bold tracking-tight uppercase leading-snug text-slate-950">
+         <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase leading-snug text-slate-950">
             {title}
          </h2>
       </div>
@@ -55,7 +55,7 @@ const Team: React.FC = () => {
    return (
       <div ref={containerRef} className="bg-white min-h-screen font-secondary overflow-x-hidden pt-[70px]">
          {/* HERO SECTION - ELITE TYPOGRAPHY REFINEMENT */}
-         <section className="relative h-[300px] lg:h-[380px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 bg-[#FDFBF9]">
+         <section className="relative h-[320px] sm:h-[350px] md:h-[380px] lg:h-[380px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 bg-[#FDFBF9]">
             <ThreeNeuralStorm />
 
             <div className="absolute inset-0 opacity-[0.03] z-[1] select-none pointer-events-none"
@@ -63,15 +63,15 @@ const Team: React.FC = () => {
 
             <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/95 z-[2] pointer-events-none" />
 
-            <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-20 w-full flex flex-col items-center justify-center">
-               <div className="flex flex-col items-center text-center gap-6 max-w-4xl">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-12 md:px-16 lg:px-20 w-full flex flex-col items-center justify-center">
+               <div className="flex flex-col items-center text-center gap-4 sm:gap-6 max-w-4xl">
                   <motion.div
                      initial={{ opacity: 0, scale: 0.8 }}
                      animate={{ opacity: 1, scale: 1 }}
-                     className="px-5 py-2 bg-slate-950 rounded-full border border-[#FF6600]/40 shadow-2xl flex items-center gap-3"
+                     className="px-3.5 sm:px-4 lg:px-5 py-1 sm:py-1.5 lg:py-2 bg-slate-950 rounded-full border border-[#FF6600]/40 shadow-2xl flex items-center gap-2 lg:gap-3"
                   >
-                     <Fingerprint size={14} className="text-[#FF6600] animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white">Verified Talent Identity</span>
+                     <Fingerprint className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-[#FF6600] animate-pulse" />
+                     <span className="text-[8px] sm:text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.3em] lg:tracking-[0.4em] text-white">Verified Talent Identity</span>
                   </motion.div>
 
                   <div className="space-y-5">
@@ -84,7 +84,7 @@ const Team: React.FC = () => {
                            Technical Core
                         </motion.span>
 
-                        <h1 className="text-3xl lg:text-5xl font-bold text-slate-950 tracking-tight leading-[1.1] uppercase flex flex-wrap items-center justify-center gap-[0.2em]">
+                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight leading-[1.1] uppercase flex flex-wrap items-center justify-center gap-[0.2em]">
                            {['OUR', 'ELITE', 'NETWORK.'].map((word, wordIdx) => (
                               <span key={wordIdx} className="flex overflow-hidden pb-1">
                                  {word.split('').map((char, charIdx) => (
@@ -114,19 +114,19 @@ const Team: React.FC = () => {
                         transition={{ delay: 1 }}
                         className="flex flex-col items-center gap-6"
                      >
-                        <motion.p className="text-slate-600 text-[10px] lg:text-[16px] font-semibold max-w-2xl leading-relaxed italic">
+                        <motion.p className="text-slate-600 text-[11px] sm:text-xs md:text-sm lg:text-[16px] font-semibold max-w-2xl leading-relaxed italic">
                            Accelerating digital dominance through a centralized pool of high-status technical architects and creative visionary talent.
                         </motion.p>
 
-                        <div className="flex items-center gap-10 pt-2">
+                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-10 pt-2">
                            {[
                               { icon: Target, label: 'Strategic' },
                               { icon: Cpu, label: 'Technical' },
                               { icon: Globe, label: 'Global' }
                            ].map((item, i) => (
-                              <div key={i} className="flex items-center gap-2.5 group">
-                                 <item.icon size={15} className="text-[#FF6600] group-hover:scale-125 transition-transform" />
-                                 <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">{item.label}</span>
+                              <div key={i} className="flex items-center gap-2 group">
+                                 <item.icon size={14} className="text-[#FF6600] group-hover:scale-125 transition-transform" />
+                                 <span className="text-[9px] sm:text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] sm:tracking-[0.3em]">{item.label}</span>
                               </div>
                            ))}
                         </div>
@@ -136,13 +136,43 @@ const Team: React.FC = () => {
             </div>
          </section>
 
-         {/* CIRCULAR NETWORK - ELITE CENTRALIZED HIERARCHY */}
-         <section className="py-32 relative bg-white overflow-hidden min-h-[650px] lg:min-h-[750px] flex items-center justify-center border-b border-slate-100">
-            <motion.div style={{ x: textX, y: textY }} className="absolute inset-0 opacity-[0.05] pointer-events-none select-none flex items-center justify-center">
-               <h2 className="text-[120px] lg:text-[200px] font-black uppercase text-[#FF6600] leading-none tracking-tighter text-center">ELITE<br />CORE</h2>
+         {/* CIRCULAR NETWORK - ELITE CENTRALIZED HIERARCHY (DESKTOP) / GRID (MOBILE) */}
+         <section className="py-16 md:py-24 lg:py-32 relative bg-white overflow-hidden min-h-[500px] lg:min-h-[750px] flex flex-col items-center justify-center border-b border-slate-100">
+            <motion.div style={{ x: textX, y: textY }} className="absolute inset-0 opacity-[0.03] lg:opacity-[0.05] pointer-events-none select-none flex items-center justify-center">
+               <h2 className="text-[60px] sm:text-[100px] md:text-[140px] lg:text-[200px] font-black uppercase text-[#FF6600] leading-none tracking-tighter text-center">ELITE<br />CORE</h2>
             </motion.div>
 
-            <div className="relative w-full max-w-4xl mx-auto flex items-center justify-center p-4">
+            {/* MOBILE & TABLET GRID VIEW */}
+            <div className="lg:hidden relative z-20 w-full max-w-[1400px] mx-auto px-4 sm:px-10">
+               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-10">
+                  {teamMembers.map((member, i) => (
+                     <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.05 }}
+                        className="flex flex-col items-center group"
+                     >
+                        <div className={`relative w-24 h-24 sm:w-28 sm:h-28 p-1 bg-white rounded-full shadow-lg transition-all border ${i === 0 ? 'border-amber-400 border-2' : 'border-slate-100'}`}>
+                           <div className="w-full h-full rounded-full overflow-hidden relative">
+                              <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                              {i === 0 && <div className="absolute inset-0 bg-amber-400/10" />}
+                           </div>
+                           <div className={`absolute top-0 right-0 w-7 h-7 ${i === 0 ? 'bg-amber-400' : 'bg-slate-950'} rounded-full border-2 border-white flex items-center justify-center shadow-lg`}>
+                              {i === 0 ? <Target size={12} className="text-white" /> : <Zap size={12} className="text-white" />}
+                           </div>
+                        </div>
+                        <div className="mt-4 text-center">
+                           <h4 className="text-[11px] sm:text-[12px] font-bold text-slate-950 tracking-tight uppercase leading-none">{member.name}</h4>
+                           <p className={`text-[8px] sm:text-[9px] font-bold uppercase tracking-widest mt-2 leading-none ${i === 0 ? 'text-amber-500' : 'text-[#FF6600]'}`}>{member.role}</p>
+                        </div>
+                     </motion.div>
+                  ))}
+               </div>
+            </div>
+
+            {/* DESKTOP CIRCULAR VIEW - HIDDEN ON SM/MD */}
+            <div className="hidden lg:flex relative w-full max-w-4xl mx-auto items-center justify-center p-4">
                <motion.div initial={{ scale: 0.8 }} whileInView={{ scale: 1 }} className="relative z-20 w-40 h-40 lg:w-48 lg:h-48 flex items-center justify-center">
                   <motion.div animate={{ rotate: 360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border-2 border-amber-400/20 rounded-full" />
                   <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 3, repeat: Infinity }} className="absolute inset-[25%] bg-amber-400/15 rounded-full blur-2xl" />
@@ -214,8 +244,8 @@ const Team: React.FC = () => {
          </section>
 
          {/* ETHOS GRID - ELITE TYPOGRAPHY REFINEMENT */}
-         <section className="py-20 lg:py-32 bg-[#FDFBF9] border-y border-slate-100">
-            <div className="max-w-[1400px] mx-auto px-8 lg:px-20 grid grid-cols-1 lg:grid-cols-[1fr_0.8fr] gap-12 lg:gap-24 items-center">
+         <section className="py-14 sm:py-20 lg:py-32 bg-[#FDFBF9] border-y border-slate-100">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-12 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-[1fr_0.8fr] gap-12 lg:gap-24 items-center">
                <div className="space-y-2">
                   <SectionHeader label="Institutional Axis" title="Elite Collaboration" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -233,11 +263,11 @@ const Team: React.FC = () => {
                   </div>
                </div>
 
-               <div className="space-y-6 lg:pl-12 border-l-2 border-slate-200 py-2">
+               <div className="space-y-6 lg:pl-12 border-l-0 lg:border-l-2 border-slate-200 py-2 mt-10 lg:mt-0">
                   <h3 className="text-xl lg:text-2xl font-display font-bold text-slate-950 uppercase tracking-tighter leading-[1.1]">
                      Synergy At <span className="text-[#FF6600]">Every Node.</span>
                   </h3>
-                  <p className="text-sm lg:text-[16px] text-slate-950 font-semibold pl-6 py-2 leading-relaxed bg-white/40 rounded-r-sm">
+                  <p className="text-sm lg:text-[16px] text-slate-950 font-semibold lg:pl-6 py-2 leading-relaxed bg-white/40 rounded-r-sm">
                      "Innovative infrastructure meets institutional reliability. We prioritize high-status technical solutions over standard corporate protocols."
                   </p>
                   <div className="space-y-3">

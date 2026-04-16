@@ -94,19 +94,19 @@ export default function Services() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="service-header text-center max-w-4xl mx-auto mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold text-[#111827] leading-[1.1] tracking-tight uppercase">
             Our Core <span className="text-[#FF6600]">Technology Services</span>
           </h2>
-          <p className="text-slate-600 text-xs md:text-base leading-relaxed font-semibold mt-4 max-w-xl mx-auto">
+          <p className="text-slate-600 text-[10px] sm:text-xs md:text-base leading-relaxed font-semibold mt-4 max-w-xl mx-auto">
             From strengthening your digital presence to automating your workflow we offer end-to-end transformation.
           </p>
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-8 items-start">
 
           {/* Left Side Buttons - Reference Style */}
-          <div className="lg:col-span-3 space-y-3.5">
+          <div className="lg:col-span-3 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4 lg:space-y-3.5">
             {services.map((service, index) => (
               <button
                 key={service.title}
@@ -119,7 +119,7 @@ export default function Services() {
                 <div className={`p-1 rounded-lg shrink-0 ${activeIndex === index ? 'text-white' : 'text-[#F97316]'}`}>
                   <service.icon className="w-4.5 h-4.5" />
                 </div>
-                <span className={`font-bold text-xs lg:text-sm leading-tight ${activeIndex === index ? 'text-white' : 'text-[#F97316]/80'}`}>
+                <span className={`font-bold text-[10px] sm:text-xs lg:text-sm leading-tight ${activeIndex === index ? 'text-white' : 'text-[#F97316]/80'}`}>
                   {service.title}
                 </span>
               </button>
@@ -127,7 +127,7 @@ export default function Services() {
           </div>
 
           {/* Right Side Content - Compact Style */}
-          <div className="lg:col-span-9">
+          <div className="md:col-span-12 lg:col-span-9">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -153,7 +153,7 @@ export default function Services() {
 
                 {/* Info Side - More Compact */}
                 <div className="flex flex-col flex-1 py-1">
-                  <h3 className="text-xl lg:text-2xl font-display font-bold text-[#111827] mb-3 tracking-tight uppercase">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-display font-bold text-[#111827] mb-3 tracking-tight uppercase">
                     {activeService.title}
                   </h3>
                   <p className="text-slate-500 text-sm lg:text-sm font-semibold leading-relaxed mb-6">

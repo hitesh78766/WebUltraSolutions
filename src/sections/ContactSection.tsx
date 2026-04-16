@@ -9,7 +9,7 @@ export default function ContactSection() {
         style={{ backgroundImage: 'radial-gradient(#111827 1px, transparent 0)', backgroundSize: '30px 30px' }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Left Column: Value Prop */}
           <div className="space-y-6">
@@ -26,7 +26,7 @@ export default function ContactSection() {
             </div>
 
             {/* Headline */}
-            <h2 className="text-3xl md:text-3xl lg:text-[40px] font-display font-bold text-[#111827] leading-[1.6] tracking-tight uppercase">
+            <h2 className="text-xl sm:text-2xl lg:text-[40px] font-display font-bold text-[#111827] leading-[1.3] lg:leading-[1.6] tracking-tight uppercase">
               Trusted by <span className="text-[#FF6600]">Startups</span> and <br />
               <span className="text-[#8B5CF6]">Fortune 500</span> companies
             </h2>
@@ -38,8 +38,8 @@ export default function ContactSection() {
                   <Trophy className="text-white" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#FF6600] transition-colors uppercase">24+ years of experience</h4>
-                  <p className="text-slate-500 text-sm lg:text-[15.5px] font-semibold leading-relaxed">
+                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#FF6600] transition-colors uppercase">24+ years of experience</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm lg:text-[15.5px] font-semibold leading-relaxed">
                     We handle projects of all complexities with zero friction.
                   </p>
                 </div>
@@ -50,8 +50,8 @@ export default function ContactSection() {
                   <ThumbsUp className="text-white" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#8B5CF6] transition-colors uppercase">500+ satisfied customers</h4>
-                  <p className="text-slate-500 text-sm lg:text-[15.5px] font-semibold leading-relaxed">
+                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#8B5CF6] transition-colors uppercase">500+ satisfied customers</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm lg:text-[15.5px] font-semibold leading-relaxed">
                     Startups to Fortune 500, we have successfully worked with all.
                   </p>
                 </div>
@@ -62,8 +62,8 @@ export default function ContactSection() {
                   <Users className="text-white" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#3B82F6] transition-colors uppercase">500+ in-house team</h4>
-                  <p className="text-slate-500 text-sm lg:text-[15.5px] font-semibold leading-relaxed">
+                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#3B82F6] transition-colors uppercase">500+ in-house team</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm lg:text-[15.5px] font-semibold leading-relaxed">
                     Top 1% talent to ensure your digital success and scaling.
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-3 lg:p-8 rounded-md shadow-[0_20px_60px_-10px_rgba(0,0,0,0.06)] border border-slate-50 relative"
+            className="bg-white p-5 sm:p-6 lg:p-8 rounded-md shadow-[0_20px_60px_-10px_rgba(0,0,0,0.06)] border border-slate-50 relative"
           >
             <h3 className="text-2xl lg:text-3xl font-display font-bold text-[#111827] mb-8 capitalize tracking-tight">Contact Us</h3>
 
