@@ -92,7 +92,7 @@ export default function ContentWriting() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER */}
-         <div className="relative min-h-[280px] lg:min-h-[400px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[400px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeNeuralStorm />
             <ParticleNetwork />
             
@@ -107,12 +107,12 @@ export default function ContentWriting() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Narrative Engineering Elite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      {(() => {
                         const title = "ENGINEERING WRITING DOMINANCE.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className="inline-block mr-4">
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -138,7 +138,7 @@ export default function ContentWriting() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-sm lg:text-base font-semibold max-w-2xl leading-relaxed italic"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-base font-semibold max-w-2xl leading-relaxed italic px-6 md:px-0"
                   >
                      "On the hunt for captivating content? Your quest concludes right here! Precision narrative architectures designed to leave a long-lasting impression."
                   </motion.p>
@@ -149,16 +149,16 @@ export default function ContentWriting() {
                    initial={{ opacity: 0, scale: 0.9 }}
                    animate={{ opacity: 1, scale: 1 }}
                    transition={{ duration: 1, delay: 1.5 }}
-                   className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto pt-4"
+                   className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto pt-4 md:pt-2 px-4"
                 >
                     {writingMetrics.map((metric, i) => (
-                       <div key={i} className="px-5 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-4 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                          <div className="w-8 h-8 rounded bg-[#FF6600] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform">
-                             <metric.icon size={16} />
+                       <div key={i} className="px-3 md:px-5 py-1.5 md:py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 md:gap-4 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
+                          <div className="w-6 h-6 md:w-8 md:h-8 rounded bg-[#FF6600] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform">
+                             <metric.icon size={12} className="md:w-[16px] md:h-[16px]" />
                           </div>
                           <div className="flex flex-col items-start">
-                             <span className="text-sm font-black text-[#FF6600] leading-none">{metric.value}</span>
-                             <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{metric.label}</span>
+                             <span className="text-[12px] md:text-sm font-black text-[#FF6600] leading-none">{metric.value}</span>
+                             <span className="text-[7px] md:text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none mt-1">{metric.label}</span>
                           </div>
                        </div>
                     ))}
@@ -167,8 +167,8 @@ export default function ContentWriting() {
          </div>
 
          {/* COMPACT NARRATIVE PIPELINE ARCHITECTURE */}
-         <section className="relative py-12 bg-[#FDFBF9] border-t border-slate-50">
-            <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-20 space-y-20">
+         <section className="relative py-8 md:py-12 bg-[#FDFBF9] border-t border-slate-50">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 space-y-12 md:space-y-20">
                
                <div className="flex flex-col items-center text-center space-y-4">
                   <div className="flex items-center gap-3">
@@ -210,7 +210,7 @@ export default function ContentWriting() {
 
                         <div className="flex-1 w-full space-y-4 text-center md:text-left">
                            <div className="space-y-4">
-                              <p className="text-sm lg:text-base font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-orange-100 pl-6 py-1 italic">
+                              <p className="text-[13px] md:text-sm lg:text-base font-semibold text-slate-800 leading-relaxed tracking-tight border-l-4 border-orange-100 pl-4 md:pl-6 py-1 italic mx-auto md:mx-0">
                                  Why hire us when there are a million similar services? We have over 4 years of experience and we re-do the work until the customer is 100% SATISFIED.
                               </p>
                               <div className="flex flex-wrap gap-2 pt-2">
@@ -307,12 +307,12 @@ export default function ContentWriting() {
 
          {/* CONCLUSION PRESTIGE BLOCK */}
          <section className="max-w-[1400px] mx-auto px-8 lg:px-20 py-12">
-            <motion.div
+               <motion.div
                initial={{ opacity: 0, y: 30 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-               className="relative py-10 lg:py-12 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
+               className="relative py-8 md:py-12 px-6 md:px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
             >
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
 
@@ -321,8 +321,8 @@ export default function ContentWriting() {
                      <Edit3 size={24} />
                   </div>
 
-                  <div className="relative">
-                     <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 mx-auto italic">
+                  <div className="relative px-2">
+                     <h3 className="text-[13px] md:text-[15px] lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 mx-auto italic">
                         {(() => {
                            const text = "Originality is the currency of influence. We engineer surgical narratives that don't just fill space—they command attention and drive 100% market satisfaction.";
                            return text.split(" ").map((word, wordIdx) => (

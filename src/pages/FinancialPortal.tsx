@@ -71,7 +71,7 @@ export default function FinancialPortal() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">
          {/* LIGHT THEME CINEMATIC HERO WITH SUBTLE ORANGE ANIMATION */}
-         <div className="relative h-[250px] lg:h-[320px] bg-[#FDFBF9] flex items-center overflow-hidden border-b border-orange-100/30">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:h-[320px] bg-[#FDFBF9] flex items-center overflow-hidden border-b border-orange-100/30">
             {/* Subtle Orange Glow Animation */}
             <motion.div 
                animate={{ 
@@ -103,7 +103,7 @@ export default function FinancialPortal() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Financial Hub</span>
                   </motion.div>
 
-                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-3">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-slate-955 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-2 md:gap-x-3 px-4 md:px-0">
                      {(() => {
                         const words = ["Financial", "Portal."];
                         return words.map((word, wordIdx) => (
@@ -133,18 +133,18 @@ export default function FinancialPortal() {
                      initial={{ opacity: 0, scale: 0.95 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2"
+                     className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3 pt-4 md:pt-2 px-4 md:px-0"
                   >
                      {[
                         { label: "Market Intel", val: "Real-Time", icon: TrendingUp },
                         { label: "Data Integrity", val: "Institutional", icon: Shield },
                         { label: "System Sync", val: "Neural", icon: Zap }
                      ].map((badge, i) => (
-                        <div key={i} className="px-3 py-1.5 bg-white border border-orange-100 rounded flex items-center gap-2 group hover:shadow-lg transition-all">
-                           <badge.icon size={12} className="text-orange-600" />
-                           <div className="flex flex-col items-start">
-                              <span className="text-[9px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
-                              <span className="text-[7px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
+                        <div key={i} className="px-2 md:px-3 py-1 md:py-1.5 bg-white border border-orange-100 rounded flex items-center gap-1.5 md:gap-2 group hover:shadow-lg transition-all">
+                           <badge.icon size={10} className="text-orange-600 md:w-[12px] md:h-[12px]" />
+                           <div className="flex flex-col items-start translate-y-0.5">
+                              <span className="text-[10px] md:text-[11px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
+                              <span className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
                            </div>
                         </div>
                      ))}
@@ -155,9 +155,9 @@ export default function FinancialPortal() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 1 }}
-                  className="max-w-md"
+                  className="max-w-md px-6 md:px-0"
                >
-                  <p className="text-[12px] lg:text-[14px] font-semibold text-slate-600 leading-relaxed border-l-4 border-orange-600 pl-6 lg:pl-8 py-1 uppercase tracking-tight italic">
+                  <p className="text-[10px] md:text-[12px] lg:text-[14px] font-semibold text-slate-600 leading-relaxed border-l-4 border-orange-600 pl-4 md:pl-8 py-1 uppercase tracking-tight italic">
                      "Financial portals are giving information to all clients the finance-related they need."
                   </p>
                </motion.div>
@@ -165,8 +165,8 @@ export default function FinancialPortal() {
          </div>
 
          {/* THE PERIPHERY: PROTOCOLS - STRICT CONTENT ONLY */}
-         <section className="bg-white relative py-20 lg:py-32 protocol-section">
-            <div className="max-w-7xl mx-auto px-8 lg:px-12 space-y-32">
+         <section className="bg-white relative py-12 md:py-20 lg:py-32 protocol-section">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 space-y-20 md:space-y-32">
 
                {/* INTRO BLOCK with IMAGE */}
                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -177,16 +177,16 @@ export default function FinancialPortal() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-xl lg:text-3xl font-display font-black text-slate-950 uppercase tracking-tight leading-[0.9]">
+                        <h2 className="text-lg md:text-xl lg:text-3xl font-display font-black text-slate-955 uppercase tracking-tight leading-[0.9] text-center lg:text-left">
                            Information <span className="text-orange-600">Hub.</span>
                         </h2>
-                        <div className="w-20 h-1 bg-orange-600" />
+                        <div className="w-16 md:w-20 h-1 bg-orange-600 mx-auto lg:mx-0" />
                      </div>
-                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed">
+                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed px-2 md:px-0">
                         <p>
                            Financial portals are giving information to all clients the finance-related they need. Often, the portals themselves will provide visitors, research, articles, and analyst recommendations.
                         </p>
-                        <p className="text-slate-950 font-black border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-tight italic bg-slate-50">
+                        <p className="text-slate-955 font-black border-l-4 border-slate-950 pl-4 md:pl-8 py-2 uppercase text-[11px] md:text-xs tracking-tight italic bg-slate-50">
                            &quot;Financial portals provide email accounts, chat rooms, and web forums to ensure a comprehensive investment ecosystem.&quot;
                         </p>
                      </div>
@@ -223,19 +223,19 @@ export default function FinancialPortal() {
                         viewport={{ once: true, margin: "-100px" }}
                         className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-24 items-start protocol-node`}
                      >
-                        <div className="lg:w-1/3 space-y-6 sticky top-32">
-                           <div className="flex items-center gap-4">
+                        <div className="lg:w-1/3 space-y-4 md:space-y-6 lg:sticky lg:top-32 w-full">
+                           <div className="flex items-center justify-center lg:justify-start gap-4">
                               <div className="relative group">
                                  <div className="absolute -inset-2 bg-orange-600/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                                 <div className="relative w-16 h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
-                                    <protocol.icon size={32} />
+                                 <div className="relative w-12 h-12 md:w-16 md:h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
+                                    <protocol.icon size={28} className="md:w-[32px] md:h-[32px]" />
                                  </div>
                               </div>
-                              <div className="text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
+                              <div className="text-3xl md:text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
                            </div>
                            <div className="space-y-2">
-                              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600">{protocol.tag}</span>
-                              <h3 className="text-lg lg:text-2xl font-display font-black uppercase tracking-tight leading-none group">
+                              <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600 text-center lg:text-left block">{protocol.tag}</span>
+                              <h3 className="text-lg md:text-xl lg:text-2xl font-display font-black uppercase tracking-tight leading-none text-center lg:text-left">
                                  {protocol.title.split(' ').map((word, i) => (
                                     <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
                                        {word}{' '}
@@ -243,13 +243,13 @@ export default function FinancialPortal() {
                                  ))}
                               </h3>
                            </div>
-                           <div className="pt-4 flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                           <div className="pt-2 md:pt-4 flex items-center justify-center lg:justify-start gap-2 text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest">
                               <ChevronRight size={12} className="text-orange-600" />
                               Active Protocol
                            </div>
                         </div>
 
-                        <div className="lg:w-2/3">
+                        <div className="lg:w-2/3 w-full">
                            <div className="relative">
                               <div className="absolute -left-12 top-0 bottom-0 w-[2px] bg-slate-100 hidden lg:block overflow-hidden">
                                  <motion.div
@@ -259,7 +259,7 @@ export default function FinancialPortal() {
                                     className="w-full bg-orange-600"
                                  />
                               </div>
-                              <p className="text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0">
+                              <p className="text-[13px] md:text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0 text-center lg:text-left px-2 md:px-0">
                                  {protocol.desc}
                               </p>
                            </div>
@@ -274,33 +274,33 @@ export default function FinancialPortal() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative py-12 lg:py-20 px-8 rounded-sm bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
+                  className="relative py-8 md:py-16 lg:py-20 px-6 md:px-8 rounded-sm bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default mx-4 md:mx-0"
                >
                   {/* Orange Glow Effect */}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
 
                   <div className="relative z-10 max-w-4xl mx-auto space-y-6">
-                     <div className="w-12 h-12 mx-auto rounded-sm bg-orange-600/10 border border-orange-600/20 flex items-center justify-center text-orange-600 shadow-xl group-hover:scale-110 transition-transform duration-700">
-                        <Zap size={24} />
+                     <div className="w-10 h-10 md:w-12 md:h-12 mx-auto rounded-sm bg-orange-600/10 border border-orange-600/20 flex items-center justify-center text-orange-600 shadow-xl group-hover:scale-110 transition-transform duration-700">
+                        <Zap size={22} className="md:w-[24px] md:h-[24px]" />
                      </div>
 
                      <div className="relative">
-                        <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic">
+                        <h3 className="text-[12px] md:text-base lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic px-4">
                            "Our financial portals are engineered to provide visitors with the research, articles, and analyst recommendations necessary to navigate complex market economies with precision and clarity."
                         </h3>
                      </div>
 
-                     <div className="pt-6">
-                        <button className="group/btn flex items-center gap-2.5 px-6 py-3 bg-orange-600 hover:bg-white hover:text-orange-600 text-white text-[10px] font-bold rounded-sm transition-all duration-300 shadow-xl shadow-orange-600/20 mx-auto uppercase tracking-[0.2em]">
+                     <div className="pt-4 md:pt-6">
+                        <button className="group/btn flex items-center gap-2.5 px-5 py-2.5 md:px-6 md:py-3 bg-orange-600 hover:bg-white hover:text-orange-600 text-white text-[9px] md:text-[10px] font-bold rounded-sm transition-all duration-300 shadow-xl shadow-orange-600/20 mx-auto uppercase tracking-[0.2em]">
                            <span>Initialize Hub Access</span>
                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                         </button>
                      </div>
 
-                     <div className="flex items-center justify-center gap-8 pt-6">
-                        <div className="h-[1px] w-24 bg-white/10" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Industry Leader</span>
-                        <div className="h-[1px] w-24 bg-white/10" />
+                     <div className="flex items-center justify-center gap-6 md:gap-8 pt-6">
+                        <div className="h-[1px] w-16 md:w-24 bg-white/10" />
+                        <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] text-orange-500">Industry Leader</span>
+                        <div className="h-[1px] w-16 md:w-24 bg-white/10" />
                      </div>
                   </div>
 

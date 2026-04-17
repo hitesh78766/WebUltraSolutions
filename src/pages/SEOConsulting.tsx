@@ -85,7 +85,7 @@ export default function SEOConsulting() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">         {/* ULTRA-COMPACT PROFESSIONAL HERO */}
          {/* CINEMATIC FULL-BLEED HEADER - ELITE COMPACT STYLE */}
-         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* MULTI-LAYER ELITE NETWORK (2D + 3D) */}
             <ParticleNetwork />
             <ThreeSEOIntelligence />
@@ -102,12 +102,12 @@ export default function SEOConsulting() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite SEO Intelligence</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      {(() => {
                         const title = "SEARCH AUTHORITY SYSTEMS.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className="inline-block mr-4">
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -133,7 +133,7 @@ export default function SEOConsulting() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed px-6 md:px-0"
                   >
                      Engineering high-performance SEO foundations through precision architectures and real-time synchronization. We dominate search results.
                   </motion.p>
@@ -142,8 +142,8 @@ export default function SEOConsulting() {
          </div>
 
          {/* THE PERIPHERY: HIGH-FIDELITY PROTOCOL SECTIONS */}
-         <section className="bg-white relative py-20 lg:py-32">
-            <div className="max-w-7xl mx-auto px-8 lg:px-12 space-y-32">
+         <section className="bg-white relative py-12 md:py-20 lg:py-32">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 space-y-20 md:space-y-32">
 
                {/* INTRO BLOCK with IMAGE */}
                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -154,16 +154,16 @@ export default function SEOConsulting() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 uppercase tracking-tight leading-none">
+                        <h2 className="text-xl md:text-2xl lg:text-5xl font-display font-extrabold text-slate-900 uppercase tracking-tight leading-none text-center lg:text-left">
                            The Core <span className="text-[#FF6600]">Protocol.</span>
                         </h2>
-                        <div className="w-20 h-1 bg-[#FF6600]" />
+                        <div className="w-16 md:w-20 h-1 bg-[#FF6600] mx-auto lg:mx-0" />
                      </div>
                      <div className="space-y-6 text-slate-500 text-base lg:text-lg font-semibold leading-relaxed">
-                        <p className="border-l-4 border-[#FF6600] pl-6">
+                        <p className="border-l-4 border-[#FF6600] pl-4 md:pl-6 text-sm md:text-base lg:text-lg">
                            Our strategic planning begins by considering your business goals, strengths, and challenges. We get to know your company inside and out to create a plan that exceeds expectations.
                         </p>
-                        <p className="text-slate-900 font-extrabold p-8 bg-slate-50 uppercase text-sm tracking-tight italic border border-slate-100 rounded-md shadow-sm">
+                        <p className="text-slate-900 font-extrabold p-5 md:p-8 bg-slate-50 uppercase text-[11px] md:text-sm tracking-tight italic border border-slate-100 rounded-md shadow-sm">
                            &quot;I have helped scores of companies redefine what they are doing online. Whether you need help refining your current strategy or need to start from scratch, I can help you create a plan that works.&quot;
                         </p>
                      </div>
@@ -213,7 +213,7 @@ export default function SEOConsulting() {
                            </div>
                            <div className="space-y-2">
                               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#FF6600]">{protocol.tag}</span>
-                              <h3 className="text-2xl lg:text-3xl font-display font-extrabold text-slate-900 uppercase tracking-tight leading-none">
+                              <h3 className="text-lg md:text-xl lg:text-3xl font-display font-extrabold text-slate-900 uppercase tracking-tight leading-none">
                                  {protocol.title.split(' ').map((word, i, arr) => (
                                     <span key={i} className={i === arr.length - 1 ? "text-[#FF6600]" : ""}>
                                        {word}{i !== arr.length - 1 ? ' ' : ''}
@@ -241,7 +241,7 @@ export default function SEOConsulting() {
                               whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.8, delay: 0.2 }}
-                              className="text-base lg:text-lg font-semibold text-slate-600 leading-relaxed lg:pl-0"
+                              className="text-[13px] md:text-sm lg:text-lg font-semibold text-slate-600 leading-relaxed lg:pl-0 px-2 md:px-0"
                            >
                               {protocol.desc}
                            </motion.p>
@@ -273,7 +273,7 @@ export default function SEOConsulting() {
                   </h2>
                </div>
                
-               <p className="text-lg lg:text-xl font-semibold text-slate-400 leading-relaxed max-w-2xl mx-auto">
+               <p className="text-base md:text-lg lg:text-xl font-semibold text-slate-400 leading-relaxed max-w-2xl mx-auto px-4">
                   We don't just optimize rankings; we engineer the high-performance search strategies that define industry leaders.
                </p>
 
@@ -284,11 +284,11 @@ export default function SEOConsulting() {
                   transition={{ delay: 0.2 }}
                   className="pt-4"
                >
-                  <button className="group relative px-8 py-4 bg-[#FF6600] text-white overflow-hidden rounded-md transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,102,0,0.3)]">
+                  <button className="group relative px-6 md:px-8 py-3 md:py-4 bg-[#FF6600] text-white overflow-hidden rounded-md transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,102,0,0.3)] mx-auto">
                      <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
-                     <span className="relative z-10 font-bold uppercase tracking-widest flex items-center gap-2">
+                     <span className="relative z-10 font-bold uppercase tracking-widest flex items-center gap-2 text-[10px] md:text-sm">
                         Initialize Strategic Consultation
-                        <ChevronRight size={18} />
+                        <ChevronRight size={16} />
                      </span>
                   </button>
                </motion.div>

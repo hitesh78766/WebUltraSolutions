@@ -91,7 +91,7 @@ export default function WebDesign() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Established Global Leader</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ENGINEERING LEGACY DIGITAL EMPIRES.";
                         const words = title.split(" ");
@@ -122,7 +122,7 @@ export default function WebDesign() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
+                     className="text-slate-600 text-[10px] md:text-sm lg:text-base font-semibold max-w-2xl leading-relaxed"
                   >
                      High-status UX/UI architecture for global enterprise leaders. Precision-engineered solutions refined across two decades of dominant industry innovation.
                   </motion.p>
@@ -133,33 +133,33 @@ export default function WebDesign() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
-                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
+                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-0 pb-4 md:pb-0"
                >
                   {[
                      { label: 'Custom Architecture', icon: Globe },
                      { label: 'Responsive Excellence', icon: Sparkles },
                      { label: 'Data Driven UX', icon: Monitor }
                   ].map((feature, i) => (
-                     <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                        <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                           <feature.icon size={14} />
+                     <div key={i} className="px-3.5 py-1.5 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 transition-all hover:shadow-md hover:-translate-y-0.5 group cursor-default">
+                        <div className="w-6 h-6 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
+                           <feature.icon size={12} />
                         </div>
-                        <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-[0.12em]">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
             </div>
          </div>
 
-         <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-8">
+         <section className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 py-6 md:py-8">
             <div className="grid grid-cols-1 gap-6 lg:gap-10">
 
                {/* MAIN SERVICE BANNERS - ALTERNATING ELITE ARCHITECTURE */}
-               <div className="flex flex-col gap-8 lg:gap-12">
+               <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
                   {servicePillars.map((pillar, idx) => (
                      <div
                         key={idx}
-                        className={`group relative flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-6 lg:gap-10 items-center`}
+                        className={`group relative flex flex-col ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-8 lg:gap-10 items-center`}
                      >
                         {/* BANNER IMAGE SECTION: CINEMATIC 3D PERSPECTIVE */}
                         <motion.div
@@ -168,7 +168,7 @@ export default function WebDesign() {
                            viewport={{ once: true, margin: "-50px" }}
                            whileHover={{ y: -6, scale: 1.01 }}
                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[45%] relative h-[250px] lg:h-[320px] rounded-md overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 group/img cursor-pointer bg-slate-100"
+                           className="w-[92%] mx-auto md:w-[45%] md:mx-0 relative h-[180px] md:h-[250px] lg:h-[320px] rounded-md overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 group/img cursor-pointer bg-slate-100"
                         >
                            <motion.img
                               src={pillar.image}
@@ -195,33 +195,33 @@ export default function WebDesign() {
                            whileInView={{ opacity: 1, x: 0 }}
                            viewport={{ once: true, margin: "-50px" }}
                            transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[55%] space-y-6 px-4 lg:px-0"
+                           className="w-full md:w-[55%] space-y-4 md:space-y-6 px-2 md:px-4 lg:px-0"
                         >
                            <div className="space-y-4">
-                              <div className="flex items-center gap-5">
+                              <div className="flex items-center gap-4 md:gap-5">
                                  <div className="relative">
-                                    <div className="absolute -inset-3 bg-[#FF6600]/10 rounded-full blur-lg animate-pulse" />
-                                    <div className="relative w-12 h-12 rounded-md bg-[#FF6600] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-700">
-                                       <pillar.icon size={22} />
+                                    <div className="absolute -inset-2 md:-inset-3 bg-[#FF6600]/10 rounded-full blur-lg animate-pulse" />
+                                    <div className="relative w-9 h-9 md:w-12 md:h-12 rounded-md bg-[#FF6600] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-700">
+                                       <pillar.icon size={18} className="md:w-5.5 md:h-5.5" />
                                     </div>
                                  </div>
-                                 <div className="space-y-1">
+                                 <div className="space-y-0.5 md:space-y-1">
                                     <div className="flex items-center gap-2">
-                                       <div className="w-6 h-[2px] bg-[#FF6600]" />
-                                       <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
+                                       <div className="w-4 md:w-6 h-[2px] bg-[#FF6600]" />
+                                       <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] md:tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                                     </div>
-                                    <h3 className="text-xl lg:text-2xl font-display font-extrabold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
+                                    <h3 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase leading-none text-slate-900 group-hover:text-[#FF6600] transition-colors duration-500">
                                        {pillar.title}
                                     </h3>
                                  </div>
                               </div>
 
-                              <p className="text-base lg:text-lg font-semibold leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
+                              <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-600 group-hover:text-slate-800 transition-colors max-w-xl">
                                  {pillar.desc}
                               </p>
 
-                              <div className="pt-2">
-                                 <button className="flex items-center gap-2 text-xs lg:text-sm font-bold text-slate-900 uppercase tracking-widest group/link">
+                              <div className="pt-1.5">
+                                 <button className="flex items-center gap-1.5 text-xs font-bold text-slate-900 capitalize tracking-wider group/link">
                                     <span>Learn More</span>
                                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1 text-[#FF6600]" />
                                  </button>
@@ -237,55 +237,55 @@ export default function WebDesign() {
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{ once: true }}
                      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                     className="relative py-10 lg:py-14 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
+                     className="relative py-8 md:py-10 lg:py-14 px-4 md:px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
                   >
                      {/* Orange Glow Effect */}
                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
 
                      <div className="relative z-10 max-w-4xl mx-auto space-y-5">
                         {/* ICON CORE */}
-                        <div className="w-12 h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600] shadow-xl group-hover:scale-110 transition-transform duration-700">
-                           <Zap size={24} />
+                        <div className="w-10 h-10 md:w-12 md:h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600] shadow-xl group-hover:scale-110 transition-transform duration-700">
+                           <Zap className="w-5 h-5 md:w-6 md:h-6" />
                         </div>
 
                         {/* QUOTE CORE */}
                         <div className="relative">
-                           <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic">
-                              {(() => {
-                                 const text = "We specialize in creative and innovative approaches to web design and development. Our primary goal is to integrate new features that pave the way for the success of your online business.";
-                                 return text.split(" ").map((word, wordIdx) => (
-                                    <span key={wordIdx} className="inline-block mr-1.5 overflow-hidden py-0.5">
-                                       <motion.span
-                                          initial={{ y: "100%" }}
-                                          whileInView={{ y: 0 }}
-                                          viewport={{ once: true }}
-                                          transition={{
-                                             duration: 0.8,
-                                             delay: 0.3 + (wordIdx * 0.012),
-                                             ease: [0.16, 1, 0.3, 1]
-                                          }}
-                                          className="inline-block"
-                                       >
-                                          {word}
-                                       </motion.span>
-                                    </span>
-                                 ));
-                              })()}
+                           <h3 className="text-xs md:text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic px-2">
+                              {/* STABILIZED MOBILE VERSION */}
+                              <span className="md:hidden">
+                                 We specialize in creative and innovative approaches to web design and development. Our primary goal is to integrate new features that pave the way for the success of your online business.
+                              </span>
+
+                              {/* ANIMATED TABLET/DESKTOP VERSION */}
+                              <span className="hidden md:inline">
+                                 {(() => {
+                                    const text = "We specialize in creative and innovative approaches to web design and development. Our primary goal is to integrate new features that pave the way for the success of your online business.";
+                                    return text.split(" ").map((word, wordIdx) => (
+                                       <span key={wordIdx} className="inline-block mr-1.5 overflow-hidden py-0.5">
+                                          <motion.span
+                                             initial={{ y: "100%" }}
+                                             whileInView={{ y: 0 }}
+                                             viewport={{ once: true }}
+                                             transition={{
+                                                duration: 0.8,
+                                                delay: 0.3 + (wordIdx * 0.012),
+                                                ease: [0.16, 1, 0.3, 1]
+                                             }}
+                                             className="inline-block"
+                                          >
+                                             {word}
+                                          </motion.span>
+                                       </span>
+                                    ));
+                                 })()}
+                              </span>
                            </h3>
                         </div>
 
-                        {/* CTA ACTION */}
-                        <div className="pt-4">
-                           <button className="group/btn flex items-center gap-2.5 px-4 py-2.5 bg-[#FF6600] hover:bg-white hover:text-[#FF6600] text-white text-[10px] font-bold rounded-md transition-all duration-300 shadow-xl shadow-[#FF6600]/20 mx-auto uppercase tracking-[0.15em]">
-                              <span>Connect with our team</span>
-                              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
-                           </button>
-                        </div>
-
-                        <div className="flex items-center justify-center gap-8 pt-4">
-                           <div className="h-[1px] w-24 bg-white/10" />
-                           <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Industry Leader</span>
-                           <div className="h-[1px] w-24 bg-white/10" />
+                        <div className="flex items-center justify-center gap-4 md:gap-8 pt-4">
+                           <div className="h-[1px] w-8 md:w-24 bg-white/10" />
+                           <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] text-orange-500 whitespace-nowrap">Industry Leader</span>
+                           <div className="h-[1px] w-8 md:w-24 bg-white/10" />
                         </div>
                      </div>
 

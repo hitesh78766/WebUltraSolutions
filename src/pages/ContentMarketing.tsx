@@ -83,7 +83,7 @@ export default function ContentMarketing() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER */}
-         <div className="relative min-h-[250px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeNeuralStorm />
             <ParticleNetwork />
 
@@ -98,12 +98,12 @@ export default function ContentMarketing() {
                      <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white">Narrative Engineering Core</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-4xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      {(() => {
                         const title = "ENGINEERING CONTENT AUTHORITY.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className="inline-block mr-3">
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-3">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -129,7 +129,7 @@ export default function ContentMarketing() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 0.8 }}
-                     className="text-slate-600 text-[13px] lg:text-sm font-bold max-w-2xl leading-relaxed italic"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed italic px-6 md:px-0"
                   >
                      "High-fidelity narrative engineering. Useful content should be at the core of your architectural marketing strategy to drive institutional growth."
                   </motion.p>
@@ -140,16 +140,16 @@ export default function ContentMarketing() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1 }}
-                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto pt-2"
+                  className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto pt-4 md:pt-2 px-4"
                >
                   {contentMetrics.map((metric, i) => (
-                     <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-3 transition-all hover:shadow-lg hover:-translate-y-0.5 group">
-                        <div className="w-7 h-7 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                           <metric.icon size={14} />
+                     <div key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 md:gap-3 transition-all hover:shadow-lg hover:-translate-y-0.5 group">
+                        <div className="w-6 h-6 md:w-7 md:h-7 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors text-[10px] md:text-xs">
+                           <metric.icon size={12} className="md:w-[14px] md:h-[14px]" />
                         </div>
                         <div className="flex flex-col items-start translate-y-0.5">
-                           <span className="text-sm font-black text-[#FF6600] leading-none tracking-tight">{metric.value}</span>
-                           <span className="text-[8px] font-black text-slate-500 uppercase tracking-widest leading-none mt-1">{metric.label}</span>
+                           <span className="text-[12px] md:text-sm font-black text-[#FF6600] leading-none tracking-tight">{metric.value}</span>
+                           <span className="text-[7px] md:text-[8px] font-black text-slate-500 uppercase tracking-widest leading-none mt-1">{metric.label}</span>
                         </div>
                      </div>
                   ))}
@@ -158,8 +158,8 @@ export default function ContentMarketing() {
          </div>
 
          {/* COMPACTED INTERFACE - REFINED HIERARCHY */}
-         <section className="relative py-16 bg-[#FDFBF9] border-t border-slate-50">
-            <div className="relative z-10 max-w-[1300px] mx-auto px-6 lg:px-12">
+         <section className="relative py-8 md:py-16 bg-[#FDFBF9] border-t border-slate-50">
+            <div className="relative z-10 max-w-[1300px] mx-auto px-4 md:px-8 lg:px-12">
 
                <div className="max-w-5xl mx-auto space-y-16">
                   <div className="space-y-10">
@@ -169,46 +169,45 @@ export default function ContentMarketing() {
                            <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Content Ecology</span>
                            <div className="h-[2px] w-10 bg-[#FF6600]" />
                         </div>
-                        <h2 className="text-xl lg:text-3xl font-extrabold text-slate-900 tracking-tighter uppercase leading-none max-w-3xl">
+                        <h2 className="text-lg md:text-xl lg:text-3xl font-extrabold text-slate-900 tracking-tighter uppercase leading-none max-w-3xl text-center lg:text-center">
                            Dynamic Content <span className="text-[#FF6600]">Marketing</span> Authority
                         </h2>
                      </div>
 
                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <div className="space-y-6">
-                           <div className="bg-white p-6 border-l-[4px] border-[#FF6600] shadow-sm rounded-r-lg">
-                              <h3 className="text-base lg:text-lg font-black text-slate-800 leading-tight tracking-tight">
-                                 Useful content should be at the core of your institutional marketing strategy.
-                              </h3>
-                           </div>
-                           <div className="space-y-4 text-slate-600 font-bold leading-relaxed text-sm">
-                              <p>
-                                 Consumers have shut off the traditional world of marketing—ignoring standard banners and skipping traditional advertising. High-fidelity information is the path.
-                              </p>
-                              <p className="text-slate-950 italic">
-                                 "Smart marketers understand that traditional methods are becoming less effective. Narrative authority is the institutional standard."
-                              </p>
-                           </div>
+                            <div className="bg-white p-5 md:p-6 border-l-[4px] border-[#FF6600] shadow-sm rounded-r-lg">
+                               <h3 className="text-sm md:text-base lg:text-lg font-black text-slate-800 leading-tight tracking-tight">
+                                  Useful content should be at the core of your institutional marketing strategy.
+                               </h3>
+                            </div>
+                            <div className="space-y-4 text-slate-600 font-semibold leading-relaxed text-[13px] md:text-sm px-2 md:px-0">
+                               <p>
+                                  Consumers have shut off the traditional world of marketing—ignoring standard banners and skipping traditional advertising. High-fidelity information is the path.
+                               </p>
+                               <p className="text-slate-950 italic">
+                                  "Smart marketers understand that traditional methods are becoming less effective. Narrative authority is the institutional standard."
+                               </p>
+                            </div>
                         </div>
-
                         <div className="relative">
-                           <div className="absolute -inset-2 bg-orange-50 rounded-xl z-0" />
-                           <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[280px]">
-                              <img
-                                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
-                                 alt="Expert Analysis"
-                                 className="w-full h-full object-cover transition-transform duration-[6000ms] group-hover/intro:scale-110"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                              <div className="absolute bottom-6 left-6 text-white space-y-1">
-                                 <div className="flex items-center gap-1.5">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-                                    <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#FF6600]">System Verified</span>
-                                 </div>
-                                 <h4 className="text-lg font-black uppercase tracking-tight">Narrative Governance</h4>
-                              </div>
-                           </div>
-                        </div>
+                            <div className="absolute -inset-2 bg-orange-50 rounded-xl z-0" />
+                            <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[220px] md:h-[280px]">
+                               <img
+                                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+                                  alt="Expert Analysis"
+                                  className="w-full h-full object-cover transition-transform duration-[6000ms] group-hover/intro:scale-110"
+                               />
+                               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+                               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white space-y-1">
+                                  <div className="flex items-center gap-1.5">
+                                     <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+                                     <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.2em] text-[#FF6600]">System Verified</span>
+                                  </div>
+                                  <h4 className="text-base md:text-lg font-black uppercase tracking-tight">Narrative Governance</h4>
+                               </div>
+                            </div>
+                         </div>
                      </div>
                   </div>
 

@@ -28,7 +28,7 @@ export default function WebDevelopment() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER - ELITE UPGRADED TYPOGRAPHY */}
-         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* INTERACTIVE NEURAL BACKDROP */}
             <ThreeNeuralStorm />
             <ParticleNetwork />
@@ -45,12 +45,12 @@ export default function WebDevelopment() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Development Core</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      {(() => {
                         const title = "WEB DEVELOPMENT.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className="inline-block mr-4">
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -76,7 +76,7 @@ export default function WebDevelopment() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed px-6 md:px-0"
                   >
                      Specialize in developing reliable yet creative Web Development solutions. Engineering scalable ecosystems for the digital future.
                   </motion.p>
@@ -87,18 +87,18 @@ export default function WebDevelopment() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
-                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
+                  className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-0 pb-4 md:pb-0 px-4"
                >
                   {[
                      { label: 'Scalable Architecture', icon: Globe },
                      { label: 'Cloud Precision', icon: Sparkles },
                      { label: 'Market Dominance', icon: Monitor }
                   ].map((feature, i) => (
-                     <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                        <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                           <feature.icon size={14} />
+                     <div key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 md:gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
+                        <div className="w-6 h-6 md:w-7 md:h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
+                           <feature.icon size={12} className="md:w-[14px] md:h-[14px]" />
                         </div>
-                        <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[9px] md:text-[10px] font-semibold text-slate-700 uppercase tracking-widest whitespace-nowrap">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -106,9 +106,9 @@ export default function WebDevelopment() {
          </div>
 
          {/* CONTENT SECTION - RESTORED ORIGINAL LAYOUT WITH ENHANCED FONTS/GAPS */}
-         <section className="relative py-12 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
-            <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+         <section className="relative py-8 md:py-12 bg-[#FDFBF9] overflow-hidden border-t border-slate-50">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12">
+               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                   
                   {/* LEFT CONTENT */}
                   <div className="lg:col-span-8 space-y-8">
@@ -118,15 +118,15 @@ export default function WebDevelopment() {
                      </div>
 
                      <div className="space-y-6">
-                        <h2 className="text-xl lg:text-3xl font-display font-extrabold text-slate-900 tracking-tight uppercase leading-[1.1]">
+                        <h2 className="text-[18px] md:text-xl lg:text-3xl font-display font-bold text-slate-900 tracking-tight uppercase leading-[1.1]">
                            Website <span className="text-[#FF6600]">Development</span> Company
                         </h2>
 
                         <div className="space-y-6">
-                           <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-6 py-1">
+                           <p className="text-sm md:text-base lg:text-lg font-semibold text-slate-500 leading-relaxed tracking-tight font-secondary border-l-4 border-[#FF6600] pl-4 md:pl-6 py-1">
                               WebUltraSolution specializes in crafting dependable and creative solutions. Our systems are fully scalable, addressing both intricate and straightforward needs.
                            </p>
-                           <p className="text-sm lg:text-base text-slate-500 font-semibold leading-relaxed max-w-3xl">
+                           <p className="text-sm md:text-sm lg:text-base text-slate-500 font-semibold leading-relaxed max-w-3xl">
                               Situated in Delhi-Noida, our development center minimizes costs while delivering a spectrum of online solutions. As a leading professional company, we offer affordable web development and portals worldwide.
                            </p>
                         </div>
@@ -161,7 +161,7 @@ export default function WebDevelopment() {
                         </div>
                      </div>
 
-                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
                         {[
                            { label: "Scalable", icon: Cpu },
                            { label: "Intuitive", icon: Zap },
@@ -170,18 +170,18 @@ export default function WebDevelopment() {
                         ].map((stat, i) => (
                            <div 
                               key={i}
-                              className="flex flex-col items-center gap-3 p-6 rounded-md bg-white border border-slate-100 shadow-sm transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl text-center group relative overflow-hidden"
+                              className="flex flex-col items-center gap-3 p-4 md:p-6 rounded-md bg-white border border-slate-100 shadow-sm transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl text-center group relative overflow-hidden"
                            >
                               {/* Dynamic Glow backdrop */}
                               <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-[#FF6600]/5 rounded-full blur-2xl group-hover:bg-[#FF6600]/10 transition-colors duration-700" />
 
                               <div className="relative">
                                  <div className="absolute -inset-4 bg-[#FF6600]/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-700" />
-                                 <div className="relative p-3 rounded-md bg-[#FF6600] text-white shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
-                                    <stat.icon size={18} />
+                                 <div className="relative p-2.5 md:p-3 rounded-md bg-[#FF6600] text-white shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
+                                    <stat.icon size={16} className="md:w-[18px] md:h-[18px]" />
                                  </div>
                               </div>
-                              <span className="text-[10px] font-display font-extrabold text-[#FF6600] uppercase tracking-[0.2em]">{stat.label}</span>
+                              <span className="text-[10px] md:text-[10px] font-display font-bold text-[#FF6600] capitalize tracking-[0.2em]">{stat.label}</span>
                            </div>
                         ))}
                      </div>
@@ -193,7 +193,7 @@ export default function WebDevelopment() {
                         <img 
                            src={imgWebDev} 
                            alt="Web Development Ecosystem" 
-                           className="w-full h-auto object-cover transition-transform duration-[4000ms] group-hover:scale-110" 
+                           className="w-full h-auto sm:h-20 md:h-60 lg:h-auto object-cover transition-transform duration-[4000ms] group-hover:scale-110" 
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex flex-col justify-end p-8">
                            <div className="flex items-center gap-3 mb-3">
@@ -221,7 +221,7 @@ export default function WebDevelopment() {
                                     <item.icon size={20} />
                                  </div>
                                  <div className="space-y-1">
-                                    <h4 className="text-[11px] font-extrabold text-slate-900 uppercase tracking-tight group-hover:text-[#FF6600] transition-colors">{item.title}</h4>
+                                    <h4 className="text-[12px] font-bold text-slate-900 capitalize tracking-tight group-hover:text-[#FF6600] transition-colors">{item.title}</h4>
                                     <p className="text-[11px] text-slate-400 font-semibold leading-tight">{item.desc}</p>
                                  </div>
                               </div>

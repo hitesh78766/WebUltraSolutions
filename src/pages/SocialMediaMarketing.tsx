@@ -83,7 +83,7 @@ export default function SocialMediaMarketing() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER */}
-         <div className="relative min-h-[250px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ForceDirectedGraph />
             <ThreeNetworkGlobe />
 
@@ -98,7 +98,7 @@ export default function SocialMediaMarketing() {
                      <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FF6600]">Global Connectivity Engine</span>
                   </motion.div>
 
-                  <h1 className="text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1] uppercase max-w-5xl mx-auto">
+                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold tracking-tight leading-[1] uppercase max-w-5xl mx-auto px-4">
                      <span className="text-slate-950 block lg:inline">Engineering Social</span>
                      <span className="text-[#FF6600] block lg:inline lg:ml-4">Synergy.</span>
                   </h1>
@@ -107,7 +107,7 @@ export default function SocialMediaMarketing() {
                      initial={{ opacity: 0, scale: 0.95 }}
                      animate={{ opacity: 1, scale: 1 }}
                      transition={{ duration: 1, delay: 0.5 }}
-                     className="text-slate-600 text-sm lg:text-base font-bold max-w-2xl leading-relaxed italic"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-base font-semibold max-w-2xl leading-relaxed italic px-6 md:px-0"
                   >
                      "Capturing the birds-eye view of your global brand resonance through precision engagement architectures and narrative scale."
                   </motion.p>
@@ -118,7 +118,7 @@ export default function SocialMediaMarketing() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1 }}
-                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto pt-2"
+                  className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto pt-4 md:pt-2 px-4"
                >
                   {socialMetrics.map((metric, i) => (
                      <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-3 transition-all hover:shadow-lg hover:-translate-y-0.5 group">
@@ -136,8 +136,8 @@ export default function SocialMediaMarketing() {
          </div>
 
          {/* COMPACTED INTERFACE - REFINED HIERARCHY */}
-         <section className="relative py-16 bg-[#FDFBF9] border-t border-slate-50">
-            <div className="relative z-10 max-w-[1300px] mx-auto px-6 lg:px-12">
+         <section className="relative py-8 md:py-16 bg-[#FDFBF9] border-t border-slate-50">
+            <div className="relative z-10 max-w-[1300px] mx-auto px-4 md:px-8 lg:px-12">
                
                <div className="max-w-6xl mx-auto space-y-16">
                   <div className="space-y-10">
@@ -147,19 +147,19 @@ export default function SocialMediaMarketing() {
                            <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Engagement Ecology</span>
                            <div className="h-[2px] w-10 bg-[#FF6600]" />
                         </div>
-                        <h2 className="text-xl lg:text-2xl font-extrabold text-slate-900 tracking-tighter uppercase leading-none max-w-3xl">
+                        <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold text-slate-900 tracking-tighter uppercase leading-none max-w-3xl text-center lg:text-center">
                            High-Fidelity <span className="text-[#FF6600]">Engagement</span> ROI
                         </h2>
                      </div>
 
                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <div className="space-y-6">
-                           <div className="bg-white p-6 border-l-[4px] border-[#FF6600] shadow-sm rounded-r-lg">
-                              <h3 className="text-base lg:text-lg font-black text-slate-800 leading-tight tracking-tight">
+                           <div className="bg-white p-5 md:p-6 border-l-[4px] border-[#FF6600] shadow-sm rounded-r-lg">
+                              <h3 className="text-sm md:text-base lg:text-lg font-black text-slate-800 leading-tight tracking-tight">
                                  Monitor your brand, competitors, and market at a glance with Elite precision.
                               </h3>
                            </div>
-                           <div className="space-y-4 text-slate-600 font-bold leading-relaxed text-[13px]">
+                           <div className="space-y-4 text-slate-600 font-semibold leading-relaxed text-[13px]">
                               <p>
                                  Create, plan, and schedule batch messages to all your networks with surgical precision. Our proprietary suggested content engine curates relevant narratives based on real-time market sentiment, ensuring your brand maximizes its architectural timeline and maintains a dominant digital footprint.
                               </p>
@@ -174,19 +174,19 @@ export default function SocialMediaMarketing() {
 
                         <div className="relative">
                            <div className="absolute -inset-2 bg-orange-50 rounded-xl z-0" />
-                           <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[250px]">
+                           <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[220px] md:h-[250px]">
                               <img
                                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
                                  alt="Expert Analysis"
                                  className="w-full h-full object-cover transition-transform duration-[6000ms] group-hover/intro:scale-110"
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                              <div className="absolute bottom-6 left-6 text-white space-y-0.5">
+                              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white space-y-0.5">
                                  <div className="flex items-center gap-1.5">
                                     <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-                                    <span className="text-[8px] font-black uppercase tracking-[0.2em] text-[#FF6600]">System Verified</span>
+                                    <span className="text-[8px] md:text-[8px] font-black uppercase tracking-[0.2em] text-[#FF6600]">System Verified</span>
                                  </div>
-                                 <h4 className="text-base font-black uppercase tracking-tight">Social Governance</h4>
+                                 <h4 className="text-base md:text-base font-black uppercase tracking-tight">Social Governance</h4>
                               </div>
                            </div>
                         </div>

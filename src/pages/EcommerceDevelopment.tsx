@@ -60,30 +60,30 @@ export default function EcommerceDevelopment() {
    }, []);
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
+      <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER - ELITE COMPACT STYLE */}
-         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* INTERACTIVE PEARLS BACKDROP */}
             <ThreeEcommercePearls />
             
             {/* Content Core - Centered Elite Architecture */}
             <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
-               <div className="flex flex-col items-center gap-4">
+               <div className="flex flex-col items-center gap-4 mt-5">
                   <motion.div 
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
-                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
+                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-sm shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Market Ecosystem</span>
+                     <span className="text-[10px] font-bold capitalize tracking-[0.2em] text-white">Market Ecosystem</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      {(() => {
                         const title = "ECOMMERCE SOLUTIONS.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className="inline-block mr-4">
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -109,7 +109,7 @@ export default function EcommerceDevelopment() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed px-6 md:px-0"
                   >
                      Optimized digital commerce for high conversion. Engineering powerful transactional architectures that dominate the global marketplace with surgical precision.
                   </motion.p>
@@ -120,39 +120,39 @@ export default function EcommerceDevelopment() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1.5 }}
-                  className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
+                  className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-0 pb-4 md:pb-0 px-4"
                >
                   {[
                      { label: 'Market Conversion', icon: Globe },
                      { label: 'Secure Protocols', icon: ShieldCheck },
                      { label: 'Trade Precision', icon: Monitor }
                   ].map((feature, i) => (
-                     <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                        <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                           <feature.icon size={14} />
+                     <div key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 md:gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
+                        <div className="w-6 h-6 md:w-7 md:h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
+                           <feature.icon size={12} className="md:w-[14px] md:h-[14px]" />
                         </div>
-                        <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                        <span className="text-[9px] md:text-[10px] font-semibold text-slate-700 uppercase tracking-widest whitespace-nowrap">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
             </div>
          </div>
 
-         <section className="max-w-[1400px] mx-auto px-8 lg:px-16 py-8">
+         <section className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 py-6 md:py-8">
             <div className="grid grid-cols-1 gap-6 lg:gap-10">
                
                {/* INTRODUCTORY HUB SECTION */}
                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center py-8">
-                  <div className="lg:col-span-7 space-y-6">
+                  <div className="lg:col-span-7 space-y-4 md:space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-[#FF6600]/30" />
                         <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.4em]">Development Hub</span>
                      </div>
                      <div className="space-y-4">
-                        <h2 className="text-xl lg:text-3xl font-display font-extrabold text-slate-900 tracking-tight uppercase leading-none">
+                        <h2 className="text-[18px] md:text-xl lg:text-3xl font-display font-bold text-slate-900 tracking-tight uppercase leading-[1.1]">
                            Elite Ecommerce <span className="text-[#FF6600]">Architectures</span>
                         </h2>
-                        <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed max-w-2xl">
+                        <p className="text-sm md:text-base lg:text-lg font-semibold text-slate-500 leading-relaxed max-w-2xl px-2 md:px-0">
                            eCommerce is growing globally for both B2B and B2C segments. We deliver powerful solutions allowing your business to stand out with authority and massive operational scale.
                         </p>
                      </div>
@@ -192,7 +192,7 @@ export default function EcommerceDevelopment() {
                            viewport={{ once: true, margin: "-50px" }}
                            whileHover={{ y: -6, scale: 1.01 }}
                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[45%] relative h-[250px] lg:h-[320px] rounded-md overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 group/img cursor-pointer bg-slate-100"
+                           className="w-[92%] mx-auto md:w-[45%] lg:w-[45%] relative h-[180px] md:h-[250px] lg:h-[320px] rounded-md overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 group/img cursor-pointer bg-slate-100"
                         >
                            <motion.img 
                               src={pillar.image} 
@@ -216,7 +216,7 @@ export default function EcommerceDevelopment() {
                            whileInView={{ opacity: 1, x: 0 }}
                            viewport={{ once: true, margin: "-50px" }}
                            transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                           className="w-full lg:w-[55%] space-y-6 px-4 lg:px-0"
+                           className="w-full md:w-[55%] lg:w-[55%] space-y-6 px-4 lg:px-0"
                         >
                            <div className="space-y-4">
                               <div className="flex items-center gap-5">
@@ -231,15 +231,15 @@ export default function EcommerceDevelopment() {
                                        <div className="w-6 h-[2px] bg-[#FF6600]" />
                                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                                     </div>
-                                    <h3 className="text-xl lg:text-2xl font-display font-extrabold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
+                                    <h3 className="text-xl lg:text-2xl font-display font-bold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
                                        {pillar.title}
                                     </h3>
                                  </div>
                               </div>
 
-                              <p className="text-base lg:text-lg font-semibold leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
-                                 {pillar.desc}
-                              </p>
+                               <p className="text-sm md:text-base lg:text-lg font-semibold leading-relaxed text-slate-500 group-hover:text-[#FF6600] transition-colors max-w-xl">
+                                  {pillar.desc}
+                               </p>
 
                               <div className="pt-2">
                                  <button className="flex items-center gap-2 text-xs lg:text-sm font-bold text-slate-900 uppercase tracking-widest group/link">
@@ -253,13 +253,13 @@ export default function EcommerceDevelopment() {
                   ))}
 
                   {/* CONCLUSION BLOCK - SYNCED WITH PRESTIGE BANNER STYLE */}
-                  <motion.div
-                     initial={{ opacity: 0, y: 40 }}
-                     whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true }}
-                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                     className="relative py-10 lg:py-14 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default mt-12"
-                  >
+                   <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                      className="relative py-8 md:py-14 px-6 md:px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default mt-12"
+                   >
                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
                      
                      <div className="relative z-10 max-w-4xl mx-auto space-y-5">
@@ -268,7 +268,7 @@ export default function EcommerceDevelopment() {
                         </div>
 
                         <div className="relative">
-                           <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic">
+                           <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic overflow-visible px-4">
                               {(() => {
                                  const text = "We specialize in creative and innovative approaches to e-commerce development. Our primary goal is to integrate powerful transactional features that pave the way for the global scaling of your online empire.";
                                  return text.split(" ").map((word, wordIdx) => (
@@ -290,13 +290,6 @@ export default function EcommerceDevelopment() {
                                  ));
                               })()}
                            </h3>
-                        </div>
-
-                        <div className="pt-4">
-                           <button className="group/btn flex items-center gap-2.5 px-4 py-2.5 bg-[#FF6600] hover:bg-white hover:text-[#FF6600] text-white text-[10px] font-bold rounded-md transition-all duration-300 shadow-xl shadow-[#FF6600]/20 mx-auto uppercase tracking-[0.15em]">
-                              <span>Scale your store now</span>
-                              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
-                           </button>
                         </div>
 
                         <div className="flex items-center justify-center gap-8 pt-4">

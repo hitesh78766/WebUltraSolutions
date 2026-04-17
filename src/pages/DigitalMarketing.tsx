@@ -57,7 +57,7 @@ export default function DigitalMarketing() {
    return (
       <div className="pt-[80px] bg-[#FDFDFD] min-h-screen font-secondary selection:bg-orange-600 selection:text-white">
          {/* ULTRA-COMPACT PROFESSIONAL HERO */}
-         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* INTERACTIVE NETWORK GLOBE BACKDROP */}
             <ThreeNetworkGlobe />
 
@@ -73,7 +73,7 @@ export default function DigitalMarketing() {
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Advanced Digital Ecosystems</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto flex flex-wrap justify-center gap-x-3">
+                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-x-2 md:gap-x-3">
                      {(() => {
                         const words = ["Digital", "Marketing."];
                         return words.map((word, wordIdx) => (
@@ -102,7 +102,7 @@ export default function DigitalMarketing() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl leading-relaxed"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed px-6 md:px-0"
                   >
                      Scaling global digital footprints through precision architectures and real-time synchronization. We engineer high-performance market presence.
                   </motion.p>
@@ -111,7 +111,7 @@ export default function DigitalMarketing() {
          </div>
 
          {/* ULTRA-COMPACT PILLARS - 2 COLUMN HIGH DENSITY */}
-         <section className="max-w-[1400px] mx-auto px-6 py-10 lg:py-16">
+         <section className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 py-8 md:py-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                {servicePillars.map((pillar, idx) => (
                   <motion.div
@@ -122,7 +122,7 @@ export default function DigitalMarketing() {
                      transition={{ duration: 0.8, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
                      className="group relative"
                   >
-                     <div className="h-full bg-white border border-slate-50 p-6 lg:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col items-start gap-6 rounded-xl relative overflow-hidden">
+                     <div className="h-full bg-white border border-slate-50 p-5 md:p-8 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col items-start gap-5 md:gap-6 rounded-xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50/50 rounded-full blur-3xl -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                         
                         <div className="flex items-start justify-between w-full">
@@ -134,8 +134,8 @@ export default function DigitalMarketing() {
 
                         <div className="relative z-10 space-y-4">
                            <div className="space-y-2">
-                              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-orange-600">{pillar.tag}</span>
-                              <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight group-hover:text-slate-800 transition-colors">
+                              <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-orange-600">{pillar.tag}</span>
+                              <h3 className="text-lg md:text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight group-hover:text-slate-800 transition-colors">
                                  {pillar.title.split(' ').map((word, i, arr) => (
                                     <span key={i} className={i === arr.length - 1 ? "text-[#FF6600]" : ""}>
                                        {word}{i !== arr.length - 1 ? ' ' : ''}
@@ -143,7 +143,7 @@ export default function DigitalMarketing() {
                                  ))}
                               </h3>
                            </div>
-                           <p className="text-base font-semibold leading-relaxed text-slate-500 group-hover:text-slate-800 transition-colors">
+                           <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 group-hover:text-slate-800 transition-colors">
                               {pillar.desc}
                            </p>
                         </div>
@@ -216,7 +216,7 @@ export default function DigitalMarketing() {
                   </h2>
                </div>
                
-               <p className="text-lg lg:text-xl font-semibold text-slate-400 leading-relaxed max-w-2xl mx-auto">
+               <p className="text-base md:text-lg lg:text-xl font-semibold text-slate-400 leading-relaxed max-w-2xl mx-auto px-4">
                   We don't just execute marketing; we engineer the high-performance digital presence that defines industry leaders.
                </p>
 
@@ -227,11 +227,11 @@ export default function DigitalMarketing() {
                   transition={{ delay: 0.2 }}
                   className="pt-4"
                >
-                  <button className="group relative px-8 py-4 bg-[#FF6600] text-white overflow-hidden rounded-md transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,102,0,0.3)]">
+                  <button className="group relative px-6 md:px-8 py-3 md:py-4 bg-[#FF6600] text-white overflow-hidden rounded-md transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,102,0,0.3)] mx-auto">
                      <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
-                     <span className="relative z-10 font-bold uppercase tracking-widest flex items-center gap-2">
+                     <span className="relative z-10 font-bold uppercase tracking-widest flex items-center gap-2 text-[10px] md:text-sm">
                         Initiate Strategic Consultation
-                        <ChevronRight size={18} />
+                        <ChevronRight size={16} />
                      </span>
                   </button>
                </motion.div>
