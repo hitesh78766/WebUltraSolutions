@@ -37,7 +37,7 @@ export default function Footer() {
    return (
       <footer
          ref={containerRef}
-         className="relative pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 overflow-hidden bg-white border-t border-slate-200/80"
+         className="relative pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 overflow-hidden bg-gradient-to-br from-white via-slate-50 to-white border-t border-slate-200/80"
       >
          {/* ELITE ARCHITECTURAL OVERLAYS */}
          <div className="absolute inset-0 bg-[#f8fafc]/30" />
@@ -50,10 +50,10 @@ export default function Footer() {
             <div className="flex flex-col xl:flex-row items-center xl:items-start justify-between gap-10 sm:gap-12 pb-10 sm:pb-12 border-b border-slate-200/60 text-center xl:text-left">
                <div className="space-y-4 w-full sm:w-auto flex flex-col items-center xl:items-start">
                   <div className="space-y-1 sm:space-y-2">
-                     <h2 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-slate-900 tracking-tight uppercase whitespace-pre-wrap sm:whitespace-nowrap">
+                     <h2 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-slate-900 tracking-wider capitalize whitespace-pre-wrap sm:whitespace-nowrap">
                         Digicorn Webultrasolution <span className="text-[#f97316]">Pvt Ltd.</span>
                      </h2>
-                     <p className="text-[9px] sm:text-[10px] font-black text-[#f97316] uppercase tracking-[0.3em] sm:tracking-[0.4em] flex items-center justify-center xl:justify-start gap-2 sm:gap-3">
+                     <p className="text-[9px] sm:text-[10px] font-black text-[#f97316] capitalize tracking-[0.3em] sm:tracking-[0.4em] flex items-center justify-center xl:justify-start gap-2 sm:gap-3">
                         <span className="w-4 sm:w-6 h-[1px] bg-[#f97316]/30" />
                         Enterprise Digital Infrastructure
                      </p>
@@ -67,9 +67,9 @@ export default function Footer() {
                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center text-[#f97316] group-hover:bg-[#f97316] group-hover:text-white transition-all duration-300">
                               <detail.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                            </div>
-                           <span className="text-[9px] sm:text-[10px] font-black text-slate-400 uppercase tracking-[0.1em] sm:tracking-[0.2em]">{detail.label}</span>
+                           <span className="text-[9px] lg:text-sm font-black text-slate-400 capitalize tracking-[0.1em] sm:tracking-[0.2em]">{detail.label}</span>
                         </div>
-                        <div className="text-[11px] sm:text-[13px] font-bold text-slate-600 font-mono tracking-tight group-hover:text-slate-900 transition-colors pl-0.5 break-all sm:break-normal">
+                        <div className="text-[11px] sm:text-xs font-bold text-slate-600 font-mono tracking-wide group-hover:text-slate-900 transition-colors pl-0.5 break-all sm:break-normal">
                            {detail.value}
                         </div>
                      </div>
@@ -85,15 +85,15 @@ export default function Footer() {
                   <div className="space-y-8 flex flex-col items-center lg:items-start">
                      <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#f97316]/5 border border-[#f97316]/10">
                         <Cpu size={14} className="text-[#f97316]" />
-                        <span className="text-[10px] font-black text-[#f97316] uppercase tracking-[0.25em]">NextGen Architecture</span>
+                        <span className="text-[10px] font-black text-[#f97316] capitalize tracking-[0.25em]">NextGen Architecture</span>
                      </div>
-                     <p className="text-slate-500 text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-md">
-                        Engineering digital legacies through <span className="text-slate-900 font-black italic underline decoration-[#f97316]/40 decoration-4 underline-offset-4">technical precision</span> and architectural excellence.
+                     <p className="text-slate-500 text-sm sm:text-base md:text-base font-medium leading-relaxed max-w-md">
+                        Engineering digital legacies through <span className="text-slate-900 font-black  underline decoration-[#f97316]/40 decoration-4 underline-offset-4">technical precision</span> and architectural excellence.
                      </p>
                   </div>
 
                   <div className="space-y-5 flex flex-col items-center lg:items-start">
-                     <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.4em]">Institutional Network</h4>
+                     <h4 className="text-[10px] text-slate-900 capitalize tracking-widest">Institutional Network</h4>
                      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
                         {socialIcons.map((social, i) => (
                            <a
@@ -113,7 +113,7 @@ export default function Footer() {
                <div className="md:col-span-full lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 lg:gap-16">
                   {/* ECOSYSTEM */}
                   <div className="space-y-6 sm:space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
-                     <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.3em] sm:tracking-[0.5em] flex items-center gap-4">
+                     <h4 className="text-[11px] lg:text-sm text-slate-900 capitalize tracking-widest flex items-center gap-4">
                         <div className="w-2 h-2 rounded-full bg-[#f97316] ring-4 ring-[#f97316]/10" />
                         Ecosystem
                      </h4>
@@ -128,7 +128,7 @@ export default function Footer() {
                            <li key={i}>
                               <a href={link.href} className="group flex items-center gap-4 text-[13px] font-bold text-slate-500 hover:text-slate-900 transition-all">
                                  <div className="w-1.5 h-1.5 rounded-full bg-[#f97316] scale-0 group-hover:scale-100 transition-transform duration-300" />
-                                 <span className="group-hover:translate-x-1 transition-transform uppercase tracking-tighter">{link.name}</span>
+                                 <span className="group-hover:translate-x-1 transition-transform capitalize tracking-tighter">{link.name}</span>
                               </a>
                            </li>
                         ))}
@@ -137,7 +137,7 @@ export default function Footer() {
 
                   {/* SOLUTIONS */}
                   <div className="space-y-6 sm:space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
-                     <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.3em] sm:tracking-[0.5em] flex items-center gap-4">
+                     <h4 className="text-[11px] lg:text-sm text-slate-900 capitalize tracking-widest flex items-center gap-4">
                         <div className="w-2 h-2 rounded-full bg-slate-300 ring-4 ring-slate-100" />
                         Solutions
                      </h4>
@@ -154,7 +154,7 @@ export default function Footer() {
                            <li key={i}>
                               <a href={link.href} className="group flex items-center gap-4 text-[13px] font-bold text-slate-500 hover:text-slate-900 transition-all">
                                  <div className="w-1.5 h-1.5 rounded-full bg-[#f97316] scale-0 group-hover:scale-100 transition-transform duration-300" />
-                                 <span className="group-hover:translate-x-1 transition-transform uppercase tracking-tighter">{link.name}</span>
+                                 <span className="group-hover:translate-x-1 transition-transform capitalize tracking-tighter">{link.name}</span>
                               </a>
                            </li>
                         ))}
@@ -163,7 +163,7 @@ export default function Footer() {
 
                   {/* ACCESS */}
                   <div className="space-y-6 sm:space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
-                     <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.3em] sm:tracking-[0.5em] flex items-center gap-4">
+                     <h4 className="text-[11px] lg:text-sm text-slate-900 capitalize tracking-widest flex items-center gap-4">
                         <div className="w-2 h-2 rounded-full bg-slate-200" />
                         Access
                      </h4>
@@ -171,18 +171,18 @@ export default function Footer() {
                         <div className="group cursor-pointer flex flex-col items-center lg:items-start">
                            <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
                               <Phone className="w-3 h-3 text-[#f97316]" />
-                              <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Global Line</span>
+                              <span className="text-[10px] lg:text-[13px] font-black text-slate-400 capitalize tracking-widest">Global Line</span>
                            </div>
-                           <span className="text-[13px] sm:text-[14px] font-black text-slate-900 group-hover:text-[#f97316] transition-colors tracking-tighter italic">
+                           <span className="text-[13px] lg:text-[13px] font-semibold text-slate-500 group-hover:text-[#f97316] transition-colors tracking-tighter ">
                               +91-87978 06959
                            </span>
                         </div>
                         <div className="group cursor-pointer flex flex-col items-center lg:items-start">
                            <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
                               <Mail className="w-3 h-3 text-[#f97316]" />
-                              <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Institutional Mail</span>
+                              <span className="text-[10px] lg:text-[13px] font-black text-slate-400 capitalize tracking-widest">Institutional Mail</span>
                            </div>
-                           <span className="text-[13px] sm:text-[14px] font-black text-slate-900 group-hover:text-[#f97316] transition-colors break-all leading-tight tracking-tight">
+                           <span className="text-[13px] sm:text-[14px] text-slate-500 font-semibold group-hover:text-[#f97316] transition-colors break-all leading-tight tracking-tight">
                               webultrasolution@gmail.com
                            </span>
                         </div>
@@ -193,8 +193,8 @@ export default function Footer() {
             </div>
 
             {/* PRECISION BASE */}
-            <div className="pt-8 sm:pt-10 border-t border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
-               <div className="flex flex-wrap flex-col sm:flex-row md:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] sm:tracking-[0.4em] order-2 md:order-1">
+            <div className="pt-4 sm:pt-10 border-t border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
+               <div className="flex flex-wrap flex-col sm:flex-row md:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 text-[10px] font-black text-slate-400 capitalize tracking-wide sm:tracking-widest order-2 md:order-1">
                   <div className="flex items-center gap-2 bg-emerald-50 px-2 sm:px-2.5 py-1 rounded-full border border-emerald-100">
                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                      <span className="text-[9px] sm:text-[10px] text-emerald-600">System Live</span>
@@ -206,9 +206,9 @@ export default function Footer() {
                <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 sm:gap-8 order-1 md:order-2">
                   <div className="flex items-center gap-2 sm:gap-3 px-3.5 sm:px-5 py-1.5 sm:py-2 bg-slate-50 rounded-full border border-slate-100 group hover:border-[#f97316]/30 transition-all shadow-sm">
                      <Heart className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-[#f97316] text-[#f97316] group-hover:scale-125 transition-transform" />
-                     <span className="text-[9px] sm:text-[10px] font-black text-slate-600 uppercase tracking-widest">Built for the future</span>
+                     <span className="text-[9px] sm:text-[10px] font-black text-slate-600 capitalize tracking-widest">Built for the future</span>
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-2.5 text-[9px] sm:text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] sm:tracking-[0.25em]">
+                  <div className="flex items-center gap-2 sm:gap-2.5 text-[9px] sm:text-[10px] font-black text-slate-400 capitalize tracking-[0.15em] sm:tracking-widest ">
                      <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#f97316]/40" />
                      <span>Global Architecture</span>
                   </div>

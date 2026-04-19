@@ -86,22 +86,13 @@ export default function ELearning() {
   }, []);
 
   return (
-    <div className="pt-[80px] bg-white min-h-screen font-secondary">
+    <div className="pt-[50px] bg-white min-h-screen font-secondary">
       {/* CINEMATIC HERO */}
       <div className="relative min-h-[220px] lg:min-h-[300px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
         <ThreeAppArchitecture />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-xl"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white">Interactive Academy Protocol</span>
-          </motion.div>
-
-          <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-5xl mx-auto">
+            <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
             {(() => {
               const title = "E-Learning Software.";
               const words = title.split(" ");
@@ -132,7 +123,7 @@ export default function ELearning() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-slate-600 text-xs lg:text-sm font-semibold max-w-2xl mx-auto leading-relaxed"
+            className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0"
           >
             E-learning is more flexibility and effectiveness to the Learning than the traditional training.
           </motion.p>
@@ -170,8 +161,8 @@ export default function ELearning() {
                         <pillar.icon size={20} />
                       </div>
                       <div>
-                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
-                        <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase leading-[1.1]">{pillar.title}</h3>
+                        <span className="text-[10px] font-bold capitalize tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
+                        <h3 className="text-xl lg:text-2xl font-display font-bold text-slate-900 uppercase leading-[1.1]">{pillar.title}</h3>
                       </div>
                     </div>
                     
@@ -179,7 +170,7 @@ export default function ELearning() {
                       {pillar.bullets.map((bullet, bi) => (
                         <li key={bi} className={`flex gap-3 group/li ${idx % 2 === 0 ? "flex-row" : "lg:flex-row-reverse"}`}>
                           <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FF6600] flex-shrink-0 group-hover/li:scale-125 transition-transform" />
-                          <p className="text-base lg:text-lg font-semibold text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
+                          <p className="text-sm lg:text-base font-semibold text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
                             {bullet}
                           </p>
                         </li>

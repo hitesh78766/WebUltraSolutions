@@ -69,24 +69,15 @@ export default function SchoolCollegeERP() {
   }, []);
 
   return (
-    <div className="pt-[80px] bg-white min-h-screen font-secondary">
+    <div className="pt-[50px] bg-white min-h-screen font-secondary">
       {/* COMPACT HIGH-STATUS HERO */}
       <div className="relative min-h-[220px] lg:min-h-[300px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/30">
         <ThreeNeuralStorm />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-xl"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white">Institutional Logic v9.2</span>
-          </motion.div>
-
-          <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-5xl mx-auto">
+              <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
             {(() => {
-              const title = "School/College ERP Software.";
+              const title = "College ERP Software.";
               return title.split(" ").map((word, wordIdx) => (
                 <span key={wordIdx} className="inline-block mr-4">
                   {word.split("").map((char, charIdx) => (
@@ -112,7 +103,7 @@ export default function SchoolCollegeERP() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-slate-600 text-xs lg:text-sm font-semibold max-w-2xl mx-auto leading-relaxed"
+            className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed w-full px-6 md:px-0"
           >
             ERP is also based on business activity module for CRM and business intelligence. Engineering future-ready academic ecosystems.
           </motion.p>
@@ -127,9 +118,9 @@ export default function SchoolCollegeERP() {
           <div className="lg:col-span-12 space-y-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                {[
-                 { title: "ENTERPRISE CORE", text: "Enterprise resource planning (ERP) is business management software that allows an organization to use a system of integrated applications to manage the business." },
-                 { title: "FACET INTEGRATION", text: "ERP software integrates all facets of an operation, including product planning, development, manufacturing processes, sales, and marketing." },
-                 { title: "INTELLIGENT LOGIC", text: "ERP is also based on business activity module for CRM and business intelligence. ERP modules include material purchasing, inventory control, distribution, accounting, and HR." }
+                 { title: "Enterprice Core", text: "Enterprise resource planning (ERP) is business management software that allows an organization to use a system of integrated applications to manage the business." },
+                 { title: "Facet Integration", text: "ERP software integrates all facets of an operation, including product planning, development, manufacturing processes, sales, and marketing." },
+                 { title: "Intelligent Logic", text: "ERP is also based on business activity module for CRM and business intelligence. ERP modules include material purchasing, inventory control, distribution, accounting, and HR." }
                ].map((mod, mi) => (
                  <motion.div 
                    key={mi}
@@ -140,8 +131,8 @@ export default function SchoolCollegeERP() {
                    className="p-8 border border-slate-50 bg-white shadow-sm hover:shadow-xl transition-all rounded-md group"
                  >
                     <div className="w-8 h-[2px] bg-[#FF6600] group-hover:w-12 transition-all" />
-                    <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#FF6600] mt-4">{mod.title}</h4>
-                    <p className="text-base font-semibold text-slate-500 leading-relaxed mt-4">{mod.text}</p>
+                    <h4 className="text-[10px] lg:text-xl font-bold capitalize tracking-wide text-[#FF6600] mt-4">{mod.title}</h4>
+                    <p className="text-sm lg:text-base font-semibold text-slate-500 leading-relaxed mt-4">{mod.text}</p>
                  </motion.div>
                ))}
             </div>
@@ -230,8 +221,8 @@ export default function SchoolCollegeERP() {
           {/* FEATURE MICRO-TILES - DATA DENSE MATRIX */}
           <div className="lg:col-span-7 space-y-8">
              <div className="space-y-1">
-                <h3 className="text-xl lg:text-2xl font-display font-extrabold text-slate-950 uppercase tracking-tight">IMPORTANT <span className="text-[#FF6600]">FEATURES.</span></h3>
-                <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.4em]">Proprietary Academic Architecture Features</p>
+                <h3 className="text-xl lg:text-2xl font-display font-bold text-slate-950 uppercase tracking-tight">IMPORTANT <span className="text-[#FF6600]">FEATURES.</span></h3>
+                <p className="text-slate-400 text-[10px] font-bold capitalize tracking-wider]">Proprietary Academic Architecture Features</p>
              </div>
 
              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
@@ -259,30 +250,6 @@ export default function SchoolCollegeERP() {
           </div>
 
         </div>
-      </section>
-
-      {/* SIGNATURE BLOCK */}
-      <section className="py-20 max-w-[1400px] mx-auto px-8 lg:px-16">
-         <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="relative py-14 lg:py-20 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel"
-         >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)]" />
-            <div className="relative z-10 max-w-4xl mx-auto space-y-6">
-               <div className="w-12 h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600]">
-                  <Zap size={24} />
-               </div>
-               <h3 className="text-sm lg:text-lg font-display font-medium italic text-slate-200 leading-relaxed max-w-2xl mx-auto">
-                  "Upgrades are automatic and invisible. Our ERP modules include product planning, material purchasing, and strategic accounting to ensure global academic dominance."
-               </h3>
-               <div className="flex items-center justify-center gap-8 pt-4">
-                  <div className="h-[1px] w-24 bg-white/10" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Elite Standards</span>
-                  <div className="h-[1px] w-24 bg-white/10" />
-               </div>
-            </div>
-         </motion.div>
       </section>
     </div>
   );

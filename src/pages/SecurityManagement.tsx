@@ -35,22 +35,22 @@ export default function SecurityManagement() {
 
   const foundationalNodes = [
     {
-      title: "METHODOLOGY CORE",
+      title: "Methodology Core",
       icon: Cpu,
       desc: "Security Management Software has been emphasized mainly to introduce methodologies which are Practical, Flexible and Understandable. It provides an effective platform for alignment."
     },
     {
-      title: "SDLC INTEGRATION",
+      title: "SDLC Integration",
       icon: Layers,
       desc: "Application Security can be seamlessly integrated into the SDLC by introducing specific steps or process within the development phases for robust protection."
     },
     {
-      title: "POSITION IMPROVEMENT",
+      title: "Position Improvement",
       icon: TrendingUp,
       desc: "Software methodology for improving the current position of Application Development by integrating Software Security across all architectural layers."
     },
     {
-      title: "DYNAMIC ADAPTATION",
+      title: "Dynamic Adaptation",
       icon: Activity,
       desc: "The application security and landscape are changing rapidly. We provide the tools to mitigate risks of application security attacks early in the lifecycle."
     }
@@ -165,13 +165,13 @@ export default function SecurityManagement() {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-1.5 px-5 py-2 bg-[#FF6600] rounded-md shadow-xl"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 bg-[#FF6600] rounded-md shadow-xl"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white">Fortress Core v2.0</span>
+              <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full bg-white animate-pulse" />
+              <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.3em] text-white">Fortress Core v2.0</span>
             </motion.div>
 
-            <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-900 tracking-[0.05em] leading-[1.1] uppercase max-w-5xl mx-auto">
+            <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
               {(() => {
                 const title = "ENGINEERING SECURITY FORTRESSES.";
                 const words = title.split(" ");
@@ -202,7 +202,7 @@ export default function SecurityManagement() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="text-slate-600 text-sm lg:text-base font-bold max-w-2xl leading-relaxed uppercase tracking-wider"
+              className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0 cpaitalize tracking-wider"
             >
               Security Management Software has been emphasized mainly to introduce methodologies which are Practical, Flexible and Understandable.
             </motion.p>
@@ -213,18 +213,18 @@ export default function SecurityManagement() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-3xl sm:max-w-4xl mx-auto"
           >
             {[
               { label: 'Cyber-Resilience Certified', icon: CheckCircle2 },
               { label: 'Cloud-Native Security', icon: Database },
               { label: 'Threat Intelligence', icon: Fingerprint }
             ].map((feature, i) => (
-              <div key={i} className="px-4 py-2.5 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                  <feature.icon size={14} />
+              <div key={i} className="px-3 py-2 sm:px-4 sm:py-2.5 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 sm:gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group mb-3 sm:mb-4">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] ">
+                  <feature.icon size={12} className="sm:size-14" />
                 </div>
-                <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
+                <span className="text-[9px] sm:text-[10px] font-bold text-slate-700 uppercase tracking-widest">{feature.label}</span>
               </div>
             ))}
           </motion.div>
@@ -245,12 +245,12 @@ export default function SecurityManagement() {
                 </div>
 
                 <div className="space-y-6">
-                  <h2 className="text-2xl lg:text-4xl font-display font-black text-slate-900 tracking-[0.05em] uppercase leading-none italic">
+                  <h2 className="text-2xl lg:text-4xl font-display text-slate-900 tracking-[0.05em] capitalize leading-none ">
                     Security <span className="text-[#FF6600]">Management</span> System
                   </h2>
 
                   <div className="space-y-6">
-                    <p className="text-base lg:text-xl font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-6 italic">
+                    <p className="text-sm lg:text-base font-bold text-slate-800 leading-relaxed tracking-wider border-l-4 border-[#FF6600] pl-6 ">
                       Security is an important feature of any software. The current scenario of security management software is many companies to an extent have started addressing security earlier in the lifecycle.
                     </p>
                     <p className="text-xs lg:text-base text-slate-500 font-semibold leading-relaxed">
@@ -278,14 +278,14 @@ export default function SecurityManagement() {
                       className="flex flex-col gap-5 p-8 rounded-xl bg-white border border-slate-100 group transition-all duration-500 hover:border-[#FF6600] hover:shadow-2xl hover:-translate-y-1"
                     >
                       <div className="flex items-center gap-6">
-                        <div className="w-12 h-12 rounded-xl bg-[#FF6600] text-white flex items-center justify-center transition-all shadow-lg group-hover:rotate-6 group-hover:scale-110">
-                          <item.icon size={24} />
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-md bg-[#FF6600] text-white flex items-center justify-center transition-all shadow-lg group-hover:rotate-6 group-hover:scale-110 p-2">
+                          <item.icon size={12} className="sm:size-14 md:size-14 lg:size-14" />
                         </div>
-                        <span className="text-sm lg:text-base font-black text-slate-900 transition-colors uppercase tracking-[0.05em]">
+                        <span className="text-sm lg:text-base font-black text-slate-900 transition-colors capitalize tracking-[0.05em]">
                           {item.title}
                         </span>
                       </div>
-                      <p className="text-[12px] lg:text-[13px] text-slate-500 font-semibold leading-relaxed group-hover:text-slate-800 transition-colors">
+                      <p className="text-[12px] lg:text-sm text-slate-500 font-semibold tracking-wider leading-relaxed group-hover:text-slate-800 transition-colors">
                         {item.desc}
                       </p>
                     </motion.div>
@@ -325,15 +325,15 @@ export default function SecurityManagement() {
 
                   <div className="grid grid-cols-1 gap-3">
                     {[
-                      { label: "METHODOLOGY STATUS", val: "PRACTICAL", color: "text-emerald-400" },
-                      { label: "INTEGRATION DEPTH", val: "NATIVE SDLC", color: "text-blue-400" },
-                      { label: "POSITION RANK", val: "ELITE CORE", color: "text-[#FF6600]" }
+                      { label: "Methodology Status", val: "PRACTICAL", color: "text-emerald-400" },
+                      { label: "Integration Depth", val: "NATIVE SDLC", color: "text-blue-400" },
+                      { label: "Position Rank", val: "ELITE CORE", color: "text-[#FF6600]" }
                     ].map((spec, i) => (
                       <div key={i} className="flex items-center justify-between p-5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
                         <div className="flex flex-col gap-1">
-                          <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">{spec.label}</span>
+                          <span className="text-[10px] font-black text-white/40 capitalize tracking-widest">{spec.label}</span>
                         </div>
-                        <span className={`text-[11px] font-mono font-black ${spec.color}`}>{spec.val}</span>
+                        <span className={`text-[11px] lg:text-base font-mono font-black ${spec.color}`}>{spec.val}</span>
                       </div>
                     ))}
                   </div>
@@ -352,9 +352,9 @@ export default function SecurityManagement() {
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="flex items-center gap-4">
                 <Sparkles size={24} className="text-[#FF6600]" />
-                <span className="text-[12px] font-black text-[#FF6600] uppercase tracking-[0.6em]">System Architecture</span>
+                <span className="text-[12px] font-black text-[#FF6600] capitalize tracking-[0.6em]">System Architecture</span>
               </div>
-              <h3 className="text-2xl lg:text-4xl font-display font-black text-slate-900 uppercase tracking-[0.05em]">Strategic <span className="text-[#FF6600]">Defensive</span> Protocols</h3>
+              <h3 className="text-2xl lg:text-4xl font-display text-slate-900 capitalize tracking-[0.05em]">Strategic <span className="text-[#FF6600]">Defensive</span> Protocols</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -372,18 +372,18 @@ export default function SecurityManagement() {
 
                   <div className="relative z-10 space-y-6">
                     <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-500 shadow-sm">
-                        <item.icon size={22} className="group-hover:rotate-12 transition-transform" />
+                      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-all duration-500 shadow-sm">
+                        <item.icon size={16} className="sm:size-22 group-hover:rotate-12 transition-transform" />
                       </div>
-                      <div className="px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-[9px] font-mono font-bold text-slate-400 group-hover:border-orange-100 group-hover:text-[#FF6600] transition-colors">{item.code}</div>
+                      <div className="px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-[9px] font-mono font-bold text-orange-400 group-hover:border-orange-100 group-hover:text-[#FF6600] transition-colors">{item.code}</div>
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="text-sm lg:text-base font-display font-black text-slate-950 uppercase tracking-[0.05em] group-hover:text-[#FF6600] transition-colors leading-tight">
+                      <h4 className="text-sm lg:text-lg font-display  text-slate-950 capitalize tracking-[0.05em] group-hover:text-[#FF6600] transition-colors leading-tight">
                         {item.title}
                       </h4>
                       <div className="w-8 h-[2px] bg-[#FF6600] group-hover:w-full transition-all duration-700" />
-                      <p className="text-[12px] lg:text-[13px] text-slate-500 font-semibold leading-relaxed group-hover:text-slate-700 transition-colors">
+                      <p className="text-[12px] lg:text-base text-slate-500 font-semibold leading-relaxed group-hover:text-slate-700 transition-colors">
                         {item.desc}
                       </p>
                     </div>

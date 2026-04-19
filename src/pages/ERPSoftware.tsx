@@ -32,14 +32,14 @@ export default function ERPSoftware() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
+            className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 bg-[#FF6600] rounded-md shadow-lg"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Institutional Grade</span>
+            <span className="text-[10px] font-black capitalize lg:uppercase tracking-[0.2em] text-white">Institutional Grade</span>
           </motion.div>
 
           {/* CHARACTER-SPLIT TITLE: SYNCED SCALE */}
-          <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-5xl mx-auto">
+          <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
             {(() => {
               const title = "ERP SOFTWARE SOLUTIONS.";
               return title.split(" ").map((word, wordIdx) => (
@@ -69,7 +69,7 @@ export default function ERPSoftware() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="text-slate-600 text-sm lg:text-base font-semibold max-w-2xl mx-auto leading-relaxed"
+            className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0"
           >
             ERP Solutions, provide you with powerful functionality and cutting-edge technology
           </motion.p>
@@ -87,7 +87,7 @@ export default function ERPSoftware() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-square sticky top-32 rounded-md overflow-hidden shadow-[0_50px_100px_-30px_rgba(0,0,0,0.15)] border border-slate-100 bg-white group"
+              className="relative aspect-square sticky top-32 rounded-md overflow-hidden shadow-[0_50px_100px_-30px_rgba(0,0,0,0.15)] border border-slate-100 bg-white group hidden lg:block"
             >
               <img
                 src="/images/erp_institutional_interface.png"
@@ -97,8 +97,8 @@ export default function ERPSoftware() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#FF6600]/10 to-transparent pointer-events-none" />
 
               <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-md rounded-md border border-white/20 shadow-xl text-center">
-                <h2 className="text-2xl font-display font-black text-[#FF6600] uppercase tracking-tight text-center">ERP Software</h2>
-                <p className="text-[10px] font-black text-slate-400 tracking-[0.3em] uppercase mt-1">Institutional Distribution Hub</p>
+                <h2 className="text-2xl font-display text-[#FF6600] capitalize tracking-tight text-center">ERP Software</h2>
+                <p className="text-[10px] font-black text-slate-400 tracking-[0.3em] capitalize mt-1">Institutional Distribution Hub</p>
               </div>
             </motion.div>
 
@@ -116,7 +116,7 @@ export default function ERPSoftware() {
                   <span className="text-[11px] lg:text-[12px] font-black uppercase tracking-[0.4em] text-[#FF6600]">Technical Overview</span>
                 </div>
 
-                <h2 className="text-3xl lg:text-4xl font-display font-extrabold tracking-tight uppercase leading-[1.1] text-slate-950">
+                <h2 className="text-3xl lg:text-4xl font-display font-bold tracking-widest uppercase leading-[1.1] text-slate-950">
                   ERP <span className="text-[#FF6600]">Software.</span>
                 </h2>
               </div>
@@ -136,7 +136,7 @@ export default function ERPSoftware() {
                       0{i + 1}
                     </div>
                     <div className="space-y-2 pt-1.5 flex-1">
-                      <p className="text-base lg:text-lg font-semibold leading-relaxed text-slate-700 italic group-hover:text-slate-900 transition-colors">
+                      <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-700  group-hover:text-slate-900 transition-colors">
                         {text}
                       </p>
                       <div className="w-8 h-[1px] bg-slate-100 group-hover:w-full group-hover:bg-orange-100 transition-all duration-700" />

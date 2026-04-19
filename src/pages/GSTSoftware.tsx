@@ -18,7 +18,7 @@ export default function GSTSoftware() {
     <div className="bg-white min-h-screen font-secondary overflow-x-hidden text-slate-600">
 
       {/* Cinematic Hero Section - Synced Scale */}
-      <section className="relative min-h-[300px] lg:min-h-[380px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 pt-[80px]">
+      <section className="relative min-h-[300px] lg:min-h-[380px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 pt-[50px]">
         <div className="absolute inset-0 z-0">
           <ThreeNeuralStorm color="#FF6600" bgOpacity={0} />
           <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
@@ -28,7 +28,7 @@ export default function GSTSoftware() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl lg:text-5xl font-display font-extrabold text-slate-950 uppercase leading-[1.1] tracking-tight mb-4"
+            className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl mb-4"
           >
             <span className="text-slate-950">GST</span> <span className="text-[#FF6600]">SOFTWARE</span>
           </motion.h1>
@@ -37,7 +37,7 @@ export default function GSTSoftware() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] max-w-3xl mx-auto leading-relaxed border-t border-orange-100 pt-5"
+            className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0 capitalize tracking-wider border-t border-orange-100 pt-5"
           >
             Goods & Services Tax can impact accounting and invoicing processes across industries for each leased Accountants and Businesses.
           </motion.p>
@@ -52,18 +52,18 @@ export default function GSTSoftware() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-8 space-y-8">
               <div className="space-y-6">
-                <h2 className="text-xl lg:text-3xl font-display font-extrabold uppercase tracking-tight leading-tight">
+                <h2 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-widest uppercase text-slate-950 leading-tight">
                   <span className="text-slate-950">GST</span> <span className="text-[#FF6600]">SOFTWARE</span>
                 </h2>
 
-                <div className="space-y-6 text-base lg:text-lg font-semibold text-slate-500 leading-relaxed border-l-4 border-orange-100 pl-8 italic">
+                <div className="space-y-6 text-sm lg:text-base font-semibold text-slate-500 leading-relaxed border-l-4 border-orange-100 pl-8 tracking-wide">
                   <p>
                     Goods & Services Tax can impact accounting and invoicing processes across industries for each leased Accountants and Businesses. once July 1, businesses and accountants can need to adopt software package and ERPs that area unit capable of managing taxation, invoicing & accounting as per the new tax regime. webultrasolution being a pioneer within the business can assist you perceive the technical aspects of the implementation of products and Services Tax, the impact on ERP systems, and what you wish to try and do to be tax compliant during this section.
                   </p>
-                  <p className="not-italic text-slate-600 border-t border-slate-50 pt-6">
+                  <p className="text-slate-600 border-t border-slate-50 pt-6">
                     Many HM professionals are choosing a GSTS to handle all their HM activities electronically. Having a great GSTS has numerous benefits. In the end, productively levels tend to increase as a result of choosing the right GSTS.
                   </p>
-                  <p className="text-sm lg:text-base font-bold text-[#FF6600] uppercase tracking-widest bg-orange-50/50 p-4 rounded-md inline-block">
+                  <p className="text-sm lg:text-base font-bold text-[#FF6600] capitalize tracking-widest bg-orange-50/50 p-4 rounded-md inline-block">
                     From first July, 2017 product and Services Tax can replace Central and State level indirect taxes like VAT, Service tax, Excise etc.
                   </p>
                 </div>
@@ -84,10 +84,10 @@ export default function GSTSoftware() {
                     <div className="space-y-4">
                       {technicalSpecs.map((spec, i) => (
                         <div key={i} className="flex flex-col gap-1.5 pb-4 border-b border-white last:border-0 group/spec">
-                          <span className="text-[9px] font-bold uppercase text-[#FF6600] tracking-widest group-hover/spec:translate-x-1 transition-transform inline-block">
+                          <span className="text-[9px] lg:text-sm font-bold capitalize text-[#FF6600] tracking-widest group-hover/spec:translate-x-1 transition-transform inline-block">
                             {spec.label}
                           </span>
-                          <span className="text-[11px] font-black uppercase text-slate-900 leading-relaxed">
+                          <span className="text-[11px] lg:text-sm font-black tracking-widest capitalize text-slate-900 leading-relaxed">
                             {spec.value}
                           </span>
                         </div>
@@ -102,8 +102,8 @@ export default function GSTSoftware() {
                   <ShieldCheck size={20} />
                 </div>
                 <div className="space-y-0.5">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 font-display">Status</span>
-                  <p className="text-[10px] font-black uppercase text-slate-950">Active Compliance v5.2</p>
+                  <span className="text-[10px] font-black capitalize tracking-widest text-slate-400 font-display">Status</span>
+                  <p className="text-[10px] font-black capitalize tracking-widest text-slate-950">Active Compliance v5.2</p>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function GSTSoftware() {
           <div className="space-y-10 pt-10 border-t border-slate-50">
             <div className="flex items-center gap-4">
               <div className="w-12 h-[2px] bg-[#FF6600]" />
-              <h3 className="text-xl lg:text-2xl font-display font-extrabold uppercase tracking-tight text-slate-950">
+              <h3 className="text-xl lg:text-2xl font-display font-bold uppercase tracking-widest text-slate-950">
                 <span className="text-slate-950">SYSTEM</span> <span className="text-[#FF6600]">VISUALS</span>
               </h3>
             </div>

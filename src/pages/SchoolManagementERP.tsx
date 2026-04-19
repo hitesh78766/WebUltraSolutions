@@ -97,22 +97,13 @@ export default function SchoolManagementERP() {
   }, []);
 
   return (
-    <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-hidden">
+    <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-hidden">
       {/* PEHRA HERO: CINEMATIC & COMPACT */}
       <div className="relative min-h-[220px] lg:min-h-[280px] bg-transparent flex items-center justify-center overflow-hidden border-b border-slate-100">
         <ThreeTechnicalLattice />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1 bg-slate-900 rounded shadow-2xl"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">System Protocol v11.8</span>
-          </motion.div>
-
-          <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+          <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
             {(() => {
               const title = "School Management System Erp.";
               return title.split(" ").map((word, wordIdx) => (
@@ -140,7 +131,7 @@ export default function SchoolManagementERP() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-slate-600 text-[11px] lg:text-xs font-semibold max-w-2xl mx-auto leading-relaxed uppercase tracking-[0.4em]"
+            className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed w-full  px-6 md:px-0 capitalize tracking-wide"
           >
             Fully functional and automated admission form for student enrollment.
           </motion.p>
@@ -155,7 +146,7 @@ export default function SchoolManagementERP() {
               {/* Category Header */}
               <div className="flex items-center gap-8 group">
                 <div className="h-[2px] w-20 bg-slate-100 group-hover:w-32 group-hover:bg-[#FF6600] transition-all duration-700" />
-                <h2 className="text-2xl lg:text-3xl font-display font-black text-slate-950 uppercase tracking-tight italic">
+                <h2 className="text-2xl lg:text-3xl font-display text-slate-950 uppercase tracking-wide ">
                   {pillar.category.split(" ").map((w, wi) => (
                     <span key={wi} className={wi === 1 ? "text-[#FF6600]" : ""}>{w} </span>
                   ))}
@@ -179,7 +170,7 @@ export default function SchoolManagementERP() {
                     </span>
 
                     <div className="space-y-4 mt-2">
-                      <h3 className={`text-lg lg:text-xl font-display font-extrabold uppercase leading-none group-hover:translate-x-2 transition-transform duration-500 ${(Math.floor(mi / 2) + (mi % 2)) % 2 === 0 ? "text-slate-950" : "text-[#FF6600]"}`}>
+                      <h3 className={`text-base lg:text-xl font-display font-bold capitalize leading-none group-hover:translate-x-2 transition-transform duration-500 ${(Math.floor(mi / 2) + (mi % 2)) % 2 === 0 ? "text-slate-950" : "text-[#FF6600]"}`}>
                         <span className="text-slate-950">{mod.title.split(" ")[0]} </span>
                         {mod.title.split(" ").slice(1).join(" ")}
                       </h3>
@@ -190,7 +181,7 @@ export default function SchoolManagementERP() {
                         {mod.bullets.map((b, bi) => (
                           <li key={bi} className="flex items-center gap-2">
                             <div className="w-1 h-1 rounded-full bg-[#FF6600]" />
-                            <span className="text-[10px] lg:text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">{b}</span>
+                            <span className="text-[10px] lg:text-[11px] font-black capitalize font-semibold tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">{b}</span>
                           </li>
                         ))}
                       </ul>

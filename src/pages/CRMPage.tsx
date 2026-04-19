@@ -76,7 +76,7 @@ export default function CRMPage() {
   }, []);
 
   return (
-    <div className="pt-[80px] bg-white min-h-screen font-secondary">
+    <div className="pt-[50px] bg-white min-h-screen font-secondary">
       {/* CINEMATIC FULL-BLEED HEADER */}
       <div className="relative min-h-[280px] lg:min-h-[400px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
         <ThreeNeuralStorm />
@@ -87,10 +87,10 @@ export default function CRMPage() {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2 py-1 sm:px-4 sm:py-1.5 bg-[#FF6600] rounded-md shadow-lg mt-3"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Advanced Client Intelligence</span>
+              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white animate-pulse" />
+              <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-white">Advanced Client Intelligence</span>
             </motion.div>
 
             <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-5xl mx-auto">
@@ -119,7 +119,7 @@ export default function CRMPage() {
               { label: 'Enterprise Hosting', icon: Sparkles },
               { label: 'AI Analytics', icon: Monitor }
             ].map((feature, i) => (
-              <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
+              <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group mb-3">
                 <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                   <feature.icon size={14} />
                 </div>
@@ -135,7 +135,7 @@ export default function CRMPage() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
-              <h2 className="text-xl lg:text-2xl font-display font-extrabold text-slate-900 uppercase tracking-tight">
+              <h2 className="text-xl lg:text-3xl font-display font-bold  text-slate-900 uppercase tracking-wider">
                 Strategic <span className="text-[#FF6600]">Solutions.</span>
               </h2>
               <ul className="space-y-4">
@@ -147,8 +147,8 @@ export default function CRMPage() {
                     transition={{ delay: i * 0.1 }}
                     className="flex gap-4 items-start group"
                   >
-                    <div className="mt-1.5 w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0 group-hover:scale-125 transition-transform" />
-                    <p className="text-sm font-semibold text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
+                    <div className="mt-3 w-2 h-2 rounded-full bg-[#FF6600] flex-shrink-0 group-hover:scale-125 transition-transform" />
+                    <p className="text-sm lg:text-base font-semibold text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
                       {bullet}
                     </p>
                   </motion.li>
@@ -218,7 +218,7 @@ export default function CRMPage() {
                           <div className="w-6 h-[2px] bg-[#FF6600]" />
                           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                         </div>
-                        <h3 className="text-xl lg:text-2xl font-display font-extrabold tracking-tight uppercase leading-[1.1] text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
+                        <h3 className="text-xl lg:text-2xl font-display font-bold tracking-tight capitalize leading-[1.1] text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
                           {pillar.title}
                         </h3>
                       </div>
@@ -240,19 +240,19 @@ export default function CRMPage() {
             className="py-6 border-y border-slate-100 flex flex-col items-center gap-5"
           >
             <div className="text-center space-y-2">
-              <h3 className="text-xl lg:text-2xl font-display font-extrabold uppercase text-slate-900">Access Your <span className="text-[#FF6600]">Ecosystem.</span></h3>
-              <p className="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Select your portal for secure verification</p>
+              <h3 className="text-xl lg:text-2xl font-display font-bold capitalize text-slate-900">Access Your <span className="text-[#FF6600]">Ecosystem.</span></h3>
+              <p className="text-slate-500 font-bold capitalize text-[10px] lg:text-sm tracking-widest">Select your portal for secure verification</p>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
               <button 
                 onClick={() => setActiveTab('admin')}
-                className={`px-8 py-3 font-bold rounded-md shadow-xl transition-all uppercase text-xs tracking-widest ${activeTab === 'admin' ? 'bg-[#FF6600] text-white shadow-orange-500/20 -translate-y-1' : 'bg-slate-100 text-slate-400 hover:text-slate-600'}`}
+                className={`px-6 py-2 sm:px-8 sm:py-3 font-bold rounded-md shadow-xl transition-all uppercase text-xs tracking-widest ${activeTab === 'admin' ? 'bg-[#FF6600] text-white shadow-orange-500/20 -translate-y-1' : 'bg-slate-100 text-slate-400 hover:text-slate-600'}`}
               >
                 Administrators login
               </button>
               <button 
                 onClick={() => setActiveTab('customer')}
-                className={`px-8 py-3 font-bold rounded-md shadow-xl transition-all uppercase text-xs tracking-widest ${activeTab === 'customer' ? 'bg-[#FF6600] text-white shadow-orange-500/20 -translate-y-1' : 'bg-slate-100 text-slate-400 hover:text-slate-600'}`}
+                className={`px-6 py-2 sm:px-8 sm:py-3 font-bold rounded-md shadow-xl transition-all uppercase text-xs tracking-widest ${activeTab === 'customer' ? 'bg-[#FF6600] text-white shadow-orange-500/20 -translate-y-1' : 'bg-slate-100 text-slate-400 hover:text-slate-600'}`}
               >
                 Customers login
               </button>
@@ -288,43 +288,6 @@ export default function CRMPage() {
             ))}
           </div>
 
-          {/* CONCLUSION BLOCK */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative py-10 lg:py-14 px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
-
-            <div className="relative z-10 max-w-4xl mx-auto space-y-4">
-              <div className="w-12 h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600] shadow-xl group-hover:scale-110 transition-transform duration-700">
-                <Zap size={24} />
-              </div>
-
-              <div className="relative">
-                <h3 className="text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic">
-                  "We specialize in creative and innovative approaches to CRM deployment and development. Our primary goal is to integrate new features that pave the way for the success of your online business."
-                </h3>
-              </div>
-
-              <div className="flex items-center justify-center gap-8 pt-4">
-                <div className="h-[1px] w-24 bg-white/10" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Elite Standards</span>
-                <div className="h-[1px] w-24 bg-white/10" />
-              </div>
-            </div>
-
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.1, 0.15, 0.1]
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#FF6600] rounded-full blur-[100px]"
-            />
-          </motion.div>
         </div>
       </section>
     </div>

@@ -45,16 +45,7 @@ export default function EcommerceSoftware() {
         <ThreeSolutionBackground />
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-5">
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Enterprise Infrastructure</span>
-          </motion.div>
-
-          <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+          <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
             {(() => {
               const title = "INSTITUTIONAL E-COMMERCE DEVELOPMENT SOLUTIONS.";
               return title.split(" ").map((word, wordIdx) => (
@@ -88,7 +79,7 @@ export default function EcommerceSoftware() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="text-slate-600 text-xs lg:text-sm font-semibold max-w-xl mx-auto leading-relaxed"
+            className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed w-full px-6 md:px-0"
           >
             eCommerce is growing globally for both B2B and B2C market segments. High-status retail architecture for global enterprise leaders.
           </motion.p>
@@ -110,7 +101,7 @@ export default function EcommerceSoftware() {
               <img 
                 src="/images/ecommerce-dev.png" 
                 alt="E-commerce Illustration" 
-                className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-110"
+                className="w-full h-full md:h-75 object-cover transition-transform duration-[3000ms] group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 via-transparent to-white/10" />
               
@@ -132,19 +123,19 @@ export default function EcommerceSoftware() {
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-[2px] bg-[#FF6600]" />
-                  <span className="text-[11px] lg:text-[12px] font-black uppercase tracking-[0.4em] text-[#FF6600]">Strategic Partner</span>
+                  <span className="text-[11px] lg:text-[12px] font-black capitalize tracking-[0.4em] text-[#FF6600]">Strategic Partner</span>
                 </div>
                 
-                <h3 className="text-3xl lg:text-4xl font-display font-extrabold tracking-tight uppercase leading-[1.1] text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
+                <h3 className="text-3xl lg:text-4xl font-display font-bold tracking-tight uppercase leading-[1.1] text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
                    Powering <span className="text-[#FF6600]">Retail Dominance.</span>
                 </h3>
 
-                <p className="text-lg lg:text-xl font-semibold leading-relaxed text-slate-500">
+                <p className="text-sm lg:text-base font-semibold capitalize tracking-wider leading-relaxed text-slate-500">
                   weultrasolution provides eCommerce development solutions to the clients with the best software and development plans for their unique requirements. We have a dedicated team of expert consultants, developers and project managers to ensure that our customers not only receive a successful development process but also a collaborative strategic partner.
                 </p>
 
                 <div className="p-8 bg-slate-50 border-l-4 border-[#FF6600] rounded-r-md">
-                   <p className="text-base lg:text-lg font-bold text-slate-900 italic leading-relaxed">
+                   <p className="text-sm lg:text-base font-bold text-slate-900 leading-relaxed tracking-wide">
                      "We turn complex selling ideas of merchants worldwide into simple e-commerce models that make shopping a fun for customers."
                    </p>
                 </div>
@@ -161,12 +152,12 @@ export default function EcommerceSoftware() {
             >
               <div className="flex items-center gap-3">
                  <div className="w-2 h-2 rounded-full bg-slate-900" />
-                 <h4 className="text-xs lg:text-sm font-black text-slate-900 uppercase tracking-[0.4em]">Infrastructure</h4>
+                 <h4 className="text-xs lg:text-base font-black text-slate-900 capitalize tracking-widest">Infrastructure</h4>
               </div>
-              <p className="text-lg lg:text-xl font-semibold leading-relaxed text-slate-500">
+              <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-500">
                 Our efforts are directed towards assisting our clients in creating a dominant web presence backed with robust software. Websites that we develop are the right blend of creativity, modern design, latest web standards, secure codes and Search Engine friendly web-pages.
               </p>
-              <p className="text-lg lg:text-xl font-semibold leading-relaxed text-slate-500">
+              <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-500">
                 E-commerce is the latest trend for selling your products and services across the web. With the availability of online payment gateway, online integration with shipping companies like UPS etc., inventory management, online support, global reach. Therefore setting up an e-commerce website is the most convenient and most cost effective way of buying/selling products/services.
               </p>
             </motion.div>
@@ -180,12 +171,12 @@ export default function EcommerceSoftware() {
             >
               <div className="flex items-center gap-3">
                  <div className="w-2 h-2 rounded-full bg-[#FF6600]" />
-                 <h4 className="text-xs lg:text-sm font-black text-[#FF6600] uppercase tracking-[0.4em]">Global Scale</h4>
+                 <h4 className="text-xs lg:text-sm font-black text-[#FF6600] capitalize tracking-widest">Global Scale</h4>
               </div>
-              <p className="text-lg lg:text-xl font-semibold leading-relaxed text-slate-500">
+              <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-500">
                 We provide high-quality E-commerce development services to our offshore clients in UK, USA, Australia, Sweden, Canada, Germany, France, and Europe and all over the world. E-commerce changes the trend of business and a give a magical move to the shopping. Earlier nobody can think of about e-commerce or web shopping .now trends are changing people want everything at their doorstep and e-commerce made it possible. 
               </p>
-              <p className="text-lg lg:text-xl font-semibold leading-relaxed text-slate-500">
+              <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-500">
                 In today's environment, everyone is so busy that they want products to be delivered to them just by making a few clicks. E-commerce change the market scenario .now everything is available on the web from buying shoes to paying a bill. We provide the best services to our clients so that they can achieve maximum profit.
               </p>
             </motion.div>
@@ -207,7 +198,7 @@ export default function EcommerceSoftware() {
                    </div>
                 </div>
                 
-                <h2 className="text-2xl lg:text-3xl font-display font-black text-slate-900 leading-tight uppercase tracking-tight">
+                <h2 className="text-2xl lg:text-3xl font-display text-slate-900 leading-widest uppercase tracking-tight">
                   Precision <span className="text-[#FF6600]">E-Commerce Engineering.</span>
                 </h2>
                 
@@ -235,8 +226,8 @@ export default function EcommerceSoftware() {
                        </div>
 
                        <div className="space-y-2">
-                          <h4 className="text-[8px] font-black text-slate-400 tracking-[0.4em] uppercase">Knowledge Core</h4>
-                          <span className="block text-[11px] lg:text-xs font-black uppercase tracking-[0.15em] text-slate-900 group-hover:text-orange-600 transition-colors leading-none">{item}</span>
+                          <h4 className="text-[10px] lg:text-xs font-black text-slate-400 tracking-widest capitalize">Knowledge Core</h4>
+                          <span className="block text-[11px] lg:text-xs font-black capitalize tracking-widest text-slate-900 group-hover:text-orange-600 transition-colors leading-none">{item}</span>
                        </div>
 
                        <div className="w-6 h-0.5 bg-slate-100 group-hover:w-12 group-hover:bg-[#FF6600] transition-all duration-700" />
@@ -257,7 +248,7 @@ export default function EcommerceSoftware() {
                 {/* Active Status Indicator */}
                 <div className="absolute top-4 right-4 flex items-center gap-1.5">
                    <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
-                   <span className="text-[8px] font-black text-slate-300 uppercase tracking-tighter">Verified</span>
+                   <span className="text-[8px] font-black text-orange-400 capitalize tracking-widest">Verified</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-8">
@@ -278,7 +269,7 @@ export default function EcommerceSoftware() {
                       </div>
                       
                       <div className="inline-block relative">
-                         <h4 className="text-xs lg:text-sm font-black text-slate-900 uppercase tracking-widest leading-none group-hover:text-[#FF6600] transition-colors">
+                         <h4 className="text-xs lg:text-sm font-black text-slate-900 capitalize tracking-widest leading-none group-hover:text-[#FF6600] transition-colors">
                             {feat.name}
                          </h4>
                          {/* Persistent Underline Shadow Accent */}

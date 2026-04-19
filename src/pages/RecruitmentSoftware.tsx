@@ -33,7 +33,7 @@ export default function RecruitmentSoftware() {
   const modularSections = [
     {
       id: "MODULE_01",
-      title: "MANAGE USER",
+      title: "Manage Users",
       color: "border-orange-500",
       icon: Users,
       features: [
@@ -46,7 +46,7 @@ export default function RecruitmentSoftware() {
     },
     {
       id: "MODULE_02",
-      title: "MANAGE JOBS",
+      title: "Manage Jobs",
       color: "border-blue-500",
       icon: Briefcase,
       features: [
@@ -58,7 +58,7 @@ export default function RecruitmentSoftware() {
     },
     {
       id: "MODULE_03",
-      title: "EMPLOYER JOBS",
+      title: "Employer Jobs",
       color: "border-emerald-500",
       icon: Building2,
       features: [
@@ -68,7 +68,7 @@ export default function RecruitmentSoftware() {
     },
     {
       id: "MODULE_04",
-      title: "COLLABORATION",
+      title: "Collaboration",
       color: "border-purple-500",
       icon: Share2,
       features: [
@@ -79,7 +79,7 @@ export default function RecruitmentSoftware() {
     },
     {
       id: "MODULE_05",
-      title: "TALENT SEARCH",
+      title: "Talent Search",
       color: "border-cyan-500",
       icon: Search,
       features: [
@@ -89,7 +89,7 @@ export default function RecruitmentSoftware() {
     },
     {
       id: "MODULE_06",
-      title: "MY ACCOUNT",
+      title: "My Account",
       color: "border-rose-500",
       icon: UserCircle,
       features: [
@@ -98,39 +98,24 @@ export default function RecruitmentSoftware() {
         { label: "Security Vault", desc: "Managed password and access credential updates." }
       ]
     },
-    {
-      id: "MODULE_07",
-      title: "DASHBOARD",
-      color: "border-slate-500",
-      icon: LayoutDashboard,
-      features: [
-        { label: "Command Status", desc: "Real-time tracking of profile interactions and views." }
-      ]
-    }
+
   ];
 
   return (
     <div className="bg-white min-h-screen font-secondary overflow-x-hidden text-slate-600">
 
       {/* COMPACT FLAGSHIP HERO - LIGHT THEME SYNC */}
-      <section className="relative min-h-[350px] lg:h-[420px] flex items-center justify-center overflow-hidden border-b border-slate-50 pt-[80px]">
+      <section className="relative min-h-[350px] lg:h-[420px] flex items-center justify-center overflow-hidden border-b border-slate-50 pt-[50px]">
         <div className="absolute inset-0 z-0">
           <ThreeNetworkGlobe />
           <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-5">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-600 rounded text-white shadow-lg"
-          >
-            <div className="w-1 h-1 rounded-full bg-white animate-pulse" />
-            <span className="text-[9px] font-black uppercase tracking-[0.3em]">Recruitment Core v5.1</span>
-          </motion.div>
+
 
           <div className="space-y-4">
-            <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-950 uppercase tracking-tighter leading-none">
+            <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
               RECRUITMENT <span className="text-orange-600">SOFTWARE</span>
             </h1>
 
@@ -138,7 +123,7 @@ export default function RecruitmentSoftware() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-[10px] lg:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] max-w-2xl mx-auto leading-relaxed"
+              className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0"
             >
               Delivering customized and tailor-made Mobile application Development services across the globe.
             </motion.p>
@@ -196,7 +181,7 @@ export default function RecruitmentSoftware() {
                       idx % 2 === 1 ? "text-orange-600/60" : "text-orange-600"
                     }`}>{section.id}</span>
                   </div>
-                  <h3 className={`text-xl font-display font-bold uppercase ${
+                  <h3 className={`text-xl font-display font-bold capitalize ${
                     idx % 2 === 1 ? "text-orange-600" : "text-slate-900 group-hover:text-orange-600"
                   } transition-colors`}>{section.title}</h3>
                 </div>
@@ -216,10 +201,10 @@ export default function RecruitmentSoftware() {
                       idx % 2 === 1 ? "border-orange-600 bg-orange-600" : "border-orange-600 group-hover/item:bg-orange-600"
                     }`} />
                     <div className="space-y-1">
-                      <h4 className={`text-[13px] font-bold uppercase tracking-tight transition-colors ${
+                      <h4 className={`text-[13px] lg:text-base font-bold capitalize tracking-tight transition-colors ${
                         idx % 2 === 1 ? "text-orange-600" : "text-slate-800 group-hover/item:text-slate-950"
                       }`}>{feat.label}</h4>
-                      <p className={`text-[11px] font-medium leading-relaxed uppercase ${
+                      <p className={`text-[11px] lg:text-sm font-medium leading-relaxed capitalize ${
                         idx % 2 === 1 ? "text-slate-800/80" : "text-slate-500"
                       }`}>{feat.desc}</p>
                     </div>
@@ -242,25 +227,6 @@ export default function RecruitmentSoftware() {
 
         </div>
       </section>
-
-      {/* MODULAR FOOTER STRIP */}
-      <div className="bg-white py-12 border-t border-slate-50 overflow-hidden">
-        <motion.div
-          initial={{ x: 0 }}
-          animate={{ x: "-50%" }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap gap-20 items-center opacity-30"
-        >
-          {[...Array(10)].map((_, i) => (
-            <div key={i} className="flex gap-20 items-center">
-              <span className="text-4xl lg:text-5xl font-display font-black text-slate-200 uppercase tracking-tighter italic">RECRUITMENT OPERATING SYSTEM</span>
-              <div className="w-4 h-4 rounded-full bg-orange-600" />
-              <span className="text-4xl lg:text-5xl font-display font-black text-slate-200 uppercase tracking-tighter italic">GLOBAL TALENT MATRIX</span>
-              <div className="w-4 h-4 rounded-full bg-orange-600" />
-            </div>
-          ))}
-        </motion.div>
-      </div>
 
     </div>
   );

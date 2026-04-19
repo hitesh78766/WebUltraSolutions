@@ -78,7 +78,7 @@ export default function EcommerceDevelopment() {
                      <span className="text-[10px] font-bold capitalize tracking-[0.2em] text-white">Market Ecosystem</span>
                   </motion.div>
 
-                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-2xl md:text-3xl lg:text-5xl px-4">
                      {(() => {
                         const title = "ECOMMERCE SOLUTIONS.";
                         const words = title.split(" ");
@@ -109,7 +109,7 @@ export default function EcommerceDevelopment() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed px-6 md:px-0"
+                     className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0"
                   >
                      Optimized digital commerce for high conversion. Engineering powerful transactional architectures that dominate the global marketplace with surgical precision.
                   </motion.p>

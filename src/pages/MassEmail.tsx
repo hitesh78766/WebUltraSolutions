@@ -51,7 +51,7 @@ export default function MassEmail() {
     <div className="bg-white min-h-screen font-secondary overflow-x-hidden text-slate-600">
 
       {/* 1:1 Flagship Hero Sync - Elite WebUltrasolutions Architecture */}
-      <section className="relative min-h-[400px] lg:h-[480px] flex items-center justify-center overflow-hidden border-b border-orange-100 pt-[80px]">
+      <section className="relative min-h-[380px] lg:h-[400px] flex items-center justify-center overflow-hidden border-b border-orange-100 pt-[80px]">
         <div className="absolute inset-0 z-0">
           <ThreeNeuralStorm color="#FF6600" bgOpacity={0} />
           <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
@@ -59,17 +59,8 @@ export default function MassEmail() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-6 lg:space-y-8">
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-6 py-2 bg-[#FF6600] rounded-full shadow-lg shadow-orange-100"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white">Project Protocol v4.2</span>
-          </motion.div>
-
           <div className="space-y-6">
-            <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-900 uppercase leading-[1] tracking-tighter">
+            <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
               {(() => {
                 const words = "PMS SOFTWARE ARCHITECTURE".split(" ");
                 return words.map((word, wordIdx) => (
@@ -97,32 +88,12 @@ export default function MassEmail() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="text-slate-600 text-[10px] lg:text-xs font-bold max-w-2xl mx-auto leading-relaxed uppercase tracking-widest"
+              className="font-system font-semibold text-slate-600 capitalize tracking-widest text-xs md:text-sm lg:text-base leading-relaxed w-full px-6 md:px-0"
             >
               Collaborate with your employees and customers on projects with high-status orchestration.
             </motion.p>
           </div>
 
-          {/* Bottom Badge Stack */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="flex flex-wrap justify-center gap-3 lg:gap-5 pt-2"
-          >
-            {[
-              { label: 'ISOMETRIC COLLABORATION', icon: Globe },
-              { label: 'MILESTONE PRECISION', icon: Sparkles },
-              { label: 'DATA DRIVEN EXECUTION', icon: Monitor }
-            ].map((feature, i) => (
-              <div key={i} className="px-5 py-2.5 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-3 transition-all hover:shadow-2xl hover:-translate-y-1 group cursor-default">
-                <div className="w-7 h-7 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                  <feature.icon size={13} />
-                </div>
-                <span className="text-[10px] font-black text-slate-700 uppercase tracking-[0.1em]">{feature.label}</span>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
@@ -133,24 +104,24 @@ export default function MassEmail() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h2 className="text-3xl lg:text-4xl font-display font-black uppercase tracking-tight leading-tight">
+                <h2 className="text-3xl lg:text-4xl font-display uppercase tracking-widest leading-tight">
                   <span className="text-slate-950">PMS</span> <span className="text-[#FF6600]">SOFTWARE</span>
                 </h2>
                 <div className="w-20 h-1 bg-[#FF6600]" />
               </div>
 
-              <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed italic border-l-4 border-[#FF6600] pl-6 py-2">
+              <p className="text-sm lg:text-base font-semibold text-slate-500 leading-relaxed tracing-wide border-l-4 border-[#FF6600] pl-6 py-2">
                 Manage project scope; create activities, milestones or even sub-projects to get things done in time. Track and bill time using the timesheets app and get online approvals from customers or managers.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-slate-50 rounded border border-slate-100 group hover:border-[#FF6600] transition-colors">
-                  <h4 className="text-[10px] font-black text-[#FF6600] uppercase tracking-widest mb-1">Scale</h4>
-                  <p className="text-sm font-bold text-slate-900 uppercase">Unlimited Teams</p>
+                  <h4 className="text-[10px] font-black text-[#FF6600] capitalize tracking-widest mb-1">Scale</h4>
+                  <p className="text-[10px] lg:text-sm font-bold text-slate-900 capitalize">Unlimited Teams</p>
                 </div>
                 <div className="p-4 bg-slate-50 rounded border border-slate-100 group hover:border-[#FF6600] transition-colors">
-                  <h4 className="text-[10px] font-black text-[#FF6600] uppercase tracking-widest mb-1">Precision</h4>
-                  <p className="text-sm font-bold text-slate-900 uppercase">Real-time Analytics</p>
+                  <h4 className="text-[10px] font-black text-[#FF6600] capitalize tracking-widest mb-1">Precision</h4>
+                  <p className="text-[10px] lg:text-sm font-bold text-slate-900 capitalize">Real-time Analytics</p>
                 </div>
               </div>
             </div>
@@ -161,7 +132,7 @@ export default function MassEmail() {
                 <img
                   src="/pms_cycle.png"
                   alt="PMS Lifecycle Diagram"
-                  className="w-full h-auto rounded-xl transform transition-transform duration-1000 group-hover:scale-[1.05]"
+                  className="w-full h-auto md:h-80 rounded-xl transform transition-transform duration-1000 group-hover:scale-[1.05]"
                 />
                 <div className="absolute bottom-6 right-6">
                   <div className="bg-slate-900/90 backdrop-blur-md text-white px-4 py-2 rounded text-[10px] font-black uppercase tracking-[0.2em] border border-white/10">
@@ -178,13 +149,13 @@ export default function MassEmail() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-[2px] bg-[#FF6600]" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FF6600]">Feature Protocol</span>
+                  <span className="text-[10px] font-black capitalize tracking-widest text-[#FF6600]">Feature Protocol</span>
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-display font-black uppercase tracking-tight">
+                <h3 className="text-2xl lg:text-3xl font-display uppercase tracking-widest">
                   <span className="text-slate-950">KEY SYSTEM</span> <span className="text-[#FF6600]">CAPABILITIES</span>
                 </h3>
               </div>
-              <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest max-w-sm">
+              <p className="text-[11px] font-bold text-slate-400 capitalize tracking-widest max-w-sm">
                 Advanced project management infrastructure engineered for high-density enterprise output.
               </p>
             </div>
@@ -197,10 +168,10 @@ export default function MassEmail() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-300">Module {i < 9 ? `0${i + 1}` : i + 1}</span>
+                      <span className="text-[9px] font-black capitalize tracking-widest text-orange-400">Module {i < 9 ? `0${i + 1}` : i + 1}</span>
                       <div className="w-1 h-1 rounded-full bg-slate-200 group-hover:bg-[#FF6600] transition-colors" />
                     </div>
-                    <span className="text-[12px] font-bold uppercase tracking-tight text-slate-600 group-hover:text-slate-950 leading-relaxed transition-colors">
+                    <span className="text-[12px] font-bold capitalize tracking-widest text-slate-600 group-hover:text-slate-950 leading-relaxed transition-colors">
                       {feat.text}
                     </span>
                   </div>
@@ -225,8 +196,8 @@ export default function MassEmail() {
                   <div className="w-12 h-12 shrink-0 rounded-xl bg-[#FF6600] flex items-center justify-center shadow-2xl shadow-orange-500/40 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-700">
                     <Rocket size={24} className="text-white" />
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-display font-black uppercase tracking-tight text-white italic leading-tight">
-                    DO MORE WITH <span className="text-[#FF6600] not-italic">SWM</span>
+                  <h3 className="text-xl lg:text-2xl font-display font-black capitlize tracking-tight text-white italic leading-tight">
+                    Do More With <span className="text-[#FF6600] not-italic">SWM</span>
                   </h3>
                 </div>
 
@@ -240,8 +211,8 @@ export default function MassEmail() {
                         <item.icon size={16} />
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="text-[12px] font-black uppercase tracking-widest text-white">{item.title}</h4>
-                        <p className="text-[10px] font-bold text-slate-500 group-hover/item:text-slate-400 leading-tight transition-colors">{item.desc}</p>
+                        <h4 className="text-[12px] font-black capitalize tracking-widest text-white">{item.title}</h4>
+                        <p className="text-[10px] font-bold text-slate-500 group-hover/item:text-slate-400 leading-widest transition-colors">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -254,7 +225,7 @@ export default function MassEmail() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-[#FF6600] animate-pulse" />
-                      <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">Live Status Monitor</span>
+                      <span className="text-[10px] font-black capitalize tracking-[0.4em] text-white/60">Live Status Monitor</span>
                     </div>
                     <div className="h-1 w-12 bg-white/10 rounded-full" />
                   </div>
@@ -266,7 +237,7 @@ export default function MassEmail() {
                       { label: "Core Utilization", val: "70%", color: "from-emerald-500 to-green-400" }
                     ].map((row, i) => (
                       <div key={i} className="space-y-2">
-                        <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-widest text-white/40">
+                        <div className="flex justify-between items-center text-[9px] font-black capitalize tracking-widest text-white/40">
                           <span>{row.label}</span>
                           <span>{row.val}</span>
                         </div>

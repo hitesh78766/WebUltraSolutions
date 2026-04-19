@@ -30,28 +30,28 @@ gsap.registerPlugin(ScrollTrigger);
 const erpModules = [
   {
     id: "ERP_ARCH_01",
-    title: "INTUITIVE CONFIGURATION",
+    title: "Intuitive Configuration",
     icon: Settings2,
     desc: "Manage student and staff information with automated integrity checks, ensuring high-status data reporting and swift access protocols.",
     bullets: ["Data Integrity", "Swift Access"]
   },
   {
     id: "ERP_SYNC_02",
-    title: "CROSS-MODULE SYNC",
+    title: "Cross-Module Sync",
     icon: Database,
     desc: "Stored data is shared across all institutional modules and programs, providing a unified backbone for school-wide orchestration.",
     bullets: ["Dynamic Sharing", "Program Integration"]
   },
   {
     id: "ERP_TRACK_03",
-    title: "OPERATIONAL TRACKING",
+    title: "Operational Tracking",
     icon: LayoutDashboard,
     desc: "Advanced tracking of student classes, real-time attendance, and automated leave records for both academic staff and student bodies.",
     bullets: ["Attendance Engine", "Leave Protocols"]
   },
   {
     id: "ERP_COMMS_04",
-    title: "STREAMLINED COMMUNICATION",
+    title: "Streamlined Communication",
     icon: Mail,
     desc: "Direct capability to broadcast emails and high-priority messages to any student or staff member within the secure system environment.",
     bullets: ["Broadcast Alerts", "User-to-User Sync"]
@@ -77,23 +77,14 @@ export default function EnterpriseERP() {
     <div className="bg-white min-h-screen font-secondary overflow-x-hidden text-slate-600">
 
       {/* UNIQUE TACTICAL HUB HERO */}
-      <section className="relative min-h-[400px] lg:min-h-[450px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 pt-[80px]">
+      <section className="relative min-h-[380px] lg:min-h-[400px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 pt-[50px]">
         <div className="absolute inset-0 z-0 opacity-40">
           <ThreeAppArchitecture />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Integrated Resource Planning v12.1</span>
-          </motion.div>
-
           <div className="space-y-4">
-            <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+            <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-wide leading-[1.1] uppercase max-w-4xl mx-auto">
               ERP <span className="text-orange-600">(ENTERPRISE</span> RESOURCE)
             </h1>
 
@@ -107,20 +98,6 @@ export default function EnterpriseERP() {
             </motion.p>
           </div>
 
-          <div className="flex justify-center gap-6 pt-2">
-            {[
-              { label: "Matrix Sync", icon: Zap },
-              { label: "Core Security", icon: ShieldCheck },
-              { label: "Global Node", icon: Globe }
-            ].map((item, i) => (
-              <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                <div className="w-6 h-6 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                  <item.icon size={14} />
-                </div>
-                <span className="text-[9px] font-semibold text-slate-700 uppercase tracking-widest">{item.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -132,10 +109,10 @@ export default function EnterpriseERP() {
           <div className="lg:w-1/3 space-y-8 order-2 lg:order-1">
             <div className="space-y-3">
               <div className="h-[2px] w-16 bg-orange-600" />
-              <h2 className="text-2xl lg:text-4xl font-display font-extrabold text-slate-900 uppercase tracking-tight leading-[1.1] italic">
-                OPERATIONAL <span className="text-orange-600 text-5xl block mt-1">INTEGRITY.</span>
+              <h2 className="text-2xl lg:text-4xl font-display font-bold text-slate-900 capitalize tracking-wide leading-[1.1] ">
+                Operational <span className="text-orange-600 block mt-1">Integrity.</span>
               </h2>
-              <p className="text-slate-600 text-xs lg:text-sm font-semibold leading-relaxed pr-6">
+              <p className="text-slate-600 text-sm lg:text-base font-semibold leading-relaxed pr-6">
                 We utilize an intuitive configuration to manage student and staff information, ensuring absolute data integrity and accurate reporting protocols.
               </p>
             </div>
@@ -145,15 +122,15 @@ export default function EnterpriseERP() {
                 <div key={i} className="group p-6 rounded-md border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl transition-all duration-700 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/5 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform duration-700" />
                   <mod.icon size={20} className="text-orange-600 mb-4" />
-                  <h3 className="text-lg font-display font-black text-slate-950 uppercase mb-2 tracking-tighter italic">{mod.title}</h3>
-                  <p className="text-[11px] font-bold text-slate-400 uppercase leading-relaxed">{mod.desc}</p>
+                  <h3 className="text-lg lg:text-xl font-display  text-slate-950 capitalize mb-2 tracking-wider ">{mod.title}</h3>
+                  <p className="text-sm lg:text-base font-bold text-slate-400 capitalize leading-relaxed">{mod.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Central Module Visualization or Identity Hub */}
-          <div className="lg:w-1/3 flex justify-center order-1 lg:order-2">
+          <div className="lg:w-1/3 flex justify-center order-1 lg:order-2 hidden lg:block">
             <div className="relative w-full aspect-square max-w-[350px]">
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-orange-200 animate-[spin_60s_linear_infinite]" />
               <div className="absolute inset-8 rounded-full border-2 border-slate-100" />
@@ -186,8 +163,8 @@ export default function EnterpriseERP() {
                 <div key={i} className="group p-6 rounded-md border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl transition-all duration-700 relative overflow-hidden">
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-slate-500/5 rounded-full -ml-12 -mb-12 group-hover:scale-150 transition-transform duration-700" />
                   <mod.icon size={20} className="text-orange-600 mb-4" />
-                  <h3 className="text-lg font-display font-black text-slate-950 uppercase mb-2 tracking-tighter italic">{mod.title}</h3>
-                  <p className="text-[11px] font-bold text-slate-400 uppercase leading-relaxed">{mod.desc}</p>
+                  <h3 className="text-lg lg:text-xl font-display  text-slate-950 capitalize mb-2 tracking-wider ">{mod.title}</h3>
+                  <p className="text-sm lg:text-base font-bold text-slate-400 capitalize leading-relaxed">{mod.desc}</p>
                 </div>
               ))}
             </div>
@@ -216,10 +193,10 @@ export default function EnterpriseERP() {
           <div className="flex flex-col lg:flex-row justify-between items-end gap-6">
             <div className="space-y-3">
               <div className="h-[2px] w-16 bg-orange-600" />
-              <h2 className="text-3xl lg:text-4xl font-display font-black text-slate-950 uppercase tracking-tighter leading-none italic">
-                HOW TO <span className="text-orange-600">USE ERP.</span>
+              <h2 className="text-2xl lg:text-4xl font-display text-slate-950 capitalize tracking-wide leading-none ">
+                How to <span className="text-orange-600">use ERP.</span>
               </h2>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Visualizing institutional management protocols through high-fidelity interfaces.</p>
+              <p className="text-xs lg:text-sm font-black text-slate-400 capitalize tracking-wide">Visualizing institutional management protocols through high-fidelity interfaces.</p>
             </div>
           </div>
 
@@ -235,7 +212,7 @@ export default function EnterpriseERP() {
                 <img
                   src={src}
                   alt={`ERP Interface ${i + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full md:h-60 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-slate-900/5 transition-opacity group-hover:opacity-0" />
                 <div className="absolute top-4 left-4 z-10">

@@ -72,7 +72,7 @@ export default function InventoryManagement() {
   ];
 
   return (
-    <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
+    <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
 
       {/* COMPACT SPLIT HERO */}
       <div className="relative min-h-[300px] lg:min-h-[380px] bg-white overflow-hidden flex items-center border-b border-orange-100/50">
@@ -92,7 +92,7 @@ export default function InventoryManagement() {
               <span className="text-[9px] font-black uppercase tracking-[0.2em] text-white">Logistics Matrix v3.0</span>
             </motion.div>
 
-            <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-950 leading-[1.1] uppercase tracking-tight">
+            <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
               Orchestrating <br />
               <span className="text-[#FF6600]">Supply</span> Chains.
             </h1>
@@ -101,7 +101,7 @@ export default function InventoryManagement() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-sm lg:text-base text-slate-500 font-bold max-w-lg uppercase tracking-wider leading-relaxed"
+              className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0"
             >
               Inventory Management Software essentially powers your sales engine with real-time liquidity and predictive fulfillment.
             </motion.p>
@@ -134,8 +134,8 @@ export default function InventoryManagement() {
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center space-y-4 mb-16">
-            <span className="text-[#FF6600] text-[11px] font-black uppercase tracking-[0.5em]">The Infrastructure</span>
-            <h2 className="text-2xl lg:text-4xl font-display font-black text-slate-900 uppercase tracking-tight">Supply Chain <span className="text-[#FF6600]">Evolution</span></h2>
+            <span className="text-[#FF6600] text-[11px] uppercase tracking-[0.5em]">The Infrastructure</span>
+            <h2 className="text-2xl lg:text-4xl font-display  text-slate-900 uppercase tracking-tight">Supply Chain <span className="text-[#FF6600]">Evolution</span></h2>
           </div>
 
           <div className="relative">
@@ -167,19 +167,19 @@ export default function InventoryManagement() {
                          <div className="flex items-center gap-2 justify-end lg:justify-start lg:group-even:justify-end">
                             <span className="text-[9px] font-mono font-black text-[#FF6600] tracking-widest">{step.id}</span>
                             <div className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
-                            <span className="text-[8px] font-mono font-bold text-slate-400 uppercase tracking-tighter">Status: Active</span>
+                            <span className="text-[10px] font-mono font-bold text-slate-400 capitalize tracking-tighter">Status: Active</span>
                          </div>
-                         <h3 className="text-sm lg:text-lg font-display font-black text-slate-900 uppercase tracking-tight leading-none">{step.title}</h3>
+                         <h3 className="text-sm lg:text-lg font-display  text-slate-900 capitalize tracking-wide leading-none">{step.title}</h3>
                       </div>
                       
-                      <p className="text-[11px] lg:text-[13px] text-slate-500 font-semibold leading-relaxed group-hover:text-slate-700 transition-colors">
+                      <p className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0 group-hover:text-slate-700 transition-colors">
                         {step.desc}
                       </p>
                     </div>
                   </div>
 
                   {/* PULSING TECHNICAL NODE */}
-                  <div className="relative z-10 w-16 h-16 flex items-center justify-center">
+                  <div className="relative z-10 w-16 h-16 flex items-center justify-center hidden lg:block">
                     <motion.div 
                        animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -215,10 +215,10 @@ export default function InventoryManagement() {
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-end mb-16">
             <div className="space-y-4">
-              <span className="text-[#FF6600] text-[11px] font-black uppercase tracking-[0.4em]">System Specs</span>
-              <h3 className="text-2xl lg:text-4xl font-display font-black text-slate-900 uppercase leading-tight tracking-tight">Strategic <br /> Logistics <span className="text-[#FF6600]">Control</span></h3>
+              <span className="text-[#FF6600] text-[11px] font-black capitalize tracking-[0.4em]">System Specs</span>
+              <h3 className="text-2xl lg:text-4xl font-display text-slate-900 uppercase leading-tight tracking-tight">Strategic <br /> Logistics <span className="text-[#FF6600]">Control</span></h3>
             </div>
-            <p className="text-slate-500 font-bold text-base lg:text-lg max-w-md italic border-l-4 border-[#FF6600] pl-6  capitalize tracking-tight">
+            <p className="text-slate-500 font-bold text-sm lg:text-base max-w-md border-l-4 border-[#FF6600] pl-6  capitalize tracking-widest">
               Transforming complex inventory metrics into a centralized orchestration of mission-critical outcomes.
             </p>
           </div>
@@ -238,7 +238,7 @@ export default function InventoryManagement() {
                 </div>
 
                 <div className="space-y-3">
-                  <h4 className="text-xs lg:text-sm font-black uppercase tracking-wider text-slate-800 group-hover:text-[#FF6600] transition-colors leading-none">
+                  <h4 className="text-xs lg:text-sm font-black capitalize tracking-wider text-slate-800 group-hover:text-[#FF6600] transition-colors leading-none">
                     {protocol.title}
                   </h4>
                   <div className="h-[2px] w-6 bg-[#FF6600]/10 group-hover:w-full group-hover:bg-[#FF6600] transition-all duration-700" />

@@ -64,16 +64,7 @@ export default function PMSSoftware() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-5 py-2 bg-slate-950 rounded text-white shadow-2xl"
-          >
-            <div className="w-2 h-2 rounded-full bg-orange-600 animate-pulse" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.5em]">Elite PMS Protocol v7.2</span>
-          </motion.div>
-
-          <h1 className="text-5xl lg:text-7xl font-display font-black text-slate-950 uppercase tracking-tighter leading-none">
+          <h1 className="text-5xl lg:text-5xl font-display text-slate-950 uppercase tracking-tighter leading-none">
             {(() => {
               const title = "PMS SOFTWARE.";
               return title.split(" ").map((word, wordIdx) => (
@@ -101,7 +92,7 @@ export default function PMSSoftware() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-[12px] lg:text-sm font-bold text-slate-400 uppercase tracking-[0.4em] max-w-2xl mx-auto leading-relaxed"
+            className="text-[12px] lg:text-sm font-bold text-slate-400 capitalize tracking-wider w-full mx-auto leading-relaxed"
           >
             High-density project management orchestration with real-time status matrices and secure billing gateways.
           </motion.p>
@@ -116,7 +107,7 @@ export default function PMSSoftware() {
               {/* Pillar Header */}
               <div className="flex items-center gap-6 group">
                 <div className="h-[3px] w-12 bg-orange-600 group-hover:w-20 transition-all duration-700" />
-                <h2 className="text-2xl lg:text-4xl font-display font-black text-slate-950 uppercase tracking-tighter italic">
+                <h2 className="text-xl lg:text-3xl font-display text-slate-950 capitalize lg:tracking-widest">
                   {pillar.category.split(" ").map((w, wi) => (
                     <span key={wi} className={wi === 1 ? "text-orange-600" : ""}>{w} </span>
                   ))}
@@ -135,17 +126,17 @@ export default function PMSSoftware() {
                     className="group relative flex flex-col"
                   >
                     {/* Index Background */}
-                    <span className="absolute -top-12 -left-8 text-7xl font-display font-black text-slate-50 group-hover:text-orange-50 transition-colors pointer-events-none select-none z-0">
+                    <span className="absolute -top-12 -left-8 text-7xl font-display text-slate-50 group-hover:text-orange-50 transition-colors pointer-events-none select-none z-0">
                       {mod.id}
                     </span>
 
                     <div className="relative z-10 space-y-5 pt-4">
-                      <h3 className="text-xl lg:text-2xl font-display font-black text-slate-950 capitalize leading-none group-hover:translate-x-1 transition-transform">
+                      <h1 className="font-system-hero font-display font-bold text-dark lg:tracking-wide leading-[1.1] capitalize max-w-4xl mx-auto text-xs lg:text-xl group-hover:translate-x-1 transition-transform">
                         {mod.title.split(" ").map((word, widx) => (
                           <span key={widx} className={widx === 1 ? "text-orange-600" : ""}>{word} </span>
                         ))}
-                      </h3>
-                      <p className="text-sm lg:text-base font-semibold text-slate-500 leading-relaxed capitalize  tracking-tight">
+                      </h1>
+                      <p className="text-sm md:text-sm lg:text-sm font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0 capitalize tracking-widest">
                         {mod.desc}
                       </p>
 
@@ -153,7 +144,7 @@ export default function PMSSoftware() {
                         {mod.bullets.map((b, bi) => (
                           <li key={bi} className="flex items-center gap-3 group/bullet">
                             <div className="w-1.5 h-1.5 rounded-full bg-orange-600 group-hover/bullet:scale-150 transition-transform" />
-                            <span className="text-[11px] lg:text-[12px] font-bold uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">{b}</span>
+                            <span className="text-[11px] lg:text-[12px] font-bold capitalize tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">{b}</span>
                           </li>
                         ))}
                       </ul>

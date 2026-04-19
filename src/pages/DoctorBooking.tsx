@@ -10,7 +10,7 @@ export default function DoctorBooking() {
     <div className="bg-white min-h-screen font-secondary overflow-x-hidden text-slate-600">
       
       {/* Hero Section - Strict WebDesign Sync */}
-      <section className="relative min-h-[280px] lg:min-h-[350px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 pt-[80px]">
+      <section className="relative min-h-[280px] lg:min-h-[350px] flex items-center justify-center overflow-hidden border-b border-orange-100/50 pt-[50px]">
         <div className="absolute inset-0 z-0">
           <ThreeNeuralStorm color="#FF6600" bgOpacity={0} />
           <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px]" />
@@ -20,7 +20,7 @@ export default function DoctorBooking() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl lg:text-5xl font-display font-extrabold text-slate-950 uppercase leading-[1.1] tracking-tight mb-4"
+            className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl mb-4"
           >
             {(() => {
               const words = "DOCTOR PATIENT BOOKING.".split(" ");
@@ -36,7 +36,7 @@ export default function DoctorBooking() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-xs lg:text-sm font-semibold max-w-2xl mx-auto leading-relaxed border-t border-orange-100 pt-5"
+            className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed max-w-xl px-6 md:px-0 border-t border-orange-100 pt-5"
           >
             Get online booking scheduling at your convenience with your doctor & clinic.
           </motion.p>
@@ -51,10 +51,10 @@ export default function DoctorBooking() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-8">
               <div className="space-y-6">
-                <h2 className="text-2xl lg:text-3xl font-display font-extrabold uppercase tracking-tight leading-tight">
-                  <span className="text-slate-950">ONLINE</span> <span className="text-[#FF6600]">appointment scheduling software for doctors, physicians patient, laboratory and clinics.</span>
+                <h2 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-wide capitalize lg:uppercase text-slate-950 leading-tight">
+                  <span className="text-slate-950">Online</span> <span className="text-[#FF6600]">appointment scheduling software for doctors, physicians patient, laboratory and clinics.</span>
                 </h2>
-                <p className="text-base lg:text-lg font-semibold text-slate-500 italic border-l-4 border-[#FF6600] pl-6 py-1">
+                <p className="text-[13px] md:text-sm lg:text-base font-semibold text-slate-500 border-l-4 border-[#FF6600] pl-6 py-1">
                   Get online booking scheduling at your convenience with your doctor & clinic.
                 </p>
               </div>
@@ -62,22 +62,22 @@ export default function DoctorBooking() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                    <div className="w-6 h-[2px] bg-[#FF6600]" />
-                   <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">System Features</h3>
+                   <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#FF6600]">System Features</h3>
                 </div>
-                <h4 className="text-xl lg:text-2xl font-display font-extrabold uppercase tracking-tight">
-                  <span className="text-slate-950">FEATURES:</span>
+                <h4 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-wide capitalize">
+                  <span className="text-slate-950">Features:</span>
                 </h4>
-                <p className="text-base lg:text-lg font-semibold text-slate-500 leading-relaxed max-w-2xl">
+                <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 max-w-2xl">
                   Our wide range of features offers you complete flexibility so that you can create your appointment schedule to perfectly fit your requirements.
                 </p>
               </div>
 
               {/* Module: Search */}
               <div className="space-y-4 pt-4 border-t border-slate-50">
-                <h3 className="text-xl lg:text-2xl font-display font-extrabold uppercase tracking-tight">
-                  <span className="text-slate-950">SEARCH</span> <span className="text-[#FF6600]">module:</span>
+                <h3 className="text-xl lg:text-2xl font-display font-bold  capitalize tracking-tight">
+                  <span className="text-slate-950">Search</span> <span className="text-[#FF6600]">module:</span>
                 </h3>
-                <p className="text-base lg:text-lg font-semibold leading-relaxed text-slate-500">
+                <p className="text-xs lg:text-base font-semibold leading-relaxed text-slate-500">
                   Search module is for searching the available doctor; Patient can search separately based on specialty, location, available date and with particular health insurance for available doctors. Search system is very easy and user friendly where you can search accordingly to your requirement.
                 </p>
               </div>
@@ -94,8 +94,8 @@ export default function DoctorBooking() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 border-t border-slate-100">
             {/* Patient Features */}
             <div className="space-y-6 p-8 bg-slate-50/50 rounded-md border border-slate-100 group hover:bg-white hover:shadow-2xl transition-all duration-500">
-              <h3 className="text-xl lg:text-2xl font-display font-extrabold uppercase pb-4 border-b border-orange-200">
-                <span className="text-slate-950">PATIENT</span> <span className="text-[#FF6600]">FEATURES</span>
+              <h3 className="text-xl lg:text-2xl font-display font-bold  capitalize pb-4 border-b border-orange-200">
+                <span className="text-slate-950">Patient</span> <span className="text-[#FF6600]">Features</span>
               </h3>
               <ul className="space-y-4">
                 {[
@@ -106,8 +106,8 @@ export default function DoctorBooking() {
                   "Can access all previous check-in details and medical past appointments."
                 ].map((item, i) => (
                   <li key={i} className="flex gap-4 items-start group/item">
-                    <span className="text-[#FF6600] font-black leading-none">★</span>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-slate-600 group-hover/item:text-slate-900 transition-colors">{item}</span>
+                    <span className="text-[#FF6600] font-black leading-none mt-1">★</span>
+                    <span className="text-xs lg:text-sm font-semibold capitalize tracking-widest text-slate-600 group-hover/item:text-slate-900 transition-colors">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -115,8 +115,8 @@ export default function DoctorBooking() {
 
             {/* Doctor Features */}
             <div className="space-y-6 p-8 bg-slate-50/50 rounded-md border border-slate-100 group hover:bg-white hover:shadow-2xl transition-all duration-500">
-              <h3 className="text-xl lg:text-2xl font-display font-extrabold uppercase pb-4 border-b border-orange-200">
-                <span className="text-slate-950">DOCTOR</span> <span className="text-[#FF6600]">FEATURES</span>
+              <h3 className="text-xl lg:text-2xl font-display font-bold capitalize pb-4 border-b border-orange-200">
+                <span className="text-slate-950">Doctor</span> <span className="text-[#FF6600]">Features</span>
               </h3>
               <ul className="space-y-4">
                 {[
@@ -127,8 +127,8 @@ export default function DoctorBooking() {
                   "Generate Reports - You can find out number of actual visits and reports of patients edited by them"
                 ].map((item, i) => (
                   <li key={i} className="flex gap-4 items-start group/item">
-                    <span className="text-[#FF6600] font-black leading-none">★</span>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-slate-600 group-hover/item:text-slate-900 transition-colors">{item}</span>
+                    <span className="text-[#FF6600] font-black leading-none mt-1">★</span>
+                    <span className="text-xs lg:text-sm font-semibold capitalize tracking-widest text-slate-600 group-hover/item:text-slate-900 transition-colors">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -143,10 +143,10 @@ export default function DoctorBooking() {
               { title: "Admin Feature", desc: "where you can manage all details from here ." }
             ].map((section, i) => (
               <div key={i} className="p-8 rounded-md border border-slate-100 bg-white shadow-sm group hover:border-orange-200 transition-all duration-300">
-                <h3 className="text-sm lg:text-base font-display font-extrabold uppercase tracking-widest mb-6">
-                  <span className="text-slate-950">{section.title.split(' ')[0].toUpperCase()}</span> <span className="text-[#FF6600]">{section.title.split(' ').slice(1).join(' ').toUpperCase()}</span>
+                <h3 className="text-sm lg:text-lg font-display font-bold capitalize tracking-widest mb-6">
+                  <span className="text-slate-950">{section.title.split(' ')[0]}</span> <span className="text-[#FF6600]">{section.title.split(' ').slice(1).join(' ')}</span>
                 </h3>
-                <p className="text-[10px] font-semibold uppercase leading-relaxed tracking-widest text-slate-500">
+                <p className="text-[10px] lg:text-sm font-semibold capitalize leading-relaxed tracking-widest text-slate-500">
                   {section.desc}
                 </p>
               </div>

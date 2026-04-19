@@ -31,22 +31,13 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
+    <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
       {/* ELITE 2.0 HEADER - COMPACT & CINEMATIC */}
       <section className="relative min-h-[280px] lg:min-h-[350px] flex items-center justify-center overflow-hidden border-b border-orange-100/50">
         <ThreeNeuralStorm />
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg mx-auto"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Global Command Center</span>
-          </motion.div>
-
-          <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+          <h1 className="text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
             {(() => {
               const title = "CONTACT US.";
               const words = title.split(" ");
@@ -77,7 +68,7 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-slate-500 text-xs lg:text-sm font-semibold max-w-xl mx-auto leading-relaxed"
+            className="text-slate-500 text-xs lg:text-base font-semibold max-w-xl mx-auto leading-relaxed"
           >
             "Feel free to share your requirements with us – we build the digital future together."
           </motion.p>
@@ -96,7 +87,7 @@ const Contact: React.FC = () => {
                     <div className="h-[2px] w-12 bg-[#FF6600]" />
                     <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.5em]">The Headquarters</span>
                   </div>
-                  <h2 className="text-2xl lg:text-3xl font-display font-extrabold text-slate-900 tracking-tighter uppercase leading-none">
+                  <h2 className="text-2xl lg:text-3xl font-display font-bold text-slate-900 tracking-widest uppercase leading-none">
                     Digicorn <span className="text-[#FF6600]">Webultrasolution.</span>
                   </h2>
                </div>
@@ -135,7 +126,7 @@ const Contact: React.FC = () => {
                   
                   <div className="relative z-10 space-y-8">
                      <div className="space-y-3">
-                        <h3 className="text-3xl font-extrabold uppercase tracking-tighter">Connection<span className="text-[#FF6600]">.</span></h3>
+                        <h3 className="text-3xl font-bold capitalize tracking-wide text-white">Connection<span className="text-[#FF6600]">.</span></h3>
                         <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">Our team responds within 12 business hours.</p>
                      </div>
 

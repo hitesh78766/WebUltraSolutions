@@ -36,7 +36,7 @@ export default function BillingSoftware() {
   ];
 
   return (
-    <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-100">
+    <div className="pt-[50px] bg-white min-h-screen font-secondary selection:bg-orange-100">
       {/* COMPACT CINEMATIC HEADER */}
       <div className="relative min-h-[300px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
         <ThreeSolutionBackground />
@@ -46,13 +46,13 @@ export default function BillingSoftware() {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg mt-4"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Financial Intelligence v14.0</span>
             </motion.div>
 
-            <h1 className="text-3xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+            <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
               PREMIER <span className="text-[#FF6600]">BILLING</span> INFRASTRUCTURE.
             </h1>
 
@@ -65,20 +65,6 @@ export default function BillingSoftware() {
             </motion.p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 pt-2">
-            {[
-              { label: 'Automated Invoicing', icon: Receipt },
-              { label: 'Global Compliance', icon: ShieldCheck },
-              { label: 'Cloud Database', icon: Database }
-            ].map((item, i) => (
-              <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                <div className="w-7 h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                  <item.icon size={14} />
-                </div>
-                <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-widest">{item.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
@@ -95,7 +81,7 @@ export default function BillingSoftware() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative rounded-xl overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.15)] border border-slate-100 bg-white p-1.5"
             >
-              <div className="relative rounded-lg overflow-hidden aspect-[4/5] lg:aspect-square">
+              <div className="relative rounded-lg overflow-hidden aspect-[4/2] lg:aspect-[3/4] lg:aspect-square">
                 <img
                   src="/images/billing_software_hero.png"
                   alt="Accounting Dashboard"
@@ -119,14 +105,14 @@ export default function BillingSoftware() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="h-[2px] w-8 bg-[#FF6600]" />
-                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-[#FF6600]">Technical Hub</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">Technical Hub</span>
               </div>
 
-              <h2 className="text-2xl lg:text-4xl font-display font-extrabold tracking-tighter text-slate-950 uppercase leading-tight">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase text-slate-950">
                 EASY, REAL <span className="text-[#FF6600]">ACCOUNTING.</span>
               </h2>
 
-              <p className="text-sm lg:text-base font-semibold leading-relaxed text-slate-500 max-w-xl">
+              <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 max-w-xl">
                 A streamlined workspace for high-growth enterprises to manage financial cycles with <span className="text-slate-900 border-b-2 border-[#FF6600]/20 italic">technical precision</span> and autonomous reporting logic.
               </p>
             </div>
@@ -144,7 +130,7 @@ export default function BillingSoftware() {
                   <div className="mt-1.5 flex-shrink-0">
                     <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-[#FF6600] border-b-[5px] border-b-transparent" />
                   </div>
-                  <span className="text-sm lg:text-base font-semibold text-slate-500 leading-relaxed group-hover:text-slate-900 transition-colors">{point}</span>
+                  <span className="text-[13px] md:text-sm lg:text-base font-semibold text-slate-500 leading-relaxed group-hover:text-slate-900 transition-colors">{point}</span>
                 </div>
               ))}
             </div>
@@ -167,11 +153,11 @@ export default function BillingSoftware() {
               { title: "Analytical Vault", icon: BarChart3, desc: "Professional reporting architecture for balance sheets, sales tax, and performance audits." }
             ].map((feature, idx) => (
               <div key={idx} className="group p-8 bg-white border border-slate-100 rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all">
-                <div className="w-12 h-12 rounded-md bg-[#FF6600] flex items-center justify-center text-white mb-6 shadow-lg shadow-orange-500/20">
-                  <feature.icon size={20} />
+                <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-md bg-[#FF6600] flex items-center justify-center text-white mb-6 shadow-lg shadow-orange-500/20">
+                  <feature.icon size={16} className="lg:size-6" />
                 </div>
-                <h3 className="text-lg lg:text-xl font-display font-extrabold tracking-tight uppercase text-slate-900 mb-3">{feature.title}</h3>
-                <p className="text-base font-semibold text-slate-500 leading-relaxed">{feature.desc}</p>
+                <h3 className="text-[16px] lg:text-[20px] font-bold capitalize tracking-wider leading-[0.9] mb-3">{feature.title}</h3>
+                <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -190,7 +176,7 @@ export default function BillingSoftware() {
                 <div className="h-[2px] w-12 bg-[#FF6600]" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#FF6600]">Infrastructure Hub</span>
               </div>
-              <h2 className="text-2xl lg:text-4xl font-display font-extrabold tracking-tighter text-slate-950 uppercase leading-none">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-wider uppercase text-slate-950">
                 MANAGE CUSTOMER & <span className="text-[#FF6600]">PRODUCT DATABASES.</span>
               </h2>
             </div>
@@ -200,7 +186,7 @@ export default function BillingSoftware() {
               whileInView={{ opacity: 1, x: 0 }}
               className="max-w-md p-4 bg-slate-50 border-l-4 border-[#FF6600] rounded-r-xl"
             >
-              <p className="text-sm font-semibold text-slate-500 italic leading-relaxed">
+              <p className="text-sm font-semibold text-slate-500 italic tracking-wide leading-relaxed">
                 "Administer multi-currency and multi-lingual technical nodes with absolute administrative precision and automated entity scaling."
               </p>
             </motion.div>
@@ -211,7 +197,7 @@ export default function BillingSoftware() {
             {[
               {
                 tag: "Global Node",
-                title: "INTERNATIONAL SYNC",
+                title: "International Sync",
                 points: [
                   "International Multi-Currency & Multi-Lingual features and date support.",
                   "Direct the management of databases related to customers and products."
@@ -220,7 +206,7 @@ export default function BillingSoftware() {
               },
               {
                 tag: "Admin Protocol",
-                title: "GOVERNANCE CORE",
+                title: "Governance Core",
                 points: [
                   "Administer customer and product databases effectively.",
                   "Take charge of customer and product database management.",
@@ -230,7 +216,7 @@ export default function BillingSoftware() {
               },
               {
                 tag: "Functional Hub",
-                title: "OPERATIONAL FLOW",
+                title: "Operational Flow",
                 points: [
                   "Ensure the smooth management of both customer and product databases.",
                   "Implement effective control over customer and product databases.",
@@ -243,8 +229,8 @@ export default function BillingSoftware() {
               <div key={i} className="group relative space-y-6 p-8 bg-white border border-slate-100 rounded-xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] transition-all duration-700">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-lg bg-slate-50 group-hover:bg-[#FF6600] flex items-center justify-center text-[#FF6600] group-hover:text-white transition-all duration-500 shadow-sm">
-                      <pillar.icon size={20} />
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg bg-slate-50 group-hover:bg-[#FF6600] flex items-center justify-center text-[#FF6600] group-hover:text-white transition-all duration-500 shadow-sm">
+                      <pillar.icon size={16} className="lg:size-5" />
                     </div>
                     <span className="text-2xl font-display font-black text-slate-100 group-hover:text-orange-50 transition-colors italic">0{i + 1}</span>
                   </div>
@@ -252,9 +238,9 @@ export default function BillingSoftware() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-[2px] bg-[#FF6600]" />
-                      <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
+                      <span className="text-[9px] font-bold capitalize tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                     </div>
-                    <h3 className="text-lg lg:text-xl font-display font-extrabold tracking-tight uppercase text-slate-900 group-hover:text-[#FF6600] transition-colors">{pillar.title}</h3>
+                    <h3 className="text-[16px] lg:text-[20px] font-bold capitalize tracking-wide leading-[0.9]">{pillar.title}</h3>
                   </div>
                 </div>
 
@@ -262,7 +248,7 @@ export default function BillingSoftware() {
                   {pillar.points.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="mt-1.5 w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-[#FF6600] border-b-[4px] border-b-transparent" />
-                      <span className="text-base font-semibold text-slate-500 leading-snug group-hover:text-slate-800 transition-colors italic">{point}</span>
+                      <span className="text-[13px] md:text-sm lg:text-base font-semibold leading-snug text-slate-500 group-hover:text-slate-800 transition-colors italic">{point}</span>
                     </div>
                   ))}
                 </div>

@@ -22,26 +22,16 @@ export default function TenderManagement() {
     <div className="bg-white min-h-screen font-secondary overflow-x-hidden text-slate-600">
       
       {/* 1:1 Flagship Hero Sync - WebDesign Architecture */}
-      <section className="relative min-h-[400px] lg:h-[480px] flex items-center justify-center overflow-hidden border-b border-orange-100 pt-[80px]">
+      <section className="relative min-h-[380px] lg:h-[400px] flex items-center justify-center overflow-hidden border-b border-orange-100 pt-[80px]">
         <div className="absolute inset-0 z-0">
           <ThreeNeuralStorm color="#FF6600" bgOpacity={0} />
           <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-6 lg:space-y-8">
-          
-          {/* Top Status Badge - Direct Flagship Port */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-6 py-2 bg-[#FF6600] rounded-full shadow-lg shadow-orange-100"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white">Established Global Leader</span>
-          </motion.div>
 
           <div className="space-y-6">
-            <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-900 uppercase leading-[1] tracking-tighter">
+            <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto text-3xl lg:text-5xl">
                {(() => {
                   const words = "TENDER MANAGEMENT SOFTWARE".split(" ");
                   return words.map((word, wordIdx) => (
@@ -69,32 +59,11 @@ export default function TenderManagement() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="text-slate-600 text-[10px] lg:text-xs font-bold max-w-2xl mx-auto leading-relaxed uppercase tracking-widest"
+              className="text-xs md:text-sm lg:text-base font-semibold text-slate-600 leading-relaxed w-full  px-6 md:px-0 capitalize tracking-widest"
             >
               We have developed ERP Software, Security Management software, and so many software products.
             </motion.p>
           </div>
-
-          {/* Bottom Badge Stack - Ultra Compact Refined Match */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="flex flex-wrap justify-center gap-3 lg:gap-5 pt-2"
-          >
-             {[
-                { label: 'CUSTOM ARCHITECTURE', icon: Globe },
-                { label: 'RESPONSIVE EXCELLENCE', icon: Sparkles },
-                { label: 'DATA DRIVEN UX', icon: Monitor }
-             ].map((feature, i) => (
-                <div key={i} className="px-5 py-2.5 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-3 transition-all hover:shadow-2xl hover:-translate-y-1 group cursor-default">
-                   <div className="w-7 h-7 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                      <feature.icon size={13} />
-                   </div>
-                   <span className="text-[10px] font-black text-slate-700 uppercase tracking-[0.1em]">{feature.label}</span>
-                </div>
-             ))}
-          </motion.div>
         </div>
       </section>
 
@@ -103,12 +72,12 @@ export default function TenderManagement() {
         <div className="max-w-7xl mx-auto px-6 space-y-10">
           
           <div className="space-y-4 max-w-5xl">
-            <h2 className="text-2xl lg:text-3xl font-display font-extrabold uppercase tracking-tight leading-tight">
+            <h2 className="text-2xl lg:text-3xl font-display font-bold uppercase tracking-widest leading-tight">
               <span className="text-slate-950">TENDER</span> <span className="text-[#FF6600]">MANAGEMENT SOFTWARE</span>
             </h2>
             
-            <p className="text-sm lg:text-[15px] font-semibold text-slate-500 leading-relaxed italic border-l-4 border-[#FF6600] pl-6 py-1">
-              webultrasolution Services Pvt. Ltd. Is Website Designing Company & Software Development Company. We have developed ERP Software, Security Management software, and so many software products. The Tender Management starts when a suitable Invitation To Tender (ITT) has been identified. Enterprise or Government sector has to regularly deal with various type of work which required Invitation of tender, select a proper supplier for work; compare different estimation with cost, previous work etc. Tender Management Software help to start with New Tender to Resubmission/verification of previously launched tender.
+            <p className="text-sm lg:text-base font-semibold text-slate-500 leading-relaxed tracking-wide border-l-4 border-[#FF6600] pl-6 py-1">
+              Webultrasolution Services Pvt. Ltd. Is Website Designing Company & Software Development Company. We have developed ERP Software, Security Management software, and so many software products. The Tender Management starts when a suitable Invitation To Tender (ITT) has been identified. Enterprise or Government sector has to regularly deal with various type of work which required Invitation of tender, select a proper supplier for work; compare different estimation with cost, previous work etc. Tender Management Software help to start with New Tender to Resubmission/verification of previously launched tender.
             </p>
           </div>
 
@@ -116,7 +85,7 @@ export default function TenderManagement() {
           <div className="pt-6 border-t border-slate-50">
             <div className="flex items-center gap-3 mb-4">
               <Search className="text-[#FF6600]" size={18} />
-              <h3 className="text-xl lg:text-2xl font-display font-extrabold uppercase tracking-tight">
+              <h3 className="text-xl lg:text-2xl font-display font-bold uppercase tracking-widest">
                 <span className="text-slate-950">SEO</span> <span className="text-[#FF6600]">SYSTEM</span>
               </h3>
             </div>
@@ -126,7 +95,7 @@ export default function TenderManagement() {
                 {seoFeatures.map((feat, i) => (
                   <div key={i} className="flex gap-4 p-3 border border-slate-100 bg-slate-50/20 rounded shadow-sm group hover:bg-white transition-all duration-300">
                     <CheckCircle2 className="text-[#FF6600] shrink-0 mt-0.5" size={14} />
-                    <span className="text-[10px] lg:text-[11px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-950 leading-relaxed">
+                    <span className="text-xs lg:text-sm font-bold capitalize tracking-widest text-slate-500 group-hover:text-slate-950 leading-relaxed">
                       {feat.text}
                     </span>
                   </div>
@@ -138,7 +107,7 @@ export default function TenderManagement() {
                    <img 
                      src="/tender_lifecycle.png" 
                      alt="Tender Process Lifecycle" 
-                     className="w-full h-auto rounded grayscale-[30%] hover:grayscale-0 transition-all duration-700" 
+                     className="w-full h-auto md:h-60 lg:h-auto rounded grayscale-[30%] hover:grayscale-0 transition-all duration-700 object-cover" 
                     />
                 </div>
               </div>
