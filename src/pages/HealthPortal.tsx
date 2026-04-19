@@ -84,9 +84,9 @@ export default function HealthPortal() {
    }, []);
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">
+      <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* LIGHT THEME CINEMATIC HERO WITH MEDICAL-TECH ANIMATION */}
-         <div className="relative min-h-[220px] md:min-h-[280px] lg:h-[350px] bg-[#FDFBF9] flex items-center overflow-hidden border-b border-orange-100/30">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* Subtle Orange Glow Animation */}
             <motion.div 
                animate={{ 
@@ -107,22 +107,23 @@ export default function HealthPortal() {
                <ThreeHealthNeural />
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
-               <div className="space-y-4 text-center lg:text-left">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+               <div className="flex flex-col items-center gap-4 mt-3">
                   <motion.div
                      initial={{ opacity: 0, x: -20 }}
                      animate={{ opacity: 1, x: 0 }}
-                     className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-orange-100 rounded-sm shadow-sm"
+                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-orange-600 animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Medical Systems</span>
+                     <span className="font-system-caption text-xs text-white capitalize">Health Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-slate-955 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-2 md:gap-x-3 px-4 md:px-0">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
-                        const words = ["Health", "Portal."];
+                        const title = "HEALTH PORTAL.";
+                        const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className={`inline-block ${word === "Portal." ? "text-orange-600 italic" : ""}`}>
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -133,7 +134,7 @@ export default function HealthPortal() {
                                        delay: 0.2 + (wordIdx * 0.1) + (charIdx * 0.04),
                                        ease: [0.16, 1, 0.3, 1]
                                     }}
-                                    className="inline-block"
+                                    className={`inline-block ${word === "PORTAL." ? "text-[#FF6600]" : ""}`}
                                  >
                                     {char}
                                  </motion.span>
@@ -142,28 +143,6 @@ export default function HealthPortal() {
                         ));
                      })()}
                   </h1>
-
-                  {/* MEDICAL PRECISION STATUS STACK */}
-                  <motion.div 
-                     initial={{ opacity: 0, scale: 0.95 }}
-                     whileInView={{ opacity: 1, scale: 1 }}
-                     transition={{ duration: 1, delay: 1.2 }}
-                     className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3 pt-4 md:pt-2 px-4 md:px-0"
-                  >
-                     {[
-                        { label: "Data Integrity", val: "Medical-Grade", icon: Shield },
-                        { label: "System Sync", val: "Neural Layer", icon: Zap },
-                        { label: "Compliance", val: "WHO-Standard", icon: ClipboardCheck }
-                     ].map((badge, i) => (
-                        <div key={i} className="px-2 md:px-3 py-1 md:py-1.5 bg-white border border-orange-100 rounded flex items-center gap-1.5 md:gap-2 group hover:shadow-lg transition-all">
-                           <badge.icon size={10} className="text-orange-600 md:w-[12px] md:h-[12px]" />
-                           <div className="flex flex-col items-start translate-y-0.5">
-                              <span className="text-[10px] md:text-[11px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
-                              <span className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
-                           </div>
-                        </div>
-                     ))}
-                  </motion.div>
                </div>
 
                <motion.div
@@ -172,9 +151,14 @@ export default function HealthPortal() {
                   transition={{ delay: 0.8, duration: 1 }}
                   className="max-w-md px-6 md:px-0"
                >
-                  <p className="text-[10px] md:text-[12px] lg:text-[14px] font-semibold text-slate-600 leading-relaxed border-l-4 border-orange-600 pl-4 md:pl-8 py-1 uppercase tracking-tight italic">
+                  <motion.p
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="text-slate-600 text-xs md:text-sm lg:text-base font-semibold max-w-xl leading-relaxed px-6 md:px-0"
+                  >
                      "Health portal permutes the Health organization, in India and globally."
-                  </p>
+                  </motion.p>
                </motion.div>
             </div>
          </div>
@@ -192,7 +176,7 @@ export default function HealthPortal() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-lg md:text-xl lg:text-3xl font-display font-black text-slate-955 uppercase tracking-tight leading-[0.9] text-center lg:text-left">
+                        <h2 className="text-lg md:text-xl lg:text-3xl font-display font-bold text-slate-955 uppercase tracking-tight leading-[0.9] text-center lg:text-left">
                            Health <span className="text-orange-600">Promotion.</span>
                         </h2>
                         <div className="w-16 md:w-20 h-1 bg-orange-600 mx-auto lg:mx-0" />
@@ -201,8 +185,8 @@ export default function HealthPortal() {
                         <p>
                            The Health Portal plays a pivotal role in transforming health organizations, both in India and globally. We provide the architectural alignment needed to transform the health sector into a high-status digital ecosystem.
                         </p>
-                        <p className="text-slate-955 font-black border-l-4 border-slate-950 pl-4 md:pl-8 py-2 uppercase text-[11px] md:text-xs tracking-tight italic bg-slate-50">
-                           &quot;Recent efforts have adopted the concept of 'Health in All Policies,' emphasizing actions that integrate health considerations into all public policies.&quot;
+                        <p className="text-slate-955 font-bold border-l-4 border-orange-500 pl-4 md:pl-8 py-2 capitalize text-[11px] md:text-xs tracking-wider  bg-slate-50">
+                           Recent efforts have adopted the concept of 'Health in All Policies,' emphasizing actions that integrate health considerations into all public policies.&quot;
                         </p>
                      </div>
                   </motion.div>
@@ -222,7 +206,7 @@ export default function HealthPortal() {
                         />
                          <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
                             <span className="text-[10px] font-bold text-orange-500 uppercase tracking-widest">Global Medical Matrix</span>
-                            <h4 className="text-xl font-bold uppercase tracking-tight">Health Promotion Infrastructure</h4>
+                            <h4 className="text-xl text-white font-bold capitalize tracking-wider">Health Promotion Infrastructure</h4>
                          </div>
                      </div>
                   </motion.div>
@@ -236,21 +220,21 @@ export default function HealthPortal() {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-24 items-start protocol-node`}
+                        className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 sm:gap-10 md:gap-12 lg:gap-24 items-start protocol-node`}
                      >
-                        <div className="lg:w-1/3 space-y-4 md:space-y-6 lg:sticky lg:top-32 w-full">
-                           <div className="flex items-center justify-center lg:justify-start gap-4">
+                        <div className="lg:w-1/3 space-y-3 sm:space-y-4 md:space-y-6 lg:sticky lg:top-32 w-full">
+                           <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4">
                               <div className="relative group">
                                  <div className="absolute -inset-2 bg-orange-600/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                                 <div className="relative w-12 h-12 md:w-16 md:h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
-                                    <protocol.icon size={28} className="md:w-[32px] md:h-[32px]" />
+                                 <div className="relative w-10 h-10 sm:w-12 md:w-16 md:h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
+                                    <protocol.icon size={24} className="sm:w-[28px] md:w-[32px] md:h-[32px]" />
                                  </div>
                               </div>
-                              <div className="text-3xl md:text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
+                              <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-100">0{idx + 1}</div>
                            </div>
                            <div className="space-y-2">
-                              <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600 text-center lg:text-left block">{protocol.tag}</span>
-                              <h3 className="text-lg md:text-xl lg:text-2xl font-display font-black uppercase tracking-tight leading-none text-center lg:text-left">
+                              <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600 text-center lg:text-left block">{protocol.tag}</span>
+                              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-bold uppercase tracking-tight leading-none text-center lg:text-left">
                                  {protocol.title.split(' ').map((word, i) => (
                                     <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
                                        {word}{' '}
@@ -258,8 +242,8 @@ export default function HealthPortal() {
                                  ))}
                               </h3>
                            </div>
-                           <div className="pt-2 md:pt-4 flex items-center justify-center lg:justify-start gap-2 text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                              <ChevronRight size={12} className="text-orange-600" />
+                           <div className="pt-2 sm:pt-3 md:pt-4 flex items-center justify-center lg:justify-start gap-2 text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                              <ChevronRight size={10} className="sm:size-[12px] text-orange-600" />
                               Active Protocol
                            </div>
                         </div>
@@ -274,7 +258,7 @@ export default function HealthPortal() {
                                     className="w-full bg-orange-600"
                                  />
                               </div>
-                              <p className="text-[13px] md:text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0 text-center lg:text-left px-2 md:px-0">
+                              <p className="text-[11px] sm:text-[12px] md:text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0 text-center lg:text-left px-2 sm:px-0">
                                  {protocol.desc}
                               </p>
                            </div>

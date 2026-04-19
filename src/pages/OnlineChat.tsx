@@ -27,32 +27,32 @@ gsap.registerPlugin(ScrollTrigger);
 const chatProtocols = [
    {
       tag: "Interpretation",
-      title: "ON LINE CHAT INTERFACE",
-      desc: "Online chat is an interpreter between two or more people; it's providing communication through the internet and SMS from sender to receiver. Chat messages are generally short in order to enable other participants to respond quickly. The expression online chat comes from the word chat which means 'informal conversation'.",
+      title: "ADVANCED ON LINE CHAT INTERFACE SYSTEMS",
+      desc: "Online chat is an interpreter between two or more people; it's providing communication through internet and SMS from sender to receiver. Chat messages are generally short in order to enable other participants to respond quickly. This brevity ensures efficient communication flow, reduces cognitive load, maintains engagement momentum, and allows for rapid information exchange in real-time conversations. The expression online chat comes from the word chat which means 'informal conversation'. Our advanced interface systems support real-time messaging, file sharing, multimedia content, and seamless synchronization across all devices with enterprise-grade security protocols.",
       icon: MessageSquare
    },
    {
       tag: "Connectivity",
-      title: "MULTICAST COMMUNICATIONS",
-      desc: "Online chat may address point-to-point communications as well as multicast communications from one sender to many receivers. Online chat provides a facility one-on-one chat or one-to-many group chat using tools such as instant messengers. This includes web-based applications that allow communication between users in a multi-user environment.",
+      title: "MULTICAST COMMUNICATIONS PROTOCOLS",
+      desc: "Online chat may address point-to-point communications as well as multicast communications from one sender to many receivers. Online chat provides a facility one-on-one chat or one-to-many group chat using tools such as instant messengers. This includes web-based applications that allow communication between users in a multi-user environment. Our protocols ensure high-performance data transmission, low-latency connections, scalable architecture, and robust message queuing systems for optimal user experience.",
       icon: Globe
    },
    {
       tag: "Architecture",
-      title: "SERVICE DEPLOYMENT",
-      desc: "Web conferencing is a more specific online service that is often sold as a service, hosted on a web server controlled by the vendor. Chat Application is primarily meant to refer to direct one-on-one chat or text based group chat. webultrasolution provide both type of chat application.",
+      title: "ENTERPRISE SERVICE DEPLOYMENT FRAMEWORK",
+      desc: "Web conferencing is a more specific online service that is often sold as a service, hosted on a web server controlled by the vendor. Chat Application is primarily meant to refer to direct one-on-one chat or text based group chat. webultrasolution provide both type of chat application. Our enterprise deployment framework includes cloud hosting, load balancing, automated backups, API integration, and comprehensive monitoring dashboards.",
       icon: Database
    },
    {
       tag: "Specifications",
-      title: "CORE FEATURES",
-      desc: "Our chat applications are engineered for maximum utility: 1) Fully customizable and rebrandable. 2) Moderated Chat. 3) No additional software is needed. 4) Small, fast, cross-platform.",
+      title: "ADVANCED CORE FEATURES & CAPABILITIES",
+      desc: "Our chat applications are engineered for maximum utility: 1) Fully customizable and rebrandable. 2) Moderated Chat. 3) No additional software is needed. 4) Small, fast, cross-platform. Additional capabilities include emoji support, message encryption, user authentication, conversation history, and advanced moderation tools.",
       icon: CheckCircle2
    },
    {
       tag: "Quality",
-      title: "CUSTOMIZED DEVELOPMENT",
-      desc: "Developing high quality, completely customized chat box with presentation of knowledge, conversational abilities, context sensitivity, and personality traits to ensure a seamless relational footprint.",
+      title: "CUSTOMIZED DEVELOPMENT SOLUTIONS",
+      desc: "Developing high quality, completely customized chat box with presentation of knowledge, conversational abilities, context sensitivity, and personality traits to ensure a seamless relational footprint. Our solutions feature AI-powered responses, natural language processing, sentiment analysis, multi-language support, and adaptive learning algorithms.",
       icon: Target
    }
 ];
@@ -82,9 +82,9 @@ export default function OnlineChat() {
    }, []);
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">
+      <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* LIGHT THEME CINEMATIC HERO WITH ORANGE ANIMATION */}
-         <div className="relative h-[250px] lg:h-[320px] bg-[#FDFBF9] flex items-center overflow-hidden border-b border-orange-100/30">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* Subtle Orange Glow Animation */}
             <motion.div 
                animate={{ 
@@ -105,23 +105,26 @@ export default function OnlineChat() {
                <ThreeNeuralStorm />
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
-               <div className="space-y-4 text-center lg:text-left">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+               <div className="flex flex-col items-center gap-4 mt-3">
                   <motion.div
                      initial={{ opacity: 0, x: -20 }}
                      animate={{ opacity: 1, x: 0 }}
-                     className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-orange-100 rounded-sm shadow-sm"
+                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-orange-600 animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Chat Architectures</span>
+                     <span className="font-system-caption text-xs text-white capitalize">Chat Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-3">
+                  <h1 className="font-system-hero font-display font-bold tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
-                        const words = ["On", "Line", "Chat."];
+                        const words = [
+                           { text: "ONLINE", color: "text-dark" },
+                           { text: "CHAT.", color: "text-orange-600" }
+                        ];
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className={`inline-block ${word === "Chat." ? "text-orange-600 italic" : ""}`}>
-                              {word.split("").map((char, charIdx) => (
+                           <span key={wordIdx} className={`inline-block mr-2 md:mr-4 ${word.color}`}>
+                              {word.text.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
                                     initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
@@ -141,27 +144,6 @@ export default function OnlineChat() {
                      })()}
                   </h1>
 
-                  {/* ELITE STATUS STACK */}
-                  <motion.div 
-                     initial={{ opacity: 0, scale: 0.95 }}
-                     whileInView={{ opacity: 1, scale: 1 }}
-                     transition={{ duration: 1, delay: 1.2 }}
-                     className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2"
-                  >
-                     {[
-                        { label: "Channel Latency", val: "Sub-10ms", icon: Activity },
-                        { label: "Security Layer", val: "Encrypted", icon: Shield },
-                        { label: "Sync Protocol", val: "Neural", icon: Zap }
-                     ].map((badge, i) => (
-                        <div key={i} className="px-3 py-1.5 bg-white border border-orange-100 rounded flex items-center gap-2 group hover:shadow-lg transition-all">
-                           <badge.icon size={12} className="text-orange-600" />
-                           <div className="flex flex-col items-start">
-                              <span className="text-[9px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
-                              <span className="text-[7px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
-                           </div>
-                        </div>
-                     ))}
-                  </motion.div>
                </div>
 
                <motion.div
@@ -170,10 +152,15 @@ export default function OnlineChat() {
                   transition={{ delay: 0.8, duration: 1 }}
                   className="max-w-md"
                >
-                  <p className="text-[12px] lg:text-[14px] font-semibold text-slate-600 leading-relaxed border-l-4 border-orange-600 pl-6 lg:pl-8 py-1 uppercase tracking-tight italic max-w-xl">
-                     "Chat messages are typically concise to facilitate prompt responses from other participants."
-                  </p>
-               </motion.div>
+             
+               </motion.div>     <motion.p
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="text-slate-600 text-xs md:text-sm lg:text-base font-semibold max-w-xl leading-relaxed px-6 md:px-0"
+                  >
+                     "Chat messages are typically concise to facilitate prompt responses from other participants. This design principle ensures optimal communication efficiency.
+                  </motion.p>
             </div>
          </div>
 
@@ -190,7 +177,7 @@ export default function OnlineChat() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-xl lg:text-3xl font-display font-black text-slate-950 uppercase tracking-tight leading-[0.9]">
+                        <h2 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase text-slate-950">
                            Interface <span className="text-orange-600">Protocol.</span>
                         </h2>
                         <div className="w-20 h-1 bg-orange-600" />
@@ -199,7 +186,7 @@ export default function OnlineChat() {
                         <p>
                            Online chat is an interpreter between two or more people; offering communication through web and SMS protocols. We provide the architectural alignment needed to capture premium engagement for global brands.
                         </p>
-                        <p className="text-slate-950 font-black border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-tight italic bg-slate-50">
+                        <p className="text-slate-950 font-bold border-l-4 border-orange-500 pl-8 py-2 capitalize text-xs tracking-wider bg-slate-50">
                            &quot;webultrasolution provide both direct one-on-one and text based group chat applications tailored to your specific connectivity requirements.&quot;
                         </p>
                      </div>
@@ -209,7 +196,7 @@ export default function OnlineChat() {
                      initial={{ opacity: 0, scale: 0.95 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true }}
-                     className="relative aspect-[16/10] group"
+                     className="relative aspect-[16/10] md:aspect-[16/6] group"
                   >
                      <div className="absolute -inset-4 bg-orange-600/5 -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
                      <div className="relative h-full overflow-hidden shadow-2xl border border-slate-100 bg-white">
@@ -220,10 +207,10 @@ export default function OnlineChat() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60" />
                         <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                           <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                           <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-orange-500">
                               <Sparkles size={18} />
                            </div>
-                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Global Interaction Visualization</span>
+                           <span className="text-[10px] font-bold text-black uppercase tracking-widest">Global Interaction Visualization</span>
                         </div>
                      </div>
                   </motion.div>
@@ -244,11 +231,11 @@ export default function OnlineChat() {
                               <div className="w-16 h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
                                  <protocol.icon size={32} />
                               </div>
-                              <div className="text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
+                              <div className="text-3xl md:text-4xl font-display font-bold text-slate-100">0{idx + 1}</div>
                            </div>
                            <div className="space-y-2">
                               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600">{protocol.tag}</span>
-                              <h3 className="text-lg lg:text-2xl font-display font-black uppercase tracking-tight leading-none">
+                              <h3 className="text-lg md:text-xl lg:text-2xl font-display font-bold uppercase tracking-tight leading-none">
                                  {protocol.title.split(' ').map((word, i) => (
                                     <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
                                        {word}{' '}

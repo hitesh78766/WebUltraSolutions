@@ -76,10 +76,10 @@ export default function CompanyOverview() {
                      className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Agency Intelligence</span>
+                     <span className="font-system-caption text-white">Agency Intelligence</span>
                   </motion.div>
 
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ABOUT WEBULTRASOLUTION.";
                         const words = title.split(" ");
@@ -110,7 +110,7 @@ export default function CompanyOverview() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold max-w-4xl leading-relaxed"
+                     className="font-system-body text-medium font-semibold max-w-4xl leading-relaxed"
                   >
                      Standing at the forefront of the global digital landscape. Engineering powerful offshore solutions with technical precision and market-leading expertise.
                   </motion.p>
@@ -126,14 +126,14 @@ export default function CompanyOverview() {
                   <div className="space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="w-6 h-[1px] bg-[#FF6600]/20" />
-                        <span className="text-[#FF6600] text-[10px] font-bold uppercase tracking-[0.3em]">Identity Protocol</span>
+                        <span className="font-system-caption text-primary">Identity Protocol</span>
                      </div>
                      <div className="space-y-6">
                         <AnimatedText
-                           className="text-slate-500 text-sm md:text-base lg:text-base font-semibold leading-relaxed max-w-3xl"
+                           className="font-system-body text-light font-semibold leading-relaxed max-w-3xl"
                            text="Webultrasolution Services is a proficiency-driven Web Design, Software Development, and IT agency headquartered in Noida. Serving as a comprehensive offshore service provider, we cater to the diverse design and IT infrastructure needs of both corporate entities and enterprise projects. With a wealth of experience in Custom Software Development, Mobile Apps, and SEO, WebUltraSolution has consistently delivered top-notch digital solutions globally."
                         />
-                        <p className="p-5 bg-white border-l-4 border-[#FF6600] shadow-sm rounded-md text-slate-500 text-sm md:text-base lg:text-base font-semibold leading-relaxed">
+                        <p className="p-5 bg-white border-l-4 border-primary shadow-sm rounded-md font-system-body text-light font-semibold leading-relaxed">
                            As a low IT cost structure provider, we are committed to providing truly cost-effective, customized IT solutions that meet our client's rigorous technological demands. From remote infrastructure management to security and compliance, we excel in delivering comprehensive and seamless solutions.
                         </p>
                      </div>
@@ -192,23 +192,23 @@ export default function CompanyOverview() {
                               {/* STATUS BADGE COHESION */}
                               <div className="flex items-center gap-3">
                                  <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
-                                 <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{item.t}</span>
+                                 <span className="font-system-caption text-primary">{item.t}</span>
                               </div>
 
                               <div className="space-y-1">
-                                 <h4 className="text-lg lg:text-xl font-display font-bold tracking-tight text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
+                                 <h4 className="font-system-title font-display font-bold tracking-tight text-dark group-hover:text-primary transition-colors duration-500">
                                     {item.h}
                                  </h4>
                                  <div className="w-10 h-0.5 bg-slate-100 group-hover:w-20 group-hover:bg-[#FF6600] transition-all duration-700" />
-                                 <p className="text-sm lg:text-base font-semibold text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-500">
+                                 <p className="font-system-body font-medium text-medium leading-relaxed group-hover:text-dark transition-colors duration-500">
                                     {item.p}
                                  </p>
                               </div>
 
                               <div className="pt-1 flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 group-hover:text-slate-950 transition-colors">
-                                 <span>Metric 2.0</span>
+                                 <span className="font-system-caption text-muted group-hover:text-dark transition-colors">Metric 2.0</span>
                                  <div className="flex-1 h-[1px] bg-slate-100 group-hover:bg-slate-200" />
-                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#FF6600]" />
+                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-primary" />
                               </div>
                            </div>
 
@@ -231,12 +231,12 @@ export default function CompanyOverview() {
                         <div className="absolute inset-x-0 bottom-0 p-6 text-white text-left">
                            <div className="space-y-4">
                               <div className="h-0.5 w-10 bg-[#FF6600] rounded-full" />
-                              <p className="text-sm lg:text-base font-semibold leading-relaxed italic">
+                              <p className="font-system-body font-semibold leading-relaxed italic">
                                  "Dominating the web requires technical precision and creative mastery through global trade axis synchronization."
                               </p>
                               <div className="flex items-center gap-2">
                                  <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
-                                 <span className="text-[9px] font-bold text-slate-200 uppercase tracking-widest leading-none">Global Trade Axis</span>
+                                 <span className="font-system-caption text-slate-200 uppercase tracking-widest leading-none">Global Trade Axis</span>
                               </div>
                            </div>
                         </div>

@@ -83,27 +83,27 @@ export default function ContentMarketing() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER */}
-         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[280px] sm:min-h-[300px] md:min-h-[320px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeNeuralStorm />
             <ParticleNetwork />
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 text-center space-y-4 sm:space-y-5">
                <div className="flex flex-col items-center gap-4">
                   <motion.div
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
-                     className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
+                     className="inline-flex items-center gap-2 px-3 sm:px-2 py-1.5 bg-orange-600 rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white">Narrative Engineering Core</span>
+                     <span className="font-system-caption text-white">Content Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-2 sm:px-4 md:px-6">
                      {(() => {
                         const title = "ENGINEERING CONTENT AUTHORITY.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className="inline-block mr-2 md:mr-3">
+                           <span key={wordIdx} className="inline-block mr-2 sm:mr-3 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -129,82 +129,63 @@ export default function ContentMarketing() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 0.8 }}
-                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed italic px-6 md:px-0"
+                     className="font-system-body text-xs md:text-sm  lg:text-base text-slate-600 font-semibold max-w-xl leading-relaxed px-2 sm:px-0 md:px-4"
                   >
                      "High-fidelity narrative engineering. Useful content should be at the core of your architectural marketing strategy to drive institutional growth."
                   </motion.p>
                </div>
 
-               {/* REFINED METRIC STACK - COMPACTED */}
-               <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 1 }}
-                  className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto pt-4 md:pt-2 px-4"
-               >
-                  {contentMetrics.map((metric, i) => (
-                     <div key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 md:gap-3 transition-all hover:shadow-lg hover:-translate-y-0.5 group">
-                        <div className="w-6 h-6 md:w-7 md:h-7 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors text-[10px] md:text-xs">
-                           <metric.icon size={12} className="md:w-[14px] md:h-[14px]" />
-                        </div>
-                        <div className="flex flex-col items-start translate-y-0.5">
-                           <span className="text-[12px] md:text-sm font-black text-[#FF6600] leading-none tracking-tight">{metric.value}</span>
-                           <span className="text-[7px] md:text-[8px] font-black text-slate-500 uppercase tracking-widest leading-none mt-1">{metric.label}</span>
-                        </div>
-                     </div>
-                  ))}
-               </motion.div>
             </div>
          </div>
 
          {/* COMPACTED INTERFACE - REFINED HIERARCHY */}
-         <section className="relative py-8 md:py-16 bg-[#FDFBF9] border-t border-slate-50">
-            <div className="relative z-10 max-w-[1300px] mx-auto px-4 md:px-8 lg:px-12">
+         <section className="relative py-8 sm:py-12 md:py-16 bg-[#FDFBF9] border-t border-slate-50">
+            <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
 
                <div className="max-w-5xl mx-auto space-y-16">
                   <div className="space-y-10">
                      <div className="flex flex-col items-center text-center space-y-4">
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                            <div className="h-[2px] w-10 bg-[#FF6600]" />
-                           <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Content Ecology</span>
+                           <span className="font-system-caption text-primary">Content Ecology</span>
                            <div className="h-[2px] w-10 bg-[#FF6600]" />
                         </div>
-                        <h2 className="text-lg md:text-xl lg:text-3xl font-extrabold text-slate-900 tracking-tighter uppercase leading-none max-w-3xl text-center lg:text-center">
+                        <h2 className="font-system-title font-bold text-slate-900 tracking-wide uppercase leading-none max-w-3xl text-center sm:text-center md:text-center lg:text-center">
                            Dynamic Content <span className="text-[#FF6600]">Marketing</span> Authority
                         </h2>
                      </div>
 
-                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-center">
                         <div className="space-y-6">
-                            <div className="bg-white p-5 md:p-6 border-l-[4px] border-[#FF6600] shadow-sm rounded-r-lg">
-                               <h3 className="text-sm md:text-base lg:text-lg font-black text-slate-800 leading-tight tracking-tight">
+                            <div className="bg-white p-3 sm:p-4 md:p-5 lg:p-6 border-l-[4px] border-primary shadow-sm rounded-r-lg">
+                               <h3 className="font-system-body text-slate-800 font-black leading-tight tracking-wide">
                                   Useful content should be at the core of your institutional marketing strategy.
                                </h3>
                             </div>
-                            <div className="space-y-4 text-slate-600 font-semibold leading-relaxed text-[13px] md:text-sm px-2 md:px-0">
-                               <p>
+                            <div className="space-y-4 font-system-body text-slate-600 leading-relaxed px-2 sm:px-0 md:px-2">
+                               <p className="font-system-body font-semibold">
                                   Consumers have shut off the traditional world of marketing—ignoring standard banners and skipping traditional advertising. High-fidelity information is the path.
                                </p>
-                               <p className="text-slate-950 italic">
+                               <p className="font-system-body text-slate-950 italic font-semibold">
                                   "Smart marketers understand that traditional methods are becoming less effective. Narrative authority is the institutional standard."
                                </p>
                             </div>
                         </div>
                         <div className="relative">
                             <div className="absolute -inset-2 bg-orange-50 rounded-xl z-0" />
-                            <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[220px] md:h-[280px]">
+                            <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[200px] sm:h-[220px] md:h-[250px] lg:h-[280px]">
                                <img
                                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
                                   alt="Expert Analysis"
                                   className="w-full h-full object-cover transition-transform duration-[6000ms] group-hover/intro:scale-110"
                                />
                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white space-y-1">
+                               <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 md:bottom-4 md:left-4 lg:bottom-6 lg:left-6 text-white space-y-1">
                                   <div className="flex items-center gap-1.5">
                                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-                                     <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.2em] text-[#FF6600]">System Verified</span>
+                                     <span className="font-system-caption text-primary">System Verified</span>
                                   </div>
-                                  <h4 className="text-base md:text-lg font-black uppercase tracking-tight">Narrative Governance</h4>
+                                  <h3 className="font-system-title text-white uppercase tracking-wide capitalize">Narrative Governance</h3>
                                </div>
                             </div>
                          </div>
@@ -212,20 +193,20 @@ export default function ContentMarketing() {
                   </div>
 
                   {/* OPERATIONAL STATUS BAR - ECOSYSTEM METRICS - COMPACTED */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 shadow-md border border-slate-200 rounded-lg overflow-hidden">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 shadow-md border border-slate-200 rounded-lg overflow-hidden">
                      {[
                         { label: "Newsworthy", val: "50%", sub: "Weekly", icon: Zap },
                         { label: "Evergreen", val: "35%", sub: "Institutional", icon: BookOpen },
                         { label: "Personal", val: "15%", sub: "Engagement", icon: Heart },
                         { label: "Efficiency", val: "95%", sub: "Resonance", icon: Activity }
                      ].map((spec, i) => (
-                        <div key={i} className="bg-white p-4 flex flex-col items-center text-center gap-2 lg:gap-3 group/st hover:bg-orange-50 transition-colors">
-                           <div className="p-1.5 bg-slate-50 rounded text-slate-300 group-hover/st:text-[#FF6600] group-hover/st:bg-white transition-all">
+                        <div key={i} className="bg-white p-2 sm:p-3 md:p-4 flex flex-col items-center text-center gap-2 sm:gap-3 md:gap-4 group/st hover:bg-orange-50 transition-colors">
+                           <div className="p-1.5 bg-primary rounded text-white group-hover/st:bg-orange-600 group-hover/st:text-white transition-all">
                               <spec.icon size={16} />
                            </div>
                            <div className="flex flex-col">
-                              <span className="text-lg font-black text-slate-950 tracking-tighter group-hover/st:text-[#FF6600] transition-colors">{spec.val}</span>
-                              <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest mt-0.5">{spec.label}</span>
+                              <span className="font-system-title text-slate-950 tracking-tighter group-hover/st:text-primary transition-colors font-bold">{spec.val}</span>
+                              <span className="font-system-caption text-slate-400 capitalize tracking-widest mt-0.5 font-bold group-hover/st:text-slate-600 transition-colors">{spec.label}</span>
                            </div>
                         </div>
                      ))}
@@ -236,14 +217,14 @@ export default function ContentMarketing() {
                <div className="mt-20 relative">
                   <div className="absolute top-1/2 left-0 w-full h-px bg-slate-100 hidden md:block z-0" />
 
-                  <div className="relative z-10 flex flex-col items-center text-center space-y-3 mb-16">
-                     <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 border border-slate-100">
-                        <Layers size={18} />
+                  <div className="relative z-10 flex flex-col items-center text-center space-y-3 mb-12 sm:mb-14 md:mb-16">
+                     <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary text-white flex items-center justify-center border border-primary/20">
+                        <Layers size={14} className="sm:size-[18px]" />
                      </div>
-                     <h3 className="text-[11px] font-black text-slate-950 uppercase tracking-[0.6em]">Operational Objectives</h3>
+                     <h3 className="font-system-title font-semibold text-slate-950 uppercase tracking-wider">Operational Objectives</h3>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative z-10">
                      {strategicNodes.slice(0, 3).map((item, i) => (
                         <motion.div
                            key={i}
@@ -259,26 +240,26 @@ export default function ContentMarketing() {
 
                               <div className="relative z-10 flex justify-between items-start mb-6">
                                  <div className="flex flex-col">
-                                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1 group-hover/card:text-[#FF6600] transition-colors">{item.tag}</span>
+                                    <span className="font-system-caption text-slate-400 uppercase tracking-wider mb-1 group-hover/card:text-primary transition-colors">{item.tag}</span>
                                     <div className="flex items-center gap-2">
-                                       <span className="text-2xl font-display font-black text-slate-100 group-hover/card:text-slate-200 transition-colors italic">0{i + 1}</span>
-                                       <div className="h-px w-6 bg-slate-100 group-hover/card:bg-slate-200 transition-colors" />
+                                       <span className="text-xl sm:text-2xl font-display font-black text-slate-100 group-hover/card:text-slate-200 transition-colors italic">0{i + 1}</span>
+                                       <div className="h-px w-6 bg-slate-100 group-hover/card:bg-primary transition-colors" />
                                     </div>
                                  </div>
-                                 <div className="w-8 h-8 rounded bg-orange-50 flex items-center justify-center text-slate-300 group-hover/card:bg-[#FF6600] group-hover/card:text-white transition-all duration-500 border border-orange-100/50">
+                                 <div className="w-8 h-8 rounded bg-orange-50 flex items-center justify-center text-primary group-hover/card:bg-primary group-hover/card:text-white transition-all duration-500 border border-primary/20">
                                     <item.icon size={16} />
                                  </div>
                               </div>
 
-                              <h4 className="text-lg font-black uppercase tracking-tighter leading-tight italic mb-3 relative z-10">
+                              <h4 className="font-system-title font-black capitalize tracking-tighter leading-tight  mb-3 relative z-10">
                                  {(() => {
                                     const words = item.title.split(" ");
                                     return (
-                                       <div className="flex flex-wrap gap-x-2">
-                                          <span className="text-slate-950 transition-colors duration-300">
+                                       <div className="flex flex-wrap gap-x-2 text-2xl">
+                                          <span className="text-slate-950 font-bold">
                                              {words[0]}
                                           </span>
-                                          <span className="text-slate-950 group-hover/card:text-[#FF6600] transition-colors duration-300">
+                                          <span className="text-[#FF6600] font-bold">
                                              {words.slice(1).join(" ")}
                                           </span>
                                        </div>
@@ -286,7 +267,7 @@ export default function ContentMarketing() {
                                  })()}
                               </h4>
 
-                              <p className="text-[13px] text-slate-500 font-bold leading-relaxed group-hover/card:text-slate-900 transition-colors line-clamp-3">
+                              <p className="font-system-body text-slate-500 font-bold leading-relaxed group-hover/card:text-slate-900 transition-colors line-clamp-3">
                                  {item.desc}
                               </p>
                            </div>
@@ -295,7 +276,7 @@ export default function ContentMarketing() {
                   </div>
 
                   {/* SECOND ROW - STAGGERED OFFSET */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 relative z-10 md:px-12">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 relative z-10 md:px-12">
                      {strategicNodes.slice(3, 6).map((item, i) => (
                         <motion.div
                            key={i + 3}
@@ -310,26 +291,26 @@ export default function ContentMarketing() {
 
                               <div className="relative z-10 flex justify-between items-start mb-6">
                                  <div className="flex flex-col">
-                                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1 group-hover/card:text-[#FF6600] transition-colors">{item.tag}</span>
+                                    <span className="font-system-caption text-slate-400 uppercase tracking-wider mb-1 group-hover/card:text-primary transition-colors">{item.tag}</span>
                                     <div className="flex items-center gap-2">
-                                       <span className="text-2xl font-display font-black text-slate-100 group-hover/card:text-slate-200 transition-colors italic">0{i + 4}</span>
-                                       <div className="h-px w-6 bg-slate-100 group-hover/card:bg-slate-200 transition-colors" />
+                                       <span className="text-xl sm:text-2xl font-display font-black text-slate-100 group-hover/card:text-slate-200 transition-colors italic">0{i + 4}</span>
+                                       <div className="h-px w-6 bg-slate-100 group-hover/card:bg-primary transition-colors" />
                                     </div>
                                  </div>
-                                 <div className="w-8 h-8 rounded bg-orange-50 flex items-center justify-center text-slate-300 group-hover/card:bg-[#FF6600] group-hover/card:text-white transition-all duration-500 border border-orange-100/50">
+                                 <div className="w-8 h-8 rounded bg-orange-50 flex items-center justify-center text-primary group-hover/card:bg-primary group-hover/card:text-white transition-all duration-500 border border-primary/20">
                                     <item.icon size={16} />
                                  </div>
                               </div>
 
-                              <h4 className="text-lg font-black uppercase tracking-tighter leading-tight italic mb-3 relative z-10">
+                              <h4 className="font-system-title font-black capitalize tracking-tighter leading-tight  mb-3 relative z-10">
                                  {(() => {
                                     const words = item.title.split(" ");
                                     return (
-                                       <div className="flex flex-wrap gap-x-2">
-                                          <span className="text-slate-950 transition-colors duration-300">
+                                       <div className="flex flex-wrap gap-x-2 text-2xl">
+                                          <span className="text-slate-950 font-bold">
                                              {words[0]}
                                           </span>
-                                          <span className="text-slate-950 group-hover/card:text-[#FF6600] transition-colors duration-300">
+                                          <span className="text-[#FF6600] font-bold">
                                              {words.slice(1).join(" ")}
                                           </span>
                                        </div>
@@ -337,7 +318,7 @@ export default function ContentMarketing() {
                                  })()}
                               </h4>
 
-                              <p className="text-[13px] text-slate-500 font-bold leading-relaxed group-hover/card:text-slate-900 transition-colors line-clamp-3">
+                              <p className="font-system-body text-slate-500 font-bold leading-relaxed group-hover/card:text-slate-900 transition-colors line-clamp-3">
                                  {item.desc}
                               </p>
                            </div>

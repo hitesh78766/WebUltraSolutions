@@ -91,10 +91,10 @@ export default function ReputationManagement() {
                      className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite Brand Custodians</span>
+                     <span className="font-system-caption text-white">Reputation Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl lg:text-4xl font-display font-black text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-wide leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ENGINEERING REPUTATION DOMINANCE.";
                         const words = title.split(" ");
@@ -125,31 +125,12 @@ export default function ReputationManagement() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-sm lg:text-base font-semibold max-w-2xl leading-relaxed italic"
+                     className="text-slate-600 text-xs lg:text-base font-semibold max-w-2xl leading-relaxed italic"
                   >
                      "When seeking information, our initial destination is the Internet, and Google stands out as the leading search engine for this purpose."
                   </motion.p>
                </div>
 
-               {/* REFINED METRIC STACK */}
-               <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 1.5 }}
-                  className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto pt-4"
-               >
-                  {reputationMetrics.map((metric, i) => (
-                     <div key={i} className="px-5 py-3 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-4 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                        <div className="w-8 h-8 rounded bg-[#FF6600] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform">
-                           <metric.icon size={16} />
-                        </div>
-                        <div className="flex flex-col items-start">
-                           <span className="text-sm font-black text-[#FF6600] leading-none">{metric.value}</span>
-                           <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{metric.label}</span>
-                        </div>
-                     </div>
-                  ))}
-               </motion.div>
             </div>
          </div>
 
@@ -166,21 +147,21 @@ export default function ReputationManagement() {
                            <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Protocol Overview</span>
                         </div>
 
-                        <div className="space-y-12">
-                           <h2 className="text-xl lg:text-4xl font-display font-black text-slate-900 tracking-tighter uppercase leading-none">
+                        <div className="space-y-6">
+                           <h2 className="text-xl lg:text-4xl font-display  text-slate-900 tracking-wider uppercase leading-none">
                               The <span className="text-[#FF6600]">Reputation</span> Paradox
                            </h2>
 
                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                               <div className="space-y-6">
-                                 <p className="text-base lg:text-xl font-bold text-slate-800 leading-relaxed tracking-tight border-l-4 border-[#FF6600] pl-6 py-2 italic">
-                                    Every day, over one billion names are searched on Google. While you may not have Google yourself, it's certain that someone else has - and they are making judgments about you based on what they find.
+                                 <p className="text-sm lg:text-base font-bold text-slate-800 leading-relaxed tracking-wide border-l-4 border-[#FF6600] pl-6 py-2 ">
+                                    Every day, over one billion names are searched on Google. While you may not have Google yourself, it's certain that someone else has - and they are making judgments about you based on what they find. A single negative review or misleading article can instantly derail a hard-earned brand image, influencing business partnerships, client trust, and your bottom line before you even have a chance to introduce yourself.
                                  </p>
                                  <p className="text-sm lg:text-base text-slate-500 font-semibold leading-relaxed">
-                                    Ultimately, it's your responsibility to ensure you make a good impression when someone Google's you. Our guide is engineered to help you assess your current online reputation and implement surgical management protocols.
+                                    Ultimately, it's your responsibility to ensure you make a good impression when someone Google's you. Our guide is engineered to help you assess your current online reputation and implement surgical management protocols. From suppressing negative search results to amplifying positive brand narratives, we utilize cutting-edge SEO tactics and PR strategies to ensure that the first page of Google accurately reflects your true value and authority.
                                  </p>
                               </div>
-                              <div className="relative rounded-lg overflow-hidden shadow-2xl border border-slate-100 group/intro h-full min-h-[300px] lg:min-h-[400px]">
+                              <div className="relative rounded-lg overflow-hidden shadow-2xl border border-slate-100 group/intro h-full min-h-[250px] lg:min-h-[300px]">
                                  <img
                                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
                                     alt="Expert Analysis"
@@ -206,7 +187,7 @@ export default function ReputationManagement() {
                         <Monitor size={20} className="text-[#FF6600]" />
                         <span className="text-[11px] font-black text-[#FF6600] uppercase tracking-[0.6em]">Brand Integrity Hub</span>
                      </div>
-                     <h3 className="text-2xl lg:text-4xl font-display font-black text-slate-900 uppercase tracking-tighter">Strategic <span className="text-[#FF6600]">Protocols</span></h3>
+                     <h3 className="text-2xl lg:text-4xl font-display  text-slate-900 uppercase tracking-wider">Strategic <span className="text-[#FF6600]">Protocols</span></h3>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 lg:gap-y-16">
@@ -214,7 +195,7 @@ export default function ReputationManagement() {
                         <div key={i} className="group relative space-y-4 hover:translate-x-2 transition-transform duration-500">
                            <div className="flex items-center gap-4">
                               <div className="w-8 h-[2px] bg-[#FF6600]/20 group-hover:w-12 group-hover:bg-[#FF6600] transition-all" />
-                              <h4 className="text-sm lg:text-base font-display font-black text-slate-900 uppercase tracking-tight group-hover:text-[#FF6600] transition-colors">
+                              <h4 className="text-sm lg:text-lg font-display  text-slate-900 uppercase tracking-wider group-hover:text-[#FF6600] transition-colors">
                                  {(() => {
                                     const words = item.title.split(" ");
                                     if (words.length > 1) {
@@ -228,7 +209,7 @@ export default function ReputationManagement() {
                                  })()}
                               </h4>
                            </div>
-                           <p className="text-[12px] lg:text-sm text-slate-500 font-semibold leading-relaxed max-w-xl">
+                           <p className="text-[12px] lg:text-base text-slate-500 font-semibold leading-relaxed max-w-xl">
                               {item.desc}
                            </p>
                         </div>

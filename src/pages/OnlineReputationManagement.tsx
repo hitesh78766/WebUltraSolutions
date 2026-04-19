@@ -68,24 +68,24 @@ export default function OnlineReputationManagement() {
    ];
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
+      <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC HERO */}
          <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* INTERACTIVE PARTICLES BACKDROP */}
             <ThreeNeuralStorm />
             
             <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
-               <div className="flex flex-col items-center gap-4">
+               <div className="flex flex-col items-center gap-4 mt-3">
                   <motion.div 
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
                      className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite Governance Protocol</span>
+                     <span className="font-system-caption text-white">Digital Reputation Core</span>
                   </motion.div>
                   
-                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      {(() => {
                         const title = "ONLINE REPUTATION MANAGEMENT.";
                         const words = title.split(" ");
@@ -116,7 +116,7 @@ export default function OnlineReputationManagement() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-xl leading-relaxed px-6 md:px-0"
+                     className="text-slate-600 text-xs md:text-xs lg:text-base font-semibold max-w-xl leading-relaxed px-6 md:px-0"
                   >
                      "Securing the digital footprint of the World's most influential Celebrities, Politicians, and Institutional Leaders."
                   </motion.p>
@@ -134,11 +134,11 @@ export default function OnlineReputationManagement() {
                      { label: 'Total Discretion', icon: Lock },
                      { label: 'Narrative Sync', icon: Target }
                   ].map((feature, i) => (
-                     <div key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-2 md:gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group">
-                        <div className="w-6 h-6 md:w-7 md:h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
+                     <div key={i} className="px-3 md:px-4 py-2 md:py-2 bg-white border border-slate-100 shadow-sm rounded-sm flex items-center gap-2 md:gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group mb-3">
+                        <div className="w-4 h-4 md:w-7 md:h-7 rounded-md bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
                            <feature.icon size={12} className="md:w-[14px] md:h-[14px]" />
                         </div>
-                        <span className="text-[8px] md:text-[10px] font-semibold text-slate-700 uppercase tracking-widest leading-none">{feature.label}</span>
+                        <span className="text-[8px] md:text-[10px] font-semibold text-slate-700 capitalize tracking-widest leading-none">{feature.label}</span>
                      </div>
                   ))}
                </motion.div>
@@ -182,7 +182,7 @@ export default function OnlineReputationManagement() {
                                           >
                                              <item.icon size={24} />
                                           </div>
-                                          <div className="px-2 py-0.5 bg-slate-900 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                          <div className="px-2 py-0.5 bg-slate-900 rounded-full shadow-lg opacity-100 transition-all duration-300">
                                              <span className="text-[8px] font-black text-white uppercase tracking-[0.1em] whitespace-nowrap">
                                                 {item.label}
                                              </span>
@@ -269,18 +269,18 @@ export default function OnlineReputationManagement() {
                                        <div className="w-6 h-[2px] bg-[#FF6600]" />
                                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                                     </div>
-                                    <h3 className="text-lg md:text-xl lg:text-2xl font-display font-extrabold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
+                                    <h3 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
                                        {pillar.title}
                                     </h3>
                                  </div>
                               </div>
                               
-                              <p className="text-[13px] md:text-sm lg:text-lg font-semibold leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
+                              <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
                                  {pillar.desc}
                               </p>
 
                               <div className="pt-2">
-                                 <button className="flex items-center gap-2 text-xs lg:text-sm font-bold text-slate-900 uppercase tracking-widest group/link">
+                                 <button className="flex items-center gap-2 text-xs lg:text-sm font-bold text-slate-900 capitalize tracking-widest group/link">
                                     <span>Initiate Protocol</span>
                                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1 text-[#FF6600]" />
                                  </button>
@@ -290,35 +290,6 @@ export default function OnlineReputationManagement() {
                      </div>
                   ))}
 
-                  {/* CONCLUSION BLOCK */}
-                  <motion.div 
-                     initial={{ opacity: 0, y: 40 }}
-                     whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true }}
-                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                     className="relative py-8 md:py-14 px-6 md:px-8 rounded-md bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default"
-                  >
-                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
-                     
-                     <div className="relative z-10 max-w-4xl mx-auto space-y-5">
-                        <div className="w-12 h-12 mx-auto rounded-md bg-[#FF6600]/10 border border-[#FF6600]/20 flex items-center justify-center text-[#FF6600] shadow-xl group-hover:scale-110 transition-transform duration-700">
-                           <Zap size={24} />
-                        </div>
-
-                        <div className="relative">
-                           <h3 className="text-[12px] md:text-sm lg:text-lg font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic px-4">
-                              "In an era of instant global communication, your digital reputation is your most valuable asset. We provide the surgical precision required to maintain your legacy and protect your status against any threat."
-                           </h3>
-                        </div>
-
-
-                        <div className="flex items-center justify-center gap-8 pt-4">
-                           <div className="h-[1px] w-24 bg-white/10" />
-                           <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-orange-500">Elite Governance</span>
-                           <div className="h-[1px] w-24 bg-white/10" />
-                        </div>
-                     </div>
-                  </motion.div>
                </div>
             </div>
          </section>

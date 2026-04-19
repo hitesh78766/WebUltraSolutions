@@ -83,22 +83,22 @@ export default function SocialMediaMarketing() {
    return (
       <div className="pt-[80px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER */}
-         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative py-12 md:py-16 lg:py-20 min-h-[200px] md:min-h-[250px] lg:min-h-[300px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ForceDirectedGraph />
             <ThreeNetworkGlobe />
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-6">
-               <div className="flex flex-col items-center gap-5">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-6 md:space-y-8">
+               <div className="flex flex-col items-center gap-4 md:gap-5">
                   <motion.div
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
-                     className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FF6600]/10 border border-[#FF6600]/20 rounded-md shadow-sm"
+                     className="inline-flex items-center gap-2 px-4 py-1 bg-[#FF6600]/10 border border-[#FF6600]/20 rounded-md shadow-sm"
                   >
-                     <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
-                     <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FF6600]">Global Connectivity Engine</span>
+                     <div className="w-1 h-1 rounded-full bg-[#FF6600] animate-pulse" />
+                     <span className="font-system-caption text-[10px] text-white">Social Media Intelligence</span>
                   </motion.div>
 
-                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold tracking-tight leading-[1] uppercase max-w-5xl mx-auto px-4">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      <span className="text-slate-950 block lg:inline">Engineering Social</span>
                      <span className="text-[#FF6600] block lg:inline lg:ml-4">Synergy.</span>
                   </h1>
@@ -107,27 +107,27 @@ export default function SocialMediaMarketing() {
                      initial={{ opacity: 0, scale: 0.95 }}
                      animate={{ opacity: 1, scale: 1 }}
                      transition={{ duration: 1, delay: 0.5 }}
-                     className="text-slate-600 text-[10px] md:text-xs lg:text-base font-semibold max-w-2xl leading-relaxed italic px-6 md:px-0"
+                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-2xl leading-relaxed italic px-6 md:px-0"
                   >
                      "Capturing the birds-eye view of your global brand resonance through precision engagement architectures and narrative scale."
                   </motion.p>
                </div>
 
-               {/* REFINED METRIC STACK - COMPACTED */}
+               {/* REFINED METRIC STACK - COMPACT & RESPONSIVE */}
                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 1 }}
-                  className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto pt-4 md:pt-2 px-4"
+                  className="flex flex-wrap justify-center items-center gap-2 md:gap-3 max-w-2xl mx-auto px-4"
                >
                   {socialMetrics.map((metric, i) => (
-                     <div key={i} className="px-4 py-2 bg-white border border-slate-100 shadow-sm rounded-md flex items-center gap-3 transition-all hover:shadow-lg hover:-translate-y-0.5 group">
-                        <div className="w-7 h-7 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors">
-                           <metric.icon size={14} />
+                     <div key={i} className="px-3 py-1.5 md:px-4 md:py-2 bg-white/95 backdrop-blur-sm border border-slate-100 shadow-sm rounded-md flex items-center gap-2 md:gap-2.5 transition-all hover:shadow hover:-translate-y-0.5 group">
+                        <div className="w-6 h-6 md:w-7 md:h-7 shrink-0 rounded bg-orange-50 flex items-center justify-center text-[#FF6600] group-hover:bg-[#FF6600] group-hover:text-white transition-colors duration-300">
+                           <metric.icon className="w-3 h-3 md:w-3.5 md:h-3.5" />
                         </div>
                         <div className="flex flex-col items-start translate-y-0.5">
-                           <span className="text-sm font-black text-[#FF6600] leading-none tracking-tight">{metric.value}</span>
-                           <span className="text-[8px] font-black text-slate-500 uppercase tracking-widest leading-none mt-1">{metric.label}</span>
+                           <span className="text-xs md:text-sm font-black text-[#FF6600] leading-none tracking-tight">{metric.value}</span>
+                           <span className="text-[7px] md:text-[8px] font-black text-slate-500 uppercase tracking-widest leading-none mt-0.5">{metric.label}</span>
                         </div>
                      </div>
                   ))}
@@ -147,7 +147,7 @@ export default function SocialMediaMarketing() {
                            <span className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.4em]">Engagement Ecology</span>
                            <div className="h-[2px] w-10 bg-[#FF6600]" />
                         </div>
-                        <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold text-slate-900 tracking-tighter uppercase leading-none max-w-3xl text-center lg:text-center">
+                        <h2 className="text-lg md:text-xl lg:text-3xl font-bold text-slate-900 tracking-wide uppercase leading-none max-w-3xl text-center lg:text-center">
                            High-Fidelity <span className="text-[#FF6600]">Engagement</span> ROI
                         </h2>
                      </div>
@@ -159,14 +159,14 @@ export default function SocialMediaMarketing() {
                                  Monitor your brand, competitors, and market at a glance with Elite precision.
                               </h3>
                            </div>
-                           <div className="space-y-4 text-slate-600 font-semibold leading-relaxed text-[13px]">
+                           <div className="space-y-4 text-slate-600 font-semibold leading-relaxed text-sm md:text-base lg:text-base">
                               <p>
                                  Create, plan, and schedule batch messages to all your networks with surgical precision. Our proprietary suggested content engine curates relevant narratives based on real-time market sentiment, ensuring your brand maximizes its architectural timeline and maintains a dominant digital footprint.
                               </p>
                               <p>
                                  We implement advanced cross-platform algorithmic synchronization to ensure your voice resonates across the entire digital ecology. By optimizing for high-frequency engagement and technical reach, we transform standard social interactions into powerful organic growth engines that feed your broader institutional funnel.
                               </p>
-                              <p className="text-slate-950 italic font-black border-l-2 border-[#FF6600] pl-4">
+                              <p className="text-slate-950 italic font-black border-l-2 border-[#FF6600] pl-4 text-sm md:text-base lg:text-base">
                                  "Social media architecture is not about viral noise; it is about engineering permanent narrative authority. We focus on true institutional results and financial ROI through technical precision, identifying high-value conversion pathways that traditional marketing simply ignores."
                               </p>
                            </div>
@@ -174,7 +174,7 @@ export default function SocialMediaMarketing() {
 
                         <div className="relative">
                            <div className="absolute -inset-2 bg-orange-50 rounded-xl z-0" />
-                           <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[220px] md:h-[250px]">
+                           <div className="relative rounded-xl overflow-hidden shadow-xl border border-white z-10 group/intro h-[220px] md:h-[250px] lg:h-[400px] xl:h-[400px]">
                               <img
                                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
                                  alt="Expert Analysis"
@@ -186,7 +186,7 @@ export default function SocialMediaMarketing() {
                                     <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
                                     <span className="text-[8px] md:text-[8px] font-black uppercase tracking-[0.2em] text-[#FF6600]">System Verified</span>
                                  </div>
-                                 <h4 className="text-base md:text-base font-black uppercase tracking-tight">Social Governance</h4>
+                                 <h4 className="text-base md:text-base text-white uppercase tracking-widest">Social Governance</h4>
                               </div>
                            </div>
                         </div>
@@ -198,7 +198,7 @@ export default function SocialMediaMarketing() {
                <div className="mt-20 max-w-6xl mx-auto">
                   <div className="relative z-10 flex flex-col items-center text-center space-y-2 mb-16">
                      <span className="text-[9px] font-black text-[#FF6600] uppercase tracking-[0.3em]">Operational Core</span>
-                     <h3 className="text-[12px] font-black text-slate-950 uppercase tracking-[0.6em]">Deployment Protocol</h3>
+                     <h3 className="text-base md:text-base lg:text-xl font-black text-slate-950 uppercase tracking-[0.4em]">Deployment <span className="text-[#FF6600]">Protocol</span></h3>
                   </div>
 
                   <div className="space-y-12 relative">
@@ -229,7 +229,7 @@ export default function SocialMediaMarketing() {
                               <div className="space-y-3 pt-1">
                                  <div className="space-y-1">
                                     <span className="text-[8px] font-black text-[#FF6600] uppercase tracking-[0.3em] mb-1 block">{item.tag}</span>
-                                    <h4 className="text-lg font-black uppercase tracking-tighter leading-tight italic">
+                                    <h4 className="text-lg md:text-xl font-black capitalize tracking-wide leading-tight italic">
                                        {(() => {
                                           const words = item.title.split(" ");
                                           return (
@@ -242,7 +242,7 @@ export default function SocialMediaMarketing() {
                                     </h4>
                                  </div>
 
-                                 <p className="text-sm text-slate-500 font-bold leading-relaxed max-w-5xl group-hover:text-slate-950 group-hover:font-black transition-all duration-300">
+                                 <p className="text-sm text-slate-500 font-bold leading-relaxed max-w-5xl tracking-wide group-hover:text-slate-950 text-sm md:text-base group-hover:font-black transition-all duration-300">
                                     {item.desc}
                                  </p>
 

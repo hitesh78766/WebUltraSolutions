@@ -65,28 +65,28 @@ export default function ClassifiedPortal() {
    }, []);
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-secondary">
+      <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER */}
          <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeNeuralStorm />
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
-               <div className="flex flex-col items-center gap-4">
+               <div className="flex flex-col items-center gap-4 mt-3">
                   <motion.div
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
                      className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite Classified Ecosystems</span>
+                     <span className="font-system-caption text-xs text-white capitalize">Classified Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
                         const title = "ENGINEERING CLASSIFIED DOMINANCE.";
                         const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className="inline-block mr-4">
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -112,37 +112,15 @@ export default function ClassifiedPortal() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 1, delay: 1.2 }}
-                     className="text-slate-600 text-[10px] md:text-xs lg:text-sm font-semibold max-w-2xl leading-relaxed px-6 md:px-0"
+                     className="text-slate-600 mb-2 text-xs md:text-sm lg:text-base font-semibold max-w-xl leading-relaxed px-6 md:px-0"
                   >
                      High-performance classified portal architectures for global market leaders. We unify your digital footprint through strategic listing distribution and verifiable growth protocols.
                   </motion.p>
-
-                  {/* ELITE STATUS STACK */}
-                  <motion.div
-                     initial={{ opacity: 0, scale: 0.95 }}
-                     animate={{ opacity: 1, scale: 1 }}
-                     transition={{ duration: 1, delay: 1.5 }}
-                     className="flex flex-wrap justify-center gap-2 md:gap-3 pt-4 px-4"
-                  >
-                     {[
-                        { label: "Active Nodes", val: "Global", icon: Globe },
-                        { label: "Data Integrity", val: "Institutional", icon: Shield },
-                        { label: "Sync Velocity", val: "Instant", icon: Zap }
-                     ].map((badge, i) => (
-                        <div key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-white/80 backdrop-blur-md border border-slate-100 shadow-sm rounded flex items-center gap-2 md:gap-3 group hover:shadow-xl transition-all">
-                           <badge.icon size={12} className="text-[#FF6600] md:w-[14px] md:h-[14px]" />
-                           <div className="flex flex-col items-start translate-y-[1px]">
-                              <span className="text-[9px] md:text-[10px] font-black text-slate-900 uppercase leading-none tracking-tight">{badge.val}</span>
-                              <span className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
-                           </div>
-                        </div>
-                     ))}
-                  </motion.div>
                </div>
             </div>
          </div>
 
-         <section className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 py-6 md:py-8 ">
+         <section className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 py-6 md:py-8">
             <div className="grid grid-cols-1 gap-6 lg:gap-10">
                <div className="flex flex-col gap-8 lg:gap-12">
                   {classifiedPillars.map((pillar, idx) => (
@@ -167,11 +145,11 @@ export default function ClassifiedPortal() {
                            {/* ELITE BADGE */}
                            <div className="absolute top-4 right-4 md:top-6 md:right-6">
                               <div className="px-2 md:px-3 py-1 md:py-1.5 rounded-md bg-[#FF6600] text-white shadow-xl flex items-center gap-1.5 md:gap-2">
-                                 <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-white animate-pulse" />
-                                 <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider">Elite standard</span>
+                                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                 <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider">Elite Standard</span>
                               </div>
                            </div>
-                           <span className={`absolute bottom-4 ${idx % 2 === 0 ? "right-4" : "left-4"} md:bottom-6 ${idx % 2 === 0 ? "right-6" : "left-6"} text-[40px] md:text-[50px] font-display font-extrabold text-white/60 select-none tracking-tighter italic`}>0{idx + 1}</span>
+                           <span className={`absolute bottom-4 ${idx % 2 === 0 ? "right-4" : "left-4"} md:bottom-6 ${idx % 2 === 0 ? "right-6" : "left-6"} text-3xl md:text-4xl font-display font-bold text-white/60 select-none tracking-tighter italic`}>0{idx + 1}</span>
                         </motion.div>
 
                         <motion.div
@@ -183,24 +161,24 @@ export default function ClassifiedPortal() {
                         >
                            <div className="space-y-4">
                               <div className="flex items-center gap-5">
-                                 <div className="relative w-12 h-12 rounded-md bg-[#FF6600] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-all duration-700">
-                                    <pillar.icon size={22} />
+                                 <div className="relative w-8 h-8 md:w-12 md:h-12 rounded-md bg-[#FF6600] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-all duration-700">
+                                    <pillar.icon size={16} className="md:size-[22px]" />
                                  </div>
                                  <div className="space-y-1">
                                     <div className="flex items-center gap-2">
-                                       <div className="w-6 h-[2px] bg-[#FF6600]" />
+                                       <div className="w-4 sm:w-6 h-[2px] bg-primary" />
                                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{pillar.tag}</span>
                                     </div>
-                                    <h3 className="text-lg md:text-xl lg:text-2xl font-display font-extrabold tracking-tight uppercase leading-none text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500 text-center lg:text-left">
+                                    <h3 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase text-slate-950 group-hover:text-[#FF6600] transition-colors duration-500">
                                        {pillar.title}
                                     </h3>
                                  </div>
                               </div>
-                              <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl text-center lg:text-left px-2 md:px-0">
+                              <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 group-hover:text-slate-700 transition-colors max-w-xl">
                                  {pillar.desc}
                               </p>
-                              <div className="pt-2 flex justify-center lg:justify-start">
-                                 <button className="flex items-center gap-2 text-[10px] font-bold text-slate-900 uppercase tracking-widest group/link">
+                              <div className="pt-2">
+                                 <button className="flex items-center gap-2 text-xs lg:text-sm font-bold text-slate-900 capitalize tracking-widest group/link">
                                     <span>Learn More</span>
                                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1 text-[#FF6600]" />
                                  </button>

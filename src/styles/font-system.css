@@ -1,0 +1,170 @@
+/* WebUltraSolutions Font System - Consistent Across All Pages */
+
+/* CSS Custom Properties for Font Sizes */
+:root {
+  /* Base Font Sizes */
+  --font-xs: 0.75rem;    /* 12px */
+  --font-sm: 0.875rem;   /* 14px */
+  --font-base: 1rem;     /* 16px */
+  --font-lg: 1.125rem;   /* 18px */
+  --font-xl: 1.25rem;    /* 20px */
+  --font-2xl: 1.5rem;    /* 24px */
+  --font-3xl: 1.875rem;  /* 30px */
+  --font-4xl: 2.25rem;   /* 36px */
+  --font-5xl: 3rem;      /* 48px */
+  
+  /* Responsive Font Scaling */
+  --font-hero-mobile: 2.25rem;    /* 36px */
+  --font-hero-tablet: 2.5rem;     /* 40px */
+  --font-hero-desktop: 3rem;       /* 48px */
+  
+  --font-title-mobile: 1.5rem;    /* 24px */
+  --font-title-tablet: 1.75rem;   /* 28px */
+  --font-title-desktop: 2rem;     /* 32px */
+  
+  --font-body-mobile: 0.875rem;   /* 14px */
+  --font-body-tablet: 0.9375rem;  /* 15px */
+  --font-body-desktop: 1rem;      /* 16px */
+  
+  --font-caption-mobile: 0.625rem; /* 10px */
+  --font-caption-tablet: 0.6875rem; /* 11px */
+  --font-caption-desktop: 0.75rem;  /* 12px */
+  
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+}
+
+/* Utility Classes for Consistent Typography */
+.font-system-hero {
+  font-size: var(--font-hero-mobile);
+  line-height: var(--leading-tight);
+  font-weight: var(--font-bold);
+}
+
+@media (min-width: 768px) {
+  .font-system-hero {
+    font-size: var(--font-hero-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-system-hero {
+    font-size: var(--font-hero-desktop);
+  }
+}
+
+.font-system-title {
+  font-size: var(--font-title-mobile);
+  line-height: var(--leading-tight);
+  font-weight: var(--font-bold);
+}
+
+@media (min-width: 768px) {
+  .font-system-title {
+    font-size: var(--font-title-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-system-title {
+    font-size: var(--font-title-desktop);
+  }
+}
+
+.font-system-body {
+  font-size: var(--font-body-mobile);
+  line-height: var(--leading-normal);
+  font-weight: var(--font-normal);
+}
+
+@media (min-width: 768px) {
+  .font-system-body {
+    font-size: var(--font-body-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-system-body {
+    font-size: var(--font-body-desktop);
+  }
+}
+
+.font-system-caption {
+  font-size: var(--font-caption-mobile);
+  line-height: var(--leading-normal);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .font-system-caption {
+    font-size: var(--font-caption-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-system-caption {
+    font-size: var(--font-caption-desktop);
+  }
+}
+
+/* Color System */
+.text-primary {
+  color: #FF6600;
+}
+
+.text-dark {
+  color: #0f172a;
+}
+
+.text-medium {
+  color: #475569;
+}
+
+.text-light {
+  color: #64748b;
+}
+
+.text-muted {
+  color: #94a3b8;
+}
+
+/* Background Colors */
+.bg-primary {
+  background-color: #FF6600;
+}
+
+.bg-dark {
+  background-color: #0f172a;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+}
+
+/* Border Colors */
+.border-primary {
+  border-color: #FF6600;
+}
+
+.border-light {
+  border-color: #e2e8f0;
+}

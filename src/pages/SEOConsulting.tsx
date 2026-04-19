@@ -99,10 +99,10 @@ export default function SEOConsulting() {
                      className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite SEO Intelligence</span>
+                     <span className="font-system-caption text-white">SEO Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto px-4">
                      {(() => {
                         const title = "SEARCH AUTHORITY SYSTEMS.";
                         const words = title.split(" ");
@@ -154,7 +154,7 @@ export default function SEOConsulting() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-xl md:text-2xl lg:text-5xl font-display font-extrabold text-slate-900 uppercase tracking-tight leading-none text-center lg:text-left">
+                        <h2 className="text-xl md:text-2xl lg:text-5xl font-display font-bold text-slate-900 uppercase tracking-tight leading-none text-center lg:text-left">
                            The Core <span className="text-[#FF6600]">Protocol.</span>
                         </h2>
                         <div className="w-16 md:w-20 h-1 bg-[#FF6600] mx-auto lg:mx-0" />
@@ -163,7 +163,7 @@ export default function SEOConsulting() {
                         <p className="border-l-4 border-[#FF6600] pl-4 md:pl-6 text-sm md:text-base lg:text-lg">
                            Our strategic planning begins by considering your business goals, strengths, and challenges. We get to know your company inside and out to create a plan that exceeds expectations.
                         </p>
-                        <p className="text-slate-900 font-extrabold p-5 md:p-8 bg-slate-50 uppercase text-[11px] md:text-sm tracking-tight italic border border-slate-100 rounded-md shadow-sm">
+                        <p className="text-slate-900 font-bold p-5 md:p-8 bg-slate-50 uppercase text-[11px] md:text-sm tracking-tight italic border border-slate-100 rounded-md shadow-sm">
                            &quot;I have helped scores of companies redefine what they are doing online. Whether you need help refining your current strategy or need to start from scratch, I can help you create a plan that works.&quot;
                         </p>
                      </div>
@@ -209,11 +209,11 @@ export default function SEOConsulting() {
                               <div className="w-16 h-16 bg-white flex items-center justify-center text-[#FF6600] border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
                                  <protocol.icon size={32} />
                               </div>
-                              <div className="text-4xl font-display font-extrabold text-slate-300">0{idx + 1}</div>
+                              <div className="text-4xl font-display font-bold text-slate-300">0{idx + 1}</div>
                            </div>
                            <div className="space-y-2">
                               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#FF6600]">{protocol.tag}</span>
-                              <h3 className="text-lg md:text-xl lg:text-3xl font-display font-extrabold text-slate-900 uppercase tracking-tight leading-none">
+                              <h3 className="text-lg md:text-xl lg:text-3xl font-display font-bold text-slate-900 uppercase tracking-tight leading-none">
                                  {protocol.title.split(' ').map((word, i, arr) => (
                                     <span key={i} className={i === arr.length - 1 ? "text-[#FF6600]" : ""}>
                                        {word}{i !== arr.length - 1 ? ' ' : ''}
@@ -268,7 +268,7 @@ export default function SEOConsulting() {
                      <Sparkles size={12} />
                      Performance Optimization
                   </motion.div>
-                  <h2 className="text-4xl lg:text-6xl font-display font-extrabold text-white tracking-tighter uppercase leading-[0.9]">
+                  <h2 className="text-4xl lg:text-6xl font-display font-bold text-white tracking-tighter uppercase leading-[0.9]">
                      Digital <span className="text-[#FF6600]">Dominance.</span>
                   </h2>
                </div>

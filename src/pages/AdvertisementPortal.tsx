@@ -72,9 +72,9 @@ export default function AdvertisementPortal() {
    }, []);
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">
+      <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* LIGHT THEME CINEMATIC HERO WITH ENHANCED ANIMATION */}
-         <div className="relative min-h-[220px] md:min-h-[280px] lg:h-[320px] bg-[#FDFBF9] flex items-center overflow-hidden border-b border-orange-100/30">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             {/* Subtle Orange Glow Animation */}
             <motion.div 
                animate={{ 
@@ -88,30 +88,33 @@ export default function AdvertisementPortal() {
                   repeat: Infinity, 
                   ease: "easeInOut" 
                }}
-               className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-200/40 rounded-full blur-[120px] -mr-40 -mt-40 z-0"
+               className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-orange-200/40 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] -mr-20 sm:-mr-30 md:-mr-40 -mt-20 sm:-mt-30 md:-mt-40 z-0"
             />
             
             <div className="absolute inset-0 opacity-[0.4] z-0 pointer-events-none">
                <ThreeNetworkGlobe />
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
-               <div className="space-y-4 text-center lg:text-left">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+               <div className="flex flex-col items-center gap-4 mt-3">
                   <motion.div
                      initial={{ opacity: 0, x: -20 }}
                      animate={{ opacity: 1, x: 0 }}
-                     className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-orange-100 rounded-sm shadow-sm"
+                     className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-orange-600 animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">Elite Advertising Hub</span>
+                     <span className="font-system-caption text-xs text-white capitalize">Advertisement Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-2 md:gap-x-3 px-4 md:px-0">
+                  <h1 className="font-system-hero font-display font-bold tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
-                        const words = ["Advertisement", "Network."];
+                        const words = [
+                           { text: "ADVERTISEMENT", color: "text-dark" },
+                           { text: "NETWORK.", color: "text-orange-600" }
+                        ];
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className={`inline-block ${word === "Network." ? "text-orange-600 italic" : ""}`}>
-                              {word.split("").map((char, charIdx) => (
+                           <span key={wordIdx} className={`inline-block mr-2 md:mr-4 ${word.color}`}>
+                              {word.text.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
                                     initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
@@ -131,48 +134,32 @@ export default function AdvertisementPortal() {
                      })()}
                   </h1>
 
-                  {/* ELITE STATUS STACK */}
-                  <motion.div 
-                     initial={{ opacity: 0, scale: 0.95 }}
-                     whileInView={{ opacity: 1, scale: 1 }}
-                     transition={{ duration: 1, delay: 1.2 }}
-                     className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3 pt-4 md:pt-2 px-4 md:px-0"
-                  >
-                     {[
-                        { label: "Daily Reach", val: "50M+", icon: Activity },
-                        { label: "Global Nodes", val: "2,400+", icon: Globe },
-                        { label: "CTR Average", val: "4.82%", icon: BarChart3 }
-                     ].map((badge, i) => (
-                        <div key={i} className="px-2 md:px-3 py-1 md:py-1.5 bg-white border border-orange-100 rounded flex items-center gap-1.5 md:gap-2 group hover:shadow-lg transition-all">
-                           <badge.icon size={10} className="text-orange-600 md:w-[12px] md:h-[12px]" />
-                           <div className="flex flex-col items-start translate-y-0.5">
-                              <span className="text-[10px] md:text-[11px] font-black text-slate-950 uppercase leading-none tracking-tight">{badge.val}</span>
-                              <span className="text-[7px] md:text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{badge.label}</span>
-                           </div>
-                        </div>
-                     ))}
-                  </motion.div>
                </div>
 
                <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 1 }}
-                  className="max-w-md px-6 md:px-0"
+                  className="w-full"
                >
-                  <p className="text-[10px] md:text-[12px] lg:text-[14px] font-semibold text-slate-600 leading-relaxed border-l-4 border-orange-600 pl-4 md:pl-8 py-1 uppercase tracking-tight italic">
+                  <motion.p
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="text-slate-600 text-xs md:text-sm lg:text-base font-semibold max-w-xl leading-relaxed px-6 md:px-0"
+                  >
                      "Our understanding of customers is reflected in the high-status user experience we provide."
-                  </p>
+                  </motion.p>
                </motion.div>
             </div>
          </div>
 
          {/* THE PERIPHERY: HIGH-FIDELITY PROTOCOL SECTIONS */}
-         <section className="bg-white relative py-12 md:py-20 lg:py-32 protocol-section">
-            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 space-y-20 md:space-y-32">
+         <section className="bg-white relative py-12 sm:py-16 md:py-20 lg:py-32 protocol-section">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-16 sm:space-y-20 md:space-y-24 lg:space-y-32">
 
                {/* INTRO BLOCK with IMAGE */}
-               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center">
                   <motion.div
                      initial={{ opacity: 0, x: -40 }}
                      whileInView={{ opacity: 1, x: 0 }}
@@ -180,17 +167,17 @@ export default function AdvertisementPortal() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-lg md:text-xl lg:text-3xl font-display font-black text-slate-955 uppercase tracking-tight leading-[0.9] text-center lg:text-left">
-                           Advertising <span className="text-orange-600">Protocol.</span>
+                        <h2 className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight uppercase text-slate-950 text-center lg:text-left">
+                           <span className="text-orange-600">Advertising</span> <span className="text-slate-950">Protocol.</span>
                         </h2>
-                        <div className="w-16 md:w-20 h-1 bg-orange-600 mx-auto lg:mx-0" />
+                        <div className="w-12 sm:w-16 md:w-20 h-1 bg-primary mx-auto lg:mx-0" />
                      </div>
-                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed px-2 md:px-0">
+                     <div className="space-y-4 sm:space-y-6 text-slate-600 text-xs md:text-sm lg:text-base font-semibold leading-relaxed px-2 sm:px-0">
                         <p>
                            Our advertisement portal is a high-status tool designed for the strategic promotion of global brands. We provide specialized technology solutions enabling seamless ad serving, meticulous conversion counting, and mathematical optimization for maximum institutional profitability.
                         </p>
-                        <p className="text-slate-955 font-black border-l-4 border-slate-950 pl-4 md:pl-8 py-2 uppercase text-[11px] md:text-xs tracking-tight italic bg-slate-50">
-                           &quot;We collaborate with you to tailor the perfect advertising package that aligns with your specific institutional requirements.&quot;
+                        <p className="text-slate-950 font-bold border-l-4 border-orange-500 pl-4 sm:pl-8 py-2 capitalize text-[10px] md:text-[12px] font-semibold tracking-wider bg-slate-50">
+                           We collaborate with you to tailor the perfect advertising package that aligns with your specific institutional requirements.&quot;
                         </p>
                      </div>
                   </motion.div>
@@ -199,7 +186,7 @@ export default function AdvertisementPortal() {
                      initial={{ opacity: 0, scale: 0.95 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true }}
-                     className="relative aspect-[16/10] group"
+                     className="relative aspect-[16/10] sm:aspect-[16/9] group"
                   >
                      <div className="absolute -inset-4 bg-orange-600/5 -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
                      <div className="relative h-full overflow-hidden shadow-2xl border border-slate-100 bg-white">
@@ -208,37 +195,37 @@ export default function AdvertisementPortal() {
                            alt="Advertisement Architecture"
                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3000ms]"
                         />
-                         <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
-                            <span className="text-[10px] font-bold text-orange-500 uppercase tracking-widest">Global Outreach Matrix</span>
-                            <h4 className="text-xl font-bold uppercase tracking-tight">Digital Presence Infrastructure</h4>
+                         <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
+                            <span className="font-system-caption text-primary uppercase tracking-widest">Global Outreach Matrix</span>
+                            <h4 className="text-lg md:text-xl lg:text-xl font-display font-bold tracking-tight uppercase text-white">Digital Presence Infrastructure</h4>
                          </div>
                      </div>
                   </motion.div>
                </div>
 
                {/* INTERACTIVE PROTOCOL LIST - PEHRA PATTERN */}
-               <div className="space-y-32">
+               <div className="space-y-20 sm:space-y-24 md:space-y-28 lg:space-y-32">
                   {adProtocols.map((protocol, idx) => (
                      <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-24 items-start protocol-node`}
+                        className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-6 sm:gap-8 md:gap-12 lg:gap-24 items-start protocol-node`}
                      >
-                        <div className="lg:w-1/3 space-y-4 md:space-y-6 lg:sticky lg:top-32 w-full">
-                           <div className="flex items-center justify-center lg:justify-start gap-4">
+                        <div className="lg:w-1/3 space-y-3 sm:space-y-4 md:space-y-6 lg:sticky lg:top-32 w-full">
+                           <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4">
                               <div className="relative group">
                                  <div className="absolute -inset-2 bg-orange-600/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                                 <div className="relative w-12 h-12 md:w-16 md:h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
-                                    <protocol.icon size={28} className="md:w-[32px] md:h-[32px]" />
+                                 <div className="relative w-8 h-8 sm:w-10 md:w-12 md:h-12 bg-slate-50 flex items-center justify-center text-orange-500 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
+                                    <protocol.icon size={20} className="sm:size-[24px] md:size-[28px]" />
                                  </div>
                               </div>
-                              <div className="text-3xl md:text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
+                              <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-100">0{idx + 1}</div>
                            </div>
                            <div className="space-y-2">
-                              <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600 text-center lg:text-left block">{protocol.tag}</span>
-                              <h3 className="text-lg md:text-xl lg:text-2xl font-display font-black uppercase tracking-tight leading-none text-center lg:text-left">
+                              <span className="text-[8px] sm:text-[9px] md:text-[10px] font-system-caption text-primary text-center lg:text-left block">{protocol.tag}</span>
+                              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-bold tracking-tight leading-none text-center lg:text-left">
                                  {protocol.title.split(' ').map((word, i) => (
                                     <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
                                        {word}{' '}
@@ -246,8 +233,8 @@ export default function AdvertisementPortal() {
                                  ))}
                               </h3>
                            </div>
-                           <div className="pt-2 md:pt-4 flex items-center justify-center lg:justify-start gap-2 text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                              <ChevronRight size={12} className="text-orange-600" />
+                           <div className="pt-2 sm:pt-3 md:pt-4 flex items-center justify-center lg:justify-start gap-2 text-[8px] sm:text-[9px] md:text-[10px] font-system-caption text-slate-400 uppercase tracking-widest">
+                              <ChevronRight size={10} className="sm:size-[12px] text-primary" />
                               Active Protocol
                            </div>
                         </div>
@@ -262,7 +249,7 @@ export default function AdvertisementPortal() {
                                     className="w-full bg-orange-600"
                                  />
                               </div>
-                              <p className="text-[13px] md:text-sm lg:text-base font-semibold text-slate-700 leading-relaxed lg:pl-0 text-center lg:text-left px-2 md:px-0">
+                              <p className="font-system-body text-slate-700 font-semibold leading-relaxed lg:pl-0 text-center lg:text-left text-[11px] sm:text-[12px] md:text-sm px-2 sm:px-0">
                                  {protocol.desc}
                               </p>
                            </div>
@@ -270,44 +257,6 @@ export default function AdvertisementPortal() {
                      </motion.div>
                   ))}
                </div>
-
-               {/* CONCLUSION BLOCK - SIGNATURE PRESTIGE */}
-               <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative py-8 md:py-14 px-6 md:px-8 rounded-sm bg-[#0d0d0f] text-white overflow-hidden shadow-2xl border border-white/5 flex items-center justify-center text-center group/panel cursor-default mx-4 md:mx-0"
-               >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(255,102,0,0.15),transparent_70%)] pointer-events-none" />
-
-                  <div className="relative z-10 max-w-4xl mx-auto space-y-5">
-                     <div className="w-10 h-10 mx-auto rounded-sm bg-orange-600/10 border border-orange-600/20 flex items-center justify-center text-orange-600 shadow-xl group-hover:scale-110 transition-transform duration-700">
-                        <Zap size={20} />
-                     </div>
-
-                     <div className="relative">
-                        <h3 className="text-[12px] md:text-[14px] lg:text-base font-display font-medium tracking-tight leading-relaxed text-slate-200 max-w-2xl mx-auto italic px-4">
-                           "Deploy your institutional message across our sophisticated advertising infrastructure to reach a vast global audience and exceed your conversion goals with mathematical certainty."
-                        </h3>
-                     </div>
-
-                     <div className="flex items-center justify-center gap-6 md:gap-8 pt-4">
-                        <div className="h-[1px] w-16 md:w-24 bg-white/10" />
-                        <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] text-orange-500">Industry Leader</span>
-                        <div className="h-[1px] w-16 md:w-24 bg-white/10" />
-                     </div>
-                  </div>
-
-                  <motion.div
-                     animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.1, 0.15, 0.1]
-                     }}
-                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                     className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange-600/20 rounded-full blur-[100px]"
-                  />
-               </motion.div>
 
             </div>
          </section>

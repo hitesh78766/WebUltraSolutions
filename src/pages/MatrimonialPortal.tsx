@@ -105,27 +105,28 @@ export default function MatrimonialPortal() {
    }, []);
 
    return (
-      <div className="pt-[80px] bg-white min-h-screen font-secondary selection:bg-orange-600 selection:text-white overflow-x-hidden">
+      <div className="pt-[50px] bg-white min-h-screen font-secondary overflow-x-hidden">
          {/* CINEMATIC FULL-BLEED HEADER */}
-         <div className="relative min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
+         <div className="relative min-h-[220px] md:min-h-[280px] lg:min-h-[350px] bg-transparent flex items-center justify-center overflow-hidden border-b border-orange-100/50">
             <ThreeNeuralStorm />
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
-               <div className="space-y-4 text-center lg:text-left">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-4 lg:space-y-5">
+               <div className="flex flex-col items-center gap-4 mt-3">
                   <motion.div
                      initial={{ opacity: 0, y: -20 }}
                      animate={{ opacity: 1, y: 0 }}
                      className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#FF6600] rounded-md shadow-lg"
                   >
                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">Elite Matrimonial Ecosystems</span>
+                     <span className="font-system-caption text-xs text-white capitalize">Matrimonial Intelligence Suite</span>
                   </motion.div>
 
-                  <h1 className="text-3xl lg:text-5xl font-display font-black text-slate-950 tracking-tight uppercase leading-[1.1] flex flex-wrap justify-center lg:justify-start gap-x-3">
+                  <h1 className="font-system-hero font-display font-bold text-dark tracking-tight leading-[1.1] uppercase max-w-4xl mx-auto">
                      {(() => {
-                        const words = ["Relational", "Dominance."];
+                        const title = "MATRIMONIAL DOMINANCE.";
+                        const words = title.split(" ");
                         return words.map((word, wordIdx) => (
-                           <span key={wordIdx} className={`inline-block ${word === "Dominance." ? "text-orange-600 italic" : ""}`}>
+                           <span key={wordIdx} className="inline-block mr-2 md:mr-4">
                               {word.split("").map((char, charIdx) => (
                                  <motion.span
                                     key={`${wordIdx}-${charIdx}`}
@@ -151,11 +152,16 @@ export default function MatrimonialPortal() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 1 }}
-                  className="max-w-md"
+                  className="w-full"
                >
-                  <p className="text-[12px] lg:text-[14px] font-semibold text-slate-500 leading-relaxed border-l-4 border-orange-600 pl-6 lg:pl-8 py-1 uppercase tracking-tight italic">
+                  <motion.p
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 1, delay: 1.2 }}
+                     className="text-slate-600 mb-2 text-xs md:text-sm lg:text-base font-semibold max-w-4xl leading-relaxed px-6 md:px-0"
+                  >
                      "Engineering high-performance matrimonial foundations through precision architectures and real-time relational synchronization."
-                  </p>
+                  </motion.p>
                </motion.div>
             </div>
          </div>
@@ -173,16 +179,16 @@ export default function MatrimonialPortal() {
                      className="space-y-8"
                   >
                      <div className="space-y-4">
-                        <h2 className="text-3xl lg:text-5xl font-display font-black text-slate-950 uppercase tracking-tight leading-[0.9]">
+                        <p className="text-slate-950 font-bold border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-wider  bg-slate-50">
                            System <span className="text-orange-600">Architecture.</span>
-                        </h2>
+                        </p>
                         <div className="w-20 h-1 bg-orange-600" />
                      </div>
-                     <div className="space-y-6 text-slate-600 text-sm lg:text-base font-semibold leading-relaxed">
+                     <div className="space-y-6 text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 max-w-xl">
                         <p>
                            Our strategic planning begins by considering your matrimonial platform goals, strengths, and relational challenges. We get to know your user ecosystem inside and out to create an architecture that exceeds expectations for institutional growth.
                         </p>
-                        <p className="text-slate-950 font-black border-l-4 border-slate-950 pl-8 py-2 uppercase text-xs tracking-tight italic bg-slate-50">
+                        <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 max-w-xl">
                            &quot;We have helped scores of platforms redefine what they are doing online. Whether you need help refining your current matching strategy or need to start from scratch, we can help you create a plan that works.&quot;
                         </p>
                      </div>
@@ -192,7 +198,7 @@ export default function MatrimonialPortal() {
                      initial={{ opacity: 0, scale: 0.95 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true }}
-                     className="relative aspect-[16/10] group"
+                     className="relative aspect-[16/10] md:aspect-[16/6] group"
                   >
                      <div className="absolute -inset-4 bg-orange-600/5 -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
                      <div className="relative h-full overflow-hidden shadow-2xl border border-slate-100 bg-white">
@@ -203,10 +209,10 @@ export default function MatrimonialPortal() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60" />
                         <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                           <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                           <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-orange-500">
                               <Sparkles size={18} />
                            </div>
-                           <span className="text-[10px] font-bold text-white uppercase tracking-widest">Global Relational Sync</span>
+                           <span className="text-[10px] font-bold text-black uppercase tracking-widest">Global Relational Sync</span>
                         </div>
                      </div>
                   </motion.div>
@@ -227,11 +233,11 @@ export default function MatrimonialPortal() {
                               <div className="w-16 h-16 bg-slate-50 flex items-center justify-center text-orange-600 border border-slate-100 shadow-sm transition-transform group-hover:scale-110">
                                  <protocol.icon size={32} />
                               </div>
-                              <div className="text-4xl font-display font-black text-slate-100">0{idx + 1}</div>
+                              <div className="text-3xl md:text-4xl font-display font-bold text-slate-100">0{idx + 1}</div>
                            </div>
                            <div className="space-y-2">
-                              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-orange-600">{protocol.tag}</span>
-                              <h3 className="text-lg lg:text-2xl font-display font-black uppercase tracking-tight leading-none">
+                              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6600]">{protocol.tag}</span>
+                              <h3 className="text-lg md:text-xl lg:text-2xl font-display font-bold uppercase tracking-tight leading-none">
                                  {protocol.title.split(' ').map((word, i) => (
                                     <span key={i} className={i === 0 ? "text-slate-950" : "text-orange-600"}>
                                        {word}{' '}
@@ -255,7 +261,7 @@ export default function MatrimonialPortal() {
                                     className="w-full bg-orange-600"
                                  />
                               </div>
-                              <p className="text-base lg:text-lg font-semibold text-slate-700 leading-relaxed lg:pl-0">
+                              <p className="text-[13px] md:text-sm lg:text-base font-semibold leading-relaxed text-slate-500 max-w-xl">
                                  {protocol.desc}
                               </p>
                            </div>
