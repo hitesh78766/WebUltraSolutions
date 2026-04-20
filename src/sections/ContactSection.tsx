@@ -26,7 +26,7 @@ export default function ContactSection() {
             </div>
 
             {/* Headline */}
-            <h2 className="text-xl sm:text-2xl lg:text-[40px] font-display font-bold text-[#111827] leading-[1.3] lg:leading-[1.6] tracking-tight uppercase">
+            <h2 className="text-xl sm:text-2xl lg:text-[40px] font-display font-bold text-[#111827] leading-[1.3] lg:leading-[1.3] tracking-tight uppercase">
               Trusted by <span className="text-[#FF6600]">Startups</span> and <br />
               <span className="text-[#8B5CF6]">Fortune 500</span> companies
             </h2>
@@ -38,7 +38,7 @@ export default function ContactSection() {
                   <Trophy className="text-white" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#FF6600] transition-colors uppercase">24+ years of experience</h4>
+                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#FF6600] transition-colors capitalize">24+ years of experience</h4>
                   <p className="text-slate-500 text-xs sm:text-sm lg:text-[15.5px] font-semibold leading-relaxed">
                     We handle projects of all complexities with zero friction.
                   </p>
@@ -50,7 +50,7 @@ export default function ContactSection() {
                   <ThumbsUp className="text-white" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#8B5CF6] transition-colors uppercase">500+ satisfied customers</h4>
+                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#8B5CF6] transition-colors capitalize">500+ satisfied customers</h4>
                   <p className="text-slate-500 text-xs sm:text-sm lg:text-[15.5px] font-semibold leading-relaxed">
                     Startups to Fortune 500, we have successfully worked with all.
                   </p>
@@ -62,7 +62,7 @@ export default function ContactSection() {
                   <Users className="text-white" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#3B82F6] transition-colors uppercase">500+ in-house team</h4>
+                  <h4 className="text-lg sm:text-xl lg:text-[18px] font-display font-bold text-[#111827] leading-tight mb-2 group-hover:text-[#3B82F6] transition-colors capitalize">500+ in-house team</h4>
                   <p className="text-slate-500 text-xs sm:text-sm lg:text-[15.5px] font-semibold leading-relaxed">
                     Top 1% talent to ensure your digital success and scaling.
                   </p>

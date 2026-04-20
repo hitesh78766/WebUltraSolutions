@@ -139,13 +139,13 @@ export default function SchoolCollegeERP() {
           </div>
 
           {/* THE ERP NEURAL HUB - UNIQUE INTERACTIVE DIAGRAM */}
-          <div className="lg:col-span-5 relative h-[500px] lg:h-[600px] flex items-center justify-center">
-             <div className="relative w-[500px] h-[500px] flex items-center justify-center">
+          <div className="lg:col-span-5 relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] flex items-center justify-center">
+             <div className="relative w-[500px] h-[500px] flex items-center justify-center scale-[0.6] sm:scale-[0.75] md:scale-[0.9] lg:scale-100">
                 {/* SVG Connecting Lines - Dynamic Data Flow */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
                    {erpHubNodes.map((node, i) => {
                      const angle = (i * (360 / erpHubNodes.length)) * (Math.PI / 180);
-                     const radius = window.innerWidth > 1024 ? 200 : 150;
+                     const radius = 200;
                      const x2 = 250 + Math.cos(angle) * radius;
                      const y2 = 250 + Math.sin(angle) * radius;
                      
@@ -186,7 +186,7 @@ export default function SchoolCollegeERP() {
                 {/* Orbiting Elements - RIGID GEOMETRIC POSITIONING */}
                 {erpHubNodes.map((node, i) => {
                   const angle = (i * (360 / erpHubNodes.length)) * (Math.PI / 180);
-                  const radius = window.innerWidth > 1024 ? 200 : 150;
+                  const radius = 200;
                   const x = Math.cos(angle) * radius;
                   const y = Math.sin(angle) * radius;
 
